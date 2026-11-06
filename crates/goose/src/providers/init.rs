@@ -1,50 +1,10 @@
 use std::sync::{Arc, RwLock};
 
-#[cfg(feature = "aws-providers")]
-use super::bedrock::BedrockProvider;
-#[cfg(feature = "local-inference")]
-use super::local_inference::LocalInferenceProvider;
-#[cfg(feature = "aws-providers")]
-use super::sagemaker_tgi::SageMakerTgiProvider;
 use super::{
-    amp_acp::AmpAcpProvider,
-    avian::AvianProvider,
-    azure::AzureProvider,
-    base::{Provider, ProviderMetadata},
-    chatgpt_codex::ChatGptCodexProvider,
-    claude_acp::ClaudeAcpProvider,
-    claude_code::ClaudeCodeProvider,
-    codex::CodexProvider,
-    codex_acp::CodexAcpProvider,
-    copilot_acp::CopilotAcpProvider,
-    cursor_agent::CursorAgentProvider,
-    gcpvertexai::GcpVertexAIProvider,
-    gemini_cli::GeminiCliProvider,
-    gemini_oauth::GeminiOAuthProvider,
-    githubcopilot::GithubCopilotProvider,
-    gondola::GondolaProvider,
-    huggingface::HuggingFaceProvider,
-    kimicode::KimiCodeProvider,
-    litellm::LiteLLMProvider,
-    nanogpt::NanoGptProvider,
-    pi_acp::PiAcpProvider,
+    base::{Provider, ProviderMetadata, ProviderType},
     provider_registry::ProviderRegistry,
-    snowflake_def::SnowflakeProviderDef,
-    tetrate::TetrateProvider,
-    xai::XaiProvider,
-    xai_oauth::XaiOAuthProvider,
 };
 use crate::config::ExtensionConfig;
-use crate::providers::anthropic_def::AnthropicProviderDef;
-use crate::providers::azure_foundry_def::AzureFoundryProviderDef;
-use crate::providers::base::ProviderType;
-use crate::providers::databricks_def::{self, DatabricksProviderDef};
-use crate::providers::databricks_v2_def::{self, DatabricksV2ProviderDef};
-use crate::providers::google_def::GoogleProviderDef;
-use crate::providers::muse_code_def::{MuseCodeProvider, MuseCodeProviderDef};
-use crate::providers::ollama_def::OllamaProviderDef;
-use crate::providers::openai_def::OpenAiProviderDef;
-use crate::providers::openrouter_def::OpenRouterProviderDef;
 use crate::{
     config::declarative_providers::register_declarative_providers,
     providers::provider_registry::ProviderEntry,
@@ -54,13 +14,62 @@ use tokio::sync::OnceCell;
 
 static REGISTRY: OnceCell<RwLock<ProviderRegistry>> = OnceCell::const_new();
 
+/// This build is a dedicated 10router client: apart from providers the user
+/// creates themselves, the only registered provider is the bundled
+/// `tenrouter` declarative provider (see the allowlist in
+/// declarative_providers.rs).
+///
+/// In-crate tests exercise the agent machinery against fixture providers
+/// (openai against a dummy API, claude-code, lmstudio, ...), so test builds
+/// restore the full upstream registry. Any other crate — and every production
+/// binary — compiles this crate without `cfg(test)` and sees tenrouter only.
 async fn init_registry() -> RwLock<ProviderRegistry> {
     let tls_config =
         crate::config::tls::provider_tls_config_from_config(crate::config::Config::global())
             .expect("failed to load provider TLS config");
-    let mut registry = ProviderRegistry::new(tls_config).with_providers(|registry| {
-        use super::inventory::registrations;
+    let mut registry = registry_with_fixture_providers(tls_config);
 
+    if let Err(e) = load_custom_providers_into_registry(&mut registry) {
+        tracing::warn!("Failed to load custom providers: {}", e);
+    }
+    RwLock::new(registry)
+}
+
+#[cfg(test)]
+fn registry_with_fixture_providers(tls_config: Option<super::api_client::TlsConfig>) -> ProviderRegistry {
+    use super::inventory::registrations;
+
+    #[allow(unused_imports)]
+    use super::{
+        amp_acp::AmpAcpProvider, avian::AvianProvider, azure::AzureProvider,
+        chatgpt_codex::ChatGptCodexProvider, claude_acp::ClaudeAcpProvider,
+        claude_code::ClaudeCodeProvider, codex::CodexProvider, codex_acp::CodexAcpProvider,
+        copilot_acp::CopilotAcpProvider, cursor_agent::CursorAgentProvider,
+        gcpvertexai::GcpVertexAIProvider, gemini_cli::GeminiCliProvider,
+        gemini_oauth::GeminiOAuthProvider, githubcopilot::GithubCopilotProvider,
+        gondola::GondolaProvider, huggingface::HuggingFaceProvider, kimicode::KimiCodeProvider,
+        litellm::LiteLLMProvider, nanogpt::NanoGptProvider, pi_acp::PiAcpProvider,
+        snowflake_def::SnowflakeProviderDef, tetrate::TetrateProvider, xai::XaiProvider,
+        xai_oauth::XaiOAuthProvider,
+    };
+    use crate::providers::anthropic_def::AnthropicProviderDef;
+    use crate::providers::azure_foundry_def::AzureFoundryProviderDef;
+    use crate::providers::databricks_def::{self, DatabricksProviderDef};
+    use crate::providers::databricks_v2_def::{self, DatabricksV2ProviderDef};
+    use crate::providers::google_def::GoogleProviderDef;
+    use crate::providers::muse_code_def::{MuseCodeProvider, MuseCodeProviderDef};
+    use crate::providers::ollama_def::OllamaProviderDef;
+    use crate::providers::openai_def::OpenAiProviderDef;
+    use crate::providers::openrouter_def::OpenRouterProviderDef;
+
+    #[cfg(feature = "aws-providers")]
+    use super::bedrock::BedrockProvider;
+    #[cfg(feature = "local-inference")]
+    use super::local_inference::LocalInferenceProvider;
+    #[cfg(feature = "aws-providers")]
+    use super::sagemaker_tgi::SageMakerTgiProvider;
+
+    let mut registry = ProviderRegistry::new(tls_config).with_providers(|registry| {
         registry.register_with_inventory::<AmpAcpProvider>(
             false,
             Some(registrations::amp_acp_inventory()),
@@ -222,11 +231,12 @@ async fn init_registry() -> RwLock<ProviderRegistry> {
         "huggingface",
         Arc::new(|| Box::pin(HuggingFaceProvider::cleanup())),
     );
+    registry
+}
 
-    if let Err(e) = load_custom_providers_into_registry(&mut registry) {
-        tracing::warn!("Failed to load custom providers: {}", e);
-    }
-    RwLock::new(registry)
+#[cfg(not(test))]
+fn registry_with_fixture_providers(tls_config: Option<super::api_client::TlsConfig>) -> ProviderRegistry {
+    ProviderRegistry::new(tls_config)
 }
 
 fn load_custom_providers_into_registry(registry: &mut ProviderRegistry) -> Result<()> {
@@ -307,124 +317,27 @@ mod tests {
     use std::fs;
 
     #[tokio::test]
-    async fn test_huggingface_provider_registry_wiring() {
-        let huggingface = get_from_registry("huggingface")
+    async fn test_tenrouter_is_registered() {
+        // The production registry is tenrouter-only via the allowlist in
+        // config/declarative_providers.rs; test builds additionally register
+        // upstream fixture providers (see registry_with_fixture_providers),
+        // so this asserts tenrouter's wiring rather than global emptiness.
+        let entry = get_from_registry("tenrouter")
             .await
-            .expect("huggingface provider should be registered");
-        let meta = huggingface.metadata();
-
-        assert_eq!(huggingface.provider_type(), ProviderType::Preferred);
-        assert_eq!(meta.display_name, "Hugging Face");
-        assert_eq!(meta.default_model, "Qwen/Qwen3-Coder-480B-A35B-Instruct");
-        assert!(meta
-            .config_keys
-            .iter()
-            .any(|key| key.name == "HF_TOKEN" && key.secret));
-    }
-
-    #[tokio::test]
-    async fn test_aimlapi_provider_registry_wiring() {
-        let aimlapi = get_from_registry("aimlapi")
-            .await
-            .expect("aimlapi provider should be registered");
-        let meta = aimlapi.metadata();
-
-        assert_eq!(meta.name, "aimlapi");
-        assert_eq!(meta.display_name, "AI/ML API");
-        assert_eq!(meta.default_model, "openai/gpt-5-5");
-        assert!(meta
-            .config_keys
-            .iter()
-            .any(|key| key.name == "AIMLAPI_API_KEY" && key.secret));
-    }
-
-    #[tokio::test]
-    async fn test_gondola_provider_registry_wiring() {
-        let gondola = get_from_registry("gondola")
-            .await
-            .expect("gondola provider should be registered");
-        let meta = gondola.metadata();
-
-        assert_eq!(meta.name, "gondola");
-        assert_eq!(meta.default_model, "deepseek-v4-flash");
-        assert!(meta
-            .config_keys
-            .iter()
-            .any(|key| key.name == "GONDOLA_API_KEY" && key.secret));
-    }
-
-    #[tokio::test]
-    async fn test_lemonade_provider_registry_wiring() {
-        let lemonade = get_from_registry("lemonade")
-            .await
-            .expect("lemonade provider should be registered");
-        let meta = lemonade.metadata();
-
-        assert_eq!(meta.name, "lemonade");
-        assert_eq!(meta.display_name, "Lemonade");
-        assert!(meta.default_model.is_empty());
-        assert!(meta
-            .config_keys
-            .iter()
-            .any(|key| key.name == "LEMONADE_API_KEY" && key.secret));
-        assert!(meta.config_keys.iter().any(|key| {
-            key.name == "LEMONADE_HOST"
-                && !key.required
-                && key.default.as_deref() == Some("http://localhost:13305")
-        }));
-    }
-
-    #[tokio::test]
-    async fn test_openai_compatible_providers_config_keys() {
-        let providers_list = providers().await;
-        let required_api_key_cases = vec![
-            ("groq", "GROQ_API_KEY"),
-            ("mistral", "MISTRAL_API_KEY"),
-            ("custom_deepseek", "DEEPSEEK_API_KEY"),
-        ];
-        for (name, expected_key) in required_api_key_cases {
-            if let Some((meta, _)) = providers_list.iter().find(|(m, _)| m.name == name) {
-                assert!(
-                    !meta.config_keys.is_empty(),
-                    "{name} provider should have config keys"
-                );
-                assert_eq!(
-                    meta.config_keys[0].name, expected_key,
-                    "First config key for {name} should be {expected_key}, got {}",
-                    meta.config_keys[0].name
-                );
-                assert!(
-                    meta.config_keys[0].required,
-                    "{expected_key} should be required"
-                );
-                assert!(
-                    meta.config_keys[0].secret,
-                    "{expected_key} should be secret"
-                );
-            } else {
-                // Provider not registered; skip test for this provider
-                continue;
-            }
-        }
-
-        if let Some((meta, _)) = providers_list.iter().find(|(m, _)| m.name == "openai") {
-            assert!(
-                !meta.config_keys.is_empty(),
-                "openai provider should have config keys"
-            );
-            assert_eq!(
-                meta.config_keys[0].name, "OPENAI_API_KEY",
-                "First config key for openai should be OPENAI_API_KEY"
-            );
-            assert!(
-                !meta.config_keys[0].required,
-                "OPENAI_API_KEY should be optional for local server support"
-            );
-            assert!(
-                meta.config_keys[0].secret,
-                "OPENAI_API_KEY should be secret"
-            );
-        }
+            .expect("tenrouter should be registered");
+        assert_eq!(entry.provider_type(), ProviderType::Declarative);
+        assert_eq!(entry.metadata().display_name, "10router");
+        assert!(
+            entry
+                .metadata()
+                .config_keys
+                .iter()
+                .any(|key| key.name == "TENROUTER_API_KEY" && key.required && key.secret)
+        );
+        assert!(
+            entry.supports_inventory_refresh(),
+            "tenrouter must refresh its model inventory from /v1/models"
+        );
     }
 
     #[tokio::test]
@@ -504,17 +417,18 @@ mod tests {
             ("GOOSE_TOOLSHIM", None::<&str>),
             ("GOOSE_TOOLSHIM_OLLAMA_MODEL", None::<&str>),
             ("GOOSE_THINKING_EFFORT", None::<&str>),
+            ("TENROUTER_API_KEY", Some("10r_test")),
         ]);
 
-        let openai = get_from_registry("openai")
+        let tenrouter = get_from_registry("tenrouter")
             .await
-            .expect("openai provider should be registered");
-        let openai_provider = openai
+            .expect("tenrouter provider should be registered");
+        let tenrouter_provider = tenrouter
             .create(vec![])
             .await
-            .expect("openai provider should be created");
+            .expect("tenrouter provider should be created");
         assert_eq!(
-            openai_provider
+            tenrouter_provider
                 .get_context_limit("totally-unknown-model", Some(1_000_000))
                 .await,
             1_000_000
@@ -560,70 +474,5 @@ mod tests {
         );
 
         std::env::remove_var("GOOSE_PATH_ROOT");
-    }
-
-    #[tokio::test]
-    async fn test_litellm_supports_inventory_refresh() {
-        let entry = get_from_registry("litellm")
-            .await
-            .expect("litellm should be registered");
-        assert!(
-            entry.supports_inventory_refresh(),
-            "litellm must support inventory refresh so the model picker calls fetch_supported_models"
-        );
-    }
-
-    #[tokio::test]
-    async fn test_api_backed_model_providers_are_registered_for_refresh() {
-        for provider_name in [
-            "gcp_vertex_ai",
-            "github_copilot",
-            "kimi_code",
-            "muse_code",
-            "nano-gpt",
-            "tetrate",
-            "xai",
-            "xai_oauth",
-        ] {
-            let entry = get_from_registry(provider_name)
-                .await
-                .expect("dynamic model provider should be registered");
-            assert!(
-                entry.supports_inventory_refresh(),
-                "{provider_name} must refresh its model inventory"
-            );
-        }
-    }
-
-    #[tokio::test]
-    async fn test_litellm_configured_without_api_key() {
-        let _guard = env_lock::lock_env([
-            ("LITELLM_API_KEY", None::<&str>),
-            ("LITELLM_HOST", Some("http://localhost:4000")),
-        ]);
-
-        let entry = get_from_registry("litellm")
-            .await
-            .expect("litellm should be registered");
-        assert!(
-            entry.inventory_configured(),
-            "litellm should be considered configured when LITELLM_HOST is set without an API key"
-        );
-    }
-
-    #[tokio::test]
-    async fn test_litellm_not_configured_without_any_settings() {
-        let _guard = env_lock::lock_env([
-            ("LITELLM_API_KEY", None::<&str>),
-            ("LITELLM_HOST", None::<&str>),
-        ]);
-
-        let entry = get_from_registry("litellm")
-            .await
-            .expect("litellm should be registered");
-        assert!(
-            !entry.inventory_configured(),
-            "litellm should not be considered configured when no settings are present"
-        );
     }
 }

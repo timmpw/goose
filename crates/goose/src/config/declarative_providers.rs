@@ -411,12 +411,26 @@ pub fn load_provider(id: &str) -> Result<LoadedProvider> {
     Err(anyhow::anyhow!("Provider not found: {}", id))
 }
 
+/// This build is a dedicated 10router client: outside this crate's own unit
+/// tests, of the bundled declarative definitions only the allowlisted names
+/// are registered. The rest stay in the crate as data and never reach the
+/// provider list. (In-crate tests keep the full set as fixtures; see
+/// providers/init.rs.)
+const BUNDLED_PROVIDER_ALLOWLIST: &[&str] = &["tenrouter"];
+
 pub fn register_declarative_providers(
     registry: &mut crate::providers::provider_registry::ProviderRegistry,
 ) -> Result<()> {
     let dir = custom_providers_dir();
     let custom_providers = load_custom_providers(&dir)?;
-    let fixed_providers = fixed_provider_configs()?;
+    let all_fixed_providers = fixed_provider_configs()?;
+    #[cfg(test)]
+    let fixed_providers = all_fixed_providers;
+    #[cfg(not(test))]
+    let fixed_providers = all_fixed_providers
+        .into_iter()
+        .filter(|config| BUNDLED_PROVIDER_ALLOWLIST.contains(&config.name.as_str()))
+        .collect::<Vec<_>>();
     for config in fixed_providers {
         register_declarative_provider(registry, config, ProviderType::Declarative);
     }

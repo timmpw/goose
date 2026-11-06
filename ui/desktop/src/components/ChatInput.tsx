@@ -1577,12 +1577,12 @@ export default function ChatInput({
                 />
               )}
               {img.isLoading && (
-                <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 rounded">
+                <div className="absolute inset-0 flex items-center justify-center bg-black/50 rounded">
                   <div className="animate-spin rounded-full h-6 w-6 border-t-2 border-b-2 border-white"></div>
                 </div>
               )}
               {img.error && !img.isLoading && (
-                <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-75 rounded p-1 text-center">
+                <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/75 rounded p-1 text-center">
                   <p className="text-red-400 text-[10px] leading-tight break-all">
                     {img.error.substring(0, 50)}
                   </p>
@@ -1618,12 +1618,12 @@ export default function ChatInput({
                     />
                   )}
                   {file.isLoading && (
-                    <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 rounded">
+                    <div className="absolute inset-0 flex items-center justify-center bg-black/50 rounded">
                       <div className="animate-spin rounded-full h-6 w-6 border-t-2 border-b-2 border-white"></div>
                     </div>
                   )}
                   {file.error && !file.isLoading && (
-                    <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-75 rounded p-1 text-center">
+                    <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/75 rounded p-1 text-center">
                       <p className="text-red-400 text-[10px] leading-tight break-all">
                         {file.error.substring(0, 30)}
                       </p>

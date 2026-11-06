@@ -1,5 +1,5 @@
 provider: github
-owner: aaif-goose
+owner: timmpw
 repo: goose
 updaterCacheDirName: goose-updater
 publisherName:

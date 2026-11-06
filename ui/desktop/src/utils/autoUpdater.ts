@@ -352,7 +352,7 @@ export function setupAutoUpdater() {
   // Set the feed URL for GitHub releases
   const feedConfig = {
     provider: 'github' as const,
-    owner: 'aaif-goose',
+    owner: 'timmpw',
     repo: 'goose',
     releaseType: 'release' as const,
     // The installer manifest has its own name (scripts/generate-windows-update-manifest.js) so
@@ -744,7 +744,7 @@ function updateTrayIcon(hasUpdate: boolean) {
     } else {
       iconPath = path.join(process.resourcesPath, 'images', 'iconTemplateUpdate.png');
     }
-    trayRef.setToolTip('Goose - Update Available');
+    trayRef.setToolTip('10Router - Update Available');
   } else {
     // Use normal icon
     if (isDev) {
@@ -752,7 +752,7 @@ function updateTrayIcon(hasUpdate: boolean) {
     } else {
       iconPath = path.join(process.resourcesPath, 'images', 'iconTemplate.png');
     }
-    trayRef.setToolTip('Goose');
+    trayRef.setToolTip('10Router');
   }
 
   const icon = nativeImage.createFromPath(iconPath);

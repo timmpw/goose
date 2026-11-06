@@ -1386,7 +1386,7 @@ mod tests {
         config
             .set_param("GOOSE_MODEL", "claude-sonnet-4-6")
             .unwrap();
-        let expected_model = goose::providers::get_from_registry("openai")
+        let expected_model = goose::providers::get_from_registry("tenrouter")
             .await
             .unwrap()
             .metadata()
@@ -1396,7 +1396,7 @@ mod tests {
         let resolved = resolve_provider_and_model(
             &SessionBuilderConfig {
                 resume: true,
-                provider: Some("openai".to_string()),
+                provider: Some("tenrouter".to_string()),
                 ..SessionBuilderConfig::default()
             },
             &config,
@@ -1407,7 +1407,7 @@ mod tests {
         )
         .await;
 
-        assert_eq!(resolved.provider_name, "openai");
+        assert_eq!(resolved.provider_name, "tenrouter");
         assert_eq!(resolved.model_name, expected_model);
         assert_ne!(resolved.model_name, "claude-sonnet-4-6");
     }

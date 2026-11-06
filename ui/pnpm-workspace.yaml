@@ -30,5 +30,8 @@ allowBuilds:
   electron: true
   electron-winstaller: true
   esbuild: true
+  # Native dep of @electron-forge/maker-dmg; its postinstall builds
+  # build/Release/volume.node, without which DMG creation fails.
+  macos-alias: true
 # Electron Forge resolves @electron/node-gyp from git.
 blockExoticSubdeps: false

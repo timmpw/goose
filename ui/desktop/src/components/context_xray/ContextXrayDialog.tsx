@@ -46,7 +46,7 @@ const i18n = defineMessages({
   providerManagesContext: {
     id: 'contextXray.providerManagesContext',
     defaultMessage:
-      '{provider} keeps its own conversation history and only receives the latest prompt from goose, so there is no request to break down.',
+      '{provider} keeps its own conversation history and only receives the latest prompt from 10Router, so there is no request to break down.',
   },
   autoCompactionPending: {
     id: 'contextXray.autoCompactionPending',

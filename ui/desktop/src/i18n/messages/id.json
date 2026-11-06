@@ -18,7 +18,7 @@
     "defaultMessage": "Delete \"{name}\"? This cannot be undone."
   },
   "appsView.description": {
-    "defaultMessage": "Aplikasi dari server MCP Anda dan Aplikasi yang dibuat oleh goose sendiri. Anda dapat memintanya membuat aplikasi baru melalui antarmuka obrolan dan aplikasi tersebut akan muncul di sini."
+    "defaultMessage": "Aplikasi dari server MCP Anda dan Aplikasi yang dibuat oleh 10Router sendiri. Anda dapat memintanya membuat aplikasi baru melalui antarmuka obrolan dan aplikasi tersebut akan muncul di sini."
   },
   "appsView.errorLoading": {
     "defaultMessage": "Kesalahan saat memuat aplikasi: {error}"
@@ -36,7 +36,7 @@
     "defaultMessage": "Memuat aplikasi..."
   },
   "appsView.noAppsDescription": {
-    "defaultMessage": "Buka obrolan dan mintalah goose membuat aplikasi yang Anda inginkan. goose dapat membuatkannya untuk Anda dan aplikasi tersebut akan muncul di sini. Atau jika seseorang membagikan sebuah aplikasi, Anda dapat mengimpornya menggunakan tombol di atas."
+    "defaultMessage": "Buka obrolan dan mintalah 10Router membuat aplikasi yang Anda inginkan. 10Router dapat membuatkannya untuk Anda dan aplikasi tersebut akan muncul di sini. Atau jika seseorang membagikan sebuah aplikasi, Anda dapat mengimpornya menggunakan tombol di atas."
   },
   "appsView.noAppsTitle": {
     "defaultMessage": "Tidak ada aplikasi yang tersedia"
@@ -75,7 +75,7 @@
     "defaultMessage": "Kredensial dihapus"
   },
   "authSettings.description": {
-    "defaultMessage": "Kelola kredensial penyedia yang disimpan secara lokal oleh goose."
+    "defaultMessage": "Kelola kredensial penyedia yang disimpan secara lokal oleh 10Router."
   },
   "authSettings.empty": {
     "defaultMessage": "Tidak ditemukan kredensial penyedia yang tersimpan secara lokal."
@@ -162,10 +162,10 @@
     "defaultMessage": "Jalankan"
   },
   "chat.notification.taskComplete.body": {
-    "defaultMessage": "Klik di sini untuk membawa Goose kembali ke fokus."
+    "defaultMessage": "Klik di sini untuk membawa 10Router kembali ke fokus."
   },
   "chat.notification.taskComplete.title": {
-    "defaultMessage": "Goose telah menyelesaikan tugas."
+    "defaultMessage": "10Router telah menyelesaikan tugas."
   },
   "chatInput.dictationError": {
     "defaultMessage": "Kesalahan Dikte"
@@ -213,13 +213,13 @@
     "defaultMessage": "Menunggu gambar disimpan..."
   },
   "chatSettings.modeDescription": {
-    "defaultMessage": "Pilih mode default yang digunakan Goose untuk sesi baru. Sesi yang sudah ada tetap menggunakan mode saat ini."
+    "defaultMessage": "Pilih mode default yang digunakan 10Router untuk sesi baru. Sesi yang sudah ada tetap menggunakan mode saat ini."
   },
   "chatSettings.modeTitle": {
     "defaultMessage": "Mode Default"
   },
   "chatSettings.responseStylesDescription": {
-    "defaultMessage": "Pilih bagaimana Goose memformat dan menata respons-nya"
+    "defaultMessage": "Pilih bagaimana 10Router memformat dan menata respons-nya"
   },
   "chatSettings.responseStylesTitle": {
     "defaultMessage": "Gaya Respons"
@@ -240,10 +240,10 @@
     "defaultMessage": "Editor Konfigurasi"
   },
   "configSettings.description": {
-    "defaultMessage": "Edit pengaturan konfigurasi goose Anda"
+    "defaultMessage": "Edit pengaturan konfigurasi 10Router Anda"
   },
   "configSettings.descriptionWithProvider": {
-    "defaultMessage": "Edit pengaturan konfigurasi goose Anda (pengaturan saat ini untuk {provider})"
+    "defaultMessage": "Edit pengaturan konfigurasi 10Router Anda (pengaturan saat ini untuk {provider})"
   },
   "configSettings.done": {
     "defaultMessage": "Selesai"
@@ -315,7 +315,7 @@
     "defaultMessage": "Giliran Maksimum"
   },
   "conversationLimitsDropdown.maxTurnsDescription": {
-    "defaultMessage": "Giliran agen maksimum sebelum Goose meminta masukan pengguna"
+    "defaultMessage": "Giliran agen maksimum sebelum 10Router meminta masukan pengguna"
   },
   "costTracker.costUnavailable": {
     "defaultMessage": "Data biaya tidak tersedia untuk {model} ({inputTokens} token masukan, {outputTokens} token keluaran)"
@@ -771,7 +771,7 @@
     "defaultMessage": "Edit pengaturan {name}"
   },
   "defaultCardButtons.getStarted": {
-    "defaultMessage": "Mulai dengan goose!"
+    "defaultMessage": "Mulai dengan 10Router!"
   },
   "defaultProviderSetupForm.apiHostLabel": {
     "defaultMessage": "Host API"
@@ -912,7 +912,7 @@
     "defaultMessage": "Enter path"
   },
   "dirSwitcher.enterPathPlaceholder": {
-    "defaultMessage": "Enter an absolute path (e.g. /home/goose/workspace)"
+    "defaultMessage": "Enter an absolute path (e.g. /home/10Router/workspace)"
   },
   "dirSwitcher.enterPathInvalid": {
     "defaultMessage": "Working directory must be an absolute path"
@@ -951,7 +951,7 @@
     "defaultMessage": "Permintaan informasi dibatalkan."
   },
   "elicitationRequest.defaultMessage": {
-    "defaultMessage": "Goose memerlukan beberapa informasi dari Anda."
+    "defaultMessage": "10Router memerlukan beberapa informasi dari Anda."
   },
   "elicitationRequest.expired": {
     "defaultMessage": "Permintaan ini telah kedaluwarsa. Ekstensi perlu menanyakan lagi."
@@ -996,7 +996,7 @@
     "defaultMessage": "Terjadi kesalahan."
   },
   "errorBoundary.errorWithVersion": {
-    "defaultMessage": "Terjadi kesalahan di Goose v{version}."
+    "defaultMessage": "Terjadi kesalahan di 10Router v{version}."
   },
   "errorBoundary.heading": {
     "defaultMessage": "Honk!"
@@ -1185,7 +1185,7 @@
     "defaultMessage": "Ekstensi yang diaktifkan di sini digunakan sebagai bawaan untuk obrolan baru. Anda juga dapat mengaktifkan ekstensi aktif selama obrolan."
   },
   "extensionsView.description": {
-    "defaultMessage": "Ekstensi ini menggunakan Model Context Protocol (MCP). Mereka dapat memperluas kemampuan Goose menggunakan tiga komponen utama: Prompt, Sumber Daya, dan Alat. {searchShortcut} untuk mencari."
+    "defaultMessage": "Ekstensi ini menggunakan Model Context Protocol (MCP). Mereka dapat memperluas kemampuan 10Router menggunakan tiga komponen utama: Prompt, Sumber Daya, dan Alat. {searchShortcut} untuk mencari."
   },
   "extensionsView.heading": {
     "defaultMessage": "Ekstensi"
@@ -1203,19 +1203,19 @@
     "defaultMessage": "AA:BB:CC:... atau sha256/base64"
   },
   "externalBackendSection.description": {
-    "defaultMessage": "Secara bawaan goose menjalankan server untuk Anda, gunakan ini untuk terhubung ke server goose eksternal"
+    "defaultMessage": "Secara bawaan 10Router menjalankan server untuk Anda, gunakan ini untuk terhubung ke server 10Router eksternal"
   },
   "externalBackendSection.fingerprintRequiresHttps": {
     "defaultMessage": "Certificate fingerprint requires an https URL"
   },
   "externalBackendSection.restartNote": {
-    "defaultMessage": "Perubahan memerlukan mulai ulang Goose agar berlaku. Jendela obrolan baru akan terhubung ke server eksternal."
+    "defaultMessage": "Perubahan memerlukan mulai ulang 10Router agar berlaku. Jendela obrolan baru akan terhubung ke server eksternal."
   },
   "externalBackendSection.secretKey": {
     "defaultMessage": "Kunci Rahasia"
   },
   "externalBackendSection.secretKeyHelp": {
-    "defaultMessage": "Kunci rahasia yang dikonfigurasi pada server Goose (GOOSE_SERVER__SECRET_KEY)"
+    "defaultMessage": "Kunci rahasia yang dikonfigurasi pada server 10Router (GOOSE_SERVER__SECRET_KEY)"
   },
   "externalBackendSection.secretKeyPlaceholder": {
     "defaultMessage": "Masukkan kunci rahasia server"
@@ -1224,10 +1224,10 @@
     "defaultMessage": "URL Server"
   },
   "externalBackendSection.serverUrlHelp": {
-    "defaultMessage": "Enter the HTTP(S) base URL. Goose checks /status and connects to /acp under this base."
+    "defaultMessage": "Enter the HTTP(S) base URL. 10Router checks /status and connects to /acp under this base."
   },
   "externalBackendSection.title": {
-    "defaultMessage": "Server Goose"
+    "defaultMessage": "Server 10Router"
   },
   "externalBackendSection.urlBaseError": {
     "defaultMessage": "URL must be the backend base URL before /acp, without query parameters or fragments"
@@ -1242,7 +1242,7 @@
     "defaultMessage": "Gunakan server eksternal"
   },
   "externalBackendSection.useExternalServerDescription": {
-    "defaultMessage": "Terhubung ke server goose yang berjalan di tempat lain (memerlukan mulai ulang aplikasi)"
+    "defaultMessage": "Terhubung ke server 10Router yang berjalan di tempat lain (memerlukan mulai ulang aplikasi)"
   },
   "externalBackendSection.workingDir": {
     "defaultMessage": "Direktori kerja jarak jauh (opsional)"
@@ -1251,7 +1251,7 @@
     "defaultMessage": "Jalur absolut pada backend eksternal. Biarkan kosong untuk mengirim direktori kerja lokal."
   },
   "externalBackendSection.workingDirPlaceholder": {
-    "defaultMessage": "/home/goose/workspace"
+    "defaultMessage": "/home/10Router/workspace"
   },
   "goosehintsModal.close": {
     "defaultMessage": "Tutup"
@@ -1260,7 +1260,7 @@
     "defaultMessage": "Pengembang"
   },
   "goosehintsModal.dialogDescription": {
-    "defaultMessage": "Berikan konteks tambahan tentang proyek Anda untuk meningkatkan komunikasi dengan Goose"
+    "defaultMessage": "Berikan konteks tambahan tentang proyek Anda untuk meningkatkan komunikasi dengan 10Router"
   },
   "goosehintsModal.dialogTitle": {
     "defaultMessage": "Konfigurasikan Petunjuk Proyek (.goosehints)"
@@ -1281,7 +1281,7 @@
     "defaultMessage": "File .goosehints ditemukan di: {filePath}"
   },
   "goosehintsModal.helpText1": {
-    "defaultMessage": ".goosehints adalah file teks yang digunakan untuk memberikan konteks tambahan tentang proyek Anda dan meningkatkan komunikasi dengan Goose."
+    "defaultMessage": ".goosehints adalah file teks yang digunakan untuk memberikan konteks tambahan tentang proyek Anda dan meningkatkan komunikasi dengan 10Router."
   },
   "goosehintsModal.helpText2": {
     "defaultMessage": "Pastikan ekstensi {bold} diaktifkan di halaman ekstensi. Ekstensi ini diperlukan untuk menggunakan .goosehints. Anda perlu memulai ulang sesi agar pembaruan .goosehints berlaku."
@@ -1308,13 +1308,13 @@
     "defaultMessage": "Konfigurasikan"
   },
   "goosehintsSection.description": {
-    "defaultMessage": "Konfigurasikan file .goosehints proyek Anda untuk memberikan konteks tambahan ke Goose"
+    "defaultMessage": "Konfigurasikan file .goosehints proyek Anda untuk memberikan konteks tambahan ke 10Router"
   },
   "goosehintsSection.title": {
     "defaultMessage": "Petunjuk Proyek (.goosehints)"
   },
   "groupedExtensionLoadingToast.askGoose": {
-    "defaultMessage": "Tanya goose"
+    "defaultMessage": "Tanya 10Router"
   },
   "groupedExtensionLoadingToast.collapseDetails": {
     "defaultMessage": "Ciutkan detail"
@@ -1434,7 +1434,7 @@
     "defaultMessage": "Hugging Face"
   },
   "imagePreview.altText": {
-    "defaultMessage": "gambar goose"
+    "defaultMessage": "gambar 10Router"
   },
   "imagePreview.clickToCollapse": {
     "defaultMessage": "Klik untuk menciutkan"
@@ -1449,10 +1449,10 @@
     "defaultMessage": "Batal"
   },
   "importRecipeForm.deeplinkHint": {
-    "defaultMessage": "Tempelkan deeplink resep yang dimulai dengan \"goose://recipe?config=\""
+    "defaultMessage": "Tempelkan deeplink resep yang dimulai dengan \"10Router://recipe?config=\""
   },
   "importRecipeForm.deeplinkPlaceholder": {
-    "defaultMessage": "Tempelkan deeplink goose://recipe?config=... Anda di sini"
+    "defaultMessage": "Tempelkan deeplink 10Router://recipe?config=... Anda di sini"
   },
   "importRecipeForm.example": {
     "defaultMessage": "contoh"
@@ -1482,7 +1482,7 @@
     "defaultMessage": "File Resep"
   },
   "importRecipeForm.reviewWarning": {
-    "defaultMessage": "Pastikan Anda meninjau konten file resep sebelum menambahkannya ke antarmuka goose Anda."
+    "defaultMessage": "Pastikan Anda meninjau konten file resep sebelum menambahkannya ke antarmuka 10Router Anda."
   },
   "importRecipeForm.schemaDescription": {
     "defaultMessage": "File YAML atau JSON Anda harus mengikuti struktur ini. Bidang yang diperlukan adalah: title, description, dan salah satu dari instructions atau prompt."
@@ -1593,13 +1593,13 @@
     "defaultMessage": "Pintasan Aplikasi"
   },
   "keyboardShortcuts.categoryApplicationDescription": {
-    "defaultMessage": "Pintasan ini berfungsi saat Goose menjadi aplikasi aktif"
+    "defaultMessage": "Pintasan ini berfungsi saat 10Router menjadi aplikasi aktif"
   },
   "keyboardShortcuts.categoryGlobal": {
     "defaultMessage": "Pintasan Global"
   },
   "keyboardShortcuts.categoryGlobalDescription": {
-    "defaultMessage": "Pintasan ini berfungsi di seluruh sistem, bahkan saat Goose tidak difokuskan"
+    "defaultMessage": "Pintasan ini berfungsi di seluruh sistem, bahkan saat 10Router tidak difokuskan"
   },
   "keyboardShortcuts.categorySearch": {
     "defaultMessage": "Pintasan Pencarian"
@@ -1641,10 +1641,10 @@
     "defaultMessage": "Cari Sebelumnya"
   },
   "keyboardShortcuts.focusWindowDescription": {
-    "defaultMessage": "Bawa jendela Goose ke depan dari mana saja"
+    "defaultMessage": "Bawa jendela 10Router ke depan dari mana saja"
   },
   "keyboardShortcuts.focusWindowLabel": {
-    "defaultMessage": "Fokuskan Jendela Goose"
+    "defaultMessage": "Fokuskan Jendela 10Router"
   },
   "keyboardShortcuts.loading": {
     "defaultMessage": "Memuat..."
@@ -1656,7 +1656,7 @@
     "defaultMessage": "Obrolan Baru"
   },
   "keyboardShortcuts.newChatWindowDescription": {
-    "defaultMessage": "Buka jendela Goose baru"
+    "defaultMessage": "Buka jendela 10Router baru"
   },
   "keyboardShortcuts.newChatWindowLabel": {
     "defaultMessage": "Jendela Obrolan Baru"
@@ -1695,7 +1695,7 @@
     "defaultMessage": "Atur Ulang ke Default"
   },
   "keyboardShortcuts.restartDescription": {
-    "defaultMessage": "Perubahan pada pintasan aplikasi (seperti Obrolan Baru, Pengaturan, dll.) memerlukan memulai ulang Goose agar berlaku. Pintasan global (Fokuskan Jendela, Peluncur Cepat) berfungsi segera."
+    "defaultMessage": "Perubahan pada pintasan aplikasi (seperti Obrolan Baru, Pengaturan, dll.) memerlukan memulai ulang 10Router agar berlaku. Pintasan global (Fokuskan Jendela, Peluncur Cepat) berfungsi segera."
   },
   "keyboardShortcuts.restartRequired": {
     "defaultMessage": "Perlu Memulai Ulang"
@@ -1725,7 +1725,7 @@
     "defaultMessage": "Alihkan Navigasi"
   },
   "launcher.placeholder": {
-    "defaultMessage": "Tanyakan apa saja kepada goose..."
+    "defaultMessage": "Tanyakan apa saja kepada 10Router..."
   },
   "liveVoice.connecting": {
     "defaultMessage": "Connecting Live voice"
@@ -1752,16 +1752,16 @@
     "defaultMessage": "Unmute microphone"
   },
   "liveVoiceSettings.description": {
-    "defaultMessage": "Lakukan percakapan suara real-time dengan Goose"
+    "defaultMessage": "Lakukan percakapan suara real-time dengan 10Router"
   },
   "liveVoiceSettings.title": {
     "defaultMessage": "Suara langsung"
   },
   "loadingGoose.compacting": {
-    "defaultMessage": "goose sedang meringkas percakapan..."
+    "defaultMessage": "10Router sedang meringkas percakapan..."
   },
   "loadingGoose.idle": {
-    "defaultMessage": "goose sedang mengerjakannya…"
+    "defaultMessage": "10Router sedang mengerjakannya…"
   },
   "loadingGoose.loadingConversation": {
     "defaultMessage": "memuat percakapan..."
@@ -1770,13 +1770,13 @@
     "defaultMessage": "memulai ulang sesi..."
   },
   "loadingGoose.streaming": {
-    "defaultMessage": "goose sedang mengerjakannya…"
+    "defaultMessage": "10Router sedang mengerjakannya…"
   },
   "loadingGoose.thinking": {
-    "defaultMessage": "goose sedang berpikir…"
+    "defaultMessage": "10Router sedang berpikir…"
   },
   "loadingGoose.waiting": {
-    "defaultMessage": "goose sedang menunggu…"
+    "defaultMessage": "10Router sedang menunggu…"
   },
   "localInferenceSettings.deleteConfirm": {
     "defaultMessage": "Hapus model ini? Anda dapat mengunduhnya kembali nanti."
@@ -1870,57 +1870,6 @@
   },
   "localModelManager.showRecommendedOnly": {
     "defaultMessage": "Tampilkan yang direkomendasikan saja"
-  },
-  "localModelPicker.bestForMachine": {
-    "defaultMessage": "Terbaik untuk mesin Anda"
-  },
-  "localModelPicker.cancelDownload": {
-    "defaultMessage": "Batalkan Unduhan"
-  },
-  "localModelPicker.checkingModels": {
-    "defaultMessage": "Memeriksa model yang tersedia..."
-  },
-  "localModelPicker.downloadModel": {
-    "defaultMessage": "Unduh {modelId} ({size})"
-  },
-  "localModelPicker.downloading": {
-    "defaultMessage": "Mengunduh {modelId}"
-  },
-  "localModelPicker.failedToLoad": {
-    "defaultMessage": "Gagal memuat model yang tersedia. Silakan coba lagi."
-  },
-  "localModelPicker.failedToStartDownload": {
-    "defaultMessage": "Gagal memulai unduhan. Silakan coba lagi."
-  },
-  "localModelPicker.hideOtherSizes": {
-    "defaultMessage": "Sembunyikan ukuran lainnya"
-  },
-  "localModelPicker.localModelsNote": {
-    "defaultMessage": "Model lokal menyimpan semuanya di mesin Anda untuk privasi penuh. Kinerja dan ukuran jendela konteks dapat bervariasi dibandingkan penyedia cloud tergantung pada perangkat keras dan ukuran model Anda."
-  },
-  "localModelPicker.lostConnection": {
-    "defaultMessage": "Koneksi ke unduhan terputus. Silakan coba lagi."
-  },
-  "localModelPicker.modelNotFound": {
-    "defaultMessage": "Model tidak ditemukan"
-  },
-  "localModelPicker.ready": {
-    "defaultMessage": "Siap"
-  },
-  "localModelPicker.selectModel": {
-    "defaultMessage": "Pilih model"
-  },
-  "localModelPicker.showOtherSizes": {
-    "defaultMessage": "Tampilkan {count} ukuran lainnya"
-  },
-  "localModelPicker.startingDownload": {
-    "defaultMessage": "Memulai unduhan..."
-  },
-  "localModelPicker.tryAgain": {
-    "defaultMessage": "Coba Lagi"
-  },
-  "localModelPicker.useModel": {
-    "defaultMessage": "Gunakan {modelId}"
   },
   "markdownContent.copyCode": {
     "defaultMessage": "Salin kode"
@@ -2418,40 +2367,10 @@
     "defaultMessage": "Server mungkin sedang dimulai atau tidak tersedia untuk sementara."
   },
   "onboardingGuard.checkProviderErrorTitle": {
-    "defaultMessage": "Tidak dapat terhubung ke server Goose"
+    "defaultMessage": "Tidak dapat terhubung ke server 10Router"
   },
   "onboardingGuard.retry": {
     "defaultMessage": "Coba Lagi"
-  },
-  "onboardingGuard.welcomeDescription": {
-    "defaultMessage": "Agen AI lokal Anda. Hubungkan penyedia model AI untuk memulai."
-  },
-  "onboardingGuard.welcomeTitle": {
-    "defaultMessage": "Selamat datang di goose"
-  },
-  "onboardingSuccess.allSet": {
-    "defaultMessage": "Anda siap untuk mulai menggunakan goose."
-  },
-  "onboardingSuccess.connectedTo": {
-    "defaultMessage": "Terhubung ke {providerName}"
-  },
-  "onboardingSuccess.getStarted": {
-    "defaultMessage": "Mulai"
-  },
-  "onboardingSuccess.learnMore": {
-    "defaultMessage": "Pelajari selengkapnya"
-  },
-  "onboardingSuccess.localModelReady": {
-    "defaultMessage": "Model lokal siap"
-  },
-  "onboardingSuccess.privacyDescription": {
-    "defaultMessage": "Data penggunaan anonim membantu meningkatkan goose. Kami tidak pernah mengumpulkan percakapan, kode, atau data pribadi Anda."
-  },
-  "onboardingSuccess.privacyTitle": {
-    "defaultMessage": "Privasi"
-  },
-  "onboardingSuccess.shareUsageData": {
-    "defaultMessage": "Bagikan data penggunaan anonim"
   },
   "parameterInput.defaultValue": {
     "defaultMessage": "Nilai Default"
@@ -2613,10 +2532,10 @@
     "defaultMessage": "Metrik sesi (durasi, jumlah interaksi, penggunaan token)"
   },
   "privacyInfoModal.collectVersion": {
-    "defaultMessage": "Versi goose dan metode instalasi"
+    "defaultMessage": "Versi 10Router dan metode instalasi"
   },
   "privacyInfoModal.description": {
-    "defaultMessage": "Data penggunaan anonim membantu kami memahami cara goose digunakan dan mengidentifikasi area yang dapat ditingkatkan."
+    "defaultMessage": "Data penggunaan anonim membantu kami memahami cara 10Router digunakan dan mengidentifikasi area yang dapat ditingkatkan."
   },
   "privacyInfoModal.neverCollect": {
     "defaultMessage": "Kami tidak pernah mengumpulkan percakapan, kode, argumen alat, pesan kesalahan, atau data pribadi Anda. Anda dapat mengubah pengaturan ini kapan saja di Pengaturan."
@@ -2688,7 +2607,7 @@
     "defaultMessage": "Gagal menyimpan prompt"
   },
   "promptsSettings.promptEditingDescription": {
-    "defaultMessage": "Sesuaikan prompt yang menentukan perilaku goose dalam berbagai konteks. Prompt ini menggunakan sintaks templat Jinja2. Berhati-hatilah saat memodifikasi variabel templat, karena perubahan yang salah dapat merusak fungsionalitas. Mohon bagikan setiap peningkatan dengan komunitas."
+    "defaultMessage": "Sesuaikan prompt yang menentukan perilaku 10Router dalam berbagai konteks. Prompt ini menggunakan sintaks templat Jinja2. Berhati-hatilah saat memodifikasi variabel templat, karena perubahan yang salah dapat merusak fungsionalitas. Mohon bagikan setiap peningkatan dengan komunitas."
   },
   "promptsSettings.promptEditingTitle": {
     "defaultMessage": "Pengeditan Prompt"
@@ -2756,29 +2675,8 @@
   "providerCatalogPicker.selectFormatDescription": {
     "defaultMessage": "Pilih format API dan penyedia. Kami akan mengisi konfigurasi secara otomatis untuk Anda."
   },
-  "providerConfigForm.browserWindowOpen": {
-    "defaultMessage": "Jendela browser akan terbuka agar Anda dapat menyelesaikan proses masuk."
-  },
-  "providerConfigForm.configuring": {
-    "defaultMessage": "Mengonfigurasi..."
-  },
-  "providerConfigForm.continue": {
-    "defaultMessage": "Lanjutkan"
-  },
-  "providerConfigForm.deviceCodeFlowHint": {
-    "defaultMessage": "Jendela browser akan terbuka. Kode verifikasi akan muncul di sini agar Anda dapat memasukkannya untuk menyelesaikan proses masuk."
-  },
-  "providerConfigForm.noApiKey": {
-    "defaultMessage": "Tidak punya kunci API?"
-  },
-  "providerConfigForm.signInWith": {
-    "defaultMessage": "Masuk dengan {providerName}"
-  },
-  "providerConfigForm.signingIn": {
-    "defaultMessage": "Sedang masuk..."
-  },
   "providerConfigurationModal.addApiKeyDescription": {
-    "defaultMessage": "Tambahkan kunci API Anda untuk penyedia ini agar terintegrasi ke dalam goose"
+    "defaultMessage": "Tambahkan kunci API Anda untuk penyedia ini agar terintegrasi ke dalam 10Router"
   },
   "providerConfigurationModal.browserWindowHint": {
     "defaultMessage": "Jendela browser akan terbuka agar Anda dapat menyelesaikan proses masuk."
@@ -2814,7 +2712,7 @@
     "defaultMessage": "Kesalahan"
   },
   "providerConfigurationModal.externalSetupIntro": {
-    "defaultMessage": "Penyedia ini dikonfigurasi di luar goose. Ikuti langkah-langkah berikut:"
+    "defaultMessage": "Penyedia ini dikonfigurasi di luar 10Router. Ikuti langkah-langkah berikut:"
   },
   "providerConfigurationModal.goBack": {
     "defaultMessage": "Kembali"
@@ -2870,27 +2768,6 @@
   "providerLogo.alt": {
     "defaultMessage": "Logo {providerName}"
   },
-  "providerSelector.addCustomProvider": {
-    "defaultMessage": "Tambahkan penyedia khusus"
-  },
-  "providerSelector.addCustomProviderTitle": {
-    "defaultMessage": "Tambah Penyedia Khusus"
-  },
-  "providerSelector.connectProvider": {
-    "defaultMessage": "Hubungkan ke Penyedia"
-  },
-  "providerSelector.connectProviderDescription": {
-    "defaultMessage": "Hubungkan OpenAI, Anthropic, Google, dll"
-  },
-  "providerSelector.localModelDescription": {
-    "defaultMessage": "Unduh model dan jalankan sepenuhnya di mesin Anda. Tanpa kunci API, tanpa akun."
-  },
-  "providerSelector.selectProvider": {
-    "defaultMessage": "Pilih penyedia"
-  },
-  "providerSelector.useLocalModel": {
-    "defaultMessage": "Gunakan Model Lokal"
-  },
   "providerSettings.configurationSettings": {
     "defaultMessage": "Pengaturan Konfigurasi Penyedia"
   },
@@ -2898,7 +2775,7 @@
     "defaultMessage": "Memuat penyedia..."
   },
   "providerSettings.onboardingDescription": {
-    "defaultMessage": "Pilih penyedia model AI untuk memulai dengan goose. Anda perlu menggunakan kunci API yang dihasilkan oleh setiap penyedia yang akan dienkripsi dan disimpan secara lokal. Anda dapat mengubah penyedia kapan saja di pengaturan."
+    "defaultMessage": "Pilih penyedia model AI untuk memulai dengan 10Router. Anda perlu menggunakan kunci API yang dihasilkan oleh setiap penyedia yang akan dienkripsi dan disimpan secara lokal. Anda dapat mengubah penyedia kapan saja di pengaturan."
   },
   "providerSettings.otherProviders": {
     "defaultMessage": "Penyedia lain"
@@ -3471,7 +3348,7 @@
     "defaultMessage": "Tautan dalam"
   },
   "scheduleModal.deepLinkPlaceholder": {
-    "defaultMessage": "Tempel tautan goose://recipe di sini..."
+    "defaultMessage": "Tempel tautan 10Router://recipe di sini..."
   },
   "scheduleModal.editSchedule": {
     "defaultMessage": "Edit Jadwal"
@@ -3486,7 +3363,7 @@
     "defaultMessage": "Gagal membaca berkas yang dipilih."
   },
   "scheduleModal.invalidDeepLink": {
-    "defaultMessage": "Tautan dalam tidak valid. Harap gunakan tautan goose://recipe."
+    "defaultMessage": "Tautan dalam tidak valid. Harap gunakan tautan 10Router://recipe."
   },
   "scheduleModal.invalidFileType": {
     "defaultMessage": "Jenis berkas tidak valid: Harap pilih berkas YAML (.yaml atau .yml)"
@@ -3828,7 +3705,7 @@
     "defaultMessage": "Riwayat obrolan"
   },
   "sessions.chatHistoryDesc": {
-    "defaultMessage": "Lihat dan cari percakapan Anda sebelumnya dengan Goose. {shortcut} untuk mencari."
+    "defaultMessage": "Lihat dan cari percakapan Anda sebelumnya dengan 10Router. {shortcut} untuk mencari."
   },
   "sessions.close": {
     "defaultMessage": "Tutup"
@@ -3921,7 +3798,7 @@
     "defaultMessage": "Deskripsi sesi berhasil diperbarui"
   },
   "settings.appearance.description": {
-    "defaultMessage": "Konfigurasikan tampilan goose di sistem Anda"
+    "defaultMessage": "Konfigurasikan tampilan 10Router di sistem Anda"
   },
   "settings.appearance.title": {
     "defaultMessage": "Tampilan"
@@ -3936,13 +3813,13 @@
     "defaultMessage": "Pelacakan Biaya"
   },
   "settings.dockIcon.description": {
-    "defaultMessage": "Tampilkan goose di dock"
+    "defaultMessage": "Tampilkan 10Router di dock"
   },
   "settings.dockIcon.title": {
     "defaultMessage": "Ikon dock"
   },
   "settings.help.description": {
-    "defaultMessage": "Bantu kami meningkatkan goose dengan melaporkan masalah atau meminta fitur baru"
+    "defaultMessage": "Bantu kami meningkatkan 10Router dengan melaporkan masalah atau meminta fitur baru"
   },
   "settings.help.reportBug": {
     "defaultMessage": "Laporkan Bug"
@@ -3954,7 +3831,7 @@
     "defaultMessage": "Bantuan & masukan"
   },
   "settings.language.description": {
-    "defaultMessage": "Pilih bahasa tampilan untuk goose"
+    "defaultMessage": "Pilih bahasa tampilan untuk 10Router"
   },
   "settings.language.english": {
     "defaultMessage": "English"
@@ -4011,7 +3888,7 @@
     "defaultMessage": "Bahasa Tionghoa (Tradisional)"
   },
   "settings.menuBarIcon.description": {
-    "defaultMessage": "Tampilkan goose di bilah menu"
+    "defaultMessage": "Tampilkan 10Router di bilah menu"
   },
   "settings.menuBarIcon.title": {
     "defaultMessage": "Ikon bilah menu"
@@ -4032,7 +3909,7 @@
     "defaultMessage": "Klik Notifications"
   },
   "settings.notifications.modal.macStep3": {
-    "defaultMessage": "Temukan dan pilih goose di daftar aplikasi"
+    "defaultMessage": "Temukan dan pilih 10Router di daftar aplikasi"
   },
   "settings.notifications.modal.macStep4": {
     "defaultMessage": "Aktifkan notifikasi dan sesuaikan pengaturan sesuai keinginan"
@@ -4050,7 +3927,7 @@
     "defaultMessage": "Buka System > Notifications"
   },
   "settings.notifications.modal.winStep3": {
-    "defaultMessage": "Temukan dan pilih goose di daftar aplikasi"
+    "defaultMessage": "Temukan dan pilih 10Router di daftar aplikasi"
   },
   "settings.notifications.modal.winStep4": {
     "defaultMessage": "Aktifkan notifikasi dan sesuaikan pengaturan sesuai keinginan"
@@ -4059,7 +3936,7 @@
     "defaultMessage": "Buka Pengaturan"
   },
   "settings.notifications.task.description": {
-    "defaultMessage": "Beri tahu saat Goose menyelesaikan tugas selagi jendela berada di latar belakang"
+    "defaultMessage": "Beri tahu saat 10Router menyelesaikan tugas selagi jendela berada di latar belakang"
   },
   "settings.notifications.task.title": {
     "defaultMessage": "Notifikasi penyelesaian tugas"
@@ -4068,19 +3945,19 @@
     "defaultMessage": "Notifikasi"
   },
   "settings.preventSleep.description": {
-    "defaultMessage": "Jaga komputer Anda tetap menyala saat goose menjalankan tugas (layar tetap dapat terkunci)"
+    "defaultMessage": "Jaga komputer Anda tetap menyala saat 10Router menjalankan tugas (layar tetap dapat terkunci)"
   },
   "settings.preventSleep.title": {
     "defaultMessage": "Cegah Tidur"
   },
   "settings.theme.description": {
-    "defaultMessage": "Sesuaikan tampilan dan nuansa goose"
+    "defaultMessage": "Sesuaikan tampilan dan nuansa 10Router"
   },
   "settings.theme.title": {
     "defaultMessage": "Tema"
   },
   "settings.updates.description": {
-    "defaultMessage": "Periksa dan instal pembaruan agar goose berjalan optimal"
+    "defaultMessage": "Periksa dan instal pembaruan agar 10Router berjalan optimal"
   },
   "settings.updates.title": {
     "defaultMessage": "Pembaruan"
@@ -4161,7 +4038,7 @@
     "defaultMessage": "Tidak ada keterampilan yang cocok ditemukan"
   },
   "skillsView.noSkillsDescription": {
-    "defaultMessage": "Keterampilan dimuat dari file SKILL.md di ~/.config/agents/skills/, .goose/skills/, atau direktori lain yang didukung."
+    "defaultMessage": "Keterampilan dimuat dari file SKILL.md di ~/.config/agents/skills/, .10Router/skills/, atau direktori lain yang didukung."
   },
   "skillsView.noSkillsInstalled": {
     "defaultMessage": "Tidak ada keterampilan yang terpasang"
@@ -4170,7 +4047,7 @@
     "defaultMessage": "Cari keterampilan..."
   },
   "skillsView.skillsDescription": {
-    "defaultMessage": "Lihat keterampilan terpasang yang memperluas kemampuan Goose. {shortcut} untuk mencari."
+    "defaultMessage": "Lihat keterampilan terpasang yang memperluas kemampuan 10Router. {shortcut} untuk mencari."
   },
   "skillsView.skillsTitle": {
     "defaultMessage": "Keterampilan"
@@ -4419,10 +4296,10 @@
     "defaultMessage": "Gunakan penyedia lain"
   },
   "telemetryConsentPrompt.description": {
-    "defaultMessage": "Apakah Anda ingin membagikan data penggunaan anonim untuk membantu meningkatkan goose? Kami tidak pernah mengumpulkan percakapan, kode, atau data pribadi Anda."
+    "defaultMessage": "Apakah Anda ingin membagikan data penggunaan anonim untuk membantu meningkatkan 10Router? Kami tidak pernah mengumpulkan percakapan, kode, atau data pribadi Anda."
   },
   "telemetryConsentPrompt.heading": {
-    "defaultMessage": "Bantu tingkatkan goose"
+    "defaultMessage": "Bantu tingkatkan 10Router"
   },
   "telemetryConsentPrompt.learnMore": {
     "defaultMessage": "Pelajari lebih lanjut"
@@ -4449,7 +4326,7 @@
     "defaultMessage": "Privasi"
   },
   "telemetrySettings.toggleDescription": {
-    "defaultMessage": "Bantu tingkatkan goose dengan membagikan statistik penggunaan anonim."
+    "defaultMessage": "Bantu tingkatkan 10Router dengan membagikan statistik penggunaan anonim."
   },
   "telemetrySettings.toggleLabel": {
     "defaultMessage": "Data penggunaan anonim"
@@ -4530,10 +4407,10 @@
     "defaultMessage": "Izinkan {toolName}?"
   },
   "toolConfirmation.gooseWouldLikeToCallWithName": {
-    "defaultMessage": "Goose ingin memanggil {toolName}. Izinkan?"
+    "defaultMessage": "10Router ingin memanggil {toolName}. Izinkan?"
   },
   "updateSection.autoDownload": {
-    "defaultMessage": "Goose akan mengunduh pembaruan di latar belakang dan menginstalnya saat Anda keluar atau memulai ulang berikutnya."
+    "defaultMessage": "10Router akan mengunduh pembaruan di latar belakang dan menginstalnya saat Anda keluar atau memulai ulang berikutnya."
   },
   "updateSection.autoDownloadDisabledByEnv": {
     "defaultMessage": "Pengunduhan otomatis dinonaktifkan melalui variabel lingkungan GOOSE_DISABLE_AUTO_DOWNLOAD."
@@ -4554,7 +4431,7 @@
     "defaultMessage": "Nonaktifkan pengunduhan pembaruan otomatis"
   },
   "updateSection.disableAutoDownloadDesc": {
-    "defaultMessage": "Saat diaktifkan, Goose akan memberi tahu Anda tentang versi baru tetapi tidak akan mengunduhnya secara otomatis."
+    "defaultMessage": "Saat diaktifkan, 10Router akan memberi tahu Anda tentang versi baru tetapi tidak akan mengunduhnya secara otomatis."
   },
   "updateSection.downloadNow": {
     "defaultMessage": "Unduh Sekarang"
@@ -4669,15 +4546,6 @@
   },
   "acpReadinessPanel.connectionNotChecked": {
     "defaultMessage": "Periksa koneksi akun Anda sebelum melanjutkan."
-  },
-  "providerConfigForm.deviceCodeAndEnter": {
-    "defaultMessage": "dan masukkan:"
-  },
-  "providerConfigForm.deviceCodeCopy": {
-    "defaultMessage": "Salin"
-  },
-  "providerConfigForm.deviceCodeVisit": {
-    "defaultMessage": "Kunjungi"
   },
   "providerConfigurationModal.deviceCodeAndEnter": {
     "defaultMessage": "dan masukkan:"
@@ -4830,9 +4698,42 @@
     "defaultMessage": "Loop agen"
   },
   "contextXray.providerManagesContext": {
-    "defaultMessage": "{provider} menyimpan riwayat percakapannya sendiri dan hanya menerima prompt terbaru dari goose, sehingga tidak ada permintaan yang bisa diuraikan."
+    "defaultMessage": "{provider} menyimpan riwayat percakapannya sendiri dan hanya menerima prompt terbaru dari 10Router, sehingga tidak ada permintaan yang bisa diuraikan."
   },
   "contextXray.autoCompactionPending": {
     "defaultMessage": "Melewati ambang pemadatan otomatis: percakapan dipadatkan sebelum permintaan berikutnya dikirim."
+  },
+  "tenRouterKeyForm.title": {
+    "defaultMessage": "Hubungkan ke 10router"
+  },
+  "tenRouterKeyForm.description": {
+    "defaultMessage": "Masukkan kunci API 10router Anda (diawali 10r_). Daftar model dimuat otomatis dari <link>10r.sokolov.io</link>."
+  },
+  "tenRouterKeyForm.keyLabel": {
+    "defaultMessage": "Kunci API"
+  },
+  "tenRouterKeyForm.keyPlaceholder": {
+    "defaultMessage": "10r_…"
+  },
+  "tenRouterKeyForm.connect": {
+    "defaultMessage": "Hubungkan"
+  },
+  "tenRouterKeyForm.connecting": {
+    "defaultMessage": "Menghubungkan..."
+  },
+  "tenRouterKeyForm.requiredError": {
+    "defaultMessage": "Silakan masukkan kunci API Anda"
+  },
+  "tenRouterKeyForm.invalidKey": {
+    "defaultMessage": "Kunci ditolak oleh 10router. Periksa kuncinya dan coba lagi."
+  },
+  "tenRouterKeyForm.fetchModelsError": {
+    "defaultMessage": "Tidak dapat mengambil daftar model dari 10router: {detail}"
+  },
+  "tenRouterKeyForm.noModels": {
+    "defaultMessage": "10router tidak mengembalikan model untuk kunci ini."
+  },
+  "tenRouterKeyForm.savedKeyHint": {
+    "defaultMessage": "Kunci sudah tersimpan — tekan Hubungkan untuk melanjutkan dengannya, atau tempel kunci baru."
   }
 }

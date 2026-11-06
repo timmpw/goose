@@ -203,10 +203,10 @@ Add any other context about the problem here.
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+    <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
       <div className="bg-background-primary border border-border-primary rounded-lg p-6 max-w-md mx-4">
         <div className="flex items-start gap-3 mb-4">
-          <AlertTriangle className="text-orange-500 flex-shrink-0 mt-1" size={20} />
+          <AlertTriangle className="text-orange-500 shrink-0 mt-1" size={20} />
           <div>
             <h3 className="text-lg font-semibold text-text-primary mb-2">{intl.formatMessage(i18n.reportProblem)}</h3>
             <p className="text-sm text-text-secondary mb-3">
@@ -226,7 +226,7 @@ Add any other context about the problem here.
             </p>
           </div>
         </div>
-        <div className="flex gap-2 justify-end">
+        <div className="flex flex-wrap gap-2 justify-end">
           <Button
             onClick={onClose}
             variant="outline"

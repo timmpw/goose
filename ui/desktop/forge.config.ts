@@ -16,10 +16,11 @@ let cfg = {
     rfc3161TimeStampServer: 'http://timestamp.digicert.com',
     signWithParams: '/fd sha256 /tr http://timestamp.digicert.com /td sha256',
   },
-  // Protocol registration
+  // Protocol registration (the goose:// scheme itself is kept so existing
+  // deep links keep working; only the display name is rebranded)
   protocols: [
     {
-      name: 'GooseProtocol',
+      name: '10RouterProtocol',
       schemes: ['goose'],
     },
   ],
@@ -74,6 +75,14 @@ module.exports = {
     },
   ],
   makers: [
+    {
+      name: '@electron-forge/maker-dmg',
+      platforms: ['darwin'],
+      config: {
+        arch: process.env.ELECTRON_ARCH === 'x64' ? ['x64'] : ['arm64'],
+        format: 'ULFO',
+      },
+    },
     {
       name: '@electron-forge/maker-zip',
       platforms: ['darwin', 'win32', 'linux'],

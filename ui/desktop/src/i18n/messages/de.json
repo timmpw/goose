@@ -18,7 +18,7 @@
     "defaultMessage": "Delete \"{name}\"? This cannot be undone."
   },
   "appsView.description": {
-    "defaultMessage": "Anwendungen von Ihren MCP-Servern und Apps, die goose selbst erstellt hat. Sie können über die Chat-Oberfläche neue Apps anfordern, die dann hier erscheinen."
+    "defaultMessage": "Anwendungen von Ihren MCP-Servern und Apps, die 10Router selbst erstellt hat. Sie können über die Chat-Oberfläche neue Apps anfordern, die dann hier erscheinen."
   },
   "appsView.errorLoading": {
     "defaultMessage": "Fehler beim Laden der Apps: {error}"
@@ -36,7 +36,7 @@
     "defaultMessage": "Apps werden geladen..."
   },
   "appsView.noAppsDescription": {
-    "defaultMessage": "Öffnen Sie einen Chat und bitten Sie goose um die gewünschte App. goose kann eine für Sie erstellen, die dann hier erscheint. Oder wenn jemand eine App geteilt hat, können Sie sie über die Schaltfläche oben importieren."
+    "defaultMessage": "Öffnen Sie einen Chat und bitten Sie 10Router um die gewünschte App. 10Router kann eine für Sie erstellen, die dann hier erscheint. Oder wenn jemand eine App geteilt hat, können Sie sie über die Schaltfläche oben importieren."
   },
   "appsView.noAppsTitle": {
     "defaultMessage": "Keine Apps verfügbar"
@@ -75,7 +75,7 @@
     "defaultMessage": "Anmeldeinformation gelöscht"
   },
   "authSettings.description": {
-    "defaultMessage": "Verwalten Sie die lokal von goose gespeicherten Anbieter-Anmeldeinformationen."
+    "defaultMessage": "Verwalten Sie die lokal von 10Router gespeicherten Anbieter-Anmeldeinformationen."
   },
   "authSettings.empty": {
     "defaultMessage": "Es wurden keine lokal gespeicherten Anbieter-Anmeldeinformationen gefunden."
@@ -162,10 +162,10 @@
     "defaultMessage": "Starten"
   },
   "chat.notification.taskComplete.body": {
-    "defaultMessage": "Klicken Sie hier, um Goose wieder in den Vordergrund zu holen."
+    "defaultMessage": "Klicken Sie hier, um 10Router wieder in den Vordergrund zu holen."
   },
   "chat.notification.taskComplete.title": {
-    "defaultMessage": "Goose hat die Aufgabe abgeschlossen."
+    "defaultMessage": "10Router hat die Aufgabe abgeschlossen."
   },
   "chatInput.dictationError": {
     "defaultMessage": "Diktierfehler"
@@ -213,13 +213,13 @@
     "defaultMessage": "Warten auf das Speichern der Bilder..."
   },
   "chatSettings.modeDescription": {
-    "defaultMessage": "Wählen Sie den Standardmodus, den Goose für neue Sitzungen verwendet. Bestehende Sitzungen behalten ihren aktuellen Modus bei."
+    "defaultMessage": "Wählen Sie den Standardmodus, den 10Router für neue Sitzungen verwendet. Bestehende Sitzungen behalten ihren aktuellen Modus bei."
   },
   "chatSettings.modeTitle": {
     "defaultMessage": "Standardmodus"
   },
   "chatSettings.responseStylesDescription": {
-    "defaultMessage": "Wählen Sie, wie Goose seine Antworten formatieren und gestalten soll"
+    "defaultMessage": "Wählen Sie, wie 10Router seine Antworten formatieren und gestalten soll"
   },
   "chatSettings.responseStylesTitle": {
     "defaultMessage": "Antwortstile"
@@ -240,10 +240,10 @@
     "defaultMessage": "Konfigurationseditor"
   },
   "configSettings.description": {
-    "defaultMessage": "Bearbeiten Sie Ihre goose-Konfigurationseinstellungen"
+    "defaultMessage": "Bearbeiten Sie Ihre 10Router-Konfigurationseinstellungen"
   },
   "configSettings.descriptionWithProvider": {
-    "defaultMessage": "Bearbeiten Sie Ihre goose-Konfigurationseinstellungen (aktuelle Einstellungen für {provider})"
+    "defaultMessage": "Bearbeiten Sie Ihre 10Router-Konfigurationseinstellungen (aktuelle Einstellungen für {provider})"
   },
   "configSettings.done": {
     "defaultMessage": "Fertig"
@@ -315,7 +315,7 @@
     "defaultMessage": "Max. Durchgänge"
   },
   "conversationLimitsDropdown.maxTurnsDescription": {
-    "defaultMessage": "Maximale Anzahl an Agentendurchgängen, bevor Goose eine Benutzereingabe anfordert"
+    "defaultMessage": "Maximale Anzahl an Agentendurchgängen, bevor 10Router eine Benutzereingabe anfordert"
   },
   "costTracker.costUnavailable": {
     "defaultMessage": "Kostendaten für {model} nicht verfügbar ({inputTokens} Eingabe, {outputTokens} Ausgabe-Token)"
@@ -771,7 +771,7 @@
     "defaultMessage": "{name}-Einstellungen bearbeiten"
   },
   "defaultCardButtons.getStarted": {
-    "defaultMessage": "Loslegen mit goose!"
+    "defaultMessage": "Loslegen mit 10Router!"
   },
   "defaultProviderSetupForm.apiHostLabel": {
     "defaultMessage": "API-Host"
@@ -912,7 +912,7 @@
     "defaultMessage": "Pfad eingeben"
   },
   "dirSwitcher.enterPathPlaceholder": {
-    "defaultMessage": "Absoluten Pfad eingeben (z. B. /home/goose/workspace)"
+    "defaultMessage": "Absoluten Pfad eingeben (z. B. /home/10Router/workspace)"
   },
   "dirSwitcher.enterPathInvalid": {
     "defaultMessage": "Arbeitsverzeichnis muss ein absoluter Pfad sein"
@@ -951,7 +951,7 @@
     "defaultMessage": "Die Informationsanfrage wurde abgebrochen."
   },
   "elicitationRequest.defaultMessage": {
-    "defaultMessage": "Goose benötigt einige Informationen von Ihnen."
+    "defaultMessage": "10Router benötigt einige Informationen von Ihnen."
   },
   "elicitationRequest.expired": {
     "defaultMessage": "Diese Anfrage ist abgelaufen. Die Erweiterung muss erneut nachfragen."
@@ -996,7 +996,7 @@
     "defaultMessage": "Ein Fehler ist aufgetreten."
   },
   "errorBoundary.errorWithVersion": {
-    "defaultMessage": "In Goose v{version} ist ein Fehler aufgetreten."
+    "defaultMessage": "In 10Router v{version} ist ein Fehler aufgetreten."
   },
   "errorBoundary.heading": {
     "defaultMessage": "Honk!"
@@ -1185,7 +1185,7 @@
     "defaultMessage": "Hier aktivierte Erweiterungen werden als Standard für neue Chats verwendet. Sie können aktive Erweiterungen auch während eines Chats umschalten."
   },
   "extensionsView.description": {
-    "defaultMessage": "Diese Erweiterungen nutzen das Model Context Protocol (MCP). Sie können die Fähigkeiten von Goose mit drei Hauptkomponenten erweitern: Prompts, Ressourcen und Tools. {searchShortcut} zum Suchen."
+    "defaultMessage": "Diese Erweiterungen nutzen das Model Context Protocol (MCP). Sie können die Fähigkeiten von 10Router mit drei Hauptkomponenten erweitern: Prompts, Ressourcen und Tools. {searchShortcut} zum Suchen."
   },
   "extensionsView.heading": {
     "defaultMessage": "Erweiterungen"
@@ -1203,19 +1203,19 @@
     "defaultMessage": "AA:BB:CC:... oder sha256/base64"
   },
   "externalBackendSection.description": {
-    "defaultMessage": "Standardmäßig startet goose einen Server für Sie. Verwenden Sie dies, um eine Verbindung zu einem externen goose-Server herzustellen"
+    "defaultMessage": "Standardmäßig startet 10Router einen Server für Sie. Verwenden Sie dies, um eine Verbindung zu einem externen 10Router-Server herzustellen"
   },
   "externalBackendSection.fingerprintRequiresHttps": {
     "defaultMessage": "Certificate fingerprint requires an https URL"
   },
   "externalBackendSection.restartNote": {
-    "defaultMessage": "Änderungen werden erst nach einem Neustart von Goose wirksam. Neue Chat-Fenster verbinden sich mit dem externen Server."
+    "defaultMessage": "Änderungen werden erst nach einem Neustart von 10Router wirksam. Neue Chat-Fenster verbinden sich mit dem externen Server."
   },
   "externalBackendSection.secretKey": {
     "defaultMessage": "Geheimer Schlüssel"
   },
   "externalBackendSection.secretKeyHelp": {
-    "defaultMessage": "Der auf dem Goose-Server konfigurierte geheime Schlüssel (GOOSE_SERVER__SECRET_KEY)"
+    "defaultMessage": "Der auf dem 10Router-Server konfigurierte geheime Schlüssel (GOOSE_SERVER__SECRET_KEY)"
   },
   "externalBackendSection.secretKeyPlaceholder": {
     "defaultMessage": "Geben Sie den geheimen Schlüssel des Servers ein"
@@ -1224,10 +1224,10 @@
     "defaultMessage": "Server-URL"
   },
   "externalBackendSection.serverUrlHelp": {
-    "defaultMessage": "Enter the HTTP(S) base URL. Goose checks /status and connects to /acp under this base."
+    "defaultMessage": "Enter the HTTP(S) base URL. 10Router checks /status and connects to /acp under this base."
   },
   "externalBackendSection.title": {
-    "defaultMessage": "Goose-Server"
+    "defaultMessage": "10Router-Server"
   },
   "externalBackendSection.urlBaseError": {
     "defaultMessage": "URL must be the backend base URL before /acp, without query parameters or fragments"
@@ -1242,7 +1242,7 @@
     "defaultMessage": "Externen Server verwenden"
   },
   "externalBackendSection.useExternalServerDescription": {
-    "defaultMessage": "Verbindung zu einem anderswo laufenden goose-Server herstellen (erfordert Neustart der App)"
+    "defaultMessage": "Verbindung zu einem anderswo laufenden 10Router-Server herstellen (erfordert Neustart der App)"
   },
   "externalBackendSection.workingDir": {
     "defaultMessage": "Remote-Arbeitsverzeichnis (optional)"
@@ -1251,7 +1251,7 @@
     "defaultMessage": "Absoluter Pfad auf dem externen Backend. Leer lassen, um das lokale Arbeitsverzeichnis zu senden."
   },
   "externalBackendSection.workingDirPlaceholder": {
-    "defaultMessage": "/home/goose/workspace"
+    "defaultMessage": "/home/10Router/workspace"
   },
   "goosehintsModal.close": {
     "defaultMessage": "Schließen"
@@ -1260,7 +1260,7 @@
     "defaultMessage": "Entwickler"
   },
   "goosehintsModal.dialogDescription": {
-    "defaultMessage": "Stellen Sie zusätzlichen Kontext zu Ihrem Projekt bereit, um die Kommunikation mit Goose zu verbessern"
+    "defaultMessage": "Stellen Sie zusätzlichen Kontext zu Ihrem Projekt bereit, um die Kommunikation mit 10Router zu verbessern"
   },
   "goosehintsModal.dialogTitle": {
     "defaultMessage": "Projekt-Hinweise konfigurieren (.goosehints)"
@@ -1281,7 +1281,7 @@
     "defaultMessage": ".goosehints-Datei gefunden unter: {filePath}"
   },
   "goosehintsModal.helpText1": {
-    "defaultMessage": ".goosehints ist eine Textdatei, mit der zusätzlicher Kontext zu Ihrem Projekt bereitgestellt und die Kommunikation mit Goose verbessert wird."
+    "defaultMessage": ".goosehints ist eine Textdatei, mit der zusätzlicher Kontext zu Ihrem Projekt bereitgestellt und die Kommunikation mit 10Router verbessert wird."
   },
   "goosehintsModal.helpText2": {
     "defaultMessage": "Bitte stellen Sie sicher, dass die Erweiterung {bold} auf der Erweiterungsseite aktiviert ist. Diese Erweiterung ist erforderlich, um .goosehints zu verwenden. Sie müssen Ihre Sitzung neu starten, damit Aktualisierungen an .goosehints wirksam werden."
@@ -1308,13 +1308,13 @@
     "defaultMessage": "Konfigurieren"
   },
   "goosehintsSection.description": {
-    "defaultMessage": "Konfigurieren Sie die .goosehints-Datei Ihres Projekts, um Goose zusätzlichen Kontext bereitzustellen"
+    "defaultMessage": "Konfigurieren Sie die .goosehints-Datei Ihres Projekts, um 10Router zusätzlichen Kontext bereitzustellen"
   },
   "goosehintsSection.title": {
     "defaultMessage": "Projekt-Hinweise (.goosehints)"
   },
   "groupedExtensionLoadingToast.askGoose": {
-    "defaultMessage": "goose fragen"
+    "defaultMessage": "10Router fragen"
   },
   "groupedExtensionLoadingToast.collapseDetails": {
     "defaultMessage": "Details einklappen"
@@ -1434,7 +1434,7 @@
     "defaultMessage": "Hugging Face"
   },
   "imagePreview.altText": {
-    "defaultMessage": "goose-Bild"
+    "defaultMessage": "10Router-Bild"
   },
   "imagePreview.clickToCollapse": {
     "defaultMessage": "Zum Einklappen klicken"
@@ -1449,10 +1449,10 @@
     "defaultMessage": "Abbrechen"
   },
   "importRecipeForm.deeplinkHint": {
-    "defaultMessage": "Fügen Sie einen Recipe-Deeplink ein, der mit „goose://recipe?config=“ beginnt"
+    "defaultMessage": "Fügen Sie einen Recipe-Deeplink ein, der mit „10Router://recipe?config=“ beginnt"
   },
   "importRecipeForm.deeplinkPlaceholder": {
-    "defaultMessage": "Fügen Sie hier Ihren goose://recipe?config=...-Deeplink ein"
+    "defaultMessage": "Fügen Sie hier Ihren 10Router://recipe?config=...-Deeplink ein"
   },
   "importRecipeForm.example": {
     "defaultMessage": "Beispiel"
@@ -1482,7 +1482,7 @@
     "defaultMessage": "Recipe-Datei"
   },
   "importRecipeForm.reviewWarning": {
-    "defaultMessage": "Stellen Sie sicher, dass Sie den Inhalt von Recipe-Dateien überprüfen, bevor Sie sie zu Ihrer goose-Oberfläche hinzufügen."
+    "defaultMessage": "Stellen Sie sicher, dass Sie den Inhalt von Recipe-Dateien überprüfen, bevor Sie sie zu Ihrer 10Router-Oberfläche hinzufügen."
   },
   "importRecipeForm.schemaDescription": {
     "defaultMessage": "Ihre YAML- oder JSON-Datei sollte dieser Struktur folgen. Erforderliche Felder sind: title, description und entweder instructions oder prompt."
@@ -1593,13 +1593,13 @@
     "defaultMessage": "Anwendungstastenkürzel"
   },
   "keyboardShortcuts.categoryApplicationDescription": {
-    "defaultMessage": "Diese Tastenkürzel funktionieren, wenn Goose die aktive Anwendung ist"
+    "defaultMessage": "Diese Tastenkürzel funktionieren, wenn 10Router die aktive Anwendung ist"
   },
   "keyboardShortcuts.categoryGlobal": {
     "defaultMessage": "Globale Tastenkürzel"
   },
   "keyboardShortcuts.categoryGlobalDescription": {
-    "defaultMessage": "Diese Tastenkürzel funktionieren systemweit, auch wenn Goose nicht im Fokus ist"
+    "defaultMessage": "Diese Tastenkürzel funktionieren systemweit, auch wenn 10Router nicht im Fokus ist"
   },
   "keyboardShortcuts.categorySearch": {
     "defaultMessage": "Such-Tastenkürzel"
@@ -1641,10 +1641,10 @@
     "defaultMessage": "Rückwärts suchen"
   },
   "keyboardShortcuts.focusWindowDescription": {
-    "defaultMessage": "Goose-Fenster von überall in den Vordergrund holen"
+    "defaultMessage": "10Router-Fenster von überall in den Vordergrund holen"
   },
   "keyboardShortcuts.focusWindowLabel": {
-    "defaultMessage": "Goose-Fenster fokussieren"
+    "defaultMessage": "10Router-Fenster fokussieren"
   },
   "keyboardShortcuts.loading": {
     "defaultMessage": "Wird geladen..."
@@ -1656,7 +1656,7 @@
     "defaultMessage": "Neuer Chat"
   },
   "keyboardShortcuts.newChatWindowDescription": {
-    "defaultMessage": "Ein neues Goose-Fenster öffnen"
+    "defaultMessage": "Ein neues 10Router-Fenster öffnen"
   },
   "keyboardShortcuts.newChatWindowLabel": {
     "defaultMessage": "Neues Chat-Fenster"
@@ -1695,7 +1695,7 @@
     "defaultMessage": "Auf Standard zurücksetzen"
   },
   "keyboardShortcuts.restartDescription": {
-    "defaultMessage": "Änderungen an Anwendungstastenkürzeln (wie Neuer Chat, Einstellungen usw.) erfordern einen Neustart von Goose, um wirksam zu werden. Globale Tastenkürzel (Fenster fokussieren, Schnellstart) funktionieren sofort."
+    "defaultMessage": "Änderungen an Anwendungstastenkürzeln (wie Neuer Chat, Einstellungen usw.) erfordern einen Neustart von 10Router, um wirksam zu werden. Globale Tastenkürzel (Fenster fokussieren, Schnellstart) funktionieren sofort."
   },
   "keyboardShortcuts.restartRequired": {
     "defaultMessage": "Neustart erforderlich"
@@ -1725,7 +1725,7 @@
     "defaultMessage": "Navigation umschalten"
   },
   "launcher.placeholder": {
-    "defaultMessage": "Frag goose irgendetwas..."
+    "defaultMessage": "Frag 10Router irgendetwas..."
   },
   "liveVoice.connecting": {
     "defaultMessage": "Connecting Live voice"
@@ -1752,16 +1752,16 @@
     "defaultMessage": "Unmute microphone"
   },
   "liveVoiceSettings.description": {
-    "defaultMessage": "Führe ein Echtzeit-Sprachgespräch mit Goose"
+    "defaultMessage": "Führe ein Echtzeit-Sprachgespräch mit 10Router"
   },
   "liveVoiceSettings.title": {
     "defaultMessage": "Live-Sprachmodus"
   },
   "loadingGoose.compacting": {
-    "defaultMessage": "goose komprimiert die Unterhaltung..."
+    "defaultMessage": "10Router komprimiert die Unterhaltung..."
   },
   "loadingGoose.idle": {
-    "defaultMessage": "goose arbeitet daran…"
+    "defaultMessage": "10Router arbeitet daran…"
   },
   "loadingGoose.loadingConversation": {
     "defaultMessage": "Unterhaltung wird geladen..."
@@ -1770,13 +1770,13 @@
     "defaultMessage": "Sitzung wird neu gestartet..."
   },
   "loadingGoose.streaming": {
-    "defaultMessage": "goose arbeitet daran…"
+    "defaultMessage": "10Router arbeitet daran…"
   },
   "loadingGoose.thinking": {
-    "defaultMessage": "goose denkt nach…"
+    "defaultMessage": "10Router denkt nach…"
   },
   "loadingGoose.waiting": {
-    "defaultMessage": "goose wartet…"
+    "defaultMessage": "10Router wartet…"
   },
   "localInferenceSettings.deleteConfirm": {
     "defaultMessage": "Dieses Modell löschen? Sie können es später erneut herunterladen."
@@ -1870,57 +1870,6 @@
   },
   "localModelManager.showRecommendedOnly": {
     "defaultMessage": "Nur empfohlene anzeigen"
-  },
-  "localModelPicker.bestForMachine": {
-    "defaultMessage": "Am besten für Ihren Computer"
-  },
-  "localModelPicker.cancelDownload": {
-    "defaultMessage": "Download abbrechen"
-  },
-  "localModelPicker.checkingModels": {
-    "defaultMessage": "Verfügbare Modelle werden geprüft..."
-  },
-  "localModelPicker.downloadModel": {
-    "defaultMessage": "{modelId} ({size}) herunterladen"
-  },
-  "localModelPicker.downloading": {
-    "defaultMessage": "{modelId} wird heruntergeladen"
-  },
-  "localModelPicker.failedToLoad": {
-    "defaultMessage": "Verfügbare Modelle konnten nicht geladen werden. Bitte versuchen Sie es erneut."
-  },
-  "localModelPicker.failedToStartDownload": {
-    "defaultMessage": "Download konnte nicht gestartet werden. Bitte versuchen Sie es erneut."
-  },
-  "localModelPicker.hideOtherSizes": {
-    "defaultMessage": "Andere Größen ausblenden"
-  },
-  "localModelPicker.localModelsNote": {
-    "defaultMessage": "Lokale Modelle behalten alles auf Ihrem Computer für vollständige Privatsphäre. Leistung und Kontextfenstergröße können je nach Hardware und Modellgröße im Vergleich zu Cloud-Anbietern variieren."
-  },
-  "localModelPicker.lostConnection": {
-    "defaultMessage": "Verbindung zum Download verloren. Bitte versuchen Sie es erneut."
-  },
-  "localModelPicker.modelNotFound": {
-    "defaultMessage": "Modell nicht gefunden"
-  },
-  "localModelPicker.ready": {
-    "defaultMessage": "Bereit"
-  },
-  "localModelPicker.selectModel": {
-    "defaultMessage": "Modell auswählen"
-  },
-  "localModelPicker.showOtherSizes": {
-    "defaultMessage": "{count} andere Größen anzeigen"
-  },
-  "localModelPicker.startingDownload": {
-    "defaultMessage": "Download wird gestartet..."
-  },
-  "localModelPicker.tryAgain": {
-    "defaultMessage": "Erneut versuchen"
-  },
-  "localModelPicker.useModel": {
-    "defaultMessage": "{modelId} verwenden"
   },
   "markdownContent.copyCode": {
     "defaultMessage": "Code kopieren"
@@ -2418,40 +2367,10 @@
     "defaultMessage": "Der Server startet möglicherweise gerade oder ist vorübergehend nicht verfügbar."
   },
   "onboardingGuard.checkProviderErrorTitle": {
-    "defaultMessage": "Verbindung zum Goose-Server nicht möglich"
+    "defaultMessage": "Verbindung zum 10Router-Server nicht möglich"
   },
   "onboardingGuard.retry": {
     "defaultMessage": "Erneut versuchen"
-  },
-  "onboardingGuard.welcomeDescription": {
-    "defaultMessage": "Ihr lokaler KI-Agent. Verbinden Sie einen KI-Modellanbieter, um zu beginnen."
-  },
-  "onboardingGuard.welcomeTitle": {
-    "defaultMessage": "Willkommen bei goose"
-  },
-  "onboardingSuccess.allSet": {
-    "defaultMessage": "Sie können jetzt mit goose loslegen."
-  },
-  "onboardingSuccess.connectedTo": {
-    "defaultMessage": "Verbunden mit {providerName}"
-  },
-  "onboardingSuccess.getStarted": {
-    "defaultMessage": "Loslegen"
-  },
-  "onboardingSuccess.learnMore": {
-    "defaultMessage": "Mehr erfahren"
-  },
-  "onboardingSuccess.localModelReady": {
-    "defaultMessage": "Lokales Modell bereit"
-  },
-  "onboardingSuccess.privacyDescription": {
-    "defaultMessage": "Anonyme Nutzungsdaten helfen, goose zu verbessern. Wir erfassen niemals Ihre Konversationen, Ihren Code oder Ihre persönlichen Daten."
-  },
-  "onboardingSuccess.privacyTitle": {
-    "defaultMessage": "Datenschutz"
-  },
-  "onboardingSuccess.shareUsageData": {
-    "defaultMessage": "Anonyme Nutzungsdaten teilen"
   },
   "parameterInput.defaultValue": {
     "defaultMessage": "Standardwert"
@@ -2613,10 +2532,10 @@
     "defaultMessage": "Sitzungsmetriken (Dauer, Anzahl der Interaktionen, Token-Nutzung)"
   },
   "privacyInfoModal.collectVersion": {
-    "defaultMessage": "goose-Version und Installationsmethode"
+    "defaultMessage": "10Router-Version und Installationsmethode"
   },
   "privacyInfoModal.description": {
-    "defaultMessage": "Anonyme Nutzungsdaten helfen uns zu verstehen, wie goose genutzt wird, und Verbesserungsbereiche zu identifizieren."
+    "defaultMessage": "Anonyme Nutzungsdaten helfen uns zu verstehen, wie 10Router genutzt wird, und Verbesserungsbereiche zu identifizieren."
   },
   "privacyInfoModal.neverCollect": {
     "defaultMessage": "Wir erfassen niemals Ihre Konversationen, Ihren Code, Tool-Argumente, Fehlermeldungen oder persönliche Daten. Sie können diese Einstellung jederzeit in den Einstellungen ändern."
@@ -2688,7 +2607,7 @@
     "defaultMessage": "Prompt konnte nicht gespeichert werden"
   },
   "promptsSettings.promptEditingDescription": {
-    "defaultMessage": "Passen Sie die Prompts an, die das Verhalten von goose in verschiedenen Kontexten definieren. Diese Prompts verwenden die Jinja2-Templating-Syntax. Seien Sie vorsichtig beim Ändern von Template-Variablen, da fehlerhafte Änderungen die Funktionalität beeinträchtigen können. Bitte teilen Sie etwaige Verbesserungen mit der Community."
+    "defaultMessage": "Passen Sie die Prompts an, die das Verhalten von 10Router in verschiedenen Kontexten definieren. Diese Prompts verwenden die Jinja2-Templating-Syntax. Seien Sie vorsichtig beim Ändern von Template-Variablen, da fehlerhafte Änderungen die Funktionalität beeinträchtigen können. Bitte teilen Sie etwaige Verbesserungen mit der Community."
   },
   "promptsSettings.promptEditingTitle": {
     "defaultMessage": "Prompt-Bearbeitung"
@@ -2756,29 +2675,8 @@
   "providerCatalogPicker.selectFormatDescription": {
     "defaultMessage": "Wählen Sie ein API-Format und einen Anbieter aus. Wir füllen die Konfiguration automatisch für Sie aus."
   },
-  "providerConfigForm.browserWindowOpen": {
-    "defaultMessage": "Es öffnet sich ein Browserfenster, in dem Sie die Anmeldung abschließen können."
-  },
-  "providerConfigForm.configuring": {
-    "defaultMessage": "Wird konfiguriert..."
-  },
-  "providerConfigForm.continue": {
-    "defaultMessage": "Weiter"
-  },
-  "providerConfigForm.deviceCodeFlowHint": {
-    "defaultMessage": "Ein Browserfenster wird geöffnet. Der Bestätigungscode wird hier angezeigt, damit Sie ihn eingeben und die Anmeldung abschließen können."
-  },
-  "providerConfigForm.noApiKey": {
-    "defaultMessage": "Sie haben keinen API-Schlüssel?"
-  },
-  "providerConfigForm.signInWith": {
-    "defaultMessage": "Anmelden mit {providerName}"
-  },
-  "providerConfigForm.signingIn": {
-    "defaultMessage": "Anmeldung läuft..."
-  },
   "providerConfigurationModal.addApiKeyDescription": {
-    "defaultMessage": "Fügen Sie Ihre API-Schlüssel für diesen Anbieter hinzu, um ihn in goose zu integrieren"
+    "defaultMessage": "Fügen Sie Ihre API-Schlüssel für diesen Anbieter hinzu, um ihn in 10Router zu integrieren"
   },
   "providerConfigurationModal.browserWindowHint": {
     "defaultMessage": "Es öffnet sich ein Browserfenster, in dem Sie die Anmeldung abschließen können."
@@ -2814,7 +2712,7 @@
     "defaultMessage": "Fehler"
   },
   "providerConfigurationModal.externalSetupIntro": {
-    "defaultMessage": "Dieser Anbieter wird außerhalb von goose konfiguriert. Befolgen Sie diese Schritte:"
+    "defaultMessage": "Dieser Anbieter wird außerhalb von 10Router konfiguriert. Befolgen Sie diese Schritte:"
   },
   "providerConfigurationModal.goBack": {
     "defaultMessage": "Zurück"
@@ -2870,27 +2768,6 @@
   "providerLogo.alt": {
     "defaultMessage": "{providerName}-Logo"
   },
-  "providerSelector.addCustomProvider": {
-    "defaultMessage": "Benutzerdefinierten Anbieter hinzufügen"
-  },
-  "providerSelector.addCustomProviderTitle": {
-    "defaultMessage": "Benutzerdefinierten Anbieter hinzufügen"
-  },
-  "providerSelector.connectProvider": {
-    "defaultMessage": "Mit einem Anbieter verbinden"
-  },
-  "providerSelector.connectProviderDescription": {
-    "defaultMessage": "Verbinden Sie OpenAI, Anthropic, Google usw."
-  },
-  "providerSelector.localModelDescription": {
-    "defaultMessage": "Laden Sie ein Modell herunter und führen Sie es vollständig auf Ihrem Rechner aus. Keine API-Schlüssel, keine Konten."
-  },
-  "providerSelector.selectProvider": {
-    "defaultMessage": "Einen Anbieter auswählen"
-  },
-  "providerSelector.useLocalModel": {
-    "defaultMessage": "Ein lokales Modell verwenden"
-  },
   "providerSettings.configurationSettings": {
     "defaultMessage": "Einstellungen zur Anbieterkonfiguration"
   },
@@ -2898,7 +2775,7 @@
     "defaultMessage": "Anbieter werden geladen..."
   },
   "providerSettings.onboardingDescription": {
-    "defaultMessage": "Wählen Sie einen KI-Modellanbieter aus, um mit goose zu beginnen. Sie benötigen API-Schlüssel, die von jedem Anbieter generiert werden und die verschlüsselt und lokal gespeichert werden. Sie können Ihren Anbieter jederzeit in den Einstellungen ändern."
+    "defaultMessage": "Wählen Sie einen KI-Modellanbieter aus, um mit 10Router zu beginnen. Sie benötigen API-Schlüssel, die von jedem Anbieter generiert werden und die verschlüsselt und lokal gespeichert werden. Sie können Ihren Anbieter jederzeit in den Einstellungen ändern."
   },
   "providerSettings.otherProviders": {
     "defaultMessage": "Andere Anbieter"
@@ -3471,7 +3348,7 @@
     "defaultMessage": "Deep-Link"
   },
   "scheduleModal.deepLinkPlaceholder": {
-    "defaultMessage": "goose://recipe-Link hier einfügen..."
+    "defaultMessage": "10Router://recipe-Link hier einfügen..."
   },
   "scheduleModal.editSchedule": {
     "defaultMessage": "Zeitplan bearbeiten"
@@ -3486,7 +3363,7 @@
     "defaultMessage": "Die ausgewählte Datei konnte nicht gelesen werden."
   },
   "scheduleModal.invalidDeepLink": {
-    "defaultMessage": "Ungültiger Deep-Link. Bitte verwenden Sie einen goose://recipe-Link."
+    "defaultMessage": "Ungültiger Deep-Link. Bitte verwenden Sie einen 10Router://recipe-Link."
   },
   "scheduleModal.invalidFileType": {
     "defaultMessage": "Ungültiger Dateityp: Bitte wählen Sie eine YAML-Datei (.yaml oder .yml)"
@@ -3828,7 +3705,7 @@
     "defaultMessage": "Chatverlauf"
   },
   "sessions.chatHistoryDesc": {
-    "defaultMessage": "Sehen und durchsuchen Sie Ihre vergangenen Unterhaltungen mit Goose. {shortcut} zum Suchen."
+    "defaultMessage": "Sehen und durchsuchen Sie Ihre vergangenen Unterhaltungen mit 10Router. {shortcut} zum Suchen."
   },
   "sessions.close": {
     "defaultMessage": "Schließen"
@@ -3921,7 +3798,7 @@
     "defaultMessage": "Sitzungsbeschreibung erfolgreich aktualisiert"
   },
   "settings.appearance.description": {
-    "defaultMessage": "Konfigurieren Sie, wie goose auf Ihrem System angezeigt wird"
+    "defaultMessage": "Konfigurieren Sie, wie 10Router auf Ihrem System angezeigt wird"
   },
   "settings.appearance.title": {
     "defaultMessage": "Darstellung"
@@ -3936,13 +3813,13 @@
     "defaultMessage": "Kostenverfolgung"
   },
   "settings.dockIcon.description": {
-    "defaultMessage": "goose im Dock anzeigen"
+    "defaultMessage": "10Router im Dock anzeigen"
   },
   "settings.dockIcon.title": {
     "defaultMessage": "Dock-Symbol"
   },
   "settings.help.description": {
-    "defaultMessage": "Helfen Sie uns, goose zu verbessern, indem Sie Probleme melden oder neue Funktionen anfordern"
+    "defaultMessage": "Helfen Sie uns, 10Router zu verbessern, indem Sie Probleme melden oder neue Funktionen anfordern"
   },
   "settings.help.reportBug": {
     "defaultMessage": "Fehler melden"
@@ -3954,7 +3831,7 @@
     "defaultMessage": "Hilfe & Feedback"
   },
   "settings.language.description": {
-    "defaultMessage": "Wählen Sie die Anzeigesprache für goose"
+    "defaultMessage": "Wählen Sie die Anzeigesprache für 10Router"
   },
   "settings.language.english": {
     "defaultMessage": "English"
@@ -4011,7 +3888,7 @@
     "defaultMessage": "Chinesisch (traditionell)"
   },
   "settings.menuBarIcon.description": {
-    "defaultMessage": "goose in der Menüleiste anzeigen"
+    "defaultMessage": "10Router in der Menüleiste anzeigen"
   },
   "settings.menuBarIcon.title": {
     "defaultMessage": "Menüleisten-Symbol"
@@ -4032,7 +3909,7 @@
     "defaultMessage": "Klicken Sie auf Benachrichtigungen"
   },
   "settings.notifications.modal.macStep3": {
-    "defaultMessage": "Suchen und wählen Sie goose in der Anwendungsliste aus"
+    "defaultMessage": "Suchen und wählen Sie 10Router in der Anwendungsliste aus"
   },
   "settings.notifications.modal.macStep4": {
     "defaultMessage": "Aktivieren Sie Benachrichtigungen und passen Sie die Einstellungen nach Wunsch an"
@@ -4050,7 +3927,7 @@
     "defaultMessage": "Gehen Sie zu System > Benachrichtigungen"
   },
   "settings.notifications.modal.winStep3": {
-    "defaultMessage": "Suchen und wählen Sie goose in der Anwendungsliste aus"
+    "defaultMessage": "Suchen und wählen Sie 10Router in der Anwendungsliste aus"
   },
   "settings.notifications.modal.winStep4": {
     "defaultMessage": "Schalten Sie Benachrichtigungen ein und passen Sie die Einstellungen nach Wunsch an"
@@ -4059,7 +3936,7 @@
     "defaultMessage": "Einstellungen öffnen"
   },
   "settings.notifications.task.description": {
-    "defaultMessage": "Benachrichtigen, wenn Goose eine Aufgabe abschließt, während sich das Fenster im Hintergrund befindet"
+    "defaultMessage": "Benachrichtigen, wenn 10Router eine Aufgabe abschließt, während sich das Fenster im Hintergrund befindet"
   },
   "settings.notifications.task.title": {
     "defaultMessage": "Benachrichtigungen bei Aufgabenabschluss"
@@ -4068,19 +3945,19 @@
     "defaultMessage": "Benachrichtigungen"
   },
   "settings.preventSleep.description": {
-    "defaultMessage": "Halten Sie Ihren Computer wach, während goose eine Aufgabe ausführt (der Bildschirm kann sich weiterhin sperren)"
+    "defaultMessage": "Halten Sie Ihren Computer wach, während 10Router eine Aufgabe ausführt (der Bildschirm kann sich weiterhin sperren)"
   },
   "settings.preventSleep.title": {
     "defaultMessage": "Energiesparmodus verhindern"
   },
   "settings.theme.description": {
-    "defaultMessage": "Passen Sie das Erscheinungsbild von goose an"
+    "defaultMessage": "Passen Sie das Erscheinungsbild von 10Router an"
   },
   "settings.theme.title": {
     "defaultMessage": "Design"
   },
   "settings.updates.description": {
-    "defaultMessage": "Suchen und installieren Sie Updates, damit goose stets optimal läuft"
+    "defaultMessage": "Suchen und installieren Sie Updates, damit 10Router stets optimal läuft"
   },
   "settings.updates.title": {
     "defaultMessage": "Updates"
@@ -4161,7 +4038,7 @@
     "defaultMessage": "Keine passenden Skills gefunden"
   },
   "skillsView.noSkillsDescription": {
-    "defaultMessage": "Skills werden aus SKILL.md-Dateien in ~/.config/agents/skills/, .goose/skills/ oder anderen unterstützten Verzeichnissen geladen."
+    "defaultMessage": "Skills werden aus SKILL.md-Dateien in ~/.config/agents/skills/, .10Router/skills/ oder anderen unterstützten Verzeichnissen geladen."
   },
   "skillsView.noSkillsInstalled": {
     "defaultMessage": "Keine Skills installiert"
@@ -4170,7 +4047,7 @@
     "defaultMessage": "Skills durchsuchen..."
   },
   "skillsView.skillsDescription": {
-    "defaultMessage": "Zeigen Sie installierte Skills an, die die Fähigkeiten von Goose erweitern. {shortcut} zum Suchen."
+    "defaultMessage": "Zeigen Sie installierte Skills an, die die Fähigkeiten von 10Router erweitern. {shortcut} zum Suchen."
   },
   "skillsView.skillsTitle": {
     "defaultMessage": "Skills"
@@ -4419,10 +4296,10 @@
     "defaultMessage": "Anderen Anbieter verwenden"
   },
   "telemetryConsentPrompt.description": {
-    "defaultMessage": "Möchten Sie anonyme Nutzungsdaten teilen, um goose zu verbessern? Wir erfassen niemals Ihre Unterhaltungen, Ihren Code oder Ihre persönlichen Daten."
+    "defaultMessage": "Möchten Sie anonyme Nutzungsdaten teilen, um 10Router zu verbessern? Wir erfassen niemals Ihre Unterhaltungen, Ihren Code oder Ihre persönlichen Daten."
   },
   "telemetryConsentPrompt.heading": {
-    "defaultMessage": "Helfen Sie, goose zu verbessern"
+    "defaultMessage": "Helfen Sie, 10Router zu verbessern"
   },
   "telemetryConsentPrompt.learnMore": {
     "defaultMessage": "Mehr erfahren"
@@ -4449,7 +4326,7 @@
     "defaultMessage": "Datenschutz"
   },
   "telemetrySettings.toggleDescription": {
-    "defaultMessage": "Helfen Sie, goose zu verbessern, indem Sie anonyme Nutzungsstatistiken teilen."
+    "defaultMessage": "Helfen Sie, 10Router zu verbessern, indem Sie anonyme Nutzungsstatistiken teilen."
   },
   "telemetrySettings.toggleLabel": {
     "defaultMessage": "Anonyme Nutzungsdaten"
@@ -4530,10 +4407,10 @@
     "defaultMessage": "{toolName} erlauben?"
   },
   "toolConfirmation.gooseWouldLikeToCallWithName": {
-    "defaultMessage": "Goose möchte {toolName} aufrufen. Erlauben?"
+    "defaultMessage": "10Router möchte {toolName} aufrufen. Erlauben?"
   },
   "updateSection.autoDownload": {
-    "defaultMessage": "Goose lädt das Update im Hintergrund herunter und installiert es beim nächsten Beenden oder Neustart."
+    "defaultMessage": "10Router lädt das Update im Hintergrund herunter und installiert es beim nächsten Beenden oder Neustart."
   },
   "updateSection.autoDownloadDisabledByEnv": {
     "defaultMessage": "Automatische Downloads sind über die Umgebungsvariable GOOSE_DISABLE_AUTO_DOWNLOAD deaktiviert."
@@ -4554,7 +4431,7 @@
     "defaultMessage": "Automatische Update-Downloads deaktivieren"
   },
   "updateSection.disableAutoDownloadDesc": {
-    "defaultMessage": "Wenn aktiviert, benachrichtigt Goose Sie über neue Versionen, lädt sie aber nicht automatisch herunter."
+    "defaultMessage": "Wenn aktiviert, benachrichtigt 10Router Sie über neue Versionen, lädt sie aber nicht automatisch herunter."
   },
   "updateSection.downloadNow": {
     "defaultMessage": "Jetzt herunterladen"
@@ -4669,15 +4546,6 @@
   },
   "acpReadinessPanel.connectionNotChecked": {
     "defaultMessage": "Prüfen Sie Ihre Kontoverbindung, bevor Sie fortfahren."
-  },
-  "providerConfigForm.deviceCodeAndEnter": {
-    "defaultMessage": "und geben Sie ein:"
-  },
-  "providerConfigForm.deviceCodeCopy": {
-    "defaultMessage": "Kopieren"
-  },
-  "providerConfigForm.deviceCodeVisit": {
-    "defaultMessage": "Besuchen Sie"
   },
   "providerConfigurationModal.deviceCodeAndEnter": {
     "defaultMessage": "und geben Sie ein:"
@@ -4830,9 +4698,42 @@
     "defaultMessage": "Agentenschleife"
   },
   "contextXray.providerManagesContext": {
-    "defaultMessage": "{provider} führt einen eigenen Gesprächsverlauf und erhält von goose nur den neuesten Prompt, daher gibt es keine Anfrage aufzuschlüsseln."
+    "defaultMessage": "{provider} führt einen eigenen Gesprächsverlauf und erhält von 10Router nur den neuesten Prompt, daher gibt es keine Anfrage aufzuschlüsseln."
   },
   "contextXray.autoCompactionPending": {
     "defaultMessage": "Auto-Verdichtungsschwelle überschritten: Das Gespräch wird verdichtet, bevor die nächste Anfrage gesendet wird."
+  },
+  "tenRouterKeyForm.title": {
+    "defaultMessage": "Mit 10router verbinden"
+  },
+  "tenRouterKeyForm.description": {
+    "defaultMessage": "Gib deinen 10router-API-Schlüssel ein (er beginnt mit 10r_). Die Modellliste wird automatisch von <link>10r.sokolov.io</link> geladen."
+  },
+  "tenRouterKeyForm.keyLabel": {
+    "defaultMessage": "API-Schlüssel"
+  },
+  "tenRouterKeyForm.keyPlaceholder": {
+    "defaultMessage": "10r_…"
+  },
+  "tenRouterKeyForm.connect": {
+    "defaultMessage": "Verbinden"
+  },
+  "tenRouterKeyForm.connecting": {
+    "defaultMessage": "Verbindung wird hergestellt..."
+  },
+  "tenRouterKeyForm.requiredError": {
+    "defaultMessage": "Bitte gib deinen API-Schlüssel ein"
+  },
+  "tenRouterKeyForm.invalidKey": {
+    "defaultMessage": "Der Schlüssel wurde von 10router abgelehnt. Prüfe ihn und versuche es erneut."
+  },
+  "tenRouterKeyForm.fetchModelsError": {
+    "defaultMessage": "Die Modellliste konnte nicht von 10router abgerufen werden: {detail}"
+  },
+  "tenRouterKeyForm.noModels": {
+    "defaultMessage": "10router hat für diesen Schlüssel keine Modelle zurückgegeben."
+  },
+  "tenRouterKeyForm.savedKeyHint": {
+    "defaultMessage": "Ein Schlüssel ist bereits gespeichert — drücke „Verbinden“, um damit fortzufahren, oder füge einen neuen ein."
   }
 }

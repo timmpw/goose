@@ -18,7 +18,7 @@
     "defaultMessage": "Delete \"{name}\"? This cannot be undone."
   },
   "appsView.description": {
-    "defaultMessage": "MCP sunucularınızdaki uygulamalar ve goose tarafından oluşturulan Uygulamalar. Sohbet arayüzü aracılığıyla yeni uygulamalar oluşturmasını isteyebilirsiniz; bunlar burada görünecektir."
+    "defaultMessage": "MCP sunucularınızdaki uygulamalar ve 10Router tarafından oluşturulan Uygulamalar. Sohbet arayüzü aracılığıyla yeni uygulamalar oluşturmasını isteyebilirsiniz; bunlar burada görünecektir."
   },
   "appsView.errorLoading": {
     "defaultMessage": "Uygulamalar yüklenirken hata oluştu: {error}"
@@ -36,7 +36,7 @@
     "defaultMessage": "Uygulamalar yükleniyor..."
   },
   "appsView.noAppsDescription": {
-    "defaultMessage": "Bir sohbet açın ve istediğiniz uygulamayı goose'a sorun. Sizin için bir uygulama oluşturabilir ve bu uygulama burada görünür. Birisi bir uygulama paylaştıysa yukarıdaki düğmeyi kullanarak içe aktarabilirsiniz."
+    "defaultMessage": "Bir sohbet açın ve istediğiniz uygulamayı 10Router'a sorun. Sizin için bir uygulama oluşturabilir ve bu uygulama burada görünür. Birisi bir uygulama paylaştıysa yukarıdaki düğmeyi kullanarak içe aktarabilirsiniz."
   },
   "appsView.noAppsTitle": {
     "defaultMessage": "Kullanılabilir uygulama yok"
@@ -75,7 +75,7 @@
     "defaultMessage": "Kimlik bilgisi silindi"
   },
   "authSettings.description": {
-    "defaultMessage": "goose tarafından yerel olarak saklanan sağlayıcı kimlik bilgilerini yönetin."
+    "defaultMessage": "10Router tarafından yerel olarak saklanan sağlayıcı kimlik bilgilerini yönetin."
   },
   "authSettings.empty": {
     "defaultMessage": "Yerel olarak saklanan sağlayıcı kimlik bilgisi bulunamadı."
@@ -162,10 +162,10 @@
     "defaultMessage": "Başlat"
   },
   "chat.notification.taskComplete.body": {
-    "defaultMessage": "Goose'yi tekrar odağa almak için buraya tıklayın."
+    "defaultMessage": "10Router'yi tekrar odağa almak için buraya tıklayın."
   },
   "chat.notification.taskComplete.title": {
-    "defaultMessage": "Goose görevi tamamladı."
+    "defaultMessage": "10Router görevi tamamladı."
   },
   "chatInput.dictationError": {
     "defaultMessage": "Dikte Hatası"
@@ -213,13 +213,13 @@
     "defaultMessage": "Resimlerin kaydedilmesi bekleniyor..."
   },
   "chatSettings.modeDescription": {
-    "defaultMessage": "Goose'nin araçlar ve uzantılarla nasıl etkileşimde bulunacağını yapılandırın"
+    "defaultMessage": "10Router'nin araçlar ve uzantılarla nasıl etkileşimde bulunacağını yapılandırın"
   },
   "chatSettings.modeTitle": {
     "defaultMessage": "Mod"
   },
   "chatSettings.responseStylesDescription": {
-    "defaultMessage": "Goose'nin yanıtlarını nasıl biçimlendireceğini ve stillendireceğini seçin"
+    "defaultMessage": "10Router'nin yanıtlarını nasıl biçimlendireceğini ve stillendireceğini seçin"
   },
   "chatSettings.responseStylesTitle": {
     "defaultMessage": "Yanıt Stilleri"
@@ -240,10 +240,10 @@
     "defaultMessage": "Yapılandırma Düzenleyici"
   },
   "configSettings.description": {
-    "defaultMessage": "goose yapılandırma ayarlarınızı düzenleyin"
+    "defaultMessage": "10Router yapılandırma ayarlarınızı düzenleyin"
   },
   "configSettings.descriptionWithProvider": {
-    "defaultMessage": "goose yapılandırma ayarlarınızı düzenleyin ({provider} için geçerli ayarlar)"
+    "defaultMessage": "10Router yapılandırma ayarlarınızı düzenleyin ({provider} için geçerli ayarlar)"
   },
   "configSettings.done": {
     "defaultMessage": "Bitti"
@@ -315,7 +315,7 @@
     "defaultMessage": "Maksimum Dönüş"
   },
   "conversationLimitsDropdown.maxTurnsDescription": {
-    "defaultMessage": "Goose kullanıcı girişi istemeden önce maksimum aracı dönüşü"
+    "defaultMessage": "10Router kullanıcı girişi istemeden önce maksimum aracı dönüşü"
   },
   "costTracker.costUnavailable": {
     "defaultMessage": "{model} için maliyet verileri mevcut değil ({inputTokens} girişi, {outputTokens} çıkış jetonları)"
@@ -771,7 +771,7 @@
     "defaultMessage": "{name} ayarlarını düzenleyin"
   },
   "defaultCardButtons.getStarted": {
-    "defaultMessage": "goose'yi kullanmaya başlayın!"
+    "defaultMessage": "10Router'yi kullanmaya başlayın!"
   },
   "defaultProviderSetupForm.apiHostLabel": {
     "defaultMessage": "API Ana Bilgisayar"
@@ -912,7 +912,7 @@
     "defaultMessage": "Enter path"
   },
   "dirSwitcher.enterPathPlaceholder": {
-    "defaultMessage": "Enter an absolute path (e.g. /home/goose/workspace)"
+    "defaultMessage": "Enter an absolute path (e.g. /home/10Router/workspace)"
   },
   "dirSwitcher.enterPathInvalid": {
     "defaultMessage": "Working directory must be an absolute path"
@@ -951,7 +951,7 @@
     "defaultMessage": "Bilgi talebi iptal edildi."
   },
   "elicitationRequest.defaultMessage": {
-    "defaultMessage": "Goose'nin sizden bazı bilgilere ihtiyacı var."
+    "defaultMessage": "10Router'nin sizden bazı bilgilere ihtiyacı var."
   },
   "elicitationRequest.expired": {
     "defaultMessage": "Bu isteğin süresi doldu. Uzantının tekrar sorması gerekecek."
@@ -996,7 +996,7 @@
     "defaultMessage": "Bir hata oluştu."
   },
   "errorBoundary.errorWithVersion": {
-    "defaultMessage": "Goose v{version}'de bir hata oluştu."
+    "defaultMessage": "10Router v{version}'de bir hata oluştu."
   },
   "errorBoundary.heading": {
     "defaultMessage": "Korna!"
@@ -1185,7 +1185,7 @@
     "defaultMessage": "Burada etkinleştirilen uzantılar, yeni sohbetler için varsayılan olarak kullanılır. Ayrıca sohbet sırasında etkin uzantıları da değiştirebilirsiniz."
   },
   "extensionsView.description": {
-    "defaultMessage": "Bu uzantılar Model Bağlam Protokolünü (MCP) kullanır. Üç ana bileşeni kullanarak Goose'nin yeteneklerini genişletebilirler: İstemler, Kaynaklar ve Araçlar. Aramak için {searchShortcut}."
+    "defaultMessage": "Bu uzantılar Model Bağlam Protokolünü (MCP) kullanır. Üç ana bileşeni kullanarak 10Router'nin yeteneklerini genişletebilirler: İstemler, Kaynaklar ve Araçlar. Aramak için {searchShortcut}."
   },
   "extensionsView.heading": {
     "defaultMessage": "Uzantılar"
@@ -1203,19 +1203,19 @@
     "defaultMessage": "AA:BB:CC:... veya sha256/base64"
   },
   "externalBackendSection.description": {
-    "defaultMessage": "Varsayılan olarak goose sizin için bir sunucu başlatır; harici bir goose sunucusuna bağlanmak için bunu kullanın"
+    "defaultMessage": "Varsayılan olarak 10Router sizin için bir sunucu başlatır; harici bir 10Router sunucusuna bağlanmak için bunu kullanın"
   },
   "externalBackendSection.fingerprintRequiresHttps": {
     "defaultMessage": "Certificate fingerprint requires an https URL"
   },
   "externalBackendSection.restartNote": {
-    "defaultMessage": "Değişikliklerin etkili olması için Goose'nin yeniden başlatılması gerekir. Yeni sohbet pencereleri harici sunucuya bağlanacaktır."
+    "defaultMessage": "Değişikliklerin etkili olması için 10Router'nin yeniden başlatılması gerekir. Yeni sohbet pencereleri harici sunucuya bağlanacaktır."
   },
   "externalBackendSection.secretKey": {
     "defaultMessage": "Gizli Anahtar"
   },
   "externalBackendSection.secretKeyHelp": {
-    "defaultMessage": "Goose sunucusunda yapılandırılan gizli anahtar (GOOSE_SERVER__SECRET_KEY)"
+    "defaultMessage": "10Router sunucusunda yapılandırılan gizli anahtar (GOOSE_SERVER__SECRET_KEY)"
   },
   "externalBackendSection.secretKeyPlaceholder": {
     "defaultMessage": "Sunucunun gizli anahtarını girin"
@@ -1224,10 +1224,10 @@
     "defaultMessage": "Sunucu URL'si"
   },
   "externalBackendSection.serverUrlHelp": {
-    "defaultMessage": "Enter the HTTP(S) base URL. Goose checks /status and connects to /acp under this base."
+    "defaultMessage": "Enter the HTTP(S) base URL. 10Router checks /status and connects to /acp under this base."
   },
   "externalBackendSection.title": {
-    "defaultMessage": "Goose Sunucu"
+    "defaultMessage": "10Router Sunucu"
   },
   "externalBackendSection.urlBaseError": {
     "defaultMessage": "URL must be the backend base URL before /acp, without query parameters or fragments"
@@ -1242,7 +1242,7 @@
     "defaultMessage": "Harici sunucu kullan"
   },
   "externalBackendSection.useExternalServerDescription": {
-    "defaultMessage": "Başka bir yerde çalışan bir goose sunucusuna bağlanın (uygulamanın yeniden başlatılmasını gerektirir)"
+    "defaultMessage": "Başka bir yerde çalışan bir 10Router sunucusuna bağlanın (uygulamanın yeniden başlatılmasını gerektirir)"
   },
   "externalBackendSection.workingDir": {
     "defaultMessage": "Uzak çalışma dizini (isteğe bağlı)"
@@ -1251,7 +1251,7 @@
     "defaultMessage": "Harici arka uçtaki mutlak yol. Yerel çalışma dizinini göndermek için boş bırakın."
   },
   "externalBackendSection.workingDirPlaceholder": {
-    "defaultMessage": "/home/goose/workspace"
+    "defaultMessage": "/home/10Router/workspace"
   },
   "goosehintsModal.close": {
     "defaultMessage": "Kapat"
@@ -1260,7 +1260,7 @@
     "defaultMessage": "Geliştirici"
   },
   "goosehintsModal.dialogDescription": {
-    "defaultMessage": "Goose ile iletişimi geliştirmek için projeniz hakkında ek bağlam sağlayın"
+    "defaultMessage": "10Router ile iletişimi geliştirmek için projeniz hakkında ek bağlam sağlayın"
   },
   "goosehintsModal.dialogTitle": {
     "defaultMessage": "Proje İpuçlarını Yapılandırma (.goosehints)"
@@ -1281,7 +1281,7 @@
     "defaultMessage": ".goosehints dosyası şu konumda bulundu: {filePath}"
   },
   "goosehintsModal.helpText1": {
-    "defaultMessage": ".goosehints, projeniz hakkında ek bağlam sağlamak ve Goose ile iletişimi geliştirmek için kullanılan bir metin dosyasıdır."
+    "defaultMessage": ".goosehints, projeniz hakkında ek bağlam sağlamak ve 10Router ile iletişimi geliştirmek için kullanılan bir metin dosyasıdır."
   },
   "goosehintsModal.helpText2": {
     "defaultMessage": "Lütfen uzantılar sayfasında {bold} uzantısının etkinleştirildiğinden emin olun. Bu uzantı.goosehints'i kullanmak için gereklidir..goosehints güncellemelerinin etkili olması için oturumunuzu yeniden başlatmanız gerekir."
@@ -1308,13 +1308,13 @@
     "defaultMessage": "Yapılandır"
   },
   "goosehintsSection.description": {
-    "defaultMessage": "Goose'a ek bağlam sağlamak için projenizin.goosehints dosyasını yapılandırın"
+    "defaultMessage": "10Router'a ek bağlam sağlamak için projenizin.goosehints dosyasını yapılandırın"
   },
   "goosehintsSection.title": {
     "defaultMessage": "Proje İpuçları (.goosehints)"
   },
   "groupedExtensionLoadingToast.askGoose": {
-    "defaultMessage": "goose'a sorun"
+    "defaultMessage": "10Router'a sorun"
   },
   "groupedExtensionLoadingToast.collapseDetails": {
     "defaultMessage": "Ayrıntıları daralt"
@@ -1434,7 +1434,7 @@
     "defaultMessage": "Hugging Face"
   },
   "imagePreview.altText": {
-    "defaultMessage": "goose resmi"
+    "defaultMessage": "10Router resmi"
   },
   "imagePreview.clickToCollapse": {
     "defaultMessage": "Daraltmak için tıklayın"
@@ -1449,10 +1449,10 @@
     "defaultMessage": "İptal"
   },
   "importRecipeForm.deeplinkHint": {
-    "defaultMessage": "\"goose://recipe?config=\" ile başlayan bir tarif derin bağlantısı yapıştırın"
+    "defaultMessage": "\"10Router://recipe?config=\" ile başlayan bir tarif derin bağlantısı yapıştırın"
   },
   "importRecipeForm.deeplinkPlaceholder": {
-    "defaultMessage": "goose://recipe?config=... derin bağlantınızı buraya yapıştırın"
+    "defaultMessage": "10Router://recipe?config=... derin bağlantınızı buraya yapıştırın"
   },
   "importRecipeForm.example": {
     "defaultMessage": "örnek"
@@ -1482,7 +1482,7 @@
     "defaultMessage": "Tarif Dosyası"
   },
   "importRecipeForm.reviewWarning": {
-    "defaultMessage": "Tarif dosyalarının içeriğini goose arayüzünüze eklemeden önce incelediğinizden emin olun."
+    "defaultMessage": "Tarif dosyalarının içeriğini 10Router arayüzünüze eklemeden önce incelediğinizden emin olun."
   },
   "importRecipeForm.schemaDescription": {
     "defaultMessage": "YAML veya JSON dosyanız bu yapıyı takip etmelidir. Zorunlu alanlar şunlardır: başlık, açıklama ve talimatlar veya bilgi istemi."
@@ -1593,13 +1593,13 @@
     "defaultMessage": "Uygulama Kısayolları"
   },
   "keyboardShortcuts.categoryApplicationDescription": {
-    "defaultMessage": "Bu kısayollar Goose etkin uygulama olduğunda çalışır"
+    "defaultMessage": "Bu kısayollar 10Router etkin uygulama olduğunda çalışır"
   },
   "keyboardShortcuts.categoryGlobal": {
     "defaultMessage": "Genel Kısayollar"
   },
   "keyboardShortcuts.categoryGlobalDescription": {
-    "defaultMessage": "Bu kısayollar, Goose odaklanmadığında bile sistem genelinde çalışır"
+    "defaultMessage": "Bu kısayollar, 10Router odaklanmadığında bile sistem genelinde çalışır"
   },
   "keyboardShortcuts.categorySearch": {
     "defaultMessage": "Arama Kısayolları"
@@ -1641,10 +1641,10 @@
     "defaultMessage": "Öncekini Bul"
   },
   "keyboardShortcuts.focusWindowDescription": {
-    "defaultMessage": "Goose penceresini istediğiniz yerden öne getirin"
+    "defaultMessage": "10Router penceresini istediğiniz yerden öne getirin"
   },
   "keyboardShortcuts.focusWindowLabel": {
-    "defaultMessage": "Odak Goose Penceresi"
+    "defaultMessage": "Odak 10Router Penceresi"
   },
   "keyboardShortcuts.loading": {
     "defaultMessage": "Yükleniyor..."
@@ -1656,7 +1656,7 @@
     "defaultMessage": "Yeni Sohbet"
   },
   "keyboardShortcuts.newChatWindowDescription": {
-    "defaultMessage": "Yeni bir Goose penceresi aç"
+    "defaultMessage": "Yeni bir 10Router penceresi aç"
   },
   "keyboardShortcuts.newChatWindowLabel": {
     "defaultMessage": "Yeni Sohbet Penceresi"
@@ -1695,7 +1695,7 @@
     "defaultMessage": "Varsayılanlara Sıfırla"
   },
   "keyboardShortcuts.restartDescription": {
-    "defaultMessage": "Uygulama kısayollarında yapılan değişikliklerin (Yeni Sohbet, Ayarlar vb.) etkili olması için Goose'nin yeniden başlatılması gerekir. Genel kısayollar (Odak Penceresi, Hızlı Başlatıcı) hemen çalışır."
+    "defaultMessage": "Uygulama kısayollarında yapılan değişikliklerin (Yeni Sohbet, Ayarlar vb.) etkili olması için 10Router'nin yeniden başlatılması gerekir. Genel kısayollar (Odak Penceresi, Hızlı Başlatıcı) hemen çalışır."
   },
   "keyboardShortcuts.restartRequired": {
     "defaultMessage": "Yeniden Başlatma Gerekli"
@@ -1725,7 +1725,7 @@
     "defaultMessage": "Gezinmeyi Değiştir"
   },
   "launcher.placeholder": {
-    "defaultMessage": "goose'a herhangi bir şey sorun..."
+    "defaultMessage": "10Router'a herhangi bir şey sorun..."
   },
   "liveVoice.connecting": {
     "defaultMessage": "Connecting Live voice"
@@ -1752,16 +1752,16 @@
     "defaultMessage": "Unmute microphone"
   },
   "liveVoiceSettings.description": {
-    "defaultMessage": "Goose ile gerçek zamanlı sesli sohbet edin"
+    "defaultMessage": "10Router ile gerçek zamanlı sesli sohbet edin"
   },
   "liveVoiceSettings.title": {
     "defaultMessage": "Canlı ses"
   },
   "loadingGoose.compacting": {
-    "defaultMessage": "goose konuşmayı sıkıştırıyor..."
+    "defaultMessage": "10Router konuşmayı sıkıştırıyor..."
   },
   "loadingGoose.idle": {
-    "defaultMessage": "goose bunun üzerinde çalışıyor…"
+    "defaultMessage": "10Router bunun üzerinde çalışıyor…"
   },
   "loadingGoose.loadingConversation": {
     "defaultMessage": "konuşma yükleniyor..."
@@ -1770,13 +1770,13 @@
     "defaultMessage": "oturum yeniden başlatılıyor..."
   },
   "loadingGoose.streaming": {
-    "defaultMessage": "goose bunun üzerinde çalışıyor…"
+    "defaultMessage": "10Router bunun üzerinde çalışıyor…"
   },
   "loadingGoose.thinking": {
-    "defaultMessage": "goose düşünüyor…"
+    "defaultMessage": "10Router düşünüyor…"
   },
   "loadingGoose.waiting": {
-    "defaultMessage": "goose bekliyor…"
+    "defaultMessage": "10Router bekliyor…"
   },
   "localInferenceSettings.deleteConfirm": {
     "defaultMessage": "Bu model silinsin mi? Daha sonra tekrar indirebilirsiniz."
@@ -1870,57 +1870,6 @@
   },
   "localModelManager.showRecommendedOnly": {
     "defaultMessage": "Yalnızca önerilenleri göster"
-  },
-  "localModelPicker.bestForMachine": {
-    "defaultMessage": "Makineniz için en iyisi"
-  },
-  "localModelPicker.cancelDownload": {
-    "defaultMessage": "İndirmeyi İptal Et"
-  },
-  "localModelPicker.checkingModels": {
-    "defaultMessage": "Mevcut modeller kontrol ediliyor..."
-  },
-  "localModelPicker.downloadModel": {
-    "defaultMessage": "{modelId}'yi ({size}) indirin"
-  },
-  "localModelPicker.downloading": {
-    "defaultMessage": "{modelId} indiriliyor"
-  },
-  "localModelPicker.failedToLoad": {
-    "defaultMessage": "Mevcut modeller yüklenemedi. Lütfen tekrar deneyin."
-  },
-  "localModelPicker.failedToStartDownload": {
-    "defaultMessage": "İndirme işlemi başlatılamadı. Lütfen tekrar deneyin."
-  },
-  "localModelPicker.hideOtherSizes": {
-    "defaultMessage": "Diğer boyutları gizle"
-  },
-  "localModelPicker.localModelsNote": {
-    "defaultMessage": "Yerel modeller, tam gizlilik için her şeyi makinenizde tutar. Performans ve bağlam penceresi boyutu, donanım ve model boyutunuza bağlı olarak bulut sağlayıcılara göre farklılık gösterebilir."
-  },
-  "localModelPicker.lostConnection": {
-    "defaultMessage": "İndirmek için bağlantı kesildi. Lütfen tekrar deneyin."
-  },
-  "localModelPicker.modelNotFound": {
-    "defaultMessage": "Model bulunamadı"
-  },
-  "localModelPicker.ready": {
-    "defaultMessage": "Hazır"
-  },
-  "localModelPicker.selectModel": {
-    "defaultMessage": "Bir model seçin"
-  },
-  "localModelPicker.showOtherSizes": {
-    "defaultMessage": "{count} diğer boyutları göster"
-  },
-  "localModelPicker.startingDownload": {
-    "defaultMessage": "İndirme başlatılıyor..."
-  },
-  "localModelPicker.tryAgain": {
-    "defaultMessage": "Tekrar Deneyin"
-  },
-  "localModelPicker.useModel": {
-    "defaultMessage": "{modelId}'yi kullanın"
   },
   "markdownContent.copyCode": {
     "defaultMessage": "Kodu kopyala"
@@ -2418,40 +2367,10 @@
     "defaultMessage": "Sunucu başlatılıyor veya geçici olarak kullanılamıyor olabilir."
   },
   "onboardingGuard.checkProviderErrorTitle": {
-    "defaultMessage": "Goose sunucusuna bağlanılamıyor"
+    "defaultMessage": "10Router sunucusuna bağlanılamıyor"
   },
   "onboardingGuard.retry": {
     "defaultMessage": "Yeniden dene"
-  },
-  "onboardingGuard.welcomeDescription": {
-    "defaultMessage": "Yerel AI temsilciniz. Başlamak için bir AI model sağlayıcısına bağlanın."
-  },
-  "onboardingGuard.welcomeTitle": {
-    "defaultMessage": "goose'a hoş geldiniz"
-  },
-  "onboardingSuccess.allSet": {
-    "defaultMessage": "goose'yi kullanmaya başlamaya hazırsınız."
-  },
-  "onboardingSuccess.connectedTo": {
-    "defaultMessage": "{providerName}'ye bağlanıldı"
-  },
-  "onboardingSuccess.getStarted": {
-    "defaultMessage": "Başlayın"
-  },
-  "onboardingSuccess.learnMore": {
-    "defaultMessage": "Daha fazla bilgi edinin"
-  },
-  "onboardingSuccess.localModelReady": {
-    "defaultMessage": "Yerli model hazır"
-  },
-  "onboardingSuccess.privacyDescription": {
-    "defaultMessage": "Anonim kullanım verileri goose'nin iyileştirilmesine yardımcı olur. Konuşmalarınızı, kodlarınızı veya kişisel verilerinizi asla toplamıyoruz."
-  },
-  "onboardingSuccess.privacyTitle": {
-    "defaultMessage": "Gizlilik"
-  },
-  "onboardingSuccess.shareUsageData": {
-    "defaultMessage": "Anonim kullanım verilerini paylaşın"
   },
   "parameterInput.defaultValue": {
     "defaultMessage": "Varsayılan Değer"
@@ -2613,10 +2532,10 @@
     "defaultMessage": "Oturum metrikleri (süre, etkileşim sayısı, belirteç kullanımı)"
   },
   "privacyInfoModal.collectVersion": {
-    "defaultMessage": "goose sürümü ve yükleme yöntemi"
+    "defaultMessage": "10Router sürümü ve yükleme yöntemi"
   },
   "privacyInfoModal.description": {
-    "defaultMessage": "Anonim kullanım verileri, goose'nin nasıl kullanıldığını anlamamıza ve iyileştirilecek alanları belirlememize yardımcı olur."
+    "defaultMessage": "Anonim kullanım verileri, 10Router'nin nasıl kullanıldığını anlamamıza ve iyileştirilecek alanları belirlememize yardımcı olur."
   },
   "privacyInfoModal.neverCollect": {
     "defaultMessage": "Konuşmalarınızı, kodunuzu, araç argümanlarınızı, hata mesajlarınızı veya herhangi bir kişisel verinizi asla toplamıyoruz. Bu ayarı istediğiniz zaman Ayarlar'dan değiştirebilirsiniz."
@@ -2688,7 +2607,7 @@
     "defaultMessage": "İstem kaydedilemedi"
   },
   "promptsSettings.promptEditingDescription": {
-    "defaultMessage": "goose'nin farklı bağlamlardaki davranışını tanımlayan istemleri özelleştirin. Bu istemler Jinja2 şablon oluşturma sözdizimini kullanır. Yanlış değişiklikler işlevselliği bozabileceğinden şablon değişkenlerini değiştirirken dikkatli olun. Lütfen iyileştirmeleri toplulukla paylaşın."
+    "defaultMessage": "10Router'nin farklı bağlamlardaki davranışını tanımlayan istemleri özelleştirin. Bu istemler Jinja2 şablon oluşturma sözdizimini kullanır. Yanlış değişiklikler işlevselliği bozabileceğinden şablon değişkenlerini değiştirirken dikkatli olun. Lütfen iyileştirmeleri toplulukla paylaşın."
   },
   "promptsSettings.promptEditingTitle": {
     "defaultMessage": "İstemi Düzenleme"
@@ -2756,29 +2675,8 @@
   "providerCatalogPicker.selectFormatDescription": {
     "defaultMessage": "Bir API formatı ve sağlayıcı seçin. Yapılandırmayı sizin için otomatik olarak dolduracağız."
   },
-  "providerConfigForm.browserWindowOpen": {
-    "defaultMessage": "Oturum açma işlemini tamamlamanız için bir tarayıcı penceresi açılacaktır."
-  },
-  "providerConfigForm.configuring": {
-    "defaultMessage": "Yapılandırılıyor..."
-  },
-  "providerConfigForm.continue": {
-    "defaultMessage": "Devam et"
-  },
-  "providerConfigForm.deviceCodeFlowHint": {
-    "defaultMessage": "Bir tarayıcı penceresi açılacak. Doğrulama kodu burada görünecek; oturum açmayı tamamlamak için kodu girin."
-  },
-  "providerConfigForm.noApiKey": {
-    "defaultMessage": "API anahtarınız yok mu?"
-  },
-  "providerConfigForm.signInWith": {
-    "defaultMessage": "{providerName} ile oturum açın"
-  },
-  "providerConfigForm.signingIn": {
-    "defaultMessage": "Oturum açılıyor..."
-  },
   "providerConfigurationModal.addApiKeyDescription": {
-    "defaultMessage": "Bu sağlayıcının goose'a entegre olması için API anahtarlarınızı ekleyin"
+    "defaultMessage": "Bu sağlayıcının 10Router'a entegre olması için API anahtarlarınızı ekleyin"
   },
   "providerConfigurationModal.browserWindowHint": {
     "defaultMessage": "Oturum açma işlemini tamamlamanız için bir tarayıcı penceresi açılacaktır."
@@ -2814,7 +2712,7 @@
     "defaultMessage": "Hata"
   },
   "providerConfigurationModal.externalSetupIntro": {
-    "defaultMessage": "Bu sağlayıcı goose dışında yapılandırılmıştır. Şu adımları izleyin:"
+    "defaultMessage": "Bu sağlayıcı 10Router dışında yapılandırılmıştır. Şu adımları izleyin:"
   },
   "providerConfigurationModal.goBack": {
     "defaultMessage": "Geri Dön"
@@ -2870,27 +2768,6 @@
   "providerLogo.alt": {
     "defaultMessage": "{providerName} logosu"
   },
-  "providerSelector.addCustomProvider": {
-    "defaultMessage": "Özel bir sağlayıcı ekleyin"
-  },
-  "providerSelector.addCustomProviderTitle": {
-    "defaultMessage": "Özel Sağlayıcı Ekle"
-  },
-  "providerSelector.connectProvider": {
-    "defaultMessage": "Bir Sağlayıcıya Bağlan"
-  },
-  "providerSelector.connectProviderDescription": {
-    "defaultMessage": "OpenAI, Anthropic, Google, vb.'yi bağlayın"
-  },
-  "providerSelector.localModelDescription": {
-    "defaultMessage": "Bir model indirin ve tamamen makinenizde çalıştırın. API anahtarı yok, hesap yok."
-  },
-  "providerSelector.selectProvider": {
-    "defaultMessage": "Bir sağlayıcı seçin"
-  },
-  "providerSelector.useLocalModel": {
-    "defaultMessage": "Yerel Bir Model Kullanın"
-  },
   "providerSettings.configurationSettings": {
     "defaultMessage": "Sağlayıcı Yapılandırma Ayarları"
   },
@@ -2898,7 +2775,7 @@
     "defaultMessage": "Sağlayıcılar yükleniyor..."
   },
   "providerSettings.onboardingDescription": {
-    "defaultMessage": "goose'yi kullanmaya başlamak için bir yapay zeka modeli sağlayıcısı seçin. Her sağlayıcı tarafından oluşturulan ve yerel olarak şifrelenecek ve saklanacak API anahtarlarını kullanmanız gerekecektir. Sağlayıcınızı istediğiniz zaman ayarlardan değiştirebilirsiniz."
+    "defaultMessage": "10Router'yi kullanmaya başlamak için bir yapay zeka modeli sağlayıcısı seçin. Her sağlayıcı tarafından oluşturulan ve yerel olarak şifrelenecek ve saklanacak API anahtarlarını kullanmanız gerekecektir. Sağlayıcınızı istediğiniz zaman ayarlardan değiştirebilirsiniz."
   },
   "providerSettings.otherProviders": {
     "defaultMessage": "Diğer sağlayıcılar"
@@ -3471,7 +3348,7 @@
     "defaultMessage": "Derin bağlantı"
   },
   "scheduleModal.deepLinkPlaceholder": {
-    "defaultMessage": "goose://tarif bağlantısını buraya yapıştırın..."
+    "defaultMessage": "10Router://tarif bağlantısını buraya yapıştırın..."
   },
   "scheduleModal.editSchedule": {
     "defaultMessage": "Programı Düzenle"
@@ -3486,7 +3363,7 @@
     "defaultMessage": "Seçilen dosya okunamadı."
   },
   "scheduleModal.invalidDeepLink": {
-    "defaultMessage": "Geçersiz derin bağlantı. Lütfen goose://tarif bağlantısını kullanın."
+    "defaultMessage": "Geçersiz derin bağlantı. Lütfen 10Router://tarif bağlantısını kullanın."
   },
   "scheduleModal.invalidFileType": {
     "defaultMessage": "Geçersiz dosya türü: Lütfen bir YAML dosyası seçin (.yaml veya.yml)"
@@ -3828,7 +3705,7 @@
     "defaultMessage": "Sohbet geçmişi"
   },
   "sessions.chatHistoryDesc": {
-    "defaultMessage": "Goose ile geçmiş konuşmalarınızı görüntüleyin ve arayın. Aramak için {shortcut}."
+    "defaultMessage": "10Router ile geçmiş konuşmalarınızı görüntüleyin ve arayın. Aramak için {shortcut}."
   },
   "sessions.close": {
     "defaultMessage": "Kapat"
@@ -3921,7 +3798,7 @@
     "defaultMessage": "Oturum açıklaması başarıyla güncellendi"
   },
   "settings.appearance.description": {
-    "defaultMessage": "goose'nin sisteminizde nasıl görüneceğini yapılandırın"
+    "defaultMessage": "10Router'nin sisteminizde nasıl görüneceğini yapılandırın"
   },
   "settings.appearance.title": {
     "defaultMessage": "Görünüm"
@@ -3936,13 +3813,13 @@
     "defaultMessage": "Maliyet Takibi"
   },
   "settings.dockIcon.description": {
-    "defaultMessage": "Dock'ta goose'yi göster"
+    "defaultMessage": "Dock'ta 10Router'yi göster"
   },
   "settings.dockIcon.title": {
     "defaultMessage": "Bağlantı noktası simgesi"
   },
   "settings.help.description": {
-    "defaultMessage": "Sorunları bildirerek veya yeni özellikler talep ederek goose'yi geliştirmemize yardımcı olun"
+    "defaultMessage": "Sorunları bildirerek veya yeni özellikler talep ederek 10Router'yi geliştirmemize yardımcı olun"
   },
   "settings.help.reportBug": {
     "defaultMessage": "Hata Bildir"
@@ -3954,7 +3831,7 @@
     "defaultMessage": "Yardım ve geri bildirim"
   },
   "settings.language.description": {
-    "defaultMessage": "goose için görüntüleme dilini seçin"
+    "defaultMessage": "10Router için görüntüleme dilini seçin"
   },
   "settings.language.english": {
     "defaultMessage": "İngilizce"
@@ -4011,7 +3888,7 @@
     "defaultMessage": "Çince (Geleneksel)"
   },
   "settings.menuBarIcon.description": {
-    "defaultMessage": "Menü çubuğunda goose'yi göster"
+    "defaultMessage": "Menü çubuğunda 10Router'yi göster"
   },
   "settings.menuBarIcon.title": {
     "defaultMessage": "Menü çubuğu simgesi"
@@ -4032,7 +3909,7 @@
     "defaultMessage": "Bildirimler'e tıklayın"
   },
   "settings.notifications.modal.macStep3": {
-    "defaultMessage": "Uygulama listesinde goose'yi bulun ve seçin"
+    "defaultMessage": "Uygulama listesinde 10Router'yi bulun ve seçin"
   },
   "settings.notifications.modal.macStep4": {
     "defaultMessage": "Bildirimleri etkinleştirin ve ayarları istediğiniz gibi yapın"
@@ -4050,7 +3927,7 @@
     "defaultMessage": "Sistem > Bildirimler'e gidin"
   },
   "settings.notifications.modal.winStep3": {
-    "defaultMessage": "Uygulama listesinde goose'yi bulun ve seçin"
+    "defaultMessage": "Uygulama listesinde 10Router'yi bulun ve seçin"
   },
   "settings.notifications.modal.winStep4": {
     "defaultMessage": "Bildirimleri açın ve ayarları istediğiniz gibi yapın"
@@ -4059,7 +3936,7 @@
     "defaultMessage": "Ayarları Aç"
   },
   "settings.notifications.task.description": {
-    "defaultMessage": "Pencere arka plandayken Goose bir görevi tamamladığında bildirim al"
+    "defaultMessage": "Pencere arka plandayken 10Router bir görevi tamamladığında bildirim al"
   },
   "settings.notifications.task.title": {
     "defaultMessage": "Görev tamamlama bildirimleri"
@@ -4068,19 +3945,19 @@
     "defaultMessage": "Bildirimler"
   },
   "settings.preventSleep.description": {
-    "defaultMessage": "goose bir görevi çalıştırırken bilgisayarınızı uyanık tutun (ekran hala kilitlenebilir)"
+    "defaultMessage": "10Router bir görevi çalıştırırken bilgisayarınızı uyanık tutun (ekran hala kilitlenebilir)"
   },
   "settings.preventSleep.title": {
     "defaultMessage": "Uykuyu Önleyin"
   },
   "settings.theme.description": {
-    "defaultMessage": "goose'nin görünümünü ve hissini özelleştirin"
+    "defaultMessage": "10Router'nin görünümünü ve hissini özelleştirin"
   },
   "settings.theme.title": {
     "defaultMessage": "Tema"
   },
   "settings.updates.description": {
-    "defaultMessage": "goose'nin en iyi şekilde çalışmasını sağlamak için güncellemeleri kontrol edin ve yükleyin"
+    "defaultMessage": "10Router'nin en iyi şekilde çalışmasını sağlamak için güncellemeleri kontrol edin ve yükleyin"
   },
   "settings.updates.title": {
     "defaultMessage": "Güncellemeler"
@@ -4161,7 +4038,7 @@
     "defaultMessage": "Eşleşen beceri bulunamadı"
   },
   "skillsView.noSkillsDescription": {
-    "defaultMessage": "Beceriler ~/.config/agents/skills/,.goose/skills/ veya desteklenen diğer dizinlerdeki SKILL.md dosyalarından yüklenir."
+    "defaultMessage": "Beceriler ~/.config/agents/skills/,.10Router/skills/ veya desteklenen diğer dizinlerdeki SKILL.md dosyalarından yüklenir."
   },
   "skillsView.noSkillsInstalled": {
     "defaultMessage": "Hiçbir beceri yüklü değil"
@@ -4170,7 +4047,7 @@
     "defaultMessage": "Arama becerileri..."
   },
   "skillsView.skillsDescription": {
-    "defaultMessage": "Goose yeteneklerini genişleten yüklü becerileri görüntüleyin. Aramak için {shortcut}."
+    "defaultMessage": "10Router yeteneklerini genişleten yüklü becerileri görüntüleyin. Aramak için {shortcut}."
   },
   "skillsView.skillsTitle": {
     "defaultMessage": "Beceriler"
@@ -4419,10 +4296,10 @@
     "defaultMessage": "Başka sağlayıcı kullan"
   },
   "telemetryConsentPrompt.description": {
-    "defaultMessage": "goose'nin iyileştirilmesine yardımcı olmak için anonim kullanım verilerini paylaşmak ister misiniz? Konuşmalarınızı, kodlarınızı veya kişisel verilerinizi asla toplamıyoruz."
+    "defaultMessage": "10Router'nin iyileştirilmesine yardımcı olmak için anonim kullanım verilerini paylaşmak ister misiniz? Konuşmalarınızı, kodlarınızı veya kişisel verilerinizi asla toplamıyoruz."
   },
   "telemetryConsentPrompt.heading": {
-    "defaultMessage": "goose'nin iyileştirilmesine yardımcı olun"
+    "defaultMessage": "10Router'nin iyileştirilmesine yardımcı olun"
   },
   "telemetryConsentPrompt.learnMore": {
     "defaultMessage": "Daha fazla bilgi edinin"
@@ -4449,7 +4326,7 @@
     "defaultMessage": "Gizlilik"
   },
   "telemetrySettings.toggleDescription": {
-    "defaultMessage": "Anonim kullanım istatistiklerini paylaşarak goose'nin geliştirilmesine yardımcı olun."
+    "defaultMessage": "Anonim kullanım istatistiklerini paylaşarak 10Router'nin geliştirilmesine yardımcı olun."
   },
   "telemetrySettings.toggleLabel": {
     "defaultMessage": "Anonim kullanım verileri"
@@ -4530,7 +4407,7 @@
     "defaultMessage": "{toolName}'ye izin verilsin mi?"
   },
   "toolConfirmation.gooseWouldLikeToCallWithName": {
-    "defaultMessage": "Goose, {toolName}'yi aramak istiyor. İzin vermek?"
+    "defaultMessage": "10Router, {toolName}'yi aramak istiyor. İzin vermek?"
   },
   "updateSection.autoDownload": {
     "defaultMessage": "Güncelleme arka planda otomatik olarak indirilecektir."
@@ -4554,7 +4431,7 @@
     "defaultMessage": "Otomatik güncelleme indirmelerini devre dışı bırak"
   },
   "updateSection.disableAutoDownloadDesc": {
-    "defaultMessage": "Etkinleştirildiğinde, Goose yeni sürümleri bildirir ancak bunları otomatik olarak indirmez."
+    "defaultMessage": "Etkinleştirildiğinde, 10Router yeni sürümleri bildirir ancak bunları otomatik olarak indirmez."
   },
   "updateSection.downloadNow": {
     "defaultMessage": "Şimdi İndir"
@@ -4669,15 +4546,6 @@
   },
   "acpReadinessPanel.connectionNotChecked": {
     "defaultMessage": "Devam etmeden önce hesap bağlantınızı kontrol edin."
-  },
-  "providerConfigForm.deviceCodeAndEnter": {
-    "defaultMessage": "ve girin:"
-  },
-  "providerConfigForm.deviceCodeCopy": {
-    "defaultMessage": "Kopyala"
-  },
-  "providerConfigForm.deviceCodeVisit": {
-    "defaultMessage": "Ziyaret edin"
   },
   "providerConfigurationModal.deviceCodeAndEnter": {
     "defaultMessage": "ve girin:"
@@ -4830,9 +4698,42 @@
     "defaultMessage": "Ajan döngüsü"
   },
   "contextXray.providerManagesContext": {
-    "defaultMessage": "{provider} kendi konuşma geçmişini tutar ve goose'dan yalnızca en son istemi alır; bu nedenle ayrıştırılacak bir istek yok."
+    "defaultMessage": "{provider} kendi konuşma geçmişini tutar ve 10Router'dan yalnızca en son istemi alır; bu nedenle ayrıştırılacak bir istek yok."
   },
   "contextXray.autoCompactionPending": {
     "defaultMessage": "Otomatik sıkıştırma eşiği aşıldı: bir sonraki istek gönderilmeden önce konuşma sıkıştırılır."
+  },
+  "tenRouterKeyForm.title": {
+    "defaultMessage": "10router'a bağlan"
+  },
+  "tenRouterKeyForm.description": {
+    "defaultMessage": "10router API anahtarınızı girin (10r_ ile başlar). Model listesi <link>10r.sokolov.io</link> adresinden otomatik olarak alınır."
+  },
+  "tenRouterKeyForm.keyLabel": {
+    "defaultMessage": "API anahtarı"
+  },
+  "tenRouterKeyForm.keyPlaceholder": {
+    "defaultMessage": "10r_…"
+  },
+  "tenRouterKeyForm.connect": {
+    "defaultMessage": "Bağlan"
+  },
+  "tenRouterKeyForm.connecting": {
+    "defaultMessage": "Bağlanıyor..."
+  },
+  "tenRouterKeyForm.requiredError": {
+    "defaultMessage": "Lütfen API anahtarınızı girin"
+  },
+  "tenRouterKeyForm.invalidKey": {
+    "defaultMessage": "Anahtar 10router tarafından reddedildi. Anahtarı kontrol edip tekrar deneyin."
+  },
+  "tenRouterKeyForm.fetchModelsError": {
+    "defaultMessage": "10router'dan model listesi alınamadı: {detail}"
+  },
+  "tenRouterKeyForm.noModels": {
+    "defaultMessage": "10router bu anahtar için model döndürmedi."
+  },
+  "tenRouterKeyForm.savedKeyHint": {
+    "defaultMessage": "Bir anahtar zaten kayıtlı — onunla devam etmek için Bağlan’a basın ya da yenisini yapıştırın."
   }
 }

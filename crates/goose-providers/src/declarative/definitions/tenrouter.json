@@ -1,0 +1,26 @@
+{
+  "name": "tenrouter",
+  "engine": "anthropic",
+  "display_name": "10router",
+  "description": "Claude and GLM models via 10router",
+  "api_key_env": "TENROUTER_API_KEY",
+  "base_url": "https://10r.sokolov.io",
+  "dynamic_models": true,
+  "skip_canonical_filtering": true,
+  "preserves_thinking": true,
+  "emit_clear_thinking": true,
+  "supports_streaming": true,
+  "models": [
+    {"name": "claude-sonnet-4-5", "context_limit": 200000},
+    {"name": "claude-opus-4-5", "context_limit": 200000},
+    {"name": "claude-haiku-4-5", "context_limit": 200000},
+    {"name": "glm-5.3", "context_limit": 1000000, "reasoning": true},
+    {"name": "glm-5.3-flash", "context_limit": 1000000, "reasoning": true}
+  ],
+  "setup": {
+    "category": "model",
+    "setup_method": "single_api_key",
+    "group": "additional",
+    "docs_url": "https://10r.sokolov.io/my/guide"
+  }
+}

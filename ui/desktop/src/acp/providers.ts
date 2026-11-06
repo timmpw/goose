@@ -18,6 +18,27 @@ import { getAcpClient } from './acpConnection';
 
 export type { CanonicalModelInfoDto, ProviderSecretDto };
 
+export const TENROUTER_PROVIDER_ID = 'tenrouter';
+
+// The shared GET /v1/models on 10router lists the GLM half under legacy
+// Claude slot ids (the spelling Claude Code / Claude Desktop accept); the
+// router itself takes real glm-* ids natively on POST /v1/messages. Show and
+// save the real ids so the model list actually names the GLM models.
+const TENROUTER_MODEL_ID_OVERRIDES: Record<string, string> = {
+  'claude-opus-4-5-20251101': 'glm-5.3',
+  'claude-opus-4-5-20251101[1m]': 'glm-5.3[1m]',
+  'claude-sonnet-4-5-20250929': 'glm-5.3-flash',
+  'claude-sonnet-4-5-20250929[1m]': 'glm-5.3-flash[1m]',
+};
+
+/** Rewrite 10router's GLM slot ids to real glm-* model ids. */
+export function normalizeTenRouterModelId(providerId: string, modelId: string): string {
+  if (providerId !== TENROUTER_PROVIDER_ID) {
+    return modelId;
+  }
+  return TENROUTER_MODEL_ID_OVERRIDES[modelId] ?? modelId;
+}
+
 const INVENTORY_REFRESH_POLL_INTERVAL_MS = 100;
 const INVENTORY_REFRESH_TIMEOUT_MS = 30_000;
 
@@ -201,7 +222,11 @@ export async function acpRefreshProviderDetails(
 export async function acpListProviderModels(providerId: string) {
   const client = await getAcpClient();
   const { entries } = await client.goose.providersList_unstable({ providerIds: [providerId] });
-  return entries.find((e) => e.providerId === providerId)?.models ?? [];
+  const models = entries.find((e) => e.providerId === providerId)?.models ?? [];
+  return models.map((model) => ({
+    ...model,
+    id: normalizeTenRouterModelId(providerId, model.id),
+  }));
 }
 
 export async function acpListProviderCatalogEntries(

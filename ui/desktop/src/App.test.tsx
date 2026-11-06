@@ -71,6 +71,13 @@ vi.mock('./acp/providers', () => ({
   acpReadDefaults: vi.fn().mockResolvedValue({ providerId: null, modelId: null }),
   acpSaveDefaults: vi.fn().mockResolvedValue(undefined),
   acpListProviderDetails: vi.fn().mockResolvedValue([]),
+  acpGetProviderDetails: vi.fn().mockResolvedValue({
+    name: 'tenrouter',
+    is_configured: false,
+    metadata: { default_model: 'claude-sonnet-4-5' },
+  }),
+  TENROUTER_PROVIDER_ID: 'tenrouter',
+  normalizeTenRouterModelId: vi.fn((_providerId: string, modelId: string) => modelId),
 }));
 
 // Mock the ConfigContext module
@@ -277,7 +284,9 @@ describe('App Component - Brand New State', () => {
       expect(mockElectron.reactReady).toHaveBeenCalled();
     });
 
-    expect(screen.getByText(/^Welcome to goose/)).toBeInTheDocument();
+    // Brand-new state now opens on the 10router API key window instead of the
+    // provider picker (the picker is one click away from there).
+    expect(screen.getByText(/^Connect to 10router/)).toBeInTheDocument();
   });
 
   it('should not redirect when provider is configured', async () => {
@@ -313,7 +322,7 @@ describe('App Component - Brand New State', () => {
 
     await waitFor(() => {
       expect(mockToastError).toHaveBeenCalledWith(
-        'The connected Goose server does not support securely scoped deeplink recipe parameters. Update the server and try again.'
+        'The connected 10Router server does not support securely scoped deeplink recipe parameters. Update the server and try again.'
       );
     });
     expect(mockNavigate).toHaveBeenCalledWith('/');
