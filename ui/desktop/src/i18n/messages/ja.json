@@ -2273,23 +2273,38 @@
   "modelSettingsPanel.topP": {
     "defaultMessage": "Top P"
   },
-  "modelsBottomBar.changeModel": {
-    "defaultMessage": "モデルを変更"
+  "modelsBottomBar.effort": {
+    "defaultMessage": "思考量"
   },
-  "modelsBottomBar.currentModel": {
-    "defaultMessage": "現在のモデル"
+  "modelsBottomBar.effortHigh": {
+    "defaultMessage": "高"
   },
-  "modelsBottomBar.loadingModel": {
-    "defaultMessage": "モデルを読み込み中..."
+  "modelsBottomBar.effortLow": {
+    "defaultMessage": "低"
+  },
+  "modelsBottomBar.effortMax": {
+    "defaultMessage": "最大"
+  },
+  "modelsBottomBar.effortMedium": {
+    "defaultMessage": "中"
+  },
+  "modelsBottomBar.effortOff": {
+    "defaultMessage": "オフ"
+  },
+  "modelsBottomBar.failedToLoadModels": {
+    "defaultMessage": "モデルを読み込めませんでした"
+  },
+  "modelsBottomBar.loadingModels": {
+    "defaultMessage": "モデルを読み込み中…"
+  },
+  "modelsBottomBar.models": {
+    "defaultMessage": "モデル"
   },
   "modelsBottomBar.localModelSettings": {
     "defaultMessage": "ローカルモデル設定"
   },
   "modelsBottomBar.localModelSettingsTitle": {
     "defaultMessage": "ローカルモデル設定 — {modelName}"
-  },
-  "modelsBottomBar.resolvedModel": {
-    "defaultMessage": "解決済みモデル"
   },
   "modelsBottomBar.selectModel": {
     "defaultMessage": "モデルを選択"
@@ -4516,9 +4531,6 @@
   },
   "userMessage.removeImageFromEdit": {
     "defaultMessage": "メッセージから画像を削除"
-  },
-  "modelsBottomBar.recentModels": {
-    "defaultMessage": "最近"
   },
   "providerConfigurationModal.chooseModel": {
     "defaultMessage": "モデルを選択"

@@ -2273,23 +2273,38 @@
   "modelSettingsPanel.topP": {
     "defaultMessage": "Top P"
   },
-  "modelsBottomBar.changeModel": {
-    "defaultMessage": "Ubah Model"
+  "modelsBottomBar.effort": {
+    "defaultMessage": "Upaya"
   },
-  "modelsBottomBar.currentModel": {
-    "defaultMessage": "Model saat ini"
+  "modelsBottomBar.effortHigh": {
+    "defaultMessage": "Tinggi"
   },
-  "modelsBottomBar.loadingModel": {
-    "defaultMessage": "Memuat model..."
+  "modelsBottomBar.effortLow": {
+    "defaultMessage": "Rendah"
+  },
+  "modelsBottomBar.effortMax": {
+    "defaultMessage": "Maks"
+  },
+  "modelsBottomBar.effortMedium": {
+    "defaultMessage": "Sedang"
+  },
+  "modelsBottomBar.effortOff": {
+    "defaultMessage": "Mati"
+  },
+  "modelsBottomBar.failedToLoadModels": {
+    "defaultMessage": "Gagal memuat model"
+  },
+  "modelsBottomBar.loadingModels": {
+    "defaultMessage": "Memuat model…"
+  },
+  "modelsBottomBar.models": {
+    "defaultMessage": "Model"
   },
   "modelsBottomBar.localModelSettings": {
     "defaultMessage": "Pengaturan Model Lokal"
   },
   "modelsBottomBar.localModelSettingsTitle": {
     "defaultMessage": "Pengaturan Model Lokal — {modelName}"
-  },
-  "modelsBottomBar.resolvedModel": {
-    "defaultMessage": "Model yang diselesaikan"
   },
   "modelsBottomBar.selectModel": {
     "defaultMessage": "Pilih Model"
@@ -4516,9 +4531,6 @@
   },
   "userMessage.removeImageFromEdit": {
     "defaultMessage": "Hapus gambar dari pesan"
-  },
-  "modelsBottomBar.recentModels": {
-    "defaultMessage": "Terbaru"
   },
   "providerConfigurationModal.chooseModel": {
     "defaultMessage": "Pilih Model"

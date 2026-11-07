@@ -1,24 +1,29 @@
-import { Sliders, Bot, LoaderCircle, Settings, History } from 'lucide-react';
-import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { Bot, Check, ChevronDown, LoaderCircle, Settings } from 'lucide-react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useModelAndProvider } from '../../../ModelAndProviderContext';
-import { SwitchModelModal } from '../subcomponents/SwitchModelModal';
-import { View } from '../../../../utils/navigationUtils';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
+  DropdownMenuLabel,
   DropdownMenuSeparator,
+  DropdownMenuSub,
+  DropdownMenuSubContent,
+  DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from '../../../ui/dropdown-menu';
-import { getProviderMetadata, fetchModelReasoning } from '../modelInterface';
-import { getModelDisplayName } from '../predefinedModelsUtils';
-import { acpReadThinkingEffort } from '../../../../acp/providers';
+import Model, { getProviderMetadata } from '../modelInterface';
+import {
+  acpListProviderModels,
+  acpReadThinkingEffort,
+  acpSaveThinkingEffort,
+  acpSetSessionProviderModel,
+} from '../../../../acp/providers';
+import type { ThinkingEffort } from '../../../../types/providers';
 
 import { ModelSettingsPanel } from '../../localInference/ModelSettingsPanel';
 import { ScrollArea } from '../../../ui/scroll-area';
 import { defineMessages, useIntl } from '../../../../i18n';
-import type { Message } from '../../../../types/message';
-import type { RecentModel } from '../../../../utils/settings';
 import { addToRecentModels } from '../../../../utils/recentModels';
 import { trackModelChanged } from '../../../../utils/analytics';
 
@@ -27,17 +32,41 @@ const i18n = defineMessages({
     id: 'modelsBottomBar.selectModel',
     defaultMessage: 'Select Model',
   },
-  currentModel: {
-    id: 'modelsBottomBar.currentModel',
-    defaultMessage: 'Current model',
+  loadingModels: {
+    id: 'modelsBottomBar.loadingModels',
+    defaultMessage: 'Loading models…',
   },
-  loadingModel: {
-    id: 'modelsBottomBar.loadingModel',
-    defaultMessage: 'Loading model...',
+  models: {
+    id: 'modelsBottomBar.models',
+    defaultMessage: 'Models',
   },
-  changeModel: {
-    id: 'modelsBottomBar.changeModel',
-    defaultMessage: 'Change Model',
+  effort: {
+    id: 'modelsBottomBar.effort',
+    defaultMessage: 'Effort',
+  },
+  effortOff: {
+    id: 'modelsBottomBar.effortOff',
+    defaultMessage: 'Off',
+  },
+  effortLow: {
+    id: 'modelsBottomBar.effortLow',
+    defaultMessage: 'Low',
+  },
+  effortMedium: {
+    id: 'modelsBottomBar.effortMedium',
+    defaultMessage: 'Medium',
+  },
+  effortHigh: {
+    id: 'modelsBottomBar.effortHigh',
+    defaultMessage: 'High',
+  },
+  effortMax: {
+    id: 'modelsBottomBar.effortMax',
+    defaultMessage: 'Max',
+  },
+  failedToLoadModels: {
+    id: 'modelsBottomBar.failedToLoadModels',
+    defaultMessage: 'Could not load models',
   },
   localModelSettings: {
     id: 'modelsBottomBar.localModelSettings',
@@ -47,36 +76,32 @@ const i18n = defineMessages({
     id: 'modelsBottomBar.localModelSettingsTitle',
     defaultMessage: 'Local Model Settings — {modelName}',
   },
-  resolvedModel: {
-    id: 'modelsBottomBar.resolvedModel',
-    defaultMessage: 'Resolved model',
-  },
-  recentModels: {
-    id: 'modelsBottomBar.recentModels',
-    defaultMessage: 'Recent',
-  },
 });
+
+const EFFORT_VALUES: ThinkingEffort[] = ['off', 'low', 'medium', 'high', 'max'];
+
+const EFFORT_MESSAGES = {
+  off: i18n.effortOff,
+  low: i18n.effortLow,
+  medium: i18n.effortMedium,
+  high: i18n.effortHigh,
+  max: i18n.effortMax,
+} as const satisfies Record<ThinkingEffort, (typeof i18n)[keyof typeof i18n]>;
 
 interface ModelsBottomBarProps {
   sessionId: string | null;
   dropdownRef: React.RefObject<HTMLDivElement>;
-  setView: (view: View) => void;
   sessionModel?: string | null;
   sessionProvider?: string | null;
-  latestInference?: Message['metadata']['inference'] | null;
   onModelChanged: (override: { model: string; provider: string }) => void;
   sessionLoaded?: boolean;
 }
 
-type ModelMenuModal = 'switch-model' | 'local-model-settings';
-
 export default function ModelsBottomBar({
   sessionId,
   dropdownRef,
-  setView,
   sessionModel,
   sessionProvider,
-  latestInference,
   onModelChanged,
   sessionLoaded,
 }: ModelsBottomBarProps) {
@@ -92,40 +117,20 @@ export default function ModelsBottomBar({
 
   const intl = useIntl();
   const [displayProvider, setDisplayProvider] = useState<string | null>(null);
-  const [displayModelName, setDisplayModelName] = useState<string>(
-    intl.formatMessage(i18n.selectModel)
-  );
   const [isModelMenuOpen, setIsModelMenuOpen] = useState(false);
-  const pendingModalRef = useRef<ModelMenuModal | null>(null);
-  const [isAddModelModalOpen, setIsAddModelModalOpen] = useState(false);
   const [isLocalModelSettingsOpen, setIsLocalModelSettingsOpen] = useState(false);
   const [providerDefaultModel, setProviderDefaultModel] = useState<string | null>(null);
-  const [recentModels, setRecentModels] = useState<RecentModel[]>([]);
-
-  const loadRecentModels = useCallback(async () => {
-    const stored = (await window.electron.getSetting('recentModels')) ?? [];
-    setRecentModels(stored);
-  }, []);
-
-  useEffect(() => {
-    void loadRecentModels();
-  }, [loadRecentModels]);
+  const [models, setModels] = useState<Model[] | null>(null);
+  const [isLoadingModels, setIsLoadingModels] = useState(false);
+  const [failedToLoadModels, setFailedToLoadModels] = useState(false);
+  const [effort, setEffort] = useState<ThinkingEffort | null>(null);
+  const pendingLocalSettingsRef = useRef(false);
+  const modelsCacheRef = useRef<Map<string, Model[]>>(new Map());
 
   // Show a visible loading placeholder while session metadata is still being fetched,
   // rather than flashing the config default or leaving the footer blank.
   const isModelLoading = Boolean(sessionId && !sessionLoaded);
-  const displayModel = currentModel || providerDefaultModel || displayModelName;
-  const resolvedModel = latestInference?.resolvedModel ?? null;
-  const shouldShowResolvedModel = Boolean(
-    !isModelLoading &&
-    resolvedModel &&
-    latestInference?.provider === currentProvider &&
-    latestInference?.requestedModel === currentModel &&
-    resolvedModel !== currentModel
-  );
-  const loadingModelLabel = intl.formatMessage(i18n.loadingModel);
-  const triggerLabel = isModelLoading ? loadingModelLabel : displayModel;
-  const menuModelLabel = isModelLoading ? loadingModelLabel : displayModelName;
+  const displayModel = currentModel || providerDefaultModel;
 
   useEffect(() => {
     if (!currentProvider) return;
@@ -156,86 +161,142 @@ export default function ModelsBottomBar({
   }, [currentProvider, currentModel]);
 
   useEffect(() => {
-    if (!currentModel) return;
-    setDisplayModelName(getModelDisplayName(currentModel));
-  }, [currentModel]);
+    acpReadThinkingEffort()
+      .then((saved) => setEffort(saved))
+      .catch(() => {});
+  }, []);
 
-  const resolvedDisplayModelName = useMemo(
-    () => (resolvedModel ? getModelDisplayName(resolvedModel) : null),
-    [resolvedModel]
-  );
+  // Refresh the model list and saved effort every time the menu opens so
+  // dynamically discovered models show up without restarting the app.
+  useEffect(() => {
+    if (!isModelMenuOpen || !currentProvider) return;
+    let cancelled = false;
 
-  const handleModelSelected = (model: string, provider: string) => {
-    void loadRecentModels();
-    onModelChanged({ model, provider });
+    const cached = modelsCacheRef.current.get(currentProvider);
+    if (cached) {
+      setModels(cached);
+      setFailedToLoadModels(false);
+    } else {
+      setModels(null);
+      setFailedToLoadModels(false);
+    }
+    setIsLoadingModels(true);
+    acpReadThinkingEffort()
+      .then((saved) => {
+        if (!cancelled && saved) setEffort(saved);
+      })
+      .catch(() => {});
+    acpListProviderModels(currentProvider)
+      .then((providerModels) => {
+        if (cancelled) return;
+        const list: Model[] = providerModels.map((m) => ({
+          name: m.id,
+          provider: currentProvider,
+          context_limit: m.contextLimit ?? undefined,
+          reasoning: m.reasoning ?? undefined,
+        }));
+        modelsCacheRef.current.set(currentProvider, list);
+        setModels(list);
+        setFailedToLoadModels(false);
+      })
+      .catch((error) => {
+        if (cancelled) return;
+        console.error('Failed to list provider models:', error);
+        setFailedToLoadModels(true);
+      })
+      .finally(() => {
+        if (!cancelled) setIsLoadingModels(false);
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [isModelMenuOpen, currentProvider]);
+
+  const currentModelInfo = models?.find((m) => m.name === currentModel) ?? null;
+  // Effort only applies to reasoning models; unknown metadata (null) is treated as supported.
+  const effortSupported = currentModelInfo?.reasoning !== false;
+
+  const handleModelClick = async (model: Model) => {
+    if (!currentProvider) return;
+    const previousModel = currentModel;
+    const modelArg: Model =
+      model.reasoning !== false && effort != null
+        ? { ...model, request_params: { thinking_effort: effort } }
+        : { name: model.name, provider: currentProvider };
+
+    const success = await changeModel(sessionId, modelArg);
+    if (!success) return;
+
+    trackModelChanged(currentProvider, model.name);
+    if (previousModel) {
+      try {
+        const stored = (await window.electron.getSetting('recentModels')) ?? [];
+        await window.electron.setSetting(
+          'recentModels',
+          addToRecentModels(stored, currentProvider, previousModel)
+        );
+      } catch (error) {
+        console.warn('Failed to update recent models:', error);
+      }
+    }
+    onModelChanged({ model: model.name, provider: currentProvider });
   };
 
-  const openModalAfterMenuCloses = (modal: ModelMenuModal) => {
-    pendingModalRef.current = modal;
-    setIsModelMenuOpen(false);
+  const handleEffortSelect = async (value: ThinkingEffort) => {
+    if (!currentProvider) return;
+    setEffort(value);
+    acpSaveThinkingEffort(value).catch(console.warn);
+    if (sessionId && currentModel && effortSupported) {
+      try {
+        await acpSetSessionProviderModel(sessionId, currentProvider, currentModel, value);
+      } catch (error) {
+        console.error('Failed to apply thinking effort to session:', error);
+      }
+    }
   };
 
   const handleModelMenuCloseAutoFocus = (event: Event) => {
-    const pendingModal = pendingModalRef.current;
-    if (!pendingModal) return;
+    if (!pendingLocalSettingsRef.current) return;
 
-    pendingModalRef.current = null;
-    if (pendingModal === 'switch-model') {
-      event.preventDefault();
-      setIsAddModelModalOpen(true);
-    } else {
-      setIsLocalModelSettingsOpen(true);
-    }
+    pendingLocalSettingsRef.current = false;
+    setIsLocalModelSettingsOpen(true);
+    // The dropdown would refocus its trigger; the settings overlay handles focus itself.
+    event.preventDefault();
   };
 
-  const handleRecentModelClick = async (recent: RecentModel) => {
-    const previousModel = currentModel;
-    const previousProvider = currentProvider;
+  const triggerLabel = isModelLoading
+    ? intl.formatMessage(i18n.loadingModels)
+    : displayModel || intl.formatMessage(i18n.selectModel);
 
-    const [reasoning, savedEffort] = await Promise.all([
-      fetchModelReasoning(recent.provider, recent.model),
-      acpReadThinkingEffort().catch(() => null),
-    ]);
-    const modelArg = reasoning
-      ? {
-          name: recent.model,
-          provider: recent.provider,
-          request_params: { thinking_effort: savedEffort ?? 'off' },
-        }
-      : { name: recent.model, provider: recent.provider };
-    const success = await changeModel(sessionId, modelArg);
-    if (success) {
-      trackModelChanged(recent.provider, recent.model);
-      if (previousModel && previousProvider) {
-        const updated = addToRecentModels(recentModels, previousProvider, previousModel);
-        await window.electron.setSetting('recentModels', updated);
-        setRecentModels(updated);
-      }
-      onModelChanged({ model: recent.model, provider: recent.provider });
-    }
-  };
-
-  const filteredRecentModels = recentModels.filter(
-    (r) => !(r.model === currentModel && r.provider === currentProvider)
-  );
+  const effortLabel =
+    effort != null && effortSupported ? intl.formatMessage(EFFORT_MESSAGES[effort]) : null;
 
   return (
     <div className="relative flex items-center" ref={dropdownRef}>
       <DropdownMenu open={isModelMenuOpen} onOpenChange={setIsModelMenuOpen}>
         <DropdownMenuTrigger className="flex items-center hover:cursor-pointer max-w-[180px] md:max-w-[200px] lg:max-w-[380px] min-w-0 text-text-primary/70 hover:text-text-primary transition-colors">
-          <div className="flex items-center truncate max-w-[130px] md:max-w-[200px] lg:max-w-[360px] min-w-0">
-            <Bot className="mr-1 h-4 w-4 flex-shrink-0" />
+          <div className="flex items-center gap-1 truncate max-w-[130px] md:max-w-[200px] lg:max-w-[360px] min-w-0">
+            <Bot className="h-4 w-4 shrink-0" />
             {isModelLoading ? (
               <span
                 data-testid="model-loading-state"
                 className="inline-flex items-center gap-1 truncate text-xs"
               >
-                <LoaderCircle className="h-3 w-3 animate-spin flex-shrink-0" />
+                <LoaderCircle className="h-3 w-3 animate-spin shrink-0" />
                 <span className="truncate">{triggerLabel}</span>
               </span>
             ) : (
-              <span className="truncate text-xs">{triggerLabel}</span>
+              <>
+                <span className="truncate text-xs">{triggerLabel}</span>
+                {effortLabel && (
+                  <span className="text-xs text-text-secondary whitespace-nowrap">
+                    {effortLabel}
+                  </span>
+                )}
+              </>
             )}
+            <ChevronDown className="h-3 w-3 shrink-0 text-text-secondary" />
           </div>
         </DropdownMenuTrigger>
         <DropdownMenuContent
@@ -244,48 +305,70 @@ export default function ModelsBottomBar({
           className="w-64 text-sm"
           onCloseAutoFocus={handleModelMenuCloseAutoFocus}
         >
-          <h6 className="text-xs text-text-primary mt-2 ml-2">
-            {intl.formatMessage(i18n.currentModel)}
-          </h6>
-          <p className="flex items-center justify-between text-sm mx-2 pb-2 border-b mb-2">
-            {menuModelLabel}
-            {!isModelLoading && displayProvider && ` — ${displayProvider}`}
-          </p>
-          {shouldShowResolvedModel && resolvedDisplayModelName && (
-            <div className="mx-2 pb-2 border-b mb-2">
-              <h6 className="text-xs text-text-primary">
-                {intl.formatMessage(i18n.resolvedModel)}
-              </h6>
-              <p className="text-xs text-text-primary truncate" title={resolvedModel ?? undefined}>
-                {resolvedDisplayModelName}
-              </p>
+          <DropdownMenuLabel className="flex items-center justify-between">
+            <span className="text-xs text-text-primary">
+              {intl.formatMessage(i18n.models)}
+            </span>
+            {!isModelLoading && displayProvider && (
+              <span className="text-xs text-text-secondary truncate">{displayProvider}</span>
+            )}
+          </DropdownMenuLabel>
+          {isLoadingModels && !models && (
+            <div
+              data-testid="models-loading"
+              className="flex items-center gap-2 px-2 py-1.5 text-sm text-text-secondary"
+            >
+              <LoaderCircle className="h-4 w-4 animate-spin" />
+              {intl.formatMessage(i18n.loadingModels)}
             </div>
           )}
-          {filteredRecentModels.length > 0 && (
+          {failedToLoadModels && !models && (
+            <div className="px-2 py-1.5 text-sm text-text-danger">
+              {intl.formatMessage(i18n.failedToLoadModels)}
+            </div>
+          )}
+          {models?.map((model) => (
+            <DropdownMenuItem
+              key={model.name}
+              onSelect={() => void handleModelClick(model)}
+            >
+              <span className="truncate">{model.name}</span>
+              {model.name === currentModel && (
+                <Check data-testid="selected-model-check" className="ml-auto" />
+              )}
+            </DropdownMenuItem>
+          ))}
+          {effortSupported && (
             <>
-              <h6 className="text-xs text-text-primary mt-2 ml-2">
-                {intl.formatMessage(i18n.recentModels)}
-              </h6>
-              {filteredRecentModels.map((recent) => (
-                <DropdownMenuItem
-                  key={`${recent.provider}/${recent.model}`}
-                  onClick={() => void handleRecentModelClick(recent)}
-                >
-                  <History className="mr-2 h-3.5 w-3.5 flex-shrink-0 text-text-secondary" />
-                  <span className="truncate">
-                    {getModelDisplayName(recent.model)} — {recent.provider}
-                  </span>
-                </DropdownMenuItem>
-              ))}
               <DropdownMenuSeparator />
+              <DropdownMenuSub>
+                <DropdownMenuSubTrigger data-testid="effort-subtrigger">
+                  <span>{intl.formatMessage(i18n.effort)}</span>
+                  {effortLabel && (
+                    <span className="ml-2 text-xs text-text-secondary">{effortLabel}</span>
+                  )}
+                </DropdownMenuSubTrigger>
+                <DropdownMenuSubContent data-testid="effort-submenu">
+                  {EFFORT_VALUES.map((value) => (
+                    <DropdownMenuItem
+                      key={value}
+                      onSelect={() => void handleEffortSelect(value)}
+                    >
+                      <span>{intl.formatMessage(EFFORT_MESSAGES[value])}</span>
+                      {effort === value && <Check className="ml-auto" />}
+                    </DropdownMenuItem>
+                  ))}
+                </DropdownMenuSubContent>
+              </DropdownMenuSub>
             </>
           )}
-          <DropdownMenuItem onSelect={() => openModalAfterMenuCloses('switch-model')}>
-            <span>{intl.formatMessage(i18n.changeModel)}</span>
-            <Sliders className="ml-auto h-4 w-4 rotate-90" />
-          </DropdownMenuItem>
           {currentProvider === 'local' && currentModel && (
-            <DropdownMenuItem onSelect={() => openModalAfterMenuCloses('local-model-settings')}>
+            <DropdownMenuItem
+              onSelect={() => {
+                pendingLocalSettingsRef.current = true;
+                setIsModelMenuOpen(false);
+              }}
+            >
               <span>{intl.formatMessage(i18n.localModelSettings)}</span>
               <Settings className="ml-auto h-4 w-4" />
             </DropdownMenuItem>
@@ -293,24 +376,13 @@ export default function ModelsBottomBar({
         </DropdownMenuContent>
       </DropdownMenu>
 
-      {isAddModelModalOpen ? (
-        <SwitchModelModal
-          sessionId={sessionId}
-          setView={setView}
-          onClose={() => setIsAddModelModalOpen(false)}
-          sessionModel={currentModel}
-          sessionProvider={currentProvider}
-          onModelSelected={(model, provider) => handleModelSelected(model, provider)}
-        />
-      ) : null}
-
       {isLocalModelSettingsOpen && currentModel && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
           <div className="bg-background-primary border border-border-primary rounded-lg shadow-lg w-[480px] max-h-[80vh] flex flex-col">
             <div className="flex items-center justify-between px-4 py-3 border-b border-border-subtle">
               <h3 className="text-sm font-medium text-text-default">
                 {intl.formatMessage(i18n.localModelSettingsTitle, {
-                  modelName: getModelDisplayName(currentModel),
+                  modelName: currentModel,
                 })}
               </h3>
               <button

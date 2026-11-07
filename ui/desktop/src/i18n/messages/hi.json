@@ -2273,23 +2273,38 @@
   "modelSettingsPanel.topP": {
     "defaultMessage": "शीर्ष पी"
   },
-  "modelsBottomBar.changeModel": {
-    "defaultMessage": "मॉडल बदलें"
+  "modelsBottomBar.effort": {
+    "defaultMessage": "चिंतन प्रयास"
   },
-  "modelsBottomBar.currentModel": {
-    "defaultMessage": "वर्तमान मॉडल"
+  "modelsBottomBar.effortHigh": {
+    "defaultMessage": "उच्च"
   },
-  "modelsBottomBar.loadingModel": {
-    "defaultMessage": "मॉडल लोड हो रहा है..."
+  "modelsBottomBar.effortLow": {
+    "defaultMessage": "निम्न"
+  },
+  "modelsBottomBar.effortMax": {
+    "defaultMessage": "मैक्स"
+  },
+  "modelsBottomBar.effortMedium": {
+    "defaultMessage": "मध्यम"
+  },
+  "modelsBottomBar.effortOff": {
+    "defaultMessage": "बंद"
+  },
+  "modelsBottomBar.failedToLoadModels": {
+    "defaultMessage": "मॉडल लोड नहीं हो सके"
+  },
+  "modelsBottomBar.loadingModels": {
+    "defaultMessage": "मॉडल लोड हो रहे हैं…"
+  },
+  "modelsBottomBar.models": {
+    "defaultMessage": "मॉडल"
   },
   "modelsBottomBar.localModelSettings": {
     "defaultMessage": "स्थानीय मॉडल Settings"
   },
   "modelsBottomBar.localModelSettingsTitle": {
     "defaultMessage": "स्थानीय मॉडल Settings — {modelName}"
-  },
-  "modelsBottomBar.resolvedModel": {
-    "defaultMessage": "हल किया गया मॉडल"
   },
   "modelsBottomBar.selectModel": {
     "defaultMessage": "मॉडल का चयन करें"
@@ -4516,9 +4531,6 @@
   },
   "userMessage.removeImageFromEdit": {
     "defaultMessage": "संदेश से छवि हटाएँ"
-  },
-  "modelsBottomBar.recentModels": {
-    "defaultMessage": "हाल के"
   },
   "providerConfigurationModal.chooseModel": {
     "defaultMessage": "मॉडल चुनें"

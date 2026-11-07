@@ -2273,23 +2273,38 @@
   "modelSettingsPanel.topP": {
     "defaultMessage": "Top P"
   },
-  "modelsBottomBar.changeModel": {
-    "defaultMessage": "Modell ändern"
+  "modelsBottomBar.effort": {
+    "defaultMessage": "Aufwand"
   },
-  "modelsBottomBar.currentModel": {
-    "defaultMessage": "Aktuelles Modell"
+  "modelsBottomBar.effortHigh": {
+    "defaultMessage": "Hoch"
   },
-  "modelsBottomBar.loadingModel": {
-    "defaultMessage": "Modell wird geladen..."
+  "modelsBottomBar.effortLow": {
+    "defaultMessage": "Niedrig"
+  },
+  "modelsBottomBar.effortMax": {
+    "defaultMessage": "Max"
+  },
+  "modelsBottomBar.effortMedium": {
+    "defaultMessage": "Mittel"
+  },
+  "modelsBottomBar.effortOff": {
+    "defaultMessage": "Aus"
+  },
+  "modelsBottomBar.failedToLoadModels": {
+    "defaultMessage": "Modelle konnten nicht geladen werden"
+  },
+  "modelsBottomBar.loadingModels": {
+    "defaultMessage": "Modelle werden geladen…"
+  },
+  "modelsBottomBar.models": {
+    "defaultMessage": "Modelle"
   },
   "modelsBottomBar.localModelSettings": {
     "defaultMessage": "Lokale Modelleinstellungen"
   },
   "modelsBottomBar.localModelSettingsTitle": {
     "defaultMessage": "Lokale Modelleinstellungen — {modelName}"
-  },
-  "modelsBottomBar.resolvedModel": {
-    "defaultMessage": "Aufgelöstes Modell"
   },
   "modelsBottomBar.selectModel": {
     "defaultMessage": "Modell auswählen"
@@ -4516,9 +4531,6 @@
   },
   "userMessage.removeImageFromEdit": {
     "defaultMessage": "Bild aus Nachricht entfernen"
-  },
-  "modelsBottomBar.recentModels": {
-    "defaultMessage": "Zuletzt verwendet"
   },
   "providerConfigurationModal.chooseModel": {
     "defaultMessage": "Modell auswählen"

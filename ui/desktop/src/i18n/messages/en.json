@@ -2363,14 +2363,29 @@
   "modelSettingsPanel.topP": {
     "defaultMessage": "Top P"
   },
-  "modelsBottomBar.changeModel": {
-    "defaultMessage": "Change Model"
+  "modelsBottomBar.effort": {
+    "defaultMessage": "Effort"
   },
-  "modelsBottomBar.currentModel": {
-    "defaultMessage": "Current model"
+  "modelsBottomBar.effortHigh": {
+    "defaultMessage": "High"
   },
-  "modelsBottomBar.loadingModel": {
-    "defaultMessage": "Loading model..."
+  "modelsBottomBar.effortLow": {
+    "defaultMessage": "Low"
+  },
+  "modelsBottomBar.effortMax": {
+    "defaultMessage": "Max"
+  },
+  "modelsBottomBar.effortMedium": {
+    "defaultMessage": "Medium"
+  },
+  "modelsBottomBar.effortOff": {
+    "defaultMessage": "Off"
+  },
+  "modelsBottomBar.failedToLoadModels": {
+    "defaultMessage": "Could not load models"
+  },
+  "modelsBottomBar.loadingModels": {
+    "defaultMessage": "Loading models…"
   },
   "modelsBottomBar.localModelSettings": {
     "defaultMessage": "Local Model Settings"
@@ -2378,11 +2393,8 @@
   "modelsBottomBar.localModelSettingsTitle": {
     "defaultMessage": "Local Model Settings — {modelName}"
   },
-  "modelsBottomBar.recentModels": {
-    "defaultMessage": "Recent"
-  },
-  "modelsBottomBar.resolvedModel": {
-    "defaultMessage": "Resolved model"
+  "modelsBottomBar.models": {
+    "defaultMessage": "Models"
   },
   "modelsBottomBar.selectModel": {
     "defaultMessage": "Select Model"

@@ -2273,23 +2273,38 @@
   "modelSettingsPanel.topP": {
     "defaultMessage": "Top P"
   },
-  "modelsBottomBar.changeModel": {
-    "defaultMessage": "Changer de modèle"
+  "modelsBottomBar.effort": {
+    "defaultMessage": "Effort"
   },
-  "modelsBottomBar.currentModel": {
-    "defaultMessage": "Modèle actuel"
+  "modelsBottomBar.effortHigh": {
+    "defaultMessage": "Élevé"
   },
-  "modelsBottomBar.loadingModel": {
-    "defaultMessage": "Chargement du modèle..."
+  "modelsBottomBar.effortLow": {
+    "defaultMessage": "Faible"
+  },
+  "modelsBottomBar.effortMax": {
+    "defaultMessage": "Max"
+  },
+  "modelsBottomBar.effortMedium": {
+    "defaultMessage": "Moyen"
+  },
+  "modelsBottomBar.effortOff": {
+    "defaultMessage": "Désactivé"
+  },
+  "modelsBottomBar.failedToLoadModels": {
+    "defaultMessage": "Impossible de charger les modèles"
+  },
+  "modelsBottomBar.loadingModels": {
+    "defaultMessage": "Chargement des modèles…"
+  },
+  "modelsBottomBar.models": {
+    "defaultMessage": "Modèles"
   },
   "modelsBottomBar.localModelSettings": {
     "defaultMessage": "Paramètres du modèle local"
   },
   "modelsBottomBar.localModelSettingsTitle": {
     "defaultMessage": "Paramètres du modèle local — {modelName}"
-  },
-  "modelsBottomBar.resolvedModel": {
-    "defaultMessage": "Modèle résolu"
   },
   "modelsBottomBar.selectModel": {
     "defaultMessage": "Sélectionner un modèle"
@@ -4516,9 +4531,6 @@
   },
   "userMessage.removeImageFromEdit": {
     "defaultMessage": "Supprimer l'image du message"
-  },
-  "modelsBottomBar.recentModels": {
-    "defaultMessage": "Récents"
   },
   "providerConfigurationModal.chooseModel": {
     "defaultMessage": "Choisir un modèle"

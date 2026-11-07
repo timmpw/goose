@@ -2273,23 +2273,38 @@
   "modelSettingsPanel.topP": {
     "defaultMessage": "Top P"
   },
-  "modelsBottomBar.changeModel": {
-    "defaultMessage": "Cambia modello"
+  "modelsBottomBar.effort": {
+    "defaultMessage": "Impegno"
   },
-  "modelsBottomBar.currentModel": {
-    "defaultMessage": "Modello corrente"
+  "modelsBottomBar.effortHigh": {
+    "defaultMessage": "Alto"
   },
-  "modelsBottomBar.loadingModel": {
-    "defaultMessage": "Caricamento modello..."
+  "modelsBottomBar.effortLow": {
+    "defaultMessage": "Basso"
+  },
+  "modelsBottomBar.effortMax": {
+    "defaultMessage": "Massimo"
+  },
+  "modelsBottomBar.effortMedium": {
+    "defaultMessage": "Medio"
+  },
+  "modelsBottomBar.effortOff": {
+    "defaultMessage": "Disattivato"
+  },
+  "modelsBottomBar.failedToLoadModels": {
+    "defaultMessage": "Impossibile caricare i modelli"
+  },
+  "modelsBottomBar.loadingModels": {
+    "defaultMessage": "Caricamento dei modelli…"
+  },
+  "modelsBottomBar.models": {
+    "defaultMessage": "Modelli"
   },
   "modelsBottomBar.localModelSettings": {
     "defaultMessage": "Impostazioni modello locale"
   },
   "modelsBottomBar.localModelSettingsTitle": {
     "defaultMessage": "Impostazioni modello locale — {modelName}"
-  },
-  "modelsBottomBar.resolvedModel": {
-    "defaultMessage": "Modello risolto"
   },
   "modelsBottomBar.selectModel": {
     "defaultMessage": "Seleziona modello"
@@ -4516,9 +4531,6 @@
   },
   "userMessage.removeImageFromEdit": {
     "defaultMessage": "Rimuovi immagine dal messaggio"
-  },
-  "modelsBottomBar.recentModels": {
-    "defaultMessage": "Recenti"
   },
   "providerConfigurationModal.chooseModel": {
     "defaultMessage": "Scegli modello"

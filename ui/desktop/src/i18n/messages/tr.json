@@ -2273,23 +2273,38 @@
   "modelSettingsPanel.topP": {
     "defaultMessage": "Üst P"
   },
-  "modelsBottomBar.changeModel": {
-    "defaultMessage": "Modeli Değiştir"
+  "modelsBottomBar.effort": {
+    "defaultMessage": "Çaba"
   },
-  "modelsBottomBar.currentModel": {
-    "defaultMessage": "Mevcut model"
+  "modelsBottomBar.effortHigh": {
+    "defaultMessage": "Yüksek"
   },
-  "modelsBottomBar.loadingModel": {
-    "defaultMessage": "Model yükleniyor..."
+  "modelsBottomBar.effortLow": {
+    "defaultMessage": "Düşük"
+  },
+  "modelsBottomBar.effortMax": {
+    "defaultMessage": "Max"
+  },
+  "modelsBottomBar.effortMedium": {
+    "defaultMessage": "Orta"
+  },
+  "modelsBottomBar.effortOff": {
+    "defaultMessage": "Kapalı"
+  },
+  "modelsBottomBar.failedToLoadModels": {
+    "defaultMessage": "Modeller yüklenemedi"
+  },
+  "modelsBottomBar.loadingModels": {
+    "defaultMessage": "Modeller yükleniyor…"
+  },
+  "modelsBottomBar.models": {
+    "defaultMessage": "Modeller"
   },
   "modelsBottomBar.localModelSettings": {
     "defaultMessage": "Yerel Model Ayarları"
   },
   "modelsBottomBar.localModelSettingsTitle": {
     "defaultMessage": "Yerel Model Ayarları — {modelName}"
-  },
-  "modelsBottomBar.resolvedModel": {
-    "defaultMessage": "Çözümlenen model"
   },
   "modelsBottomBar.selectModel": {
     "defaultMessage": "Modeli Seçin"
@@ -4516,9 +4531,6 @@
   },
   "userMessage.removeImageFromEdit": {
     "defaultMessage": "Görseli mesajdan kaldır"
-  },
-  "modelsBottomBar.recentModels": {
-    "defaultMessage": "Son kullanılan"
   },
   "providerConfigurationModal.chooseModel": {
     "defaultMessage": "Modeli seçin"
