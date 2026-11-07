@@ -94,11 +94,16 @@ export async function parseDeeplink(deeplink: string): Promise<Recipe | null> {
   try {
     const cleanLink = deeplink.trim();
 
-    if (!cleanLink.startsWith('goose://recipe?config=')) {
-      throw new Error('Invalid deeplink format. Expected: goose://recipe?config=...');
+    // 10router:// is the app's own scheme; goose:// links keep working for
+    // links shared before the rename.
+    const matchedPrefix = ['10router://recipe?config=', 'goose://recipe?config='].find((prefix) =>
+      cleanLink.startsWith(prefix)
+    );
+    if (!matchedPrefix) {
+      throw new Error('Invalid deeplink format. Expected: 10router://recipe?config=...');
     }
 
-    const recipeEncoded = cleanLink.replace('goose://recipe?config=', '');
+    const recipeEncoded = cleanLink.slice(matchedPrefix.length);
 
     if (!recipeEncoded) {
       throw new Error('No recipe configuration found in deeplink');
