@@ -62,33 +62,21 @@ jobs:
         if: failure()
         run: |
           LOG="$RUNNER_TEMP/cargo-test.log"
+          if [ ! -f "$LOG" ]; then
+            echo "::error::cargo-test.log missing at $RUNNER_TEMP"
+            exit 0
+          fi
           failing() {
             awk '/^failures:$/{f=1;next} f&&/^$/{f=0} f&&/^    /{print $1}' "$LOG" | sort -u
-          }
-          crashes() {
-            grep -E "process didn't exit successfully|signal: [0-9]+|error: could not compile|error\[" "$LOG" | sort -u | head -40
           }
           failing | head -10 | while read -r test; do
             echo "::error::failing test: $test"
           done
-          crashes | head -10 | while read -r line; do
+          grep -E "process didn't exit successfully|signal: [0-9]+|error: could not compile|error\[|^error" "$LOG" \
+            | sort -u | head -10 | while read -r line; do
             echo "::error::$line"
           done
-          {
-            echo "## cargo test failure report"
-            echo "### Failing tests"
-            echo '```'
-            failing
-            echo '```'
-            echo "### Crashes / compile errors"
-            echo '```'
-            crashes
-            echo '```'
-            echo "### Log tail (last 150 lines)"
-            echo '```'
-            tail -n 150 "$LOG"
-            echo '```'
-          } >> "$GITHUB_STEP_SUMMARY"
+          echo "::error::log stats: $(wc -l < "$LOG") lines; TAIL: $(tail -n 30 "$LOG" | tr '\n' '|' | cut -c1-700)"
 
   desktop-lint:
     name: Test and Lint Electron Desktop App
