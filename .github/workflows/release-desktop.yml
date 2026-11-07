@@ -136,14 +136,18 @@ jobs:
           fi
           pkill -f "10Router.app/Contents/MacOS/10Router"
 
+      - name: Stage release files
+        run: |
+          mkdir -p ui/desktop/dist
+          cp ui/desktop/out/make/*.dmg ui/desktop/dist/
+          cp ui/desktop/out/10Router-darwin-arm64/10Router.zip ui/desktop/dist/
+          cp ui/desktop/out/10Router-darwin-arm64/10Router.zip.macos.json ui/desktop/dist/
+
       - name: Upload artifacts
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a  # v7.0.1
         with:
           name: desktop-macos-arm64
-          path: |
-            ui/desktop/out/make/*.dmg
-            ui/desktop/out/10Router-darwin-arm64/10Router.zip
-            ui/desktop/out/10Router-darwin-arm64/10Router.zip.macos.json
+          path: ui/desktop/dist
           if-no-files-found: error
           retention-days: 5
 
@@ -227,13 +231,17 @@ jobs:
           fi
         working-directory: ui/desktop
 
+      - name: Stage release files
+        run: |
+          mkdir -p ui/desktop/dist
+          cp ui/desktop/out/make/*.dmg ui/desktop/dist/
+          cp ui/desktop/out/10Router-darwin-x64/10Router_intel_mac.zip ui/desktop/dist/
+
       - name: Upload artifacts
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a  # v7.0.1
         with:
           name: desktop-macos-x64
-          path: |
-            ui/desktop/out/make/*.dmg
-            ui/desktop/out/10Router-darwin-x64/10Router_intel_mac.zip
+          path: ui/desktop/dist
           if-no-files-found: error
           retention-days: 5
 
@@ -358,13 +366,18 @@ jobs:
         run: pnpm run make:win32-installer ./dist-windows
         working-directory: ui/desktop
 
+      - name: Stage release files
+        shell: bash
+        run: |
+          mkdir -p ui/desktop/dist
+          cp ui/desktop/10Router-win32-x64.zip ui/desktop/dist/
+          cp ui/desktop/out/make/nsis/win32/x64/10Router-win32-x64-setup.exe ui/desktop/dist/
+
       - name: Upload artifacts
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a  # v7.0.1
         with:
           name: desktop-windows-x64
-          path: |
-            ui/desktop/10Router-win32-x64.zip
-            ui/desktop/out/make/nsis/win32/x64/10Router-win32-x64-setup.exe
+          path: ui/desktop/dist
           if-no-files-found: error
           retention-days: 5
 
