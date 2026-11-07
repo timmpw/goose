@@ -356,9 +356,6 @@
   "createEditRecipe.generatingDeeplink": {
     "defaultMessage": "Đang tạo deeplink..."
   },
-  "createEditRecipe.learnMore": {
-    "defaultMessage": "Tìm hiểu thêm"
-  },
   "createEditRecipe.recipeSavedAndLaunchedMsg": {
     "defaultMessage": "Đã lưu và khởi chạy công thức thành công"
   },
@@ -1163,9 +1160,6 @@
   "extensionsSection.addExtension": {
     "defaultMessage": "Thêm tiện ích mở rộng"
   },
-  "extensionsSection.browseExtensions": {
-    "defaultMessage": "Duyệt tiện ích mở rộng"
-  },
   "extensionsSection.saveChanges": {
     "defaultMessage": "Lưu thay đổi"
   },
@@ -1177,9 +1171,6 @@
   },
   "extensionsView.addExtension": {
     "defaultMessage": "Thêm tiện ích mở rộng"
-  },
-  "extensionsView.browseExtensions": {
-    "defaultMessage": "Duyệt tiện ích mở rộng"
   },
   "extensionsView.defaultNote": {
     "defaultMessage": "Các tiện ích mở rộng được bật ở đây sẽ được dùng làm mặc định cho các cuộc trò chuyện mới. Bạn cũng có thể bật/tắt các tiện ích mở rộng đang hoạt động trong khi trò chuyện."
@@ -1285,12 +1276,6 @@
   },
   "goosehintsModal.helpText2": {
     "defaultMessage": "Hãy đảm bảo tiện ích mở rộng {bold} được bật trong trang tiện ích mở rộng. Tiện ích mở rộng này là bắt buộc để sử dụng .goosehints. Bạn cần khởi động lại phiên để các cập nhật .goosehints có hiệu lực."
-  },
-  "goosehintsModal.helpText3": {
-    "defaultMessage": "Xem {link} để biết thêm thông tin."
-  },
-  "goosehintsModal.helpTextLink": {
-    "defaultMessage": "cách sử dụng .goosehints"
   },
   "goosehintsModal.placeholder": {
     "defaultMessage": "Nhập gợi ý dự án ở đây..."
@@ -4252,9 +4237,6 @@
   },
   "switchModelModal.providerPlaceholder": {
     "defaultMessage": "Nhà cung cấp, nhập để tìm kiếm"
-  },
-  "switchModelModal.quickStartGuide": {
-    "defaultMessage": "Hướng dẫn bắt đầu nhanh"
   },
   "switchModelModal.recommended": {
     "defaultMessage": "Được đề xuất"

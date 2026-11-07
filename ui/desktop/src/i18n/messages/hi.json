@@ -356,9 +356,6 @@
   "createEditRecipe.generatingDeeplink": {
     "defaultMessage": "डीपलिंक जनरेट किया जा रहा है..."
   },
-  "createEditRecipe.learnMore": {
-    "defaultMessage": "और जानें"
-  },
   "createEditRecipe.recipeSavedAndLaunchedMsg": {
     "defaultMessage": "रेसिपी सहेजी गई और सफलतापूर्वक लॉन्च की गई"
   },
@@ -1163,9 +1160,6 @@
   "extensionsSection.addExtension": {
     "defaultMessage": "एक्सटेंशन जोड़ें"
   },
-  "extensionsSection.browseExtensions": {
-    "defaultMessage": "एक्सटेंशन ब्राउज़ करें"
-  },
   "extensionsSection.saveChanges": {
     "defaultMessage": "परिवर्तन सहेजें"
   },
@@ -1177,9 +1171,6 @@
   },
   "extensionsView.addExtension": {
     "defaultMessage": "एक्सटेंशन जोड़ें"
-  },
-  "extensionsView.browseExtensions": {
-    "defaultMessage": "एक्सटेंशन ब्राउज़ करें"
   },
   "extensionsView.defaultNote": {
     "defaultMessage": "यहां सक्षम एक्सटेंशन नई चैट के लिए डिफ़ॉल्ट के रूप में उपयोग किए जाते हैं। आप चैट के दौरान सक्रिय एक्सटेंशन भी टॉगल कर सकते हैं।"
@@ -1285,12 +1276,6 @@
   },
   "goosehintsModal.helpText2": {
     "defaultMessage": "कृपया सुनिश्चित करें कि एक्सटेंशन पृष्ठ में {bold} एक्सटेंशन सक्षम है। .goosehints का उपयोग करने के लिए यह एक्सटेंशन आवश्यक है। .goosehints अपडेट को प्रभावी बनाने के लिए आपको अपना सत्र पुनः आरंभ करना होगा।"
-  },
-  "goosehintsModal.helpText3": {
-    "defaultMessage": "अधिक जानकारी के लिए {link} देखें।"
-  },
-  "goosehintsModal.helpTextLink": {
-    "defaultMessage": ".goosehints का उपयोग करना"
   },
   "goosehintsModal.placeholder": {
     "defaultMessage": "प्रोजेक्ट संकेत यहां दर्ज करें..."
@@ -4252,9 +4237,6 @@
   },
   "switchModelModal.providerPlaceholder": {
     "defaultMessage": "प्रदाता, खोजने के लिए टाइप करें"
-  },
-  "switchModelModal.quickStartGuide": {
-    "defaultMessage": "त्वरित आरंभ मार्गदर्शिका"
   },
   "switchModelModal.recommended": {
     "defaultMessage": "अनुशंसित"

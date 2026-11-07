@@ -32,14 +32,6 @@ const i18n = defineMessages({
     defaultMessage:
       "Please make sure {bold} extension is enabled in the extensions page. This extension is required to use .goosehints. You'll need to restart your session for .goosehints updates to take effect.",
   },
-  helpText3: {
-    id: 'goosehintsModal.helpText3',
-    defaultMessage: 'See {link} for more information.',
-  },
-  helpTextLink: {
-    id: 'goosehintsModal.helpTextLink',
-    defaultMessage: 'using .goosehints',
-  },
   errorReading: {
     id: 'goosehintsModal.errorReading',
     defaultMessage: 'Error reading .goosehints file: {error}',
@@ -95,24 +87,6 @@ const HelpText = () => {
       <p>
         {intl.formatMessage(i18n.helpText2, {
           bold: <span className="font-bold">{intl.formatMessage(i18n.developer)}</span>,
-        })}
-      </p>
-      <p>
-        {intl.formatMessage(i18n.helpText3, {
-          link: (
-            <Button
-              variant="link"
-              className="text-blue-500 hover:text-blue-600 p-0 h-auto"
-              onClick={() =>
-                window.open(
-                  'https://goose-docs.ai/docs/guides/using-goosehints/',
-                  '_blank'
-                )
-              }
-            >
-              {intl.formatMessage(i18n.helpTextLink)}
-            </Button>
-          ),
         })}
       </p>
     </div>

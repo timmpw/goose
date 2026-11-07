@@ -356,9 +356,6 @@
   "createEditRecipe.generatingDeeplink": {
     "defaultMessage": "Génération du lien profond..."
   },
-  "createEditRecipe.learnMore": {
-    "defaultMessage": "En savoir plus"
-  },
   "createEditRecipe.recipeSavedAndLaunchedMsg": {
     "defaultMessage": "Recette enregistrée et lancée avec succès"
   },
@@ -1163,9 +1160,6 @@
   "extensionsSection.addExtension": {
     "defaultMessage": "Ajouter une extension"
   },
-  "extensionsSection.browseExtensions": {
-    "defaultMessage": "Parcourir les extensions"
-  },
   "extensionsSection.saveChanges": {
     "defaultMessage": "Enregistrer les modifications"
   },
@@ -1177,9 +1171,6 @@
   },
   "extensionsView.addExtension": {
     "defaultMessage": "Ajouter une extension"
-  },
-  "extensionsView.browseExtensions": {
-    "defaultMessage": "Parcourir les extensions"
   },
   "extensionsView.defaultNote": {
     "defaultMessage": "Les extensions activées ici sont utilisées par défaut pour les nouvelles discussions. Vous pouvez également activer ou désactiver les extensions actives pendant une discussion."
@@ -1285,12 +1276,6 @@
   },
   "goosehintsModal.helpText2": {
     "defaultMessage": "Veuillez vous assurer que l'extension {bold} est activée sur la page des extensions. Cette extension est requise pour utiliser .goosehints. Vous devrez redémarrer votre session pour que les mises à jour de .goosehints prennent effet."
-  },
-  "goosehintsModal.helpText3": {
-    "defaultMessage": "Consultez {link} pour plus d'informations."
-  },
-  "goosehintsModal.helpTextLink": {
-    "defaultMessage": "utilisation de .goosehints"
   },
   "goosehintsModal.placeholder": {
     "defaultMessage": "Saisissez les indices du projet ici..."
@@ -4252,9 +4237,6 @@
   },
   "switchModelModal.providerPlaceholder": {
     "defaultMessage": "Fournisseur, saisissez pour rechercher"
-  },
-  "switchModelModal.quickStartGuide": {
-    "defaultMessage": "Guide de démarrage rapide"
   },
   "switchModelModal.recommended": {
     "defaultMessage": "Recommandé"

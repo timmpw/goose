@@ -356,9 +356,6 @@
   "createEditRecipe.generatingDeeplink": {
     "defaultMessage": "딥링크 생성 중..."
   },
-  "createEditRecipe.learnMore": {
-    "defaultMessage": "자세히 알아보기"
-  },
   "createEditRecipe.recipeSavedAndLaunchedMsg": {
     "defaultMessage": "레시피가 저장되고 성공적으로 실행되었습니다."
   },
@@ -1163,9 +1160,6 @@
   "extensionsSection.addExtension": {
     "defaultMessage": "익스텐션 추가"
   },
-  "extensionsSection.browseExtensions": {
-    "defaultMessage": "익스텐션 찾아보기"
-  },
   "extensionsSection.saveChanges": {
     "defaultMessage": "변경 사항 저장"
   },
@@ -1177,9 +1171,6 @@
   },
   "extensionsView.addExtension": {
     "defaultMessage": "익스텐션 추가"
-  },
-  "extensionsView.browseExtensions": {
-    "defaultMessage": "익스텐션 찾아보기"
   },
   "extensionsView.defaultNote": {
     "defaultMessage": "여기에서 켠 익스텐션은 새 채팅의 기본값으로 사용됩니다. 채팅 중에도 익스텐션을 켜거나 끌 수 있습니다."
@@ -1285,12 +1276,6 @@
   },
   "goosehintsModal.helpText2": {
     "defaultMessage": "익스텐션 페이지에서 {bold} 익스텐션이 활성화되어 있는지 확인하세요. .goosehints를 사용하려면 이 익스텐션이 필요합니다. .goosehints 업데이트를 적용하려면 세션을 다시 시작해야 합니다."
-  },
-  "goosehintsModal.helpText3": {
-    "defaultMessage": "자세한 내용은 {link}를 참조하세요."
-  },
-  "goosehintsModal.helpTextLink": {
-    "defaultMessage": ".goosehints 사용"
   },
   "goosehintsModal.placeholder": {
     "defaultMessage": "여기에 프로젝트 힌트를 입력하세요..."
@@ -4252,9 +4237,6 @@
   },
   "switchModelModal.providerPlaceholder": {
     "defaultMessage": "제공업체 검색"
-  },
-  "switchModelModal.quickStartGuide": {
-    "defaultMessage": "빠른 시작 가이드"
   },
   "switchModelModal.recommended": {
     "defaultMessage": "추천"

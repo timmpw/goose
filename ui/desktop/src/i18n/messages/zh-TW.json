@@ -356,9 +356,6 @@
   "createEditRecipe.generatingDeeplink": {
     "defaultMessage": "正在產生深層連結…"
   },
-  "createEditRecipe.learnMore": {
-    "defaultMessage": "瞭解更多"
-  },
   "createEditRecipe.recipeSavedAndLaunchedMsg": {
     "defaultMessage": "食譜已成功儲存並啟動"
   },
@@ -1163,9 +1160,6 @@
   "extensionsSection.addExtension": {
     "defaultMessage": "新增擴充功能"
   },
-  "extensionsSection.browseExtensions": {
-    "defaultMessage": "瀏覽擴充功能"
-  },
   "extensionsSection.saveChanges": {
     "defaultMessage": "儲存變更"
   },
@@ -1177,9 +1171,6 @@
   },
   "extensionsView.addExtension": {
     "defaultMessage": "新增擴充功能"
-  },
-  "extensionsView.browseExtensions": {
-    "defaultMessage": "瀏覽擴充功能"
   },
   "extensionsView.defaultNote": {
     "defaultMessage": "在此啟用的擴充功能會作為新聊天的預設值。您也可以在聊天期間切換使用中的擴充功能。"
@@ -1285,12 +1276,6 @@
   },
   "goosehintsModal.helpText2": {
     "defaultMessage": "請確認擴充功能頁面中已啟用 {bold} 擴充功能。使用 .goosehints 需要此擴充功能。您需要重新啟動工作階段，.goosehints 的更新才會生效。"
-  },
-  "goosehintsModal.helpText3": {
-    "defaultMessage": "如需更多資訊，請參閱 {link}。"
-  },
-  "goosehintsModal.helpTextLink": {
-    "defaultMessage": "使用 .goosehints"
   },
   "goosehintsModal.placeholder": {
     "defaultMessage": "在此輸入專案提示…"
@@ -4252,9 +4237,6 @@
   },
   "switchModelModal.providerPlaceholder": {
     "defaultMessage": "提供者，輸入以搜尋"
-  },
-  "switchModelModal.quickStartGuide": {
-    "defaultMessage": "快速入門指南"
   },
   "switchModelModal.recommended": {
     "defaultMessage": "建議"
