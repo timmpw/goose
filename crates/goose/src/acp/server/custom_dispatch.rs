@@ -582,6 +582,46 @@ impl AcpConnection {
         self.on_recipe_to_yaml(req).await
     }
 
+    #[custom_method(HarnessPublishRecipeRequest)]
+    async fn dispatch_harness_publish_recipe(
+        &self,
+        req: HarnessPublishRecipeRequest,
+    ) -> Result<HarnessPublishResponse, agent_client_protocol::Error> {
+        self.on_harness_publish_recipe(req).await
+    }
+
+    #[custom_method(HarnessPublishAppRequest)]
+    async fn dispatch_harness_publish_app(
+        &self,
+        req: HarnessPublishAppRequest,
+    ) -> Result<HarnessPublishResponse, agent_client_protocol::Error> {
+        self.on_harness_publish_app(req).await
+    }
+
+    #[custom_method(HarnessListRequest)]
+    async fn dispatch_harness_list(
+        &self,
+        req: HarnessListRequest,
+    ) -> Result<HarnessListResponse, agent_client_protocol::Error> {
+        self.on_harness_list(req).await
+    }
+
+    #[custom_method(HarnessFetchRequest)]
+    async fn dispatch_harness_fetch(
+        &self,
+        req: HarnessFetchRequest,
+    ) -> Result<HarnessFetchResponse, agent_client_protocol::Error> {
+        self.on_harness_fetch(req).await
+    }
+
+    #[custom_method(HarnessUnpublishRequest)]
+    async fn dispatch_harness_unpublish(
+        &self,
+        req: HarnessUnpublishRequest,
+    ) -> Result<EmptyResponse, agent_client_protocol::Error> {
+        self.on_harness_unpublish(req).await
+    }
+
     #[custom_method(ListSchedulesRequest)]
     async fn dispatch_list_schedules(
         &self,

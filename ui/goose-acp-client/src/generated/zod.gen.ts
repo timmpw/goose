@@ -1492,6 +1492,79 @@ export const zRecipeToYamlResponse_unstable = z.object({
 });
 
 /**
+ * Publish a local recipe to the 10router harness library.
+ */
+export const zHarnessPublishRecipeRequest_unstable = z.object({
+    recipe_id: z.string()
+});
+
+export const zHarnessPublishResponse_unstable = z.object({
+    item_id: z.int(),
+    updated: z.boolean()
+});
+
+/**
+ * Publish a local app (HTML mini-app) to the 10router harness library.
+ */
+export const zHarnessPublishAppRequest_unstable = z.object({
+    app_name: z.string()
+});
+
+/**
+ * Which half of the harness library a request is about.
+ */
+export const zHarnessKindDto = z.enum(['recipe', 'app']);
+
+/**
+ * List the harness library — everyone's publications, the viewer's own
+ * marked with `mine`.
+ */
+export const zHarnessListRequest_unstable = z.object({
+    kind: zHarnessKindDto
+});
+
+export const zHarnessListItemDto = z.object({
+    id: z.int(),
+    title: z.string(),
+    description: z.string().optional().default(''),
+    activities: z.array(z.string()).optional().default([]),
+    author: z.string().optional().default(''),
+    updated_at: z.string().optional().default(''),
+    install_count: z.int().optional().default(0),
+    mine: z.boolean().optional().default(false)
+});
+
+export const zHarnessListResponse_unstable = z.object({
+    items: z.array(zHarnessListItemDto)
+});
+
+/**
+ * Fetch one harness item, payload included. The payload is recipe YAML or
+ * app HTML, exactly what `recipes/parse` + `recipes/save` or `apps/import`
+ * take locally — installing goes through those, behind their checks.
+ */
+export const zHarnessFetchRequest_unstable = z.object({
+    kind: zHarnessKindDto,
+    item_id: z.int()
+});
+
+export const zHarnessFetchResponse_unstable = z.object({
+    title: z.string(),
+    description: z.string().optional().default(''),
+    author: z.string().optional().default(''),
+    payload: z.string()
+});
+
+/**
+ * Take the viewer's own publication out of the library. The server hides
+ * the item rather than deleting it.
+ */
+export const zHarnessUnpublishRequest_unstable = z.object({
+    kind: zHarnessKindDto,
+    item_id: z.int()
+});
+
+/**
  * List scheduled recipe jobs.
  */
 export const zListSchedulesRequest_unstable = z.record(z.string(), z.unknown());
@@ -2429,6 +2502,11 @@ export const zExtRequest = z.object({
             zSaveRecipeRequest_unstable,
             zParseRecipeRequest_unstable,
             zRecipeToYamlRequest_unstable,
+            zHarnessPublishRecipeRequest_unstable,
+            zHarnessPublishAppRequest_unstable,
+            zHarnessListRequest_unstable,
+            zHarnessFetchRequest_unstable,
+            zHarnessUnpublishRequest_unstable,
             zListSchedulesRequest_unstable,
             zListScheduleSessionsRequest_unstable,
             zCreateScheduleRequest_unstable,
@@ -2531,6 +2609,9 @@ export const zExtResponse = z.union([
                 zSaveRecipeResponse_unstable,
                 zParseRecipeResponse_unstable,
                 zRecipeToYamlResponse_unstable,
+                zHarnessPublishResponse_unstable,
+                zHarnessListResponse_unstable,
+                zHarnessFetchResponse_unstable,
                 zListSchedulesResponse_unstable,
                 zListScheduleSessionsResponse_unstable,
                 zCreateScheduleResponse_unstable,

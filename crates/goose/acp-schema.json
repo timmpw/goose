@@ -4667,6 +4667,193 @@
       "x-side": "agent",
       "x-method": "_goose/unstable/recipes/to-yaml"
     },
+    "HarnessPublishRecipeRequest_unstable": {
+      "type": "object",
+      "properties": {
+        "recipe_id": {
+          "type": "string",
+          "description": "The local recipe's manifest id (`ListRecipesRequest`)."
+        }
+      },
+      "required": [
+        "recipe_id"
+      ],
+      "description": "Publish a local recipe to the 10router harness library.",
+      "x-side": "agent",
+      "x-method": "_goose/unstable/harness/publish-recipe"
+    },
+    "HarnessPublishResponse_unstable": {
+      "type": "object",
+      "properties": {
+        "item_id": {
+          "type": "integer"
+        },
+        "updated": {
+          "type": "boolean",
+          "description": "True when an existing publication of the same title was updated\n(including one the owner or an admin had hidden), false when this\npublish created it."
+        }
+      },
+      "required": [
+        "item_id",
+        "updated"
+      ],
+      "x-side": "agent"
+    },
+    "HarnessPublishAppRequest_unstable": {
+      "type": "object",
+      "properties": {
+        "app_name": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "app_name"
+      ],
+      "description": "Publish a local app (HTML mini-app) to the 10router harness library.",
+      "x-side": "agent",
+      "x-method": "_goose/unstable/harness/publish-app"
+    },
+    "HarnessListRequest_unstable": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "$ref": "#/$defs/HarnessKindDto"
+        }
+      },
+      "required": [
+        "kind"
+      ],
+      "description": "List the harness library — everyone's publications, the viewer's own\nmarked with `mine`.",
+      "x-side": "agent",
+      "x-method": "_goose/unstable/harness/list"
+    },
+    "HarnessKindDto": {
+      "type": "string",
+      "enum": [
+        "recipe",
+        "app"
+      ],
+      "description": "Which half of the harness library a request is about."
+    },
+    "HarnessListResponse_unstable": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/HarnessListItemDto"
+          }
+        }
+      },
+      "required": [
+        "items"
+      ],
+      "x-side": "agent",
+      "x-method": "_goose/unstable/harness/list"
+    },
+    "HarnessListItemDto": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string",
+          "default": ""
+        },
+        "activities": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": []
+        },
+        "author": {
+          "type": "string",
+          "default": ""
+        },
+        "updated_at": {
+          "type": "string",
+          "default": ""
+        },
+        "install_count": {
+          "type": "integer",
+          "default": 0
+        },
+        "mine": {
+          "type": "boolean",
+          "default": false
+        }
+      },
+      "required": [
+        "id",
+        "title"
+      ]
+    },
+    "HarnessFetchRequest_unstable": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "$ref": "#/$defs/HarnessKindDto"
+        },
+        "item_id": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "kind",
+        "item_id"
+      ],
+      "description": "Fetch one harness item, payload included. The payload is recipe YAML or\napp HTML, exactly what `recipes/parse` + `recipes/save` or `apps/import`\ntake locally — installing goes through those, behind their checks.",
+      "x-side": "agent",
+      "x-method": "_goose/unstable/harness/fetch"
+    },
+    "HarnessFetchResponse_unstable": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string",
+          "default": ""
+        },
+        "author": {
+          "type": "string",
+          "default": ""
+        },
+        "payload": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "title",
+        "payload"
+      ],
+      "x-side": "agent",
+      "x-method": "_goose/unstable/harness/fetch"
+    },
+    "HarnessUnpublishRequest_unstable": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "$ref": "#/$defs/HarnessKindDto"
+        },
+        "item_id": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "kind",
+        "item_id"
+      ],
+      "description": "Take the viewer's own publication out of the library. The server hides\nthe item rather than deleting it.",
+      "x-side": "agent",
+      "x-method": "_goose/unstable/harness/unpublish"
+    },
     "ListSchedulesRequest_unstable": {
       "type": "object",
       "description": "List scheduled recipe jobs.",
@@ -7849,6 +8036,51 @@
                 {
                   "allOf": [
                     {
+                      "$ref": "#/$defs/HarnessPublishRecipeRequest_unstable"
+                    }
+                  ],
+                  "description": "Params for _goose/unstable/harness/publish-recipe",
+                  "title": "HarnessPublishRecipeRequest_unstable"
+                },
+                {
+                  "allOf": [
+                    {
+                      "$ref": "#/$defs/HarnessPublishAppRequest_unstable"
+                    }
+                  ],
+                  "description": "Params for _goose/unstable/harness/publish-app",
+                  "title": "HarnessPublishAppRequest_unstable"
+                },
+                {
+                  "allOf": [
+                    {
+                      "$ref": "#/$defs/HarnessListRequest_unstable"
+                    }
+                  ],
+                  "description": "Params for _goose/unstable/harness/list",
+                  "title": "HarnessListRequest_unstable"
+                },
+                {
+                  "allOf": [
+                    {
+                      "$ref": "#/$defs/HarnessFetchRequest_unstable"
+                    }
+                  ],
+                  "description": "Params for _goose/unstable/harness/fetch",
+                  "title": "HarnessFetchRequest_unstable"
+                },
+                {
+                  "allOf": [
+                    {
+                      "$ref": "#/$defs/HarnessUnpublishRequest_unstable"
+                    }
+                  ],
+                  "description": "Params for _goose/unstable/harness/unpublish",
+                  "title": "HarnessUnpublishRequest_unstable"
+                },
+                {
+                  "allOf": [
+                    {
                       "$ref": "#/$defs/ListSchedulesRequest_unstable"
                     }
                   ],
@@ -8653,6 +8885,30 @@
                         }
                       ],
                       "title": "RecipeToYamlResponse_unstable"
+                    },
+                    {
+                      "allOf": [
+                        {
+                          "$ref": "#/$defs/HarnessPublishResponse_unstable"
+                        }
+                      ],
+                      "title": "HarnessPublishResponse_unstable"
+                    },
+                    {
+                      "allOf": [
+                        {
+                          "$ref": "#/$defs/HarnessListResponse_unstable"
+                        }
+                      ],
+                      "title": "HarnessListResponse_unstable"
+                    },
+                    {
+                      "allOf": [
+                        {
+                          "$ref": "#/$defs/HarnessFetchResponse_unstable"
+                        }
+                      ],
+                      "title": "HarnessFetchResponse_unstable"
                     },
                     {
                       "allOf": [

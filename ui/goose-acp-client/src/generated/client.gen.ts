@@ -75,6 +75,14 @@ import type {
   GetToolsResponse_unstable,
   GooseToolCallRequest_unstable,
   GooseToolCallResponse_unstable,
+  HarnessFetchRequest_unstable,
+  HarnessFetchResponse_unstable,
+  HarnessListRequest_unstable,
+  HarnessListResponse_unstable,
+  HarnessPublishAppRequest_unstable,
+  HarnessPublishRecipeRequest_unstable,
+  HarnessPublishResponse_unstable,
+  HarnessUnpublishRequest_unstable,
   ImportSessionRequest_unstable,
   ImportSessionResponse_unstable,
   ImportSourcesRequest_unstable,
@@ -221,6 +229,9 @@ import {
   zGetSessionInfoResponse_unstable,
   zGetToolsResponse_unstable,
   zGooseToolCallResponse_unstable,
+  zHarnessFetchResponse_unstable,
+  zHarnessListResponse_unstable,
+  zHarnessPublishResponse_unstable,
   zImportSessionResponse_unstable,
   zImportSourcesResponse_unstable,
   zInspectRunningJobResponse_unstable,
@@ -984,6 +995,57 @@ export class GooseExtClient {
     return zRecipeToYamlResponse_unstable.parse(
       raw,
     ) as RecipeToYamlResponse_unstable;
+  }
+
+  async harnessPublishRecipe_unstable(
+    params: HarnessPublishRecipeRequest_unstable,
+  ): Promise<HarnessPublishResponse_unstable> {
+    const raw = await this.conn.request(
+      "_goose/unstable/harness/publish-recipe",
+      params,
+    );
+    return zHarnessPublishResponse_unstable.parse(
+      raw,
+    ) as HarnessPublishResponse_unstable;
+  }
+
+  async harnessPublishApp_unstable(
+    params: HarnessPublishAppRequest_unstable,
+  ): Promise<HarnessPublishResponse_unstable> {
+    const raw = await this.conn.request(
+      "_goose/unstable/harness/publish-app",
+      params,
+    );
+    return zHarnessPublishResponse_unstable.parse(
+      raw,
+    ) as HarnessPublishResponse_unstable;
+  }
+
+  async harnessList_unstable(
+    params: HarnessListRequest_unstable,
+  ): Promise<HarnessListResponse_unstable> {
+    const raw = await this.conn.request("_goose/unstable/harness/list", params);
+    return zHarnessListResponse_unstable.parse(
+      raw,
+    ) as HarnessListResponse_unstable;
+  }
+
+  async harnessFetch_unstable(
+    params: HarnessFetchRequest_unstable,
+  ): Promise<HarnessFetchResponse_unstable> {
+    const raw = await this.conn.request(
+      "_goose/unstable/harness/fetch",
+      params,
+    );
+    return zHarnessFetchResponse_unstable.parse(
+      raw,
+    ) as HarnessFetchResponse_unstable;
+  }
+
+  async harnessUnpublish_unstable(
+    params: HarnessUnpublishRequest_unstable,
+  ): Promise<void> {
+    await this.conn.request("_goose/unstable/harness/unpublish", params);
   }
 
   async schedulesList_unstable(

@@ -346,6 +346,31 @@
       "responseType": "RecipeToYamlResponse_unstable"
     },
     {
+      "method": "_goose/unstable/harness/publish-recipe",
+      "requestType": "HarnessPublishRecipeRequest_unstable",
+      "responseType": "HarnessPublishResponse_unstable"
+    },
+    {
+      "method": "_goose/unstable/harness/publish-app",
+      "requestType": "HarnessPublishAppRequest_unstable",
+      "responseType": "HarnessPublishResponse_unstable"
+    },
+    {
+      "method": "_goose/unstable/harness/list",
+      "requestType": "HarnessListRequest_unstable",
+      "responseType": "HarnessListResponse_unstable"
+    },
+    {
+      "method": "_goose/unstable/harness/fetch",
+      "requestType": "HarnessFetchRequest_unstable",
+      "responseType": "HarnessFetchResponse_unstable"
+    },
+    {
+      "method": "_goose/unstable/harness/unpublish",
+      "requestType": "HarnessUnpublishRequest_unstable",
+      "responseType": "EmptyResponse"
+    },
+    {
       "method": "_goose/unstable/schedules/list",
       "requestType": "ListSchedulesRequest_unstable",
       "responseType": "ListSchedulesResponse_unstable"
