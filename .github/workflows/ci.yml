@@ -64,7 +64,7 @@ jobs:
           {
             echo "=== df/free before ==="
             df -h / /home 2>/dev/null; free -m 2>/dev/null || true
-            cargo test --locked
+            cargo test --locked -j 2 --color never
             rc=$?
             echo "CARGO_EXIT=$rc"
             echo "=== df/free after ==="
