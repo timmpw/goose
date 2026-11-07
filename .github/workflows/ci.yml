@@ -61,10 +61,34 @@ jobs:
       - name: Report failing test names
         if: failure()
         run: |
-          awk '/^failures:$/{f=1;next} f&&/^$/{f=0} f&&/^    /{print $1}' \
-            "$RUNNER_TEMP/cargo-test.log" | sort -u | while read -r test; do
+          LOG="$RUNNER_TEMP/cargo-test.log"
+          failing() {
+            awk '/^failures:$/{f=1;next} f&&/^$/{f=0} f&&/^    /{print $1}' "$LOG" | sort -u
+          }
+          crashes() {
+            grep -E "process didn't exit successfully|signal: [0-9]+|error: could not compile|error\[" "$LOG" | sort -u | head -40
+          }
+          failing | head -10 | while read -r test; do
             echo "::error::failing test: $test"
           done
+          crashes | head -10 | while read -r line; do
+            echo "::error::$line"
+          done
+          {
+            echo "## cargo test failure report"
+            echo "### Failing tests"
+            echo '```'
+            failing
+            echo '```'
+            echo "### Crashes / compile errors"
+            echo '```'
+            crashes
+            echo '```'
+            echo "### Log tail (last 150 lines)"
+            echo '```'
+            tail -n 150 "$LOG"
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
 
   desktop-lint:
     name: Test and Lint Electron Desktop App
