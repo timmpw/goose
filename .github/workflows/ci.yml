@@ -52,9 +52,18 @@ jobs:
 
       - name: Build and Test
         run: |
+          set +e
           export CARGO_INCREMENTAL=0
-          set -o pipefail
-          cargo test --locked 2>&1 | tee "$RUNNER_TEMP/cargo-test.log"
+          {
+            echo "=== df/free before ==="
+            df -h / /home 2>/dev/null; free -m 2>/dev/null || true
+            cargo test --locked
+            rc=$?
+            echo "CARGO_EXIT=$rc"
+            echo "=== df/free after ==="
+            df -h / /home 2>/dev/null; free -m 2>/dev/null || true
+            exit $rc
+          } > "$RUNNER_TEMP/cargo-test.log" 2>&1
         working-directory: crates
         env:
           RUST_MIN_STACK: 8388608
