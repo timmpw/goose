@@ -356,9 +356,6 @@
   "createEditRecipe.generatingDeeplink": {
     "defaultMessage": "Derin bağlantı oluşturuluyor..."
   },
-  "createEditRecipe.learnMore": {
-    "defaultMessage": "Daha fazla bilgi edinin"
-  },
   "createEditRecipe.recipeSavedAndLaunchedMsg": {
     "defaultMessage": "Tarif başarıyla kaydedildi ve başlatıldı"
   },
@@ -1163,9 +1160,6 @@
   "extensionsSection.addExtension": {
     "defaultMessage": "Uzantı Ekle"
   },
-  "extensionsSection.browseExtensions": {
-    "defaultMessage": "Uzantılara göz atın"
-  },
   "extensionsSection.saveChanges": {
     "defaultMessage": "Değişiklikleri Kaydet"
   },
@@ -1177,9 +1171,6 @@
   },
   "extensionsView.addExtension": {
     "defaultMessage": "Uzantı Ekle"
-  },
-  "extensionsView.browseExtensions": {
-    "defaultMessage": "Uzantılara göz atın"
   },
   "extensionsView.defaultNote": {
     "defaultMessage": "Burada etkinleştirilen uzantılar, yeni sohbetler için varsayılan olarak kullanılır. Ayrıca sohbet sırasında etkin uzantıları da değiştirebilirsiniz."
@@ -1285,12 +1276,6 @@
   },
   "goosehintsModal.helpText2": {
     "defaultMessage": "Lütfen uzantılar sayfasında {bold} uzantısının etkinleştirildiğinden emin olun. Bu uzantı.goosehints'i kullanmak için gereklidir..goosehints güncellemelerinin etkili olması için oturumunuzu yeniden başlatmanız gerekir."
-  },
-  "goosehintsModal.helpText3": {
-    "defaultMessage": "Daha fazla bilgi için {link}'ye bakın."
-  },
-  "goosehintsModal.helpTextLink": {
-    "defaultMessage": ".goosehints'i kullanma"
   },
   "goosehintsModal.placeholder": {
     "defaultMessage": "Proje ipuçlarını buraya girin..."
@@ -4252,9 +4237,6 @@
   },
   "switchModelModal.providerPlaceholder": {
     "defaultMessage": "Sağlayıcı, aramak için yazın"
-  },
-  "switchModelModal.quickStartGuide": {
-    "defaultMessage": "Hızlı başlangıç kılavuzu"
   },
   "switchModelModal.recommended": {
     "defaultMessage": "Önerilen"

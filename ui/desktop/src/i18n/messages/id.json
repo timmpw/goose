@@ -356,9 +356,6 @@
   "createEditRecipe.generatingDeeplink": {
     "defaultMessage": "Membuat deeplink..."
   },
-  "createEditRecipe.learnMore": {
-    "defaultMessage": "Pelajari selengkapnya"
-  },
   "createEditRecipe.recipeSavedAndLaunchedMsg": {
     "defaultMessage": "Resep berhasil disimpan dan dijalankan"
   },
@@ -1163,9 +1160,6 @@
   "extensionsSection.addExtension": {
     "defaultMessage": "Tambah Ekstensi"
   },
-  "extensionsSection.browseExtensions": {
-    "defaultMessage": "Jelajahi ekstensi"
-  },
   "extensionsSection.saveChanges": {
     "defaultMessage": "Simpan Perubahan"
   },
@@ -1177,9 +1171,6 @@
   },
   "extensionsView.addExtension": {
     "defaultMessage": "Tambah Ekstensi"
-  },
-  "extensionsView.browseExtensions": {
-    "defaultMessage": "Jelajahi ekstensi"
   },
   "extensionsView.defaultNote": {
     "defaultMessage": "Ekstensi yang diaktifkan di sini digunakan sebagai bawaan untuk obrolan baru. Anda juga dapat mengaktifkan ekstensi aktif selama obrolan."
@@ -1285,12 +1276,6 @@
   },
   "goosehintsModal.helpText2": {
     "defaultMessage": "Pastikan ekstensi {bold} diaktifkan di halaman ekstensi. Ekstensi ini diperlukan untuk menggunakan .goosehints. Anda perlu memulai ulang sesi agar pembaruan .goosehints berlaku."
-  },
-  "goosehintsModal.helpText3": {
-    "defaultMessage": "Lihat {link} untuk informasi lebih lanjut."
-  },
-  "goosehintsModal.helpTextLink": {
-    "defaultMessage": "menggunakan .goosehints"
   },
   "goosehintsModal.placeholder": {
     "defaultMessage": "Masukkan petunjuk proyek di sini..."
@@ -4252,9 +4237,6 @@
   },
   "switchModelModal.providerPlaceholder": {
     "defaultMessage": "Penyedia, ketik untuk mencari"
-  },
-  "switchModelModal.quickStartGuide": {
-    "defaultMessage": "Panduan mulai cepat"
   },
   "switchModelModal.recommended": {
     "defaultMessage": "Direkomendasikan"

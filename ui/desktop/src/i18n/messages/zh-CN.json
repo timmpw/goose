@@ -356,9 +356,6 @@
   "createEditRecipe.generatingDeeplink": {
     "defaultMessage": "正在生成深层链接…"
   },
-  "createEditRecipe.learnMore": {
-    "defaultMessage": "了解更多"
-  },
   "createEditRecipe.recipeSavedAndLaunchedMsg": {
     "defaultMessage": "配方保存并启动成功"
   },
@@ -1163,9 +1160,6 @@
   "extensionsSection.addExtension": {
     "defaultMessage": "添加扩展"
   },
-  "extensionsSection.browseExtensions": {
-    "defaultMessage": "浏览扩展"
-  },
   "extensionsSection.saveChanges": {
     "defaultMessage": "保存更改"
   },
@@ -1177,9 +1171,6 @@
   },
   "extensionsView.addExtension": {
     "defaultMessage": "添加扩展"
-  },
-  "extensionsView.browseExtensions": {
-    "defaultMessage": "浏览扩展"
   },
   "extensionsView.defaultNote": {
     "defaultMessage": "在此启用的扩展将作为新聊天的默认扩展。你也可以在聊天过程中切换活跃的扩展。"
@@ -1285,12 +1276,6 @@
   },
   "goosehintsModal.helpText2": {
     "defaultMessage": "请确认已在扩展页面启用 {bold} 扩展。此扩展是使用 .goosehints 所必需的。你需要重启会话，.goosehints 的更新才会生效。"
-  },
-  "goosehintsModal.helpText3": {
-    "defaultMessage": "更多信息请参见 {link}。"
-  },
-  "goosehintsModal.helpTextLink": {
-    "defaultMessage": "使用 .goosehints"
   },
   "goosehintsModal.placeholder": {
     "defaultMessage": "在此输入项目提示…"
@@ -4252,9 +4237,6 @@
   },
   "switchModelModal.providerPlaceholder": {
     "defaultMessage": "提供商，输入以搜索"
-  },
-  "switchModelModal.quickStartGuide": {
-    "defaultMessage": "快速入门指南"
   },
   "switchModelModal.recommended": {
     "defaultMessage": "推荐"

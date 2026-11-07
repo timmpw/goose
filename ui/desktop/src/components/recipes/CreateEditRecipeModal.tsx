@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { useForm } from '@tanstack/react-form';
 import { generateDeepLink } from '../../recipe';
 import type { Recipe, Parameter, RecipeExtension, RecipeSettings } from '../../recipe';
-import { Check, ExternalLink, Play, Save, X } from 'lucide-react';
+import { Check, Play, Save, X } from 'lucide-react';
 import { Geese } from '../icons/Geese';
 import Copy from '../icons/Copy';
 import { Button } from '../ui/button';
@@ -32,10 +32,6 @@ const i18n = defineMessages({
     id: 'createEditRecipe.editSubtitle',
     defaultMessage:
       "You can edit the recipe below to change the agent's behavior in a new session.",
-  },
-  learnMore: {
-    id: 'createEditRecipe.learnMore',
-    defaultMessage: 'Learn more',
   },
   copyLinkDescription: {
     id: 'createEditRecipe.copyLinkDescription',
@@ -502,16 +498,7 @@ export default function CreateEditRecipeModal({
               <p className="text-text-secondary text-sm">
                 {isCreateMode
                   ? intl.formatMessage(i18n.createSubtitle)
-                  : intl.formatMessage(i18n.editSubtitle)}{' '}
-                <a
-                  href="https://goose-docs.ai/docs/guides/recipes/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 text-blue-500 hover:text-blue-600 hover:underline"
-                >
-                  {intl.formatMessage(i18n.learnMore)}
-                  <ExternalLink className="w-3 h-3" />
-                </a>
+                  : intl.formatMessage(i18n.editSubtitle)}
               </p>
             </div>
           </div>

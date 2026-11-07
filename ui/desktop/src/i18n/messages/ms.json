@@ -356,9 +356,6 @@
   "createEditRecipe.generatingDeeplink": {
     "defaultMessage": "Menjana deeplink..."
   },
-  "createEditRecipe.learnMore": {
-    "defaultMessage": "Ketahui lebih lanjut"
-  },
   "createEditRecipe.recipeSavedAndLaunchedMsg": {
     "defaultMessage": "Resipi berjaya disimpan dan dilancarkan"
   },
@@ -1163,9 +1160,6 @@
   "extensionsSection.addExtension": {
     "defaultMessage": "Tambah Sambungan"
   },
-  "extensionsSection.browseExtensions": {
-    "defaultMessage": "Layari sambungan"
-  },
   "extensionsSection.saveChanges": {
     "defaultMessage": "Simpan Perubahan"
   },
@@ -1177,9 +1171,6 @@
   },
   "extensionsView.addExtension": {
     "defaultMessage": "Tambah Sambungan"
-  },
-  "extensionsView.browseExtensions": {
-    "defaultMessage": "Layari sambungan"
   },
   "extensionsView.defaultNote": {
     "defaultMessage": "Sambungan yang didayakan di sini digunakan sebagai lalai untuk sembang baharu. Anda juga boleh menogol sambungan aktif semasa sembang."
@@ -1285,12 +1276,6 @@
   },
   "goosehintsModal.helpText2": {
     "defaultMessage": "Sila pastikan sambungan {bold} didayakan dalam halaman sambungan. Sambungan ini diperlukan untuk menggunakan .goosehints. Anda perlu memulakan semula sesi anda untuk kemas kini .goosehints berkuat kuasa."
-  },
-  "goosehintsModal.helpText3": {
-    "defaultMessage": "Lihat {link} untuk maklumat lanjut."
-  },
-  "goosehintsModal.helpTextLink": {
-    "defaultMessage": "menggunakan .goosehints"
   },
   "goosehintsModal.placeholder": {
     "defaultMessage": "Masukkan petunjuk projek di sini..."
@@ -4252,9 +4237,6 @@
   },
   "switchModelModal.providerPlaceholder": {
     "defaultMessage": "Penyedia, taip untuk mencari"
-  },
-  "switchModelModal.quickStartGuide": {
-    "defaultMessage": "Panduan permulaan pantas"
   },
   "switchModelModal.recommended": {
     "defaultMessage": "Disyorkan"

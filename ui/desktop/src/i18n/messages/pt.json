@@ -356,9 +356,6 @@
   "createEditRecipe.generatingDeeplink": {
     "defaultMessage": "A gerar deeplink..."
   },
-  "createEditRecipe.learnMore": {
-    "defaultMessage": "Saber mais"
-  },
   "createEditRecipe.recipeSavedAndLaunchedMsg": {
     "defaultMessage": "Receita guardada e iniciada com sucesso"
   },
@@ -1163,9 +1160,6 @@
   "extensionsSection.addExtension": {
     "defaultMessage": "Adicionar extensão"
   },
-  "extensionsSection.browseExtensions": {
-    "defaultMessage": "Procurar extensões"
-  },
   "extensionsSection.saveChanges": {
     "defaultMessage": "Salvar alterações"
   },
@@ -1177,9 +1171,6 @@
   },
   "extensionsView.addExtension": {
     "defaultMessage": "Adicionar extensão"
-  },
-  "extensionsView.browseExtensions": {
-    "defaultMessage": "Procurar extensões"
   },
   "extensionsView.defaultNote": {
     "defaultMessage": "As extensões ativadas aqui são usadas como padrão para novos chats. Você também pode ativar ou desativar extensões durante o chat."
@@ -1285,12 +1276,6 @@
   },
   "goosehintsModal.helpText2": {
     "defaultMessage": "Verifique se a extensão {bold} está ativada na página de extensões. Esta extensão é necessária para usar o .goosehints. Você precisará reiniciar sua sessão para que as atualizações do .goosehints entrem em vigor."
-  },
-  "goosehintsModal.helpText3": {
-    "defaultMessage": "Consulte {link} para mais informações."
-  },
-  "goosehintsModal.helpTextLink": {
-    "defaultMessage": "usando .goosehints"
   },
   "goosehintsModal.placeholder": {
     "defaultMessage": "Insira as dicas do projeto aqui..."
@@ -4252,9 +4237,6 @@
   },
   "switchModelModal.providerPlaceholder": {
     "defaultMessage": "Fornecedor, escreva para pesquisar"
-  },
-  "switchModelModal.quickStartGuide": {
-    "defaultMessage": "Guia de introdução rápida"
   },
   "switchModelModal.recommended": {
     "defaultMessage": "Recomendado"

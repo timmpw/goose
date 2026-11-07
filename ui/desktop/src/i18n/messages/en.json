@@ -434,9 +434,6 @@
   "createEditRecipe.generatingDeeplink": {
     "defaultMessage": "Generating deeplink..."
   },
-  "createEditRecipe.learnMore": {
-    "defaultMessage": "Learn more"
-  },
   "createEditRecipe.recipeSavedAndLaunchedMsg": {
     "defaultMessage": "Recipe saved and launched successfully"
   },
@@ -1229,9 +1226,6 @@
   "extensionsSection.addExtension": {
     "defaultMessage": "Add Extension"
   },
-  "extensionsSection.browseExtensions": {
-    "defaultMessage": "Browse extensions"
-  },
   "extensionsSection.saveChanges": {
     "defaultMessage": "Save Changes"
   },
@@ -1243,9 +1237,6 @@
   },
   "extensionsView.addExtension": {
     "defaultMessage": "Add Extension"
-  },
-  "extensionsView.browseExtensions": {
-    "defaultMessage": "Browse extensions"
   },
   "extensionsView.defaultNote": {
     "defaultMessage": "Extensions enabled here are used as the default for new chats. You can also toggle active extensions during chat."
@@ -1363,12 +1354,6 @@
   },
   "goosehintsModal.helpText2": {
     "defaultMessage": "Please make sure {bold} extension is enabled in the extensions page. This extension is required to use .goosehints. You'll need to restart your session for .goosehints updates to take effect."
-  },
-  "goosehintsModal.helpText3": {
-    "defaultMessage": "See {link} for more information."
-  },
-  "goosehintsModal.helpTextLink": {
-    "defaultMessage": "using .goosehints"
   },
   "goosehintsModal.placeholder": {
     "defaultMessage": "Enter project hints here..."
@@ -4435,9 +4420,6 @@
   },
   "switchModelModal.providerPlaceholder": {
     "defaultMessage": "Provider, type to search"
-  },
-  "switchModelModal.quickStartGuide": {
-    "defaultMessage": "Quick start guide"
   },
   "switchModelModal.recommended": {
     "defaultMessage": "Recommended"

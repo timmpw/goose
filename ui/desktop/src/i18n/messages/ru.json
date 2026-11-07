@@ -356,9 +356,6 @@
   "createEditRecipe.generatingDeeplink": {
     "defaultMessage": "Создание диплинка..."
   },
-  "createEditRecipe.learnMore": {
-    "defaultMessage": "Подробнее"
-  },
   "createEditRecipe.recipeSavedAndLaunchedMsg": {
     "defaultMessage": "Рецепт успешно сохранен и запущен"
   },
@@ -1163,9 +1160,6 @@
   "extensionsSection.addExtension": {
     "defaultMessage": "Добавить расширение"
   },
-  "extensionsSection.browseExtensions": {
-    "defaultMessage": "Просмотреть расширения"
-  },
   "extensionsSection.saveChanges": {
     "defaultMessage": "Сохранить изменения"
   },
@@ -1177,9 +1171,6 @@
   },
   "extensionsView.addExtension": {
     "defaultMessage": "Добавить расширение"
-  },
-  "extensionsView.browseExtensions": {
-    "defaultMessage": "Просмотреть расширения"
   },
   "extensionsView.defaultNote": {
     "defaultMessage": "Расширения, включенные здесь, используются по умолчанию для новых чатов. Активные расширения также можно переключать во время чата."
@@ -1285,12 +1276,6 @@
   },
   "goosehintsModal.helpText2": {
     "defaultMessage": "Убедитесь, что расширение {bold} включено на странице расширений. Оно необходимо для использования .goosehints. Чтобы обновления .goosehints вступили в силу, перезапустите сеанс."
-  },
-  "goosehintsModal.helpText3": {
-    "defaultMessage": "Подробнее см. {link}."
-  },
-  "goosehintsModal.helpTextLink": {
-    "defaultMessage": "использование .goosehints"
   },
   "goosehintsModal.placeholder": {
     "defaultMessage": "Введите подсказки проекта здесь..."
@@ -4252,9 +4237,6 @@
   },
   "switchModelModal.providerPlaceholder": {
     "defaultMessage": "Провайдер, введите для поиска"
-  },
-  "switchModelModal.quickStartGuide": {
-    "defaultMessage": "Краткое руководство"
   },
   "switchModelModal.recommended": {
     "defaultMessage": "Рекомендуется"

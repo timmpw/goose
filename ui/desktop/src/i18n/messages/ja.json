@@ -356,9 +356,6 @@
   "createEditRecipe.generatingDeeplink": {
     "defaultMessage": "ディープリンクを生成中..."
   },
-  "createEditRecipe.learnMore": {
-    "defaultMessage": "詳しく見る"
-  },
   "createEditRecipe.recipeSavedAndLaunchedMsg": {
     "defaultMessage": "レシピを保存して起動しました"
   },
@@ -1163,9 +1160,6 @@
   "extensionsSection.addExtension": {
     "defaultMessage": "拡張機能を追加"
   },
-  "extensionsSection.browseExtensions": {
-    "defaultMessage": "拡張機能を参照"
-  },
   "extensionsSection.saveChanges": {
     "defaultMessage": "変更を保存"
   },
@@ -1177,9 +1171,6 @@
   },
   "extensionsView.addExtension": {
     "defaultMessage": "拡張機能を追加"
-  },
-  "extensionsView.browseExtensions": {
-    "defaultMessage": "拡張機能を参照"
   },
   "extensionsView.defaultNote": {
     "defaultMessage": "ここで有効にした拡張機能は、新しいチャットのデフォルトとして使用されます。チャット中にアクティブな拡張機能を切り替えることもできます。"
@@ -1285,12 +1276,6 @@
   },
   "goosehintsModal.helpText2": {
     "defaultMessage": "拡張機能ページで {bold} 拡張機能が有効になっていることを確認してください。この拡張機能は .goosehints を使用するために必要です。.goosehints の更新を反映するにはセッションの再起動が必要です。"
-  },
-  "goosehintsModal.helpText3": {
-    "defaultMessage": "詳しくは {link} をご覧ください。"
-  },
-  "goosehintsModal.helpTextLink": {
-    "defaultMessage": ".goosehints の使い方"
   },
   "goosehintsModal.placeholder": {
     "defaultMessage": "プロジェクトヒントをここに入力..."
@@ -4252,9 +4237,6 @@
   },
   "switchModelModal.providerPlaceholder": {
     "defaultMessage": "プロバイダーを選択（入力で検索）"
-  },
-  "switchModelModal.quickStartGuide": {
-    "defaultMessage": "クイックスタートガイド"
   },
   "switchModelModal.recommended": {
     "defaultMessage": "推奨"
