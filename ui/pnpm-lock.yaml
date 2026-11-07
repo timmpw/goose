@@ -326,9 +326,6 @@ importers:
       eslint-plugin-react-hooks:
         specifier: ^5.2.0
         version: 5.2.0(eslint@9.39.4(jiti@2.7.0))
-      fs-xattr:
-        specifier: 0.3.1
-        version: 0.3.1
       jsdom:
         specifier: ^28.1.0
         version: 28.1.0(@noble/hashes@2.4.0)
@@ -11292,7 +11289,8 @@ snapshots:
       random-path: 0.1.2
     optional: true
 
-  fs-xattr@0.3.1: {}
+  fs-xattr@0.3.1:
+    optional: true
 
   fs.realpath@1.0.0: {}
 

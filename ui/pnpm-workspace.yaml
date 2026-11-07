@@ -33,8 +33,5 @@ allowBuilds:
   # Native dep of @electron-forge/maker-dmg; its postinstall builds
   # build/Release/volume.node, without which DMG creation fails.
   macos-alias: true
-  # Optional-transitive native dep of appdmg; without an approved build
-  # pnpm drops it entirely and `require('fs-xattr')` fails inside appdmg.
-  fs-xattr: true
 # Electron Forge resolves @electron/node-gyp from git.
 blockExoticSubdeps: false
