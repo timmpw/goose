@@ -421,6 +421,7 @@ if (MAIN_WINDOW_VITE_DEV_SERVER_URL) {
   // Development mode - force registration
   console.log('[Main] Development mode: Forcing protocol registration for goose://');
   app.setAsDefaultProtocolClient('goose');
+  app.setAsDefaultProtocolClient('10router');
 
   if (process.platform === 'darwin') {
     try {
@@ -429,6 +430,14 @@ if (MAIN_WINDOW_VITE_DEV_SERVER_URL) {
         detached: true,
         stdio: 'ignore',
       });
+      spawn(
+        'open',
+        ['-a', process.execPath, '--args', '--reset-protocol-handler', '10router'],
+        {
+          detached: true,
+          stdio: 'ignore',
+        }
+      );
     } catch {
       console.warn('[Main] Could not reset protocol handler');
     }
@@ -436,6 +445,7 @@ if (MAIN_WINDOW_VITE_DEV_SERVER_URL) {
 } else {
   // Production mode - normal registration
   app.setAsDefaultProtocolClient('goose');
+  app.setAsDefaultProtocolClient('10router');
 }
 
 // Apply single instance lock on Windows and Linux where it's needed for deep links
@@ -449,7 +459,9 @@ if (process.platform !== 'darwin') {
     app.quit();
   } else {
     app.on('second-instance', (_event, commandLine) => {
-      const protocolUrl = commandLine.find((arg) => arg.startsWith('goose://'));
+      const protocolUrl = commandLine.find(
+        (arg) => arg.startsWith('goose://') || arg.startsWith('10router://')
+      );
       if (protocolUrl) {
         const parsedUrl = new URL(protocolUrl);
         // If it's a bot/recipe URL, handle it directly by creating a new window
@@ -518,7 +530,9 @@ if (process.platform !== 'darwin') {
   }
 
   // Handle protocol URLs on Windows and Linux startup
-  const protocolUrl = process.argv.find((arg) => arg.startsWith('goose://'));
+  const protocolUrl = process.argv.find(
+    (arg) => arg.startsWith('goose://') || arg.startsWith('10router://')
+  );
   if (protocolUrl) {
     app.whenReady().then(async () => {
       let parsedUrl: URL;
@@ -583,11 +597,46 @@ async function createResumeChatWindow(parsedUrl: URL, dir?: string): Promise<boo
   return true;
 }
 
+// A 10router://harness/install deeplink: focus a regular window (creating
+// one if none) and hand the item to the renderer's Recipe Book, which
+// downloads it by id and installs it through the local import paths.
+async function handleHarnessInstallUrl(parsedUrl: URL, openDir?: string | null) {
+  const kind = parsedUrl.searchParams.get('kind');
+  const id = Number(parsedUrl.searchParams.get('id'));
+  if ((kind !== 'recipe' && kind !== 'app') || !Number.isFinite(id) || id <= 0) {
+    log.warn('[Main] Ignoring malformed harness install URL');
+    return;
+  }
+
+  const regularWindows = getRegularWindows();
+  let targetWindow: BrowserWindow | undefined = regularWindows[0];
+  if (!targetWindow) {
+    targetWindow = await createChat(app, { dir: openDir || undefined });
+  }
+  if (!targetWindow) return;
+  if (targetWindow.isMinimized()) {
+    targetWindow.restore();
+  }
+  targetWindow.focus();
+
+  if (targetWindow.webContents.isLoadingMainFrame()) {
+    await new Promise<void>((resolve) => {
+      targetWindow!.webContents.once('did-finish-load', () => resolve());
+    });
+  }
+  targetWindow.webContents.send('harness-install', kind, id);
+}
+
 async function handleProtocolUrl(url: string, parsedUrl: URL) {
   if (!url) return;
 
   const recentDirs = loadRecentDirs();
   const openDir = recentDirs.length > 0 ? recentDirs[0] : null;
+
+  if (parsedUrl.hostname === 'harness') {
+    await handleHarnessInstallUrl(parsedUrl, openDir);
+    return;
+  }
 
   if (parsedUrl.hostname === 'new-session') {
     const prompt = parsedUrl.searchParams.get('prompt') || undefined;
@@ -702,6 +751,13 @@ app.on('open-url', async (_event, url) => {
         recipeParameters: deeplinkData?.parameters,
       });
       windowDeeplinkURL = null;
+      return;
+    }
+
+    // A harness install deeplink from the 10router cabinet
+    if (parsedUrl.hostname === 'harness') {
+      openUrlHandledLaunch = true;
+      await handleHarnessInstallUrl(parsedUrl, openDir);
       return;
     }
 

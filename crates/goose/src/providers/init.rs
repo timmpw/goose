@@ -36,7 +36,9 @@ async fn init_registry() -> RwLock<ProviderRegistry> {
 }
 
 #[cfg(test)]
-fn registry_with_fixture_providers(tls_config: Option<super::api_client::TlsConfig>) -> ProviderRegistry {
+fn registry_with_fixture_providers(
+    tls_config: Option<super::api_client::TlsConfig>,
+) -> ProviderRegistry {
     use super::inventory::registrations;
 
     #[allow(unused_imports)]
@@ -235,7 +237,9 @@ fn registry_with_fixture_providers(tls_config: Option<super::api_client::TlsConf
 }
 
 #[cfg(not(test))]
-fn registry_with_fixture_providers(tls_config: Option<super::api_client::TlsConfig>) -> ProviderRegistry {
+fn registry_with_fixture_providers(
+    tls_config: Option<super::api_client::TlsConfig>,
+) -> ProviderRegistry {
     ProviderRegistry::new(tls_config)
 }
 
@@ -327,13 +331,11 @@ mod tests {
             .expect("tenrouter should be registered");
         assert_eq!(entry.provider_type(), ProviderType::Declarative);
         assert_eq!(entry.metadata().display_name, "10router");
-        assert!(
-            entry
-                .metadata()
-                .config_keys
-                .iter()
-                .any(|key| key.name == "TENROUTER_API_KEY" && key.required && key.secret)
-        );
+        assert!(entry
+            .metadata()
+            .config_keys
+            .iter()
+            .any(|key| key.name == "TENROUTER_API_KEY" && key.required && key.secret));
         assert!(
             entry.supports_inventory_refresh(),
             "tenrouter must refresh its model inventory from /v1/models"

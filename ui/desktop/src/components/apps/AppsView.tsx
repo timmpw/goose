@@ -1,9 +1,12 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { MainPanelLayout } from '../Layout/MainPanelLayout';
 import { Button } from '../ui/button';
-import { AlertTriangle, Download, Play, Trash2, Upload } from 'lucide-react';
+import { AlertTriangle, BookOpen, CloudUpload, Download, Play, Trash2, Upload } from 'lucide-react';
 import type { GooseApp } from '../../types/apps';
 import { deleteMcpApp, exportMcpApp, importMcpApp, listMcpApps } from '../../acp/mcp-apps';
+import { harnessPublishApp } from '../../acp/harness';
+import { useNavigation } from '../../hooks/useNavigation';
+import { toastSuccess, toastError } from '../../toasts';
 import { useChatContext } from '../../contexts/ChatContext';
 import { formatAppName } from '../../utils/conversionUtils';
 import { errorMessage } from '../../utils/conversionUtils';
@@ -69,6 +72,30 @@ const i18n = defineMessages({
     id: 'appsView.deleteApp',
     defaultMessage: 'Delete app',
   },
+  shareTo10Router: {
+    id: 'appsView.shareTo10Router',
+    defaultMessage: 'Share to 10router',
+  },
+  publishSuccessTitle: {
+    id: 'appsView.publishSuccessTitle',
+    defaultMessage: 'Published to 10router',
+  },
+  publishCreatedMsg: {
+    id: 'appsView.publishCreatedMsg',
+    defaultMessage: '"{title}" is now in the shared library',
+  },
+  publishUpdatedMsg: {
+    id: 'appsView.publishUpdatedMsg',
+    defaultMessage: '"{title}" publication was updated',
+  },
+  publishFailedTitle: {
+    id: 'appsView.publishFailedTitle',
+    defaultMessage: 'Failed to publish to 10router',
+  },
+  recipeBook: {
+    id: 'appsView.recipeBook',
+    defaultMessage: 'Recipe Book',
+  },
   errorPrefix: {
     id: 'appsView.errorPrefix',
     defaultMessage: 'Error: {error}',
@@ -91,6 +118,7 @@ const GridLayout = ({ children }: { children: React.ReactNode }) => {
 
 export default function AppsView() {
   const intl = useIntl();
+  const setView = useNavigation();
   const [apps, setApps] = useState<GooseApp[]>([]);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
@@ -235,6 +263,25 @@ export default function AppsView() {
     }
   };
 
+  const handleShareApp = async (app: GooseApp) => {
+    try {
+      const result = await harnessPublishApp(app.name);
+      toastSuccess({
+        title: intl.formatMessage(i18n.publishSuccessTitle),
+        msg: intl.formatMessage(
+          result.updated ? i18n.publishUpdatedMsg : i18n.publishCreatedMsg,
+          { title: app.name }
+        ),
+      });
+    } catch (err) {
+      console.error('Failed to publish app to 10router:', err);
+      toastError({
+        title: intl.formatMessage(i18n.publishFailedTitle),
+        msg: errorMessage(err),
+      });
+    }
+  };
+
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const handleImportClick = () => {
@@ -286,15 +333,26 @@ export default function AppsView() {
           <div className="flex flex-col page-transition">
             <div className="flex justify-between items-center mb-1">
               <h1 className="text-4xl font-light">{intl.formatMessage(i18n.title)}</h1>
-              <Button
-                variant="outline"
-                size="sm"
-                onClick={handleImportClick}
-                className="flex items-center gap-2"
-              >
-                <Upload className="h-4 w-4" />
-                {intl.formatMessage(i18n.importApp)}
-              </Button>
+              <div className="flex gap-2">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={handleImportClick}
+                  className="flex items-center gap-2"
+                >
+                  <Upload className="h-4 w-4" />
+                  {intl.formatMessage(i18n.importApp)}
+                </Button>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => setView('recipeBook')}
+                  className="flex items-center gap-2"
+                >
+                  <BookOpen className="h-4 w-4" />
+                  {intl.formatMessage(i18n.recipeBook)}
+                </Button>
+              </div>
             </div>
             <div className="mb-4">
               <p className="text-sm text-text-secondary mb-2">
@@ -377,14 +435,25 @@ export default function AppsView() {
                         {intl.formatMessage(i18n.launch)}
                       </Button>
                       {isCustomApp && (
-                        <Button
-                          variant="outline"
-                          size="sm"
-                          onClick={() => handleDownloadApp(app)}
-                          className="flex items-center gap-2"
-                        >
-                          <Download className="h-4 w-4" />
-                        </Button>
+                        <>
+                          <Button
+                            variant="outline"
+                            size="sm"
+                            onClick={() => handleDownloadApp(app)}
+                            className="flex items-center gap-2"
+                          >
+                            <Download className="h-4 w-4" />
+                          </Button>
+                          <Button
+                            variant="outline"
+                            size="sm"
+                            onClick={() => handleShareApp(app)}
+                            className="flex items-center gap-2"
+                            title={intl.formatMessage(i18n.shareTo10Router)}
+                          >
+                            <CloudUpload className="h-4 w-4" />
+                          </Button>
+                        </>
                       )}
                       {canDelete && (
                         <Button

@@ -79,14 +79,17 @@ interface ImportRecipeFormProps {
 
 const MAX_RECIPE_FILE_SIZE_BYTES = 1024 * 1024;
 
+const DEEPLINK_PREFIXES = ['10router://recipe?config=', 'goose://recipe?config='];
+
 // Define Zod schema for the import form
 const importRecipeSchema = z
   .object({
     deeplink: z
       .string()
       .refine(
-        (value) => !value || value.trim().startsWith('goose://recipe?config='),
-        'Invalid deeplink format. Expected: goose://recipe?config=...'
+        (value) =>
+          !value || DEEPLINK_PREFIXES.some((prefix) => value.trim().startsWith(prefix)),
+        'Invalid deeplink format. Expected: 10router://recipe?config=...'
       ),
     recipeUploadFile: z
       .instanceof(File)

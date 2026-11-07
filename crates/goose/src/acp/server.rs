@@ -107,6 +107,7 @@ mod dispatch;
 mod elicitation;
 mod extensions;
 mod fork_session;
+mod harness;
 mod list_sessions;
 mod live_voice;
 mod load_session;

@@ -4729,5 +4729,104 @@
   },
   "tenRouterKeyForm.savedKeyHint": {
     "defaultMessage": "Ключ уже сохранён — нажмите «Подключиться», чтобы продолжить с ним, или введите новый."
+  },
+  "recipesView.shareTo10Router": {
+    "defaultMessage": "Поделиться в 10router"
+  },
+  "recipesView.shareEnvWarningTitle": {
+    "defaultMessage": "Рецепт содержит значения переменных окружения расширений — они станут видны всем пользователям. Опубликовать?"
+  },
+  "recipesView.publishSuccessTitle": {
+    "defaultMessage": "Опубликовано в 10router"
+  },
+  "recipesView.publishCreatedMsg": {
+    "defaultMessage": "«{title}» теперь в общей библиотеке"
+  },
+  "recipesView.publishUpdatedMsg": {
+    "defaultMessage": "Публикация «{title}» обновлена"
+  },
+  "recipesView.publishFailedTitle": {
+    "defaultMessage": "Не удалось опубликовать в 10router"
+  },
+  "recipesView.recipeBook": {
+    "defaultMessage": "Книга рецептов"
+  },
+  "appsView.shareTo10Router": {
+    "defaultMessage": "Поделиться в 10router"
+  },
+  "appsView.publishSuccessTitle": {
+    "defaultMessage": "Опубликовано в 10router"
+  },
+  "appsView.publishCreatedMsg": {
+    "defaultMessage": "«{title}» теперь в общей библиотеке"
+  },
+  "appsView.publishUpdatedMsg": {
+    "defaultMessage": "Публикация «{title}» обновлена"
+  },
+  "appsView.publishFailedTitle": {
+    "defaultMessage": "Не удалось опубликовать в 10router"
+  },
+  "appsView.recipeBook": {
+    "defaultMessage": "Книга рецептов"
+  },
+  "recipeBook.title": {
+    "defaultMessage": "Книга рецептов"
+  },
+  "recipeBook.description": {
+    "defaultMessage": "Рецепты и приложения, которыми поделились другие пользователи 10router. Установка сохраняет их в вашу библиотеку."
+  },
+  "recipeBook.recipesTab": {
+    "defaultMessage": "Рецепты"
+  },
+  "recipeBook.appsTab": {
+    "defaultMessage": "Приложения"
+  },
+  "recipeBook.refresh": {
+    "defaultMessage": "Обновить"
+  },
+  "recipeBook.loading": {
+    "defaultMessage": "Загрузка…"
+  },
+  "recipeBook.emptyTitle": {
+    "defaultMessage": "Пока ничего не опубликовано"
+  },
+  "recipeBook.emptyDescription": {
+    "defaultMessage": "Здесь появятся публикации. Используйте «Поделиться в 10router» на карточке рецепта или приложения."
+  },
+  "recipeBook.errorTitle": {
+    "defaultMessage": "Не удалось загрузить библиотеку"
+  },
+  "recipeBook.retry": {
+    "defaultMessage": "Повторить"
+  },
+  "recipeBook.install": {
+    "defaultMessage": "Установить"
+  },
+  "recipeBook.installing": {
+    "defaultMessage": "Установка…"
+  },
+  "recipeBook.installed": {
+    "defaultMessage": "Установлено"
+  },
+  "recipeBook.unpublish": {
+    "defaultMessage": "Снять публикацию"
+  },
+  "recipeBook.installedRecipeMsg": {
+    "defaultMessage": "Рецепт «{title}» сохранён в библиотеку"
+  },
+  "recipeBook.installedAppMsg": {
+    "defaultMessage": "Приложение «{title}» добавлено"
+  },
+  "recipeBook.installFailedTitle": {
+    "defaultMessage": "Не удалось установить"
+  },
+  "recipeBook.unpublishedMsg": {
+    "defaultMessage": "«{title}» больше не опубликован"
+  },
+  "recipeBook.unpublishFailedTitle": {
+    "defaultMessage": "Не удалось снять публикацию"
+  },
+  "recipeBook.you": {
+    "defaultMessage": "вы"
   }
 }

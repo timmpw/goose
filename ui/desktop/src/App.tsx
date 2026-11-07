@@ -44,6 +44,7 @@ import PermissionSettingsView from './components/settings/permission/PermissionS
 
 import ExtensionsView, { ExtensionsViewOptions } from './components/extensions/ExtensionsView';
 import RecipesView from './components/recipes/RecipesView';
+import RecipeBookView from './components/recipes/RecipeBookView';
 import SkillsView from './components/skills/SkillsView';
 import AppsView from './components/apps/AppsView';
 import StandaloneAppView from './components/apps/StandaloneAppView';
@@ -554,6 +555,18 @@ export function AppInner() {
   }, [navigate]);
 
   useEffect(() => {
+    const handleHarnessInstall = (_event: IpcRendererEvent, ...args: unknown[]) => {
+      const kind = args[0];
+      const id = Number(args[1]);
+      if ((kind !== 'recipe' && kind !== 'app') || !Number.isFinite(id)) return;
+      navigate(`/recipe-book?install=${kind}:${id}`);
+    };
+
+    window.electron.on('harness-install', handleHarnessInstall);
+    return () => window.electron.off('harness-install', handleHarnessInstall);
+  }, [navigate]);
+
+  useEffect(() => {
     const handleNewChat = (_event: IpcRendererEvent, ..._args: unknown[]) => {
       if (location.pathname === '/') return;
 
@@ -684,6 +697,7 @@ export function AppInner() {
               <Route path="sessions" element={<SessionsRoute />} />
               <Route path="schedules" element={<SchedulesRoute />} />
               <Route path="recipes" element={<RecipesRoute />} />
+              <Route path="recipe-book" element={<RecipeBookView />} />
               <Route path="skills" element={<SkillsRoute />} />
               <Route path="permission" element={<PermissionRoute />} />
             </Route>

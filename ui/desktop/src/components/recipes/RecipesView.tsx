@@ -22,6 +22,8 @@ import {
   Share2,
   Copy,
   Download,
+  CloudUpload,
+  BookOpen,
 } from 'lucide-react';
 import { ScrollArea } from '../ui/scroll-area';
 import { Card } from '../ui/card';
@@ -34,6 +36,7 @@ import { createSession } from '../../sessions';
 import { isRecipeDeclined, isRecipeParamsCancelled } from '../../acp/errors';
 import ImportRecipeForm, { ImportRecipeButton } from './ImportRecipeForm';
 import CreateEditRecipeModal from './CreateEditRecipeModal';
+import { harnessPublishRecipe } from '../../acp/harness';
 import { generateDeepLink } from '../../recipe';
 import { useNavigation } from '../../hooks/useNavigation';
 import { CronPicker } from '../schedule/CronPicker';
@@ -207,6 +210,35 @@ const i18n = defineMessages({
   exportToFile: {
     id: 'recipesView.exportToFile',
     defaultMessage: 'Export to File',
+  },
+  shareTo10Router: {
+    id: 'recipesView.shareTo10Router',
+    defaultMessage: 'Share to 10router',
+  },
+  shareEnvWarningTitle: {
+    id: 'recipesView.shareEnvWarningTitle',
+    defaultMessage:
+      'This recipe includes extension environment values, which will be visible to everyone. Publish anyway?',
+  },
+  publishSuccessTitle: {
+    id: 'recipesView.publishSuccessTitle',
+    defaultMessage: 'Published to 10router',
+  },
+  publishCreatedMsg: {
+    id: 'recipesView.publishCreatedMsg',
+    defaultMessage: '"{title}" is now in the shared library',
+  },
+  publishUpdatedMsg: {
+    id: 'recipesView.publishUpdatedMsg',
+    defaultMessage: '"{title}" publication was updated',
+  },
+  publishFailedTitle: {
+    id: 'recipesView.publishFailedTitle',
+    defaultMessage: 'Failed to publish to 10router',
+  },
+  recipeBook: {
+    id: 'recipesView.recipeBook',
+    defaultMessage: 'Recipe Book',
   },
   editSchedule: {
     id: 'recipesView.editSchedule',
@@ -459,6 +491,34 @@ export default function RecipesView() {
     setSelectedRecipe(null);
     if (wasSaved) {
       loadSavedRecipes();
+    }
+  };
+
+  const handleShareTo10Router = async (recipeManifest: RecipeManifest) => {
+    const hasInlineEnvs = (recipeManifest.recipe.extensions ?? []).some(
+      (extension) => 'envs' in extension && Object.keys(extension.envs ?? {}).length > 0
+    );
+    if (
+      hasInlineEnvs &&
+      !window.confirm(intl.formatMessage(i18n.shareEnvWarningTitle))
+    ) {
+      return;
+    }
+    try {
+      const result = await harnessPublishRecipe(recipeManifest.id);
+      toastSuccess({
+        title: intl.formatMessage(i18n.publishSuccessTitle),
+        msg: intl.formatMessage(
+          result.updated ? i18n.publishUpdatedMsg : i18n.publishCreatedMsg,
+          { title: recipeManifest.recipe.title }
+        ),
+      });
+    } catch (error) {
+      console.error('Failed to publish recipe to 10router:', error);
+      toastError({
+        title: intl.formatMessage(i18n.publishFailedTitle),
+        msg: errorMessage(error),
+      });
     }
   };
 
@@ -785,6 +845,11 @@ export default function RecipesView() {
                 <Download className="w-4 h-4" />
                 {intl.formatMessage(i18n.exportToFile)}
               </DropdownMenuItem>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem onClick={() => handleShareTo10Router(recipeManifestResponse)}>
+                <CloudUpload className="w-4 h-4" />
+                {intl.formatMessage(i18n.shareTo10Router)}
+              </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
           <Button
@@ -920,6 +985,15 @@ export default function RecipesView() {
                     {intl.formatMessage(i18n.createRecipe)}
                   </Button>
                   <ImportRecipeButton onClick={() => setShowImportDialog(true)} />
+                  <Button
+                    onClick={() => setView('recipeBook')}
+                    variant="outline"
+                    size="sm"
+                    className="flex items-center gap-2"
+                  >
+                    <BookOpen className="w-4 h-4" />
+                    {intl.formatMessage(i18n.recipeBook)}
+                  </Button>
                 </div>
               </div>
               <p className="text-sm text-text-secondary mb-1">

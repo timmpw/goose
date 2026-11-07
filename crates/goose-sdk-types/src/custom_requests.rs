@@ -8,6 +8,8 @@ use std::collections::HashMap;
 
 mod recipe;
 pub use recipe::*;
+mod harness;
+pub use harness::*;
 mod schedule;
 pub use schedule::*;
 
