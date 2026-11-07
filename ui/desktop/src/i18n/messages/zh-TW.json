@@ -2273,23 +2273,38 @@
   "modelSettingsPanel.topP": {
     "defaultMessage": "Top P"
   },
-  "modelsBottomBar.changeModel": {
-    "defaultMessage": "變更模型"
+  "modelsBottomBar.effort": {
+    "defaultMessage": "思考用力程度"
   },
-  "modelsBottomBar.currentModel": {
-    "defaultMessage": "目前模型"
+  "modelsBottomBar.effortHigh": {
+    "defaultMessage": "高"
   },
-  "modelsBottomBar.loadingModel": {
+  "modelsBottomBar.effortLow": {
+    "defaultMessage": "低"
+  },
+  "modelsBottomBar.effortMax": {
+    "defaultMessage": "最高"
+  },
+  "modelsBottomBar.effortMedium": {
+    "defaultMessage": "中"
+  },
+  "modelsBottomBar.effortOff": {
+    "defaultMessage": "關閉"
+  },
+  "modelsBottomBar.failedToLoadModels": {
+    "defaultMessage": "無法載入模型"
+  },
+  "modelsBottomBar.loadingModels": {
     "defaultMessage": "正在載入模型…"
+  },
+  "modelsBottomBar.models": {
+    "defaultMessage": "模型"
   },
   "modelsBottomBar.localModelSettings": {
     "defaultMessage": "本機模型設定"
   },
   "modelsBottomBar.localModelSettingsTitle": {
     "defaultMessage": "本機模型設定 — {modelName}"
-  },
-  "modelsBottomBar.resolvedModel": {
-    "defaultMessage": "已解析的模型"
   },
   "modelsBottomBar.selectModel": {
     "defaultMessage": "選擇模型"
@@ -4516,9 +4531,6 @@
   },
   "userMessage.removeImageFromEdit": {
     "defaultMessage": "從訊息中移除圖片"
-  },
-  "modelsBottomBar.recentModels": {
-    "defaultMessage": "最近"
   },
   "providerConfigurationModal.chooseModel": {
     "defaultMessage": "選擇模型"

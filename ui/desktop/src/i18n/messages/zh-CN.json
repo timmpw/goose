@@ -2273,23 +2273,38 @@
   "modelSettingsPanel.topP": {
     "defaultMessage": "Top P"
   },
-  "modelsBottomBar.changeModel": {
-    "defaultMessage": "切换模型"
+  "modelsBottomBar.effort": {
+    "defaultMessage": "思考努力"
   },
-  "modelsBottomBar.currentModel": {
-    "defaultMessage": "当前模型"
+  "modelsBottomBar.effortHigh": {
+    "defaultMessage": "高"
   },
-  "modelsBottomBar.loadingModel": {
+  "modelsBottomBar.effortLow": {
+    "defaultMessage": "低"
+  },
+  "modelsBottomBar.effortMax": {
+    "defaultMessage": "最大"
+  },
+  "modelsBottomBar.effortMedium": {
+    "defaultMessage": "中"
+  },
+  "modelsBottomBar.effortOff": {
+    "defaultMessage": "关闭"
+  },
+  "modelsBottomBar.failedToLoadModels": {
+    "defaultMessage": "无法加载模型"
+  },
+  "modelsBottomBar.loadingModels": {
     "defaultMessage": "正在加载模型…"
+  },
+  "modelsBottomBar.models": {
+    "defaultMessage": "模型"
   },
   "modelsBottomBar.localModelSettings": {
     "defaultMessage": "本地模型设置"
   },
   "modelsBottomBar.localModelSettingsTitle": {
     "defaultMessage": "本地模型设置 — {modelName}"
-  },
-  "modelsBottomBar.resolvedModel": {
-    "defaultMessage": "解析后的模型"
   },
   "modelsBottomBar.selectModel": {
     "defaultMessage": "选择模型"
@@ -4516,9 +4531,6 @@
   },
   "userMessage.removeImageFromEdit": {
     "defaultMessage": "从消息中移除图片"
-  },
-  "modelsBottomBar.recentModels": {
-    "defaultMessage": "最近"
   },
   "providerConfigurationModal.chooseModel": {
     "defaultMessage": "选择模型"

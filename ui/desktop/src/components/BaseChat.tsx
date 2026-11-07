@@ -309,20 +309,6 @@ export default function BaseChat({
 
   const sessionModel = session?.model_config?.model_name ?? null;
   const sessionProvider = session?.provider_name ?? null;
-  const latestInference = useMemo(() => {
-    for (let i = messages.length - 1; i >= 0; i--) {
-      const message = messages[i];
-      if (
-        message.role === 'assistant' &&
-        message.metadata.userVisible &&
-        message.metadata.inference
-      ) {
-        return message.metadata.inference;
-      }
-    }
-    return null;
-  }, [messages]);
-
   // Track if this is the initial render for session resuming
   const initialRenderRef = useRef(true);
 
@@ -583,7 +569,6 @@ export default function BaseChat({
               queueProcessingBlocked={queueProcessingBlocked || acpRecovering}
               commandHistory={commandHistory}
               initialValue={initialPrompt}
-              setView={setView}
               totalTokens={tokenState?.totalTokens ?? session?.usage?.total_tokens ?? undefined}
               contextLimit={tokenState?.contextLimit}
               accumulatedInputTokens={
@@ -610,7 +595,6 @@ export default function BaseChat({
               sessionLoaded={sessionLoaded}
               workingDir={session?.working_dir}
               onWorkingDirChange={handleWorkingDirChange}
-              latestInference={latestInference}
               liveVoice={{
                 availability: liveVoiceAvailability,
                 phase: ownsLiveVoice ? liveVoice.phase : 'idle',

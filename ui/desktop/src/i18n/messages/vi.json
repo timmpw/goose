@@ -2273,23 +2273,38 @@
   "modelSettingsPanel.topP": {
     "defaultMessage": "Top P"
   },
-  "modelsBottomBar.changeModel": {
-    "defaultMessage": "Thay đổi mô hình"
+  "modelsBottomBar.effort": {
+    "defaultMessage": "Nỗ lực"
   },
-  "modelsBottomBar.currentModel": {
-    "defaultMessage": "Mô hình hiện tại"
+  "modelsBottomBar.effortHigh": {
+    "defaultMessage": "Cao"
   },
-  "modelsBottomBar.loadingModel": {
-    "defaultMessage": "Đang tải mô hình..."
+  "modelsBottomBar.effortLow": {
+    "defaultMessage": "Thấp"
+  },
+  "modelsBottomBar.effortMax": {
+    "defaultMessage": "Tối đa"
+  },
+  "modelsBottomBar.effortMedium": {
+    "defaultMessage": "Trung bình"
+  },
+  "modelsBottomBar.effortOff": {
+    "defaultMessage": "Tắt"
+  },
+  "modelsBottomBar.failedToLoadModels": {
+    "defaultMessage": "Không thể tải mô hình"
+  },
+  "modelsBottomBar.loadingModels": {
+    "defaultMessage": "Đang tải mô hình…"
+  },
+  "modelsBottomBar.models": {
+    "defaultMessage": "Mô hình"
   },
   "modelsBottomBar.localModelSettings": {
     "defaultMessage": "Cài đặt mô hình cục bộ"
   },
   "modelsBottomBar.localModelSettingsTitle": {
     "defaultMessage": "Cài đặt mô hình cục bộ — {modelName}"
-  },
-  "modelsBottomBar.resolvedModel": {
-    "defaultMessage": "Mô hình đã phân giải"
   },
   "modelsBottomBar.selectModel": {
     "defaultMessage": "Chọn mô hình"
@@ -4516,9 +4531,6 @@
   },
   "userMessage.removeImageFromEdit": {
     "defaultMessage": "Xóa hình ảnh khỏi tin nhắn"
-  },
-  "modelsBottomBar.recentModels": {
-    "defaultMessage": "Gần đây"
   },
   "providerConfigurationModal.chooseModel": {
     "defaultMessage": "Chọn mô hình"

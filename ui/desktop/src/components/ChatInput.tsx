@@ -2,7 +2,6 @@ import React, { useRef, useState, useEffect, useMemo, useCallback } from 'react'
 import { ArrowUp, Bug } from 'lucide-react';
 import { Tooltip, TooltipContent, TooltipTrigger } from './ui/Tooltip';
 import { Button } from './ui/button';
-import type { View } from '../utils/navigationUtils';
 import Stop from './ui/Stop';
 import { Attach, Close, Microphone } from './icons';
 import { ChatState } from '../types/chatState';
@@ -177,7 +176,6 @@ interface ChatInputProps {
   draftRef?: React.RefObject<string>;
   droppedFiles?: DroppedFile[];
   onFilesProcessed?: () => void;
-  setView: (view: View) => void;
   totalTokens?: number;
   contextLimit?: number;
   accumulatedInputTokens?: number;
@@ -195,7 +193,6 @@ interface ChatInputProps {
   sessionProvider?: string | null;
   sessionLoaded?: boolean;
   workingDir?: string | null;
-  latestInference?: Message['metadata']['inference'] | null;
   nextChatExtensionDraft?: NextChatExtensionDraft;
   onNextChatExtensionDraftChange?: (draft: NextChatExtensionDraft) => void;
   liveVoice?: ChatInputLiveVoice;
@@ -217,7 +214,6 @@ export default function ChatInput({
   draftRef,
   droppedFiles = [],
   onFilesProcessed,
-  setView,
   totalTokens,
   contextLimit,
   accumulatedInputTokens,
@@ -235,7 +231,6 @@ export default function ChatInput({
   sessionProvider,
   sessionLoaded,
   workingDir,
-  latestInference,
   nextChatExtensionDraft,
   onNextChatExtensionDraftChange,
   liveVoice,
@@ -1676,10 +1671,8 @@ export default function ChatInput({
             <ModelsBottomBar
               sessionId={sessionId}
               dropdownRef={dropdownRef}
-              setView={setView}
               sessionModel={effectiveModel}
               sessionProvider={effectiveProvider}
-              latestInference={latestInference}
               onModelChanged={setModelOverride}
               sessionLoaded={sessionLoaded}
             />

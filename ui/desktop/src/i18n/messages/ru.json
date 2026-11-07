@@ -2273,23 +2273,38 @@
   "modelSettingsPanel.topP": {
     "defaultMessage": "Top P"
   },
-  "modelsBottomBar.changeModel": {
-    "defaultMessage": "Изменить модель"
+  "modelsBottomBar.effort": {
+    "defaultMessage": "Усилие"
   },
-  "modelsBottomBar.currentModel": {
-    "defaultMessage": "Текущая модель"
+  "modelsBottomBar.effortHigh": {
+    "defaultMessage": "Высокий"
   },
-  "modelsBottomBar.loadingModel": {
-    "defaultMessage": "Загрузка модели..."
+  "modelsBottomBar.effortLow": {
+    "defaultMessage": "Низкий"
+  },
+  "modelsBottomBar.effortMax": {
+    "defaultMessage": "Макс."
+  },
+  "modelsBottomBar.effortMedium": {
+    "defaultMessage": "Средний"
+  },
+  "modelsBottomBar.effortOff": {
+    "defaultMessage": "Выкл."
+  },
+  "modelsBottomBar.failedToLoadModels": {
+    "defaultMessage": "Не удалось загрузить модели"
+  },
+  "modelsBottomBar.loadingModels": {
+    "defaultMessage": "Загрузка моделей…"
+  },
+  "modelsBottomBar.models": {
+    "defaultMessage": "Модели"
   },
   "modelsBottomBar.localModelSettings": {
     "defaultMessage": "Настройки локальной модели"
   },
   "modelsBottomBar.localModelSettingsTitle": {
     "defaultMessage": "Настройки локальной модели — {modelName}"
-  },
-  "modelsBottomBar.resolvedModel": {
-    "defaultMessage": "Разрешенная модель"
   },
   "modelsBottomBar.selectModel": {
     "defaultMessage": "Выбрать модель"
@@ -4516,9 +4531,6 @@
   },
   "userMessage.removeImageFromEdit": {
     "defaultMessage": "Удалить изображение из сообщения"
-  },
-  "modelsBottomBar.recentModels": {
-    "defaultMessage": "Недавние"
   },
   "providerConfigurationModal.chooseModel": {
     "defaultMessage": "Выбрать модель"
