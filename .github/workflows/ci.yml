@@ -51,11 +51,20 @@ jobs:
       - name: Build and Test
         run: |
           export CARGO_INCREMENTAL=0
-          cargo test --locked
+          set -o pipefail
+          cargo test --locked 2>&1 | tee "$RUNNER_TEMP/cargo-test.log"
         working-directory: crates
         env:
           RUST_MIN_STACK: 8388608
           GOOSE_DISABLE_KEYRING: 1
+
+      - name: Report failing test names
+        if: failure()
+        run: |
+          awk '/^failures:$/{f=1;next} f&&/^$/{f=0} f&&/^    /{print $1}' \
+            "$RUNNER_TEMP/cargo-test.log" | sort -u | while read -r test; do
+            echo "::error::failing test: $test"
+          done
 
   desktop-lint:
     name: Test and Lint Electron Desktop App
