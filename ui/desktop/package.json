@@ -2,7 +2,7 @@
   "name": "goose-app",
   "productName": "10Router",
   "desktopName": "Goose.desktop",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "10Router App",
   "engines": {
     "node": "^24.10.0",
