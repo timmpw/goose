@@ -43,14 +43,19 @@ let cfg = {
   },
 };
 
-// macOS code signing and notarization via Electron Forge
-// Activated when APPLE_TEAM_ID is set (CI signing builds)
+// macOS code signing via Electron Forge (per-binary Developer ID signing).
+// Activated when APPLE_TEAM_ID is set; notarization runs separately via
+// scripts/notarize-macos.sh (notarizes app + DMG, staples, rebuilds artifacts).
 if (process.env.APPLE_TEAM_ID) {
   cfg.osxSign = {
     keychain: process.env.KEYCHAIN_PATH || undefined,
     entitlements: 'entitlements.plist',
     'entitlements-inherit': 'entitlements.plist',
   };
+}
+// Notarization inside Forge is only enabled when credentials are explicitly
+// provided to the build (upstream CI); release-desktop.yml notarizes later.
+if (process.env.APPLE_ID && process.env.APPLE_ID_PASSWORD) {
   cfg.osxNotarize = {
     appleId: process.env.APPLE_ID,
     appleIdPassword: process.env.APPLE_ID_PASSWORD,

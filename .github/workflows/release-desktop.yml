@@ -116,7 +116,28 @@ jobs:
           fi
         working-directory: ui/desktop
 
+      - name: Import Apple signing certificate
+        env:
+          APPLE_CERTIFICATE_BASE64: ${{ secrets.APPLE_CERTIFICATE_BASE64 }}
+          APPLE_CERTIFICATE_PASSWORD: ${{ secrets.APPLE_CERTIFICATE_PASSWORD }}
+        run: |
+          CERT_PATH="$RUNNER_TEMP/certificate.p12"
+          KEYCHAIN_PATH="$RUNNER_TEMP/signing.keychain-db"
+          KEYCHAIN_PASSWORD="$(openssl rand -hex 16)"
+          echo "$APPLE_CERTIFICATE_BASE64" | base64 --decode > "$CERT_PATH"
+          security create-keychain -p "$KEYCHAIN_PASSWORD" "$KEYCHAIN_PATH"
+          security set-keychain-settings -lut 21600 "$KEYCHAIN_PATH"
+          security unlock-keychain -p "$KEYCHAIN_PASSWORD" "$KEYCHAIN_PATH"
+          security import "$CERT_PATH" -k "$KEYCHAIN_PATH" -P "$APPLE_CERTIFICATE_PASSWORD" -T /usr/bin/codesign
+          security set-key-partition-list -S apple-tool:,apple: -s -k "$KEYCHAIN_PASSWORD" "$KEYCHAIN_PATH"
+          security list-keychains -d user -s "$KEYCHAIN_PATH" login.keychain-db
+          rm -f "$CERT_PATH"
+          echo "KEYCHAIN_PATH=$KEYCHAIN_PATH" >> "$GITHUB_ENV"
+
       - name: Build app (DMG + zip)
+        env:
+          APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+          KEYCHAIN_PATH: ${{ env.KEYCHAIN_PATH }}
         run: |
           source ../../bin/activate-hermit
           attempt=0
@@ -153,6 +174,23 @@ jobs:
             exit 1
           fi
           pkill -f "10Router.app/Contents/MacOS/10Router"
+
+      - name: Notarize and staple
+        env:
+          APPLE_ID: ${{ secrets.APPLE_ID }}
+          APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
+          APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+          MACOS_NOTARY_PROFILE: 10router-notary
+          MACOS_NOTARY_KEYCHAIN: ${{ env.KEYCHAIN_PATH }}
+        run: |
+          xcrun notarytool store-credentials "$MACOS_NOTARY_PROFILE" \
+            --apple-id "$APPLE_ID" --password "$APPLE_ID_PASSWORD" --team-id "$APPLE_TEAM_ID" \
+            --keychain "$MACOS_NOTARY_KEYCHAIN" --validate
+          cd ui/desktop && bash scripts/notarize-macos.sh arm64
+
+      - name: Clean up signing keychain
+        if: always()
+        run: security delete-keychain "$KEYCHAIN_PATH" || true
 
       - name: Stage release files
         run: |
@@ -248,9 +286,29 @@ jobs:
           fi
         working-directory: ui/desktop
 
+      - name: Import Apple signing certificate
+        env:
+          APPLE_CERTIFICATE_BASE64: ${{ secrets.APPLE_CERTIFICATE_BASE64 }}
+          APPLE_CERTIFICATE_PASSWORD: ${{ secrets.APPLE_CERTIFICATE_PASSWORD }}
+        run: |
+          CERT_PATH="$RUNNER_TEMP/certificate.p12"
+          KEYCHAIN_PATH="$RUNNER_TEMP/signing.keychain-db"
+          KEYCHAIN_PASSWORD="$(openssl rand -hex 16)"
+          echo "$APPLE_CERTIFICATE_BASE64" | base64 --decode > "$CERT_PATH"
+          security create-keychain -p "$KEYCHAIN_PASSWORD" "$KEYCHAIN_PATH"
+          security set-keychain-settings -lut 21600 "$KEYCHAIN_PATH"
+          security unlock-keychain -p "$KEYCHAIN_PASSWORD" "$KEYCHAIN_PATH"
+          security import "$CERT_PATH" -k "$KEYCHAIN_PATH" -P "$APPLE_CERTIFICATE_PASSWORD" -T /usr/bin/codesign
+          security set-key-partition-list -S apple-tool:,apple: -s -k "$KEYCHAIN_PASSWORD" "$KEYCHAIN_PATH"
+          security list-keychains -d user -s "$KEYCHAIN_PATH" login.keychain-db
+          rm -f "$CERT_PATH"
+          echo "KEYCHAIN_PATH=$KEYCHAIN_PATH" >> "$GITHUB_ENV"
+
       - name: Build app (DMG + zip)
         env:
           ELECTRON_ARCH: x64
+          APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+          KEYCHAIN_PATH: ${{ env.KEYCHAIN_PATH }}
         run: |
           source ../../bin/activate-hermit
           attempt=0
@@ -266,6 +324,23 @@ jobs:
             exit 1
           fi
         working-directory: ui/desktop
+
+      - name: Notarize and staple
+        env:
+          APPLE_ID: ${{ secrets.APPLE_ID }}
+          APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
+          APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+          MACOS_NOTARY_PROFILE: 10router-notary
+          MACOS_NOTARY_KEYCHAIN: ${{ env.KEYCHAIN_PATH }}
+        run: |
+          xcrun notarytool store-credentials "$MACOS_NOTARY_PROFILE" \
+            --apple-id "$APPLE_ID" --password "$APPLE_ID_PASSWORD" --team-id "$APPLE_TEAM_ID" \
+            --keychain "$MACOS_NOTARY_KEYCHAIN" --validate
+          cd ui/desktop && bash scripts/notarize-macos.sh x64
+
+      - name: Clean up signing keychain
+        if: always()
+        run: security delete-keychain "$KEYCHAIN_PATH" || true
 
       - name: Stage release files
         run: |
