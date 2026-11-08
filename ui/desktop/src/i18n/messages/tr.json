@@ -3818,18 +3818,6 @@
   "settings.dockIcon.title": {
     "defaultMessage": "Bağlantı noktası simgesi"
   },
-  "settings.help.description": {
-    "defaultMessage": "Sorunları bildirerek veya yeni özellikler talep ederek 10Router'yi geliştirmemize yardımcı olun"
-  },
-  "settings.help.reportBug": {
-    "defaultMessage": "Hata Bildir"
-  },
-  "settings.help.requestFeature": {
-    "defaultMessage": "Özellik Talep Edin"
-  },
-  "settings.help.title": {
-    "defaultMessage": "Yardım ve geri bildirim"
-  },
   "settings.language.description": {
     "defaultMessage": "10Router için görüntüleme dilini seçin"
   },

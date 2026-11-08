@@ -3818,18 +3818,6 @@
   "settings.dockIcon.title": {
     "defaultMessage": "Icona del dock"
   },
-  "settings.help.description": {
-    "defaultMessage": "Aiutaci a migliorare 10Router segnalando problemi o richiedendo nuove funzionalità"
-  },
-  "settings.help.reportBug": {
-    "defaultMessage": "Segnala un bug"
-  },
-  "settings.help.requestFeature": {
-    "defaultMessage": "Richiedi una funzionalità"
-  },
-  "settings.help.title": {
-    "defaultMessage": "Guida e feedback"
-  },
   "settings.language.description": {
     "defaultMessage": "Scegli la lingua di visualizzazione per 10Router"
   },

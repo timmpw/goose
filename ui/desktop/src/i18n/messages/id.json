@@ -3818,18 +3818,6 @@
   "settings.dockIcon.title": {
     "defaultMessage": "Ikon dock"
   },
-  "settings.help.description": {
-    "defaultMessage": "Bantu kami meningkatkan 10Router dengan melaporkan masalah atau meminta fitur baru"
-  },
-  "settings.help.reportBug": {
-    "defaultMessage": "Laporkan Bug"
-  },
-  "settings.help.requestFeature": {
-    "defaultMessage": "Minta Fitur"
-  },
-  "settings.help.title": {
-    "defaultMessage": "Bantuan & masukan"
-  },
   "settings.language.description": {
     "defaultMessage": "Pilih bahasa tampilan untuk 10Router"
   },

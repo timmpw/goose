@@ -3818,18 +3818,6 @@
   "settings.dockIcon.title": {
     "defaultMessage": "Dockアイコン"
   },
-  "settings.help.description": {
-    "defaultMessage": "問題の報告や新機能のリクエストでgooseの改善にご協力ください"
-  },
-  "settings.help.reportBug": {
-    "defaultMessage": "バグを報告"
-  },
-  "settings.help.requestFeature": {
-    "defaultMessage": "機能をリクエスト"
-  },
-  "settings.help.title": {
-    "defaultMessage": "ヘルプとフィードバック"
-  },
   "settings.language.description": {
     "defaultMessage": "10Router の表示言語を選択"
   },

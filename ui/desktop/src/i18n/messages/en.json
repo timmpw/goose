@@ -4100,18 +4100,6 @@
   "settings.dockIcon.title": {
     "defaultMessage": "Dock icon"
   },
-  "settings.help.description": {
-    "defaultMessage": "Help us improve 10Router by reporting issues or requesting new features"
-  },
-  "settings.help.reportBug": {
-    "defaultMessage": "Report a Bug"
-  },
-  "settings.help.requestFeature": {
-    "defaultMessage": "Request a Feature"
-  },
-  "settings.help.title": {
-    "defaultMessage": "Help & feedback"
-  },
   "settings.language.description": {
     "defaultMessage": "Choose the display language for 10Router"
   },

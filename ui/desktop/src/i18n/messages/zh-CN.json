@@ -3818,18 +3818,6 @@
   "settings.dockIcon.title": {
     "defaultMessage": "Dock 图标"
   },
-  "settings.help.description": {
-    "defaultMessage": "通过报告问题或请求新功能帮助我们改进 10Router"
-  },
-  "settings.help.reportBug": {
-    "defaultMessage": "报告 Bug"
-  },
-  "settings.help.requestFeature": {
-    "defaultMessage": "请求功能"
-  },
-  "settings.help.title": {
-    "defaultMessage": "帮助与反馈"
-  },
   "settings.language.description": {
     "defaultMessage": "选择 10Router 的显示语言"
   },

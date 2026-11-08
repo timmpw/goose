@@ -3818,18 +3818,6 @@
   "settings.dockIcon.title": {
     "defaultMessage": "Dock 아이콘"
   },
-  "settings.help.description": {
-    "defaultMessage": "문제를 신고하거나 새 기능을 요청하여 10Router 개선에 도움을 주세요."
-  },
-  "settings.help.reportBug": {
-    "defaultMessage": "버그 신고"
-  },
-  "settings.help.requestFeature": {
-    "defaultMessage": "기능 요청"
-  },
-  "settings.help.title": {
-    "defaultMessage": "도움말 및 피드백"
-  },
   "settings.language.description": {
     "defaultMessage": "goose의 표시 언어를 선택하세요"
   },

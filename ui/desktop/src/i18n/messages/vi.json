@@ -3818,18 +3818,6 @@
   "settings.dockIcon.title": {
     "defaultMessage": "Biểu tượng dock"
   },
-  "settings.help.description": {
-    "defaultMessage": "Giúp chúng tôi cải thiện 10Router bằng cách báo cáo sự cố hoặc yêu cầu tính năng mới"
-  },
-  "settings.help.reportBug": {
-    "defaultMessage": "Báo cáo lỗi"
-  },
-  "settings.help.requestFeature": {
-    "defaultMessage": "Yêu cầu tính năng"
-  },
-  "settings.help.title": {
-    "defaultMessage": "Trợ giúp & phản hồi"
-  },
   "settings.language.description": {
     "defaultMessage": "Chọn ngôn ngữ hiển thị cho 10Router"
   },
