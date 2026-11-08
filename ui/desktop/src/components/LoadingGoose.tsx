@@ -1,6 +1,5 @@
 import { TenRouterMark } from './icons';
-import AnimatedIcons from './AnimatedIcons';
-import FlyingBird from './FlyingBird';
+import { BrandSpinner } from './ui/BrandSpinner';
 import { ChatState } from '../types/chatState';
 import { defineMessages, useIntl } from '../i18n';
 
@@ -40,16 +39,16 @@ const i18n = defineMessages({
   },
 });
 
+// Every busy state shows the same brand-blue spinner; waiting for the user
+// pulses instead, and idle shows the 10router mark.
 const STATE_ICONS: Record<ChatState, React.ReactNode> = {
-  [ChatState.LoadingConversation]: <AnimatedIcons className="flex-shrink-0" cycleInterval={600} />,
-  [ChatState.Thinking]: <AnimatedIcons className="flex-shrink-0" cycleInterval={600} />,
-  [ChatState.Streaming]: <FlyingBird className="flex-shrink-0" cycleInterval={150} />,
-  [ChatState.WaitingForUserInput]: (
-    <AnimatedIcons className="flex-shrink-0" cycleInterval={600} variant="waiting" />
-  ),
-  [ChatState.Compacting]: <AnimatedIcons className="flex-shrink-0" cycleInterval={600} />,
+  [ChatState.LoadingConversation]: <BrandSpinner />,
+  [ChatState.Thinking]: <BrandSpinner />,
+  [ChatState.Streaming]: <BrandSpinner />,
+  [ChatState.WaitingForUserInput]: <BrandSpinner variant="waiting" />,
+  [ChatState.Compacting]: <BrandSpinner />,
   [ChatState.Idle]: <TenRouterMark className="h-7 w-auto" />,
-  [ChatState.RestartingAgent]: <AnimatedIcons className="flex-shrink-0" cycleInterval={600} />,
+  [ChatState.RestartingAgent]: <BrandSpinner />,
 };
 
 const STATE_MESSAGE_KEYS: Record<ChatState, keyof typeof i18n> = {
