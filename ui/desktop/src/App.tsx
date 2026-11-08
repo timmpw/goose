@@ -44,7 +44,7 @@ import PermissionSettingsView from './components/settings/permission/PermissionS
 
 import ExtensionsView, { ExtensionsViewOptions } from './components/extensions/ExtensionsView';
 import RecipesView from './components/recipes/RecipesView';
-import RecipeBookView from './components/recipes/RecipeBookView';
+import RecipeBookView, { HARNESS_LIBRARY_PATH } from './components/recipes/RecipeBookView';
 import SkillsView from './components/skills/SkillsView';
 import AppsView from './components/apps/AppsView';
 import StandaloneAppView from './components/apps/StandaloneAppView';
@@ -550,7 +550,7 @@ export function AppInner() {
       const kind = args[0];
       const id = Number(args[1]);
       if ((kind !== 'recipe' && kind !== 'app') || !Number.isFinite(id)) return;
-      navigate(`/recipe-book?install=${kind}:${id}`);
+      navigate(`${HARNESS_LIBRARY_PATH[kind]}?install=${kind}:${id}`);
     };
 
     window.electron.on('harness-install', handleHarnessInstall);
@@ -688,7 +688,8 @@ export function AppInner() {
               <Route path="sessions" element={<SessionsRoute />} />
               <Route path="schedules" element={<SchedulesRoute />} />
               <Route path="recipes" element={<RecipesRoute />} />
-              <Route path="recipe-book" element={<RecipeBookView />} />
+              <Route path="recipes/library" element={<RecipeBookView kind="recipe" />} />
+              <Route path="apps/library" element={<RecipeBookView kind="app" />} />
               <Route path="skills" element={<SkillsRoute />} />
               <Route path="permission" element={<PermissionRoute />} />
             </Route>

@@ -1,8 +1,8 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import { useSearchParams } from 'react-router';
-import { AlertCircle, BookOpen, CloudDownload, EyeOff, RefreshCw } from 'lucide-react';
+import { useNavigate, useSearchParams } from 'react-router';
+import { AlertCircle, BookOpen, CloudDownload, EyeOff, LayoutGrid, RefreshCw } from 'lucide-react';
 import { Button } from '../ui/button';
-import { Tabs, TabsList, TabsTrigger } from '../ui/tabs';
+import BackButton from '../ui/BackButton';
 import { MainPanelLayout } from '../Layout/MainPanelLayout';
 import { toastSuccess, toastError } from '../../toasts';
 import { defineMessages, useIntl } from '../../i18n';
@@ -23,18 +23,19 @@ const i18n = defineMessages({
     id: 'recipeBook.title',
     defaultMessage: 'Recipe Book',
   },
-  description: {
-    id: 'recipeBook.description',
+  titleApps: {
+    id: 'recipeBook.titleApps',
+    defaultMessage: 'App Library',
+  },
+  descriptionRecipes: {
+    id: 'recipeBook.descriptionRecipes',
     defaultMessage:
-      'Recipes and applications other 10router users shared. Installing saves them to your library.',
+      'Recipes other 10router users shared. Installing saves a recipe to your recipes.',
   },
-  recipesTab: {
-    id: 'recipeBook.recipesTab',
-    defaultMessage: 'Recipes',
-  },
-  appsTab: {
-    id: 'recipeBook.appsTab',
-    defaultMessage: 'Applications',
+  descriptionApps: {
+    id: 'recipeBook.descriptionApps',
+    defaultMessage:
+      'Applications other 10router users shared. Installing adds an application to your apps.',
   },
   refresh: {
     id: 'recipeBook.refresh',
@@ -48,10 +49,14 @@ const i18n = defineMessages({
     id: 'recipeBook.emptyTitle',
     defaultMessage: 'Nothing shared yet',
   },
-  emptyDescription: {
-    id: 'recipeBook.emptyDescription',
+  emptyDescriptionRecipes: {
+    id: 'recipeBook.emptyDescriptionRecipes',
+    defaultMessage: 'Shared recipes will appear here. Use “Share to 10router” on a recipe card.',
+  },
+  emptyDescriptionApps: {
+    id: 'recipeBook.emptyDescriptionApps',
     defaultMessage:
-      'Publications will appear here. Use “Share to 10router” on a recipe or application card.',
+      'Shared applications will appear here. Use “Share to 10router” on an application card.',
   },
   errorTitle: {
     id: 'recipeBook.errorTitle',
@@ -103,10 +108,17 @@ const i18n = defineMessages({
   },
 });
 
-export default function RecipeBookView() {
+// The shared 10router library for one kind of item. Recipes live in the
+// Recipes section (/recipes/library), applications in Apps (/apps/library).
+export const HARNESS_LIBRARY_PATH: Record<HarnessKind, string> = {
+  recipe: '/recipes/library',
+  app: '/apps/library',
+};
+
+export default function RecipeBookView({ kind }: { kind: HarnessKind }) {
   const intl = useIntl();
+  const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
-  const [kind, setKind] = useState<HarnessKind>('recipe');
   const [items, setItems] = useState<HarnessListItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -127,10 +139,7 @@ export default function RecipeBookView() {
         setItems(library);
         setInstalledTitles(new Set(localRecipes.map((entry) => entry.recipe.title)));
       } else {
-        const [library, localApps] = await Promise.all([
-          harnessList(currentKind),
-          listMcpApps(),
-        ]);
+        const [library, localApps] = await Promise.all([harnessList(currentKind), listMcpApps()]);
         if (signal?.aborted) return;
         setItems(library);
         setInstalledTitles(new Set(localApps.map((app) => app.name)));
@@ -204,8 +213,9 @@ export default function RecipeBookView() {
   );
 
   // A `10router://harness/install` deeplink lands here as
-  // /recipe-book?install=<kind>:<id> — install that item once, then clean
-  // the URL so a refresh does not repeat it.
+  // <library path>?install=<kind>:<id> — install that item once, then clean
+  // the URL so a refresh does not repeat it. An item of the other kind is
+  // handed to its own section's library.
   const pendingInstall = searchParams.get('install');
   useEffect(() => {
     if (!pendingInstall || loading) return;
@@ -216,10 +226,11 @@ export default function RecipeBookView() {
     }
     const itemKind = match[1] as HarnessKind;
     const itemId = Number(match[2]);
-    setSearchParams({}, { replace: true });
     if (itemKind !== kind) {
-      setKind(itemKind);
+      navigate(`${HARNESS_LIBRARY_PATH[itemKind]}?install=${pendingInstall}`, { replace: true });
+      return;
     }
+    setSearchParams({}, { replace: true });
     const item = items.find((entry) => entry.id === itemId);
     if (item) {
       install(itemKind, item);
@@ -230,6 +241,9 @@ export default function RecipeBookView() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pendingInstall, loading, items]);
 
+  const isRecipes = kind === 'recipe';
+  const TitleIcon = isRecipes ? BookOpen : LayoutGrid;
+
   const sortedItems = useMemo(
     () => [...items].sort((a, b) => Number(b.mine ?? false) - Number(a.mine ?? false)),
     [items]
@@ -238,12 +252,18 @@ export default function RecipeBookView() {
   return (
     <MainPanelLayout>
       <div className="flex-1 flex flex-col min-h-0">
-        <div className="bg-background-primary px-8 pb-8 pt-16">
+        <div className="bg-background-primary px-8 pb-8 pt-10">
           <div className="flex flex-col page-transition">
+            <BackButton
+              variant="ghost"
+              size="sm"
+              className="mb-4 self-start px-2"
+              onClick={() => navigate(isRecipes ? '/recipes' : '/apps')}
+            />
             <div className="flex justify-between items-center mb-1">
               <h1 className="font-display text-[32px] font-bold tracking-tight flex items-center gap-3">
-                <BookOpen className="w-8 h-8" />
-                {intl.formatMessage(i18n.title)}
+                <TitleIcon className="w-8 h-8" />
+                {intl.formatMessage(isRecipes ? i18n.title : i18n.titleApps)}
               </h1>
               <Button
                 variant="outline"
@@ -255,17 +275,9 @@ export default function RecipeBookView() {
                 {intl.formatMessage(i18n.refresh)}
               </Button>
             </div>
-            <p className="text-sm text-text-secondary mb-4">
-              {intl.formatMessage(i18n.description)}
+            <p className="text-sm text-text-secondary">
+              {intl.formatMessage(isRecipes ? i18n.descriptionRecipes : i18n.descriptionApps)}
             </p>
-            <Tabs value={kind} onValueChange={(value) => setKind(value as HarnessKind)}>
-              <TabsList>
-                <TabsTrigger value="recipe">
-                  {intl.formatMessage(i18n.recipesTab)}
-                </TabsTrigger>
-                <TabsTrigger value="app">{intl.formatMessage(i18n.appsTab)}</TabsTrigger>
-              </TabsList>
-            </Tabs>
           </div>
         </div>
 
@@ -287,7 +299,9 @@ export default function RecipeBookView() {
               <div className="text-center">
                 <h3 className="text-lg font-medium mb-2">{intl.formatMessage(i18n.emptyTitle)}</h3>
                 <p className="text-sm text-text-secondary max-w-md">
-                  {intl.formatMessage(i18n.emptyDescription)}
+                  {intl.formatMessage(
+                    isRecipes ? i18n.emptyDescriptionRecipes : i18n.emptyDescriptionApps
+                  )}
                 </p>
               </div>
             </div>

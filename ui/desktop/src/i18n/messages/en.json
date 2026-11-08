@@ -29,6 +29,9 @@
   "appLayout.openNavigation": {
     "defaultMessage": "Open navigation"
   },
+  "appsView.appLibrary": {
+    "defaultMessage": "App Library"
+  },
   "appsView.customApp": {
     "defaultMessage": "Custom app"
   },
@@ -73,9 +76,6 @@
   },
   "appsView.publishUpdatedMsg": {
     "defaultMessage": "\"{title}\" publication was updated"
-  },
-  "appsView.recipeBook": {
-    "defaultMessage": "Recipe Book"
   },
   "appsView.retiredChatApp": {
     "defaultMessage": "Chat app retired"
@@ -2942,14 +2942,17 @@
   "recipeActivityEditor.messagePlaceholder": {
     "defaultMessage": "Enter a user facing introduction message for your recipe (supports **bold**, *italic*, `code`, etc.)"
   },
-  "recipeBook.appsTab": {
-    "defaultMessage": "Applications"
+  "recipeBook.descriptionApps": {
+    "defaultMessage": "Applications other 10router users shared. Installing adds an application to your apps."
   },
-  "recipeBook.description": {
-    "defaultMessage": "Recipes and applications other 10router users shared. Installing saves them to your library."
+  "recipeBook.descriptionRecipes": {
+    "defaultMessage": "Recipes other 10router users shared. Installing saves a recipe to your recipes."
   },
-  "recipeBook.emptyDescription": {
-    "defaultMessage": "Publications will appear here. Use “Share to 10router” on a recipe or application card."
+  "recipeBook.emptyDescriptionApps": {
+    "defaultMessage": "Shared applications will appear here. Use “Share to 10router” on an application card."
+  },
+  "recipeBook.emptyDescriptionRecipes": {
+    "defaultMessage": "Shared recipes will appear here. Use “Share to 10router” on a recipe card."
   },
   "recipeBook.emptyTitle": {
     "defaultMessage": "Nothing shared yet"
@@ -2978,9 +2981,6 @@
   "recipeBook.loading": {
     "defaultMessage": "Loading…"
   },
-  "recipeBook.recipesTab": {
-    "defaultMessage": "Recipes"
-  },
   "recipeBook.refresh": {
     "defaultMessage": "Refresh"
   },
@@ -2989,6 +2989,9 @@
   },
   "recipeBook.title": {
     "defaultMessage": "Recipe Book"
+  },
+  "recipeBook.titleApps": {
+    "defaultMessage": "App Library"
   },
   "recipeBook.unpublish": {
     "defaultMessage": "Unpublish"

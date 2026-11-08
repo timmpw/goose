@@ -265,7 +265,13 @@ export const Navigation: React.FC<{
     });
   }, [appsExtensionEnabled]);
 
-  const isActive = useCallback((path: string) => location.pathname === path, [location.pathname]);
+  // A section stays highlighted on its sub-pages too (/recipes/library,
+  // /apps/library); '/' only matches itself.
+  const isActive = useCallback(
+    (path: string) =>
+      location.pathname === path || (path !== '/' && location.pathname.startsWith(`${path}/`)),
+    [location.pathname]
+  );
 
   const {
     recentSessions,
