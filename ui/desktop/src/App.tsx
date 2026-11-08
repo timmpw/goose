@@ -65,6 +65,10 @@ function PageViewTracker() {
   return null;
 }
 
+// Sessions deleted in this app run; the resume effect below must not remount them
+// while the router is still transitioning away from their /pair URL.
+const deletedSessionIds = new Set<string>();
+
 // Route Components
 const HubRouteWrapper = ({
   draftRef,
@@ -178,7 +182,11 @@ export const PairRouteWrapper = ({
 
   // Add resumed session to active sessions if not already there
   useEffect(() => {
-    if (resumeSessionId && !activeSessions.some((s) => s.sessionId === resumeSessionId)) {
+    if (
+      resumeSessionId &&
+      !deletedSessionIds.has(resumeSessionId) &&
+      !activeSessions.some((s) => s.sessionId === resumeSessionId)
+    ) {
       window.dispatchEvent(
         new CustomEvent(AppEvents.ADD_ACTIVE_SESSION, {
           detail: {
@@ -409,6 +417,7 @@ export function AppInner() {
     const handleSessionDeleted = (event: Event) => {
       const { sessionId } = (event as CustomEvent<{ sessionId: string }>).detail;
 
+      deletedSessionIds.add(sessionId);
       setActiveSessions((prev) => {
         return prev.filter((session) => session.sessionId !== sessionId);
       });

@@ -3,7 +3,7 @@
     "defaultMessage": "Понятно!"
   },
   "appLayout.collapseNavigation": {
-    "defaultMessage": "Collapse navigation"
+    "defaultMessage": "Свернуть навигацию"
   },
   "appLayout.openNavigation": {
     "defaultMessage": "Открыть навигацию"
@@ -12,10 +12,10 @@
     "defaultMessage": "Пользовательское приложение"
   },
   "appsView.deleteApp": {
-    "defaultMessage": "Delete app"
+    "defaultMessage": "Удалить приложение"
   },
   "appsView.deleteConfirm": {
-    "defaultMessage": "Delete \"{name}\"? This cannot be undone."
+    "defaultMessage": "Удалить «{name}»? Это действие нельзя отменить."
   },
   "appsView.description": {
     "defaultMessage": "Приложения с ваших MCP-серверов и приложения, созданные самим 10Router. Вы можете попросить его создать новые приложения через чат, и они появятся здесь."
@@ -24,7 +24,7 @@
     "defaultMessage": "Ошибка загрузки приложений: {error}"
   },
   "appsView.errorPrefix": {
-    "defaultMessage": "Error: {error}"
+    "defaultMessage": "Ошибка: {error}"
   },
   "appsView.importApp": {
     "defaultMessage": "Импортировать приложение"
@@ -42,10 +42,10 @@
     "defaultMessage": "Нет доступных приложений"
   },
   "appsView.retiredChatApp": {
-    "defaultMessage": "Chat app retired"
+    "defaultMessage": "Чат-приложение удалено"
   },
   "appsView.retiredChatAppDetail": {
-    "defaultMessage": "We removed this feature because MCP sampling is no longer supported."
+    "defaultMessage": "Мы убрали эту функцию, так как MCP sampling больше не поддерживается."
   },
   "appsView.retry": {
     "defaultMessage": "Повторить"
@@ -906,19 +906,19 @@
     "defaultMessage": "Текущий каталог"
   },
   "dirSwitcher.enterPath": {
-    "defaultMessage": "Enter path"
+    "defaultMessage": "Введите путь"
   },
   "dirSwitcher.enterPathPlaceholder": {
-    "defaultMessage": "Enter an absolute path (e.g. /home/10Router/workspace)"
+    "defaultMessage": "Введите абсолютный путь (например, /home/10Router/workspace)"
   },
   "dirSwitcher.enterPathInvalid": {
-    "defaultMessage": "Working directory must be an absolute path"
+    "defaultMessage": "Рабочий каталог должен быть абсолютным путём"
   },
   "dirSwitcher.failedToUpdateWorkingDir": {
     "defaultMessage": "Не удалось обновить рабочий каталог"
   },
   "dirSwitcher.gitWorktrees": {
-    "defaultMessage": "Git worktrees"
+    "defaultMessage": "Рабочие деревья Git"
   },
   "dirSwitcher.noWorktreesFound": {
     "defaultMessage": "Git worktrees не найдены"
@@ -957,7 +957,7 @@
     "defaultMessage": "Отправить"
   },
   "elicitationRequest.submitError": {
-    "defaultMessage": "This request is no longer active. The extension will need to ask again."
+    "defaultMessage": "Этот запрос больше не активен. Расширению придётся запросить снова."
   },
   "elicitationRequest.submitted": {
     "defaultMessage": "Информация отправлена"
@@ -1077,10 +1077,10 @@
     "defaultMessage": "OK"
   },
   "extensionInstallModal.policyErrorMessage": {
-    "defaultMessage": "The extension allowlist policy could not be retrieved. Extension installation is blocked until the policy is available. Contact your administrator to check the GOOSE_ALLOWLIST configuration."
+    "defaultMessage": "Не удалось получить политику разрешённых расширений. Установка расширений заблокирована, пока политика недоступна. Обратитесь к администратору, чтобы проверить настройку GOOSE_ALLOWLIST."
   },
   "extensionInstallModal.policyErrorTitle": {
-    "defaultMessage": "Extension Policy Unavailable"
+    "defaultMessage": "Политика расширений недоступна"
   },
   "extensionInstallModal.trustedMessage": {
     "defaultMessage": "Установить расширение {name}? Команда: {command}"
@@ -1197,7 +1197,7 @@
     "defaultMessage": "По умолчанию 10Router запускает сервер за вас; используйте это для подключения к внешнему серверу 10Router"
   },
   "externalBackendSection.fingerprintRequiresHttps": {
-    "defaultMessage": "Certificate fingerprint requires an https URL"
+    "defaultMessage": "Отпечаток сертификата требует URL с https"
   },
   "externalBackendSection.restartNote": {
     "defaultMessage": "Чтобы изменения вступили в силу, требуется перезапуск 10Router. Новые окна чата будут подключаться к внешнему серверу."
@@ -1215,13 +1215,13 @@
     "defaultMessage": "URL сервера"
   },
   "externalBackendSection.serverUrlHelp": {
-    "defaultMessage": "Enter the HTTP(S) base URL. 10Router checks /status and connects to /acp under this base."
+    "defaultMessage": "Введите базовый URL HTTP(S). 10Router проверяет /status и подключается к /acp по этому адресу."
   },
   "externalBackendSection.title": {
     "defaultMessage": "Сервер 10Router"
   },
   "externalBackendSection.urlBaseError": {
-    "defaultMessage": "URL must be the backend base URL before /acp, without query parameters or fragments"
+    "defaultMessage": "URL должен быть базовым адресом бэкенда до /acp, без параметров запроса и фрагментов"
   },
   "externalBackendSection.urlFormatError": {
     "defaultMessage": "Неверный формат URL"
@@ -1713,28 +1713,28 @@
     "defaultMessage": "Спросите 10Router о чем угодно..."
   },
   "liveVoice.connecting": {
-    "defaultMessage": "Connecting Live voice"
+    "defaultMessage": "Подключение Live voice"
   },
   "liveVoice.emptyComposerRequired": {
-    "defaultMessage": "Clear the message and attachments to use Live voice"
+    "defaultMessage": "Очистите сообщение и вложения, чтобы использовать Live voice"
   },
   "liveVoice.error": {
-    "defaultMessage": "Live voice failed. Try again"
+    "defaultMessage": "Не удалось запустить Live voice. Попробуйте ещё раз"
   },
   "liveVoice.live": {
-    "defaultMessage": "Stop Live voice"
+    "defaultMessage": "Остановить Live voice"
   },
   "liveVoice.mute": {
-    "defaultMessage": "Mute microphone"
+    "defaultMessage": "Выключить микрофон"
   },
   "liveVoice.returnToActive": {
-    "defaultMessage": "Return to active Live voice"
+    "defaultMessage": "Вернуться к активному Live voice"
   },
   "liveVoice.stopping": {
-    "defaultMessage": "Stopping Live voice"
+    "defaultMessage": "Остановка Live voice"
   },
   "liveVoice.unmute": {
-    "defaultMessage": "Unmute microphone"
+    "defaultMessage": "Включить микрофон"
   },
   "liveVoiceSettings.description": {
     "defaultMessage": "Общайтесь с 10Router голосом в реальном времени"
@@ -1788,13 +1788,13 @@
     "defaultMessage": "Скачивание"
   },
   "localInferenceSettings.evictFromMemory": {
-    "defaultMessage": "Evict from memory"
+    "defaultMessage": "Выгрузить из памяти"
   },
   "localInferenceSettings.huggingFaceSignInNote": {
     "defaultMessage": "Войдите, чтобы увеличить лимиты запросов при поиске и загрузке моделей, а также получить доступ к приватным или ограниченным репозиториям Hugging Face."
   },
   "localInferenceSettings.loadedInMemory": {
-    "defaultMessage": "Loaded in memory"
+    "defaultMessage": "Загружено в память"
   },
   "localInferenceSettings.modelSettings": {
     "defaultMessage": "Настройки модели"
@@ -3750,10 +3750,10 @@
     "defaultMessage": "Сохранение..."
   },
   "sessions.scheduledJobs": {
-    "defaultMessage": "Scheduled Jobs"
+    "defaultMessage": "Запланированные задачи"
   },
   "sessions.scheduledJobsCount": {
-    "defaultMessage": "{count,plural,one{{count} job} other{{count} jobs}}"
+    "defaultMessage": "{count,plural,one{{count} задача} few{{count} задачи} many{{count} задач} other{{count} задачи}}"
   },
   "sessions.search.noResults": {
     "defaultMessage": "Подходящие сеансы не найдены"
@@ -4359,7 +4359,7 @@
     "defaultMessage": "Отклонить"
   },
   "toolApprovalButtons.staleApprovalRequest": {
-    "defaultMessage": "This approval request is no longer active."
+    "defaultMessage": "Этот запрос на подтверждение больше не активен."
   },
   "toolCallStatusIndicator.toolStatus": {
     "defaultMessage": "Статус инструмента: {status}"

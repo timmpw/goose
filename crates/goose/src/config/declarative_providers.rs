@@ -415,8 +415,26 @@ pub fn load_provider(id: &str) -> Result<LoadedProvider> {
 /// tests, of the bundled declarative definitions only the allowlisted names
 /// are registered. The rest stay in the crate as data and never reach the
 /// provider list. (In-crate tests keep the full set as fixtures; see
-/// providers/init.rs.)
-const BUNDLED_PROVIDER_ALLOWLIST: &[&str] = &["tenrouter"];
+/// providers/init.rs.) Integration tests can opt back into the full set by
+/// setting GOOSE_BUNDLED_PROVIDERS=all.
+#[cfg(not(test))]
+pub fn bundled_providers_all() -> bool {
+    std::env::var("GOOSE_BUNDLED_PROVIDERS").as_deref() == Ok("all")
+}
+
+#[cfg(test)]
+pub fn bundled_providers_all() -> bool {
+    true
+}
+
+#[cfg(not(test))]
+fn bundled_provider_allowed(name: &str) -> bool {
+    if bundled_providers_all() {
+        return true;
+    }
+    const ALLOWLIST: &[&str] = &["tenrouter"];
+    ALLOWLIST.contains(&name)
+}
 
 pub fn register_declarative_providers(
     registry: &mut crate::providers::provider_registry::ProviderRegistry,
@@ -429,7 +447,7 @@ pub fn register_declarative_providers(
     #[cfg(not(test))]
     let fixed_providers = all_fixed_providers
         .into_iter()
-        .filter(|config| BUNDLED_PROVIDER_ALLOWLIST.contains(&config.name.as_str()))
+        .filter(|config| bundled_provider_allowed(&config.name))
         .collect::<Vec<_>>();
     for config in fixed_providers {
         register_declarative_provider(registry, config, ProviderType::Declarative);
