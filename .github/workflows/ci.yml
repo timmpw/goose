@@ -109,27 +109,28 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
 
+      - name: Set up Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020  # v7.0.0
+        with:
+          node-version: 24.10.0
+
+      - name: Install pnpm
+        run: npm install -g pnpm@10.30.3
+
       - name: Install Dependencies
-        run: |
-          set +e
-          source ../../bin/activate-hermit && pnpm install --frozen-lockfile > "$RUNNER_TEMP/install.log" 2>&1
-          rc=$?
-          if [ $rc -ne 0 ]; then
-            echo "::error::install failed rc=$rc TAIL: $(tail -n 40 "$RUNNER_TEMP/install.log" | tr '\n' '|' | cut -c1-1500)"
-          fi
-          exit $rc
+        run: pnpm install --frozen-lockfile
         working-directory: ui/desktop
 
       - name: Run Lint
-        run: source ../../bin/activate-hermit && pnpm run lint:check
+        run: pnpm run lint:check
         working-directory: ui/desktop
 
       - name: Run Tests
-        run: source ../../bin/activate-hermit && pnpm run test:run
+        run: pnpm run test:run
         working-directory: ui/desktop
 
       - name: Test macOS update manifests
-        run: source ../../bin/activate-hermit && node --test scripts/mac-update-requirements.test.cjs
+        run: node --test scripts/mac-update-requirements.test.cjs
         working-directory: ui/desktop
 
   desktop-updater-install:
