@@ -1018,3 +1018,20 @@ pre:has(> code.bg-inline-code) {
 .dark .surface-card {
   box-shadow: none;
 }
+
+/* ═══════════════════════════════════════════════════════════
+   EFFORT SLIDER TRACK
+   Green into the 10router blue, with a scatter of soft sparks —
+   the more effort, the further the colour runs (EffortSlider.tsx).
+   ═══════════════════════════════════════════════════════════ */
+.effort-track {
+  background:
+    radial-gradient(circle at 8% 30%, rgb(255 255 255 / 0.55) 0 1.5px, transparent 2px),
+    radial-gradient(circle at 21% 70%, rgb(255 255 255 / 0.4) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 34% 35%, rgb(255 255 255 / 0.5) 0 1.5px, transparent 2px),
+    radial-gradient(circle at 47% 65%, rgb(255 255 255 / 0.35) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 58% 28%, rgb(255 255 255 / 0.45) 0 1.5px, transparent 2px),
+    radial-gradient(circle at 71% 72%, rgb(255 255 255 / 0.4) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 86% 40%, rgb(255 255 255 / 0.35) 0 1px, transparent 1.5px),
+    linear-gradient(90deg, #3cc48f 0%, #17b3c4 45%, #2463f5 100%);
+}

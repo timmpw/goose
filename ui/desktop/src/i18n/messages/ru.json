@@ -4831,5 +4831,20 @@
   },
   "appsView.appLibrary": {
     "defaultMessage": "Каталог приложений"
+  },
+  "modelsBottomBar.tierCapable": {
+    "defaultMessage": "Самая мощная — для сложных задач"
+  },
+  "modelsBottomBar.tierEfficient": {
+    "defaultMessage": "Оптимальная для повседневных задач"
+  },
+  "modelsBottomBar.tierFast": {
+    "defaultMessage": "Самая быстрая — для коротких ответов"
+  },
+  "modelsBottomBar.tierCoding": {
+    "defaultMessage": "Заточена под агентную разработку"
+  },
+  "modelsBottomBar.longContext": {
+    "defaultMessage": "Контекстное окно 1M"
   }
 }

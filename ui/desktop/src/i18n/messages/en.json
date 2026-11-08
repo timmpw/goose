@@ -2396,11 +2396,26 @@
   "modelsBottomBar.localModelSettingsTitle": {
     "defaultMessage": "Local Model Settings — {modelName}"
   },
+  "modelsBottomBar.longContext": {
+    "defaultMessage": "1M context window"
+  },
   "modelsBottomBar.models": {
     "defaultMessage": "Models"
   },
   "modelsBottomBar.selectModel": {
     "defaultMessage": "Select Model"
+  },
+  "modelsBottomBar.tierCapable": {
+    "defaultMessage": "Most capable for ambitious work"
+  },
+  "modelsBottomBar.tierCoding": {
+    "defaultMessage": "Tuned for agentic coding"
+  },
+  "modelsBottomBar.tierEfficient": {
+    "defaultMessage": "Most efficient for everyday tasks"
+  },
+  "modelsBottomBar.tierFast": {
+    "defaultMessage": "Fastest for quick answers"
   },
   "modelsSection.resetDescription": {
     "defaultMessage": "Clear your selected model and provider settings to start fresh"

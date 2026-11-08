@@ -88,13 +88,6 @@ vi.mock('../../../ui/dropdown-menu', () => ({
     onSelect?: () => void;
   }) => <button onClick={onSelect}>{children}</button>,
   DropdownMenuSeparator: () => null,
-  DropdownMenuSub: ({ children }: { children: React.ReactNode }) => <div>{children}</div>,
-  DropdownMenuSubTrigger: ({ children }: { children: React.ReactNode }) => (
-    <div data-testid="effort-subtrigger">{children}</div>
-  ),
-  DropdownMenuSubContent: ({ children }: { children: React.ReactNode }) => (
-    <div data-testid="effort-submenu">{children}</div>
-  ),
 }));
 
 vi.mock('../../localInference/ModelSettingsPanel', () => ({
@@ -151,7 +144,8 @@ describe('ModelsBottomBar', () => {
       />
     );
 
-    expect(await screen.findByText('glm-5.3')).toBeInTheDocument();
+    // The raw id reads as a model name in the trigger.
+    expect(await screen.findByText('GLM 5.3')).toBeInTheDocument();
     expect(screen.getByText('Max')).toBeInTheDocument();
     expect(screen.queryByTestId('model-loading-state')).not.toBeInTheDocument();
   });
@@ -169,7 +163,7 @@ describe('ModelsBottomBar', () => {
     expect(screen.queryByTestId('model-loading-state')).not.toBeInTheDocument();
   });
 
-  it('lists all provider models, marks the current one, and switches on click', async () => {
+  it('lists all provider models with names and subtitles, marks the current one, and switches on click', async () => {
     mockCurrentModel = 'glm-5.3';
     renderWithIntl(
       <ModelsBottomBar
@@ -184,13 +178,19 @@ describe('ModelsBottomBar', () => {
 
     fireEvent.click(screen.getByRole('button', { name: 'Open model menu' }));
 
-    expect(await screen.findByRole('button', { name: 'glm-5.3-flash' })).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: 'glm-5.3' })).toBeInTheDocument();
+    expect(
+      await screen.findByRole('button', {
+        name: /^GLM 5\.3 Flash\s*Most efficient for everyday tasks$/,
+      })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('button', { name: /^GLM 5\.3\s*Most capable for ambitious work$/ })
+    ).toBeInTheDocument();
     expect(screen.getByText('Models')).toBeInTheDocument();
     expect(screen.getByText('Config Provider')).toBeInTheDocument();
     expect(screen.getByTestId('selected-model-check')).toBeInTheDocument();
 
-    fireEvent.click(screen.getByRole('button', { name: 'glm-5.3-flash' }));
+    fireEvent.click(screen.getByRole('button', { name: /^GLM 5\.3 Flash/ }));
 
     await waitFor(() => {
       expect(mockChangeModel).toHaveBeenCalledWith('session-123', {
@@ -211,7 +211,7 @@ describe('ModelsBottomBar', () => {
     });
   });
 
-  it('changes effort from the submenu, persists it, and applies it to the session', async () => {
+  it('changes effort with the slider, persists it, and applies it to the session', async () => {
     renderWithIntl(
       <ModelsBottomBar
         sessionId="session-123"
@@ -224,13 +224,15 @@ describe('ModelsBottomBar', () => {
     );
 
     fireEvent.click(screen.getByRole('button', { name: 'Open model menu' }));
-    await screen.findByRole('button', { name: 'glm-5.3-flash' });
+    await screen.findByRole('button', { name: /^GLM 5\.3 Flash/ });
 
-    const subtrigger = screen.getByTestId('effort-subtrigger');
-    expect(subtrigger).toHaveTextContent('Effort');
-    expect(subtrigger).toHaveTextContent('Max');
+    const control = screen.getByTestId('effort-control');
+    expect(control).toHaveTextContent('Effort');
+    await waitFor(() => expect(screen.getByTestId('effort-value')).toHaveTextContent('Max'));
 
-    fireEvent.click(screen.getByRole('button', { name: 'High' }));
+    const slider = screen.getByRole('slider', { name: 'Effort' });
+    // off, low, medium, high, max → "high" is step 3.
+    fireEvent.change(slider, { target: { value: '3' } });
 
     await waitFor(() => {
       expect(mockSaveThinkingEffort).toHaveBeenCalledWith('high');
@@ -241,10 +243,8 @@ describe('ModelsBottomBar', () => {
       'glm-5.3',
       'high'
     );
-    await waitFor(() => {
-      expect(screen.getByTestId('effort-subtrigger')).toHaveTextContent('High');
-    });
-    expect(screen.getByTestId('effort-subtrigger')).not.toHaveTextContent('Max');
+    expect(screen.getByTestId('effort-value')).toHaveTextContent('High');
+    expect(slider).toHaveAttribute('aria-valuetext', 'High');
     // Selecting an effort does not switch the model.
     expect(mockChangeModel).not.toHaveBeenCalled();
   });
@@ -262,9 +262,9 @@ describe('ModelsBottomBar', () => {
     );
 
     fireEvent.click(screen.getByRole('button', { name: 'Open model menu' }));
-    await screen.findByRole('button', { name: 'glm-5.3' });
+    await screen.findByRole('button', { name: /^GLM 5\.3/ });
 
-    expect(screen.queryByTestId('effort-subtrigger')).not.toBeInTheDocument();
+    expect(screen.queryByTestId('effort-control')).not.toBeInTheDocument();
     expect(screen.queryByText('Max')).not.toBeInTheDocument();
   });
 
