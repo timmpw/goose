@@ -193,17 +193,17 @@ export default function TenRouterKeyForm({ onConnected }: TenRouterKeyFormProps)
   };
 
   return (
-    <div className="h-screen w-full bg-background-default overflow-hidden">
+    <div className="hero-gradient h-screen w-full overflow-hidden">
       <div className="h-full overflow-y-auto">
-        <div className="flex flex-col items-center p-4 pt-[15vh] pb-8">
-          <div className="max-w-md w-full mx-auto">
-            <div className="mb-4">
-              <TenRouterMark className="size-8" />
+        <div className="flex flex-col items-center p-4 pt-[12vh] pb-8">
+          <div className="surface-card max-w-md w-full mx-auto p-8">
+            <div className="mb-6">
+              <TenRouterMark className="h-10 w-auto" />
             </div>
-            <h1 className="text-2xl sm:text-4xl font-light mb-3">
+            <h1 className="text-2xl sm:text-3xl font-bold tracking-tight mb-3">
               {intl.formatMessage(i18n.title)}
             </h1>
-            <p className="text-text-muted text-base sm:text-lg mb-8">
+            <p className="text-text-secondary text-base sm:text-lg mb-8">
               {intl.formatMessage(i18n.description, {
                 link: (chunks: ReactNode) => (
                   <a
@@ -212,7 +212,7 @@ export default function TenRouterKeyForm({ onConnected }: TenRouterKeyFormProps)
                       e.preventDefault();
                       window.electron.openExternal('https://10r.sokolov.io');
                     }}
-                    className="underline hover:text-text-primary"
+                    className="underline underline-offset-2 hover:text-text-primary"
                   >
                     {chunks}
                   </a>
@@ -235,14 +235,14 @@ export default function TenRouterKeyForm({ onConnected }: TenRouterKeyFormProps)
                   autoComplete="off"
                   autoFocus
                   disabled={isSubmitting}
-                  className={`w-full h-14 pl-11 pr-12 font-regular rounded-lg shadow-none ${
+                  className={`w-full h-14 pl-11 pr-12 rounded-lg shadow-none ${
                     error ? 'border-2 border-red-500' : 'border border-border-primary'
                   } bg-background-primary text-lg placeholder:text-text-secondary text-text-primary`}
                 />
                 <button
                   type="button"
                   onClick={() => setShowKey((prev) => !prev)}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-text-secondary hover:text-text-default"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-text-secondary hover:text-text-primary"
                   tabIndex={-1}
                 >
                   {showKey ? <EyeOff className="size-5" /> : <Eye className="size-5" />}
@@ -252,7 +252,7 @@ export default function TenRouterKeyForm({ onConnected }: TenRouterKeyFormProps)
               <SecureStorageNotice className="mt-2" />
 
               {hasSavedKey && (
-                <p className="mt-2 text-sm text-text-muted">
+                <p className="mt-2 text-sm text-text-secondary">
                   {intl.formatMessage(i18n.savedKeyHint)}
                 </p>
               )}
@@ -263,8 +263,8 @@ export default function TenRouterKeyForm({ onConnected }: TenRouterKeyFormProps)
                 </div>
               )}
 
-              <div className="mt-4">
-                <Button type="submit" disabled={isSubmitting} className="w-full">
+              <div className="mt-6">
+                <Button type="submit" disabled={isSubmitting} className="w-full h-11">
                   {isSubmitting ? (
                     <>
                       <Loader2 className="size-4 animate-spin" />

@@ -34,8 +34,8 @@ type ColorTokenKey = Exclude<McpUiStyleVariableKey, BaseTokenKey>;
 // ---------------------------------------------------------------------------
 const baseTokens: Pick<ThemeTokens, BaseTokenKey> = {
   // Typography — families
-  '--font-sans': "'Cash Sans', sans-serif",
-  '--font-mono': 'monospace',
+  '--font-sans': "'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif",
+  '--font-mono': "'IBM Plex Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace",
 
   // Typography — weights
   '--font-weight-normal': '400',
@@ -90,114 +90,124 @@ type ColorTokens = Pick<ThemeTokens, ColorTokenKey>;
 
 // ---------------------------------------------------------------------------
 // Light theme — colors & shadows
+// The 10router cabinet palette (html.theme-user in 10router web/src/index.css,
+// DESIGN.md there): white cards (--color-background-primary) on a pale grey
+// page (--color-background-secondary, also the app canvas), ink #0B1220 text.
+// --color-background-inverse is the cabinet's --primary-solid #1E5AE6 — the
+// fill under white text (buttons, the active menu row), 5.7:1, AA. The exact
+// brand blue #2463F5 is for the logo only (--brand in main.css).
 // ---------------------------------------------------------------------------
 const lightColorTokens: ColorTokens = {
   // Backgrounds
   '--color-background-primary': '#ffffff',
-  '--color-background-secondary': '#f4f6f7',
-  '--color-background-tertiary': '#e3e6ea',
-  '--color-background-inverse': '#000000',
+  '--color-background-secondary': '#f6f7f9',
+  '--color-background-tertiary': '#edeff2',
+  '--color-background-inverse': '#1e5ae6',
   '--color-background-ghost': 'transparent',
-  '--color-background-info': '#5c98f9',
-  '--color-background-danger': '#f94b4b',
-  '--color-background-success': '#91cb80',
-  '--color-background-warning': '#fbcd44',
-  '--color-background-disabled': '#e3e6ea',
+  '--color-background-info': '#1e5ae6',
+  '--color-background-danger': '#db2424',
+  '--color-background-success': '#059669',
+  '--color-background-warning': '#d97706',
+  '--color-background-disabled': '#edeff2',
 
   // Text
-  '--color-text-primary': '#3f434b',
-  '--color-text-secondary': '#878787',
-  '--color-text-tertiary': '#a7b0b9',
+  '--color-text-primary': '#0b1220',
+  '--color-text-secondary': '#666d7a',
+  '--color-text-tertiary': '#8b93a1',
   '--color-text-inverse': '#ffffff',
-  '--color-text-ghost': '#878787',
-  '--color-text-info': '#5c98f9',
-  '--color-text-danger': '#f94b4b',
-  '--color-text-success': '#91cb80',
-  '--color-text-warning': '#fbcd44',
-  '--color-text-disabled': '#cbd1d6',
+  '--color-text-ghost': '#666d7a',
+  '--color-text-info': '#1e5ae6',
+  '--color-text-danger': '#db2424',
+  '--color-text-success': '#047857',
+  '--color-text-warning': '#b45309',
+  '--color-text-disabled': '#a6adbd',
 
   // Borders
-  '--color-border-primary': '#e3e6ea',
-  '--color-border-secondary': '#e3e6ea',
-  '--color-border-tertiary': '#cbd1d6',
-  '--color-border-inverse': '#000000',
+  '--color-border-primary': '#e1e4ea',
+  '--color-border-secondary': '#e1e4ea',
+  '--color-border-tertiary': '#d6dae0',
+  '--color-border-inverse': '#1e5ae6',
   '--color-border-ghost': 'transparent',
-  '--color-border-info': '#5c98f9',
-  '--color-border-danger': '#f94b4b',
-  '--color-border-success': '#91cb80',
-  '--color-border-warning': '#fbcd44',
-  '--color-border-disabled': '#e3e6ea',
+  '--color-border-info': '#1e5ae6',
+  '--color-border-danger': '#db2424',
+  '--color-border-success': '#059669',
+  '--color-border-warning': '#d97706',
+  '--color-border-disabled': '#e1e4ea',
 
   // Rings
-  '--color-ring-primary': '#e3e6ea',
-  '--color-ring-secondary': '#cbd1d6',
+  '--color-ring-primary': '#1e5ae6',
+  '--color-ring-secondary': '#d6dae0',
   '--color-ring-inverse': '#ffffff',
-  '--color-ring-info': '#5c98f9',
-  '--color-ring-danger': '#f94b4b',
-  '--color-ring-success': '#91cb80',
-  '--color-ring-warning': '#fbcd44',
+  '--color-ring-info': '#1e5ae6',
+  '--color-ring-danger': '#db2424',
+  '--color-ring-success': '#059669',
+  '--color-ring-warning': '#d97706',
 
-  // Shadows
-  '--shadow-hairline': '0 0 0 1px rgba(0, 0, 0, 0.05)',
-  '--shadow-sm': '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
-  '--shadow-md': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1)',
-  '--shadow-lg': '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1)',
+  // Shadows — the cabinet's .surface: a hairline and the faintest shadow
+  '--shadow-hairline': '0 0 0 1px rgba(16, 24, 40, 0.06)',
+  '--shadow-sm': '0 1px 2px 0 rgba(16, 24, 40, 0.04)',
+  '--shadow-md': '0 2px 6px -1px rgba(16, 24, 40, 0.07), 0 1px 2px -1px rgba(16, 24, 40, 0.04)',
+  '--shadow-lg': '0 10px 24px -6px rgba(16, 24, 40, 0.1), 0 2px 6px -2px rgba(16, 24, 40, 0.05)',
 };
 
 // ---------------------------------------------------------------------------
 // Dark theme — colors & shadows
+// The cabinet's dark twin (html.theme-user.dark): #161A22 cards on a #0E1016
+// page (the canvas — see --color-canvas in main.css), #22262F for raised and
+// hovered fills. Fills under white text stay #1E5AE6; blue text, links and
+// rings take the lighter #4A7EF7 that reads on the dark page.
 // ---------------------------------------------------------------------------
 const darkColorTokens: ColorTokens = {
   // Backgrounds
-  '--color-background-primary': '#22252a',
-  '--color-background-secondary': '#3f434b',
-  '--color-background-tertiary': '#474e57',
-  '--color-background-inverse': '#cbd1d6',
+  '--color-background-primary': '#161a22',
+  '--color-background-secondary': '#22262f',
+  '--color-background-tertiary': '#2a2f3a',
+  '--color-background-inverse': '#1e5ae6',
   '--color-background-ghost': 'transparent',
-  '--color-background-info': '#7cacff',
-  '--color-background-danger': '#ff6b6b',
-  '--color-background-success': '#a3d795',
-  '--color-background-warning': '#ffd966',
-  '--color-background-disabled': '#474e57',
+  '--color-background-info': '#4a7ef7',
+  '--color-background-danger': '#e64c4c',
+  '--color-background-success': '#34d399',
+  '--color-background-warning': '#fbbf24',
+  '--color-background-disabled': '#22262f',
 
   // Text
-  '--color-text-primary': '#ffffff',
-  '--color-text-secondary': '#878787',
-  '--color-text-tertiary': '#606c7a',
-  '--color-text-inverse': '#000000',
-  '--color-text-ghost': '#878787',
-  '--color-text-info': '#7cacff',
-  '--color-text-danger': '#ff6b6b',
-  '--color-text-success': '#a3d795',
-  '--color-text-warning': '#ffd966',
-  '--color-text-disabled': '#525b68',
+  '--color-text-primary': '#edeff3',
+  '--color-text-secondary': '#9aa0ac',
+  '--color-text-tertiary': '#737d90',
+  '--color-text-inverse': '#ffffff',
+  '--color-text-ghost': '#9aa0ac',
+  '--color-text-info': '#4a7ef7',
+  '--color-text-danger': '#e64c4c',
+  '--color-text-success': '#34d399',
+  '--color-text-warning': '#fbbf24',
+  '--color-text-disabled': '#4a5266',
 
   // Borders
-  '--color-border-primary': '#3f434b',
-  '--color-border-secondary': '#525b68',
-  '--color-border-tertiary': '#474e57',
-  '--color-border-inverse': '#ffffff',
+  '--color-border-primary': '#292d38',
+  '--color-border-secondary': '#292d38',
+  '--color-border-tertiary': '#373c49',
+  '--color-border-inverse': '#4a7ef7',
   '--color-border-ghost': 'transparent',
-  '--color-border-info': '#7cacff',
-  '--color-border-danger': '#ff6b6b',
-  '--color-border-success': '#a3d795',
-  '--color-border-warning': '#ffd966',
-  '--color-border-disabled': '#3f434b',
+  '--color-border-info': '#4a7ef7',
+  '--color-border-danger': '#e64c4c',
+  '--color-border-success': '#34d399',
+  '--color-border-warning': '#fbbf24',
+  '--color-border-disabled': '#292d38',
 
   // Rings
-  '--color-ring-primary': '#525b68',
-  '--color-ring-secondary': '#474e57',
-  '--color-ring-inverse': '#000000',
-  '--color-ring-info': '#7cacff',
-  '--color-ring-danger': '#ff6b6b',
-  '--color-ring-success': '#a3d795',
-  '--color-ring-warning': '#ffd966',
+  '--color-ring-primary': '#4a7ef7',
+  '--color-ring-secondary': '#373c49',
+  '--color-ring-inverse': '#ffffff',
+  '--color-ring-info': '#4a7ef7',
+  '--color-ring-danger': '#e64c4c',
+  '--color-ring-success': '#34d399',
+  '--color-ring-warning': '#fbbf24',
 
-  // Shadows (darker for dark mode)
-  '--shadow-hairline': '0 0 0 1px rgba(0, 0, 0, 0.2)',
-  '--shadow-sm': '0 1px 2px 0 rgba(0, 0, 0, 0.2)',
-  '--shadow-md': '0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -2px rgba(0, 0, 0, 0.2)',
-  '--shadow-lg': '0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -4px rgba(0, 0, 0, 0.2)',
+  // Shadows — none to speak of in the dark cabinet; depth comes from borders
+  '--shadow-hairline': '0 0 0 1px rgba(0, 0, 0, 0.3)',
+  '--shadow-sm': '0 1px 2px 0 rgba(0, 0, 0, 0.25)',
+  '--shadow-md': '0 2px 6px -1px rgba(0, 0, 0, 0.4), 0 1px 2px -1px rgba(0, 0, 0, 0.3)',
+  '--shadow-lg': '0 10px 24px -6px rgba(0, 0, 0, 0.5), 0 2px 6px -2px rgba(0, 0, 0, 0.35)',
 };
 
 // ---------------------------------------------------------------------------
@@ -297,34 +307,10 @@ export const themes: Record<ThemeId, ThemeDefinition> = {
 
 // @font-face rules passed to MCP apps so sandboxed iframes can load host fonts.
 const HOST_FONT_CSS = `
-@font-face {
-  font-family: 'Cash Sans';
-  src: url(https://cash-f.squarecdn.com/static/fonts/cashsans/woff2/CashSans-Light.woff2) format('woff2'),
-       url(https://cash-f.squarecdn.com/static/fonts/cashsans/woff/CashSans-Light.woff) format('woff');
-  font-weight: 300;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Cash Sans';
-  src: url(https://cash-f.squarecdn.com/static/fonts/cashsans/woff2/CashSans-Regular.woff2) format('woff2'),
-       url(https://cash-f.squarecdn.com/static/fonts/cashsans/woff/CashSans-Regular.woff) format('woff');
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Cash Sans';
-  src: url(https://cash-f.squarecdn.com/static/fonts/cashsans/woff2/CashSans-Medium.woff2) format('woff2'),
-       url(https://cash-f.squarecdn.com/static/fonts/cashsans/woff/CashSans-Medium.woff) format('woff');
-  font-weight: 500;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Cash Sans';
-  src: url(https://cash-f.squarecdn.com/static/fonts/cashsans/woff2/CashSans-Bold.woff2) format('woff2'),
-       url(https://cash-f.squarecdn.com/static/fonts/cashsans/woff/CashSans-Bold.woff) format('woff');
-  font-weight: 700;
-  font-style: normal;
-}
+@font-face { font-family: 'IBM Plex Mono'; font-style: normal; font-weight: 400; font-display: swap; src: url(https://fonts.gstatic.com/s/ibmplexmono/v20/-F63fjptAgt5VM-kVkqdyU8n1isq131nj-otFQ.woff2) format('woff2'); unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
+@font-face { font-family: 'IBM Plex Mono'; font-style: normal; font-weight: 400; font-display: swap; src: url(https://fonts.gstatic.com/s/ibmplexmono/v20/-F63fjptAgt5VM-kVkqdyU8n1i8q131nj-o.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'IBM Plex Mono'; font-style: normal; font-weight: 500; font-display: swap; src: url(https://fonts.gstatic.com/s/ibmplexmono/v20/-F6qfjptAgt5VM-kVkqdyU8n3twJwlRFgsAXHNlYzg.woff2) format('woff2'); unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
+@font-face { font-family: 'IBM Plex Mono'; font-style: normal; font-weight: 500; font-display: swap; src: url(https://fonts.gstatic.com/s/ibmplexmono/v20/-F6qfjptAgt5VM-kVkqdyU8n3twJwlBFgsAXHNk.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
 `.trim();
 
 /**

@@ -124,15 +124,15 @@ export default function OnboardingGuard({ children }: OnboardingGuardProps) {
 
   if (checkProviderError) {
     return (
-      <div className="h-screen w-full bg-background-default flex flex-col items-center justify-center">
-        <div className="text-center max-w-md">
+      <div className="hero-gradient h-screen w-full flex flex-col items-center justify-center">
+        <div className="surface-card text-center max-w-md p-8">
           <div className="mb-4">
-            <TenRouterMark className="size-8 mx-auto" />
+            <TenRouterMark className="h-9 w-auto mx-auto" />
           </div>
-          <h1 className="text-xl font-light mb-3">
+          <h1 className="text-xl font-bold tracking-tight mb-3">
             {intl.formatMessage(i18n.checkProviderErrorTitle)}
           </h1>
-          <p className="text-text-muted mb-6">
+          <p className="text-text-secondary mb-6">
             {intl.formatMessage(i18n.checkProviderErrorDescription)}
           </p>
           <Button onClick={() => checkProvider()}>{intl.formatMessage(i18n.retry)}</Button>

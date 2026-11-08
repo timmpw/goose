@@ -1834,7 +1834,8 @@ export default function ChatInput({
           </Tooltip>
         )}
 
-        {/* Right: send / stop — soft gray circle with up-arrow */}
+        {/* Right: send / stop — the cabinet's solid blue action once there is
+            something to send, a quiet grey square otherwise */}
         {isLoading && !hasSubmittableContent ? (
           <Button
             type="button"
@@ -1843,7 +1844,7 @@ export default function ChatInput({
             shape="round"
             variant="ghost"
             aria-label="Stop"
-            className="bg-background-tertiary text-text-primary hover:bg-background-tertiary/70"
+            className="rounded-lg bg-background-tertiary text-text-primary hover:bg-background-tertiary/70"
           >
             <Stop />
           </Button>
@@ -1860,10 +1861,10 @@ export default function ChatInput({
                   aria-label={intl.formatMessage(i18n.send)}
                   onClick={onFormSubmit}
                   className={cn(
-                    'bg-background-tertiary',
+                    'rounded-lg',
                     isSubmitButtonDisabled
-                      ? 'text-text-secondary cursor-not-allowed opacity-60'
-                      : 'text-text-primary hover:bg-background-tertiary/70 hover:cursor-pointer'
+                      ? 'bg-background-tertiary text-text-secondary cursor-not-allowed opacity-60'
+                      : 'bg-background-inverse text-text-inverse hover:bg-background-inverse/90 hover:cursor-pointer'
                   )}
                 >
                   <ArrowUp className="w-4 h-4" strokeWidth={2.25} />

@@ -80,7 +80,7 @@ export default function ProviderSettings({ onClose, isOnboarding }: ProviderSett
   }, [isOnboarding]);
 
   return (
-    <div className="h-screen w-full flex flex-col bg-background-primary text-text-primary">
+    <div className="h-full w-full flex flex-col bg-background-primary text-text-primary">
       <ScrollArea className="flex-1 w-full">
         <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 md:px-8 pt-12 pb-4">
           {/* Consistent header pattern with back button */}
@@ -88,7 +88,7 @@ export default function ProviderSettings({ onClose, isOnboarding }: ProviderSett
             <div className="flex items-center pt-2 mb-1 no-drag">
               <BackButton onClick={onClose} />
             </div>
-            <h1 className="text-4xl font-light mb-4 pt-6" data-testid="provider-selection-heading">
+            <h1 className="font-display text-[32px] font-bold tracking-tight mb-4 pt-6" data-testid="provider-selection-heading">
               {isOnboarding
                 ? intl.formatMessage(i18n.otherProviders)
                 : intl.formatMessage(i18n.configurationSettings)}

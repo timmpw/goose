@@ -7,9 +7,6 @@ import {
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuSeparator,
-  DropdownMenuSub,
-  DropdownMenuSubContent,
-  DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from '../../../ui/dropdown-menu';
 import Model, { getProviderMetadata } from '../modelInterface';
@@ -26,6 +23,8 @@ import { ScrollArea } from '../../../ui/scroll-area';
 import { defineMessages, useIntl } from '../../../../i18n';
 import { addToRecentModels } from '../../../../utils/recentModels';
 import { trackModelChanged } from '../../../../utils/analytics';
+import { compareModelIds, describeModel, type ModelTier } from '../../../../utils/modelDisplay';
+import { EffortSlider } from './EffortSlider';
 
 const i18n = defineMessages({
   selectModel: {
@@ -64,6 +63,26 @@ const i18n = defineMessages({
     id: 'modelsBottomBar.effortMax',
     defaultMessage: 'Max',
   },
+  tierCapable: {
+    id: 'modelsBottomBar.tierCapable',
+    defaultMessage: 'Most capable for ambitious work',
+  },
+  tierEfficient: {
+    id: 'modelsBottomBar.tierEfficient',
+    defaultMessage: 'Most efficient for everyday tasks',
+  },
+  tierFast: {
+    id: 'modelsBottomBar.tierFast',
+    defaultMessage: 'Fastest for quick answers',
+  },
+  tierCoding: {
+    id: 'modelsBottomBar.tierCoding',
+    defaultMessage: 'Tuned for agentic coding',
+  },
+  longContext: {
+    id: 'modelsBottomBar.longContext',
+    defaultMessage: '1M context window',
+  },
   failedToLoadModels: {
     id: 'modelsBottomBar.failedToLoadModels',
     defaultMessage: 'Could not load models',
@@ -87,6 +106,17 @@ const EFFORT_MESSAGES = {
   high: i18n.effortHigh,
   max: i18n.effortMax,
 } as const satisfies Record<ThinkingEffort, (typeof i18n)[keyof typeof i18n]>;
+
+const TIER_MESSAGES = {
+  capable: i18n.tierCapable,
+  efficient: i18n.tierEfficient,
+  fast: i18n.tierFast,
+  coding: i18n.tierCoding,
+} as const satisfies Record<ModelTier, (typeof i18n)[keyof typeof i18n]>;
+
+// Persisting effort talks to the backend; while the slider is being dragged
+// only the last position is saved.
+const EFFORT_SAVE_DELAY_MS = 250;
 
 interface ModelsBottomBarProps {
   sessionId: string | null;
@@ -125,6 +155,7 @@ export default function ModelsBottomBar({
   const [failedToLoadModels, setFailedToLoadModels] = useState(false);
   const [effort, setEffort] = useState<ThinkingEffort | null>(null);
   const pendingLocalSettingsRef = useRef(false);
+  const effortSaveTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const modelsCacheRef = useRef<Map<string, Model[]>>(new Map());
 
   // Show a visible loading placeholder while session metadata is still being fetched,
@@ -189,7 +220,8 @@ export default function ModelsBottomBar({
     acpListProviderModels(currentProvider)
       .then((providerModels) => {
         if (cancelled) return;
-        const list: Model[] = providerModels.map((m) => ({
+        const sorted = [...providerModels].sort((a, b) => compareModelIds(a.id, b.id));
+        const list: Model[] = sorted.map((m) => ({
           name: m.id,
           provider: currentProvider,
           context_limit: m.contextLimit ?? undefined,
@@ -243,9 +275,8 @@ export default function ModelsBottomBar({
     onModelChanged({ model: model.name, provider: currentProvider });
   };
 
-  const handleEffortSelect = async (value: ThinkingEffort) => {
+  const applyEffort = async (value: ThinkingEffort) => {
     if (!currentProvider) return;
-    setEffort(value);
     acpSaveThinkingEffort(value).catch(console.warn);
     if (sessionId && currentModel && effortSupported) {
       try {
@@ -254,6 +285,29 @@ export default function ModelsBottomBar({
         console.error('Failed to apply thinking effort to session:', error);
       }
     }
+  };
+
+  const handleEffortChange = (value: ThinkingEffort) => {
+    if (!currentProvider) return;
+    setEffort(value);
+    if (effortSaveTimerRef.current) clearTimeout(effortSaveTimerRef.current);
+    effortSaveTimerRef.current = setTimeout(() => {
+      effortSaveTimerRef.current = null;
+      void applyEffort(value);
+    }, EFFORT_SAVE_DELAY_MS);
+  };
+
+  useEffect(
+    () => () => {
+      if (effortSaveTimerRef.current) clearTimeout(effortSaveTimerRef.current);
+    },
+    []
+  );
+
+  const modelSubtitle = (id: string) => {
+    const { tier, longContext } = describeModel(id);
+    if (longContext) return intl.formatMessage(i18n.longContext);
+    return tier ? intl.formatMessage(TIER_MESSAGES[tier]) : null;
   };
 
   const handleModelMenuCloseAutoFocus = (event: Event) => {
@@ -267,7 +321,9 @@ export default function ModelsBottomBar({
 
   const triggerLabel = isModelLoading
     ? intl.formatMessage(i18n.loadingModels)
-    : displayModel || intl.formatMessage(i18n.selectModel);
+    : displayModel
+      ? describeModel(displayModel).label
+      : intl.formatMessage(i18n.selectModel);
 
   const effortLabel =
     effort != null && effortSupported ? intl.formatMessage(EFFORT_MESSAGES[effort]) : null;
@@ -302,64 +358,68 @@ export default function ModelsBottomBar({
         <DropdownMenuContent
           side="top"
           align="center"
-          className="w-64 text-sm"
+          className="flex w-72 flex-col overflow-hidden text-sm"
           onCloseAutoFocus={handleModelMenuCloseAutoFocus}
         >
           <DropdownMenuLabel className="flex items-center justify-between">
-            <span className="text-xs text-text-primary">
-              {intl.formatMessage(i18n.models)}
-            </span>
+            <span className="text-xs text-text-primary">{intl.formatMessage(i18n.models)}</span>
             {!isModelLoading && displayProvider && (
               <span className="text-xs text-text-secondary truncate">{displayProvider}</span>
             )}
           </DropdownMenuLabel>
-          {isLoadingModels && !models && (
-            <div
-              data-testid="models-loading"
-              className="flex items-center gap-2 px-2 py-1.5 text-sm text-text-secondary"
-            >
-              <LoaderCircle className="h-4 w-4 animate-spin" />
-              {intl.formatMessage(i18n.loadingModels)}
-            </div>
-          )}
-          {failedToLoadModels && !models && (
-            <div className="px-2 py-1.5 text-sm text-text-danger">
-              {intl.formatMessage(i18n.failedToLoadModels)}
-            </div>
-          )}
-          {models?.map((model) => (
-            <DropdownMenuItem
-              key={model.name}
-              onSelect={() => void handleModelClick(model)}
-            >
-              <span className="truncate">{model.name}</span>
-              {model.name === currentModel && (
-                <Check data-testid="selected-model-check" className="ml-auto" />
-              )}
-            </DropdownMenuItem>
-          ))}
+          {/* Only the model list scrolls; the effort slider stays in view below it. */}
+          <div className="min-h-0 flex-1 overflow-y-auto">
+            {isLoadingModels && !models && (
+              <div
+                data-testid="models-loading"
+                className="flex items-center gap-2 px-2 py-1.5 text-sm text-text-secondary"
+              >
+                <LoaderCircle className="h-4 w-4 animate-spin" />
+                {intl.formatMessage(i18n.loadingModels)}
+              </div>
+            )}
+            {failedToLoadModels && !models && (
+              <div className="px-2 py-1.5 text-sm text-text-danger">
+                {intl.formatMessage(i18n.failedToLoadModels)}
+              </div>
+            )}
+            {models?.map((model) => {
+              const subtitle = modelSubtitle(model.name);
+              return (
+                <DropdownMenuItem
+                  key={model.name}
+                  onSelect={() => void handleModelClick(model)}
+                  title={model.name}
+                  className="items-start"
+                >
+                  <span className="flex min-w-0 flex-col">
+                    <span className="truncate text-text-primary">
+                      {describeModel(model.name).label}
+                    </span>
+                    {subtitle && (
+                      <span className="truncate text-xs text-text-secondary">{subtitle}</span>
+                    )}
+                  </span>
+                  {model.name === currentModel && (
+                    <Check
+                      data-testid="selected-model-check"
+                      className="ml-auto mt-0.5 text-text-info"
+                    />
+                  )}
+                </DropdownMenuItem>
+              );
+            })}
+          </div>
           {effortSupported && (
             <>
               <DropdownMenuSeparator />
-              <DropdownMenuSub>
-                <DropdownMenuSubTrigger data-testid="effort-subtrigger">
-                  <span>{intl.formatMessage(i18n.effort)}</span>
-                  {effortLabel && (
-                    <span className="ml-2 text-xs text-text-secondary">{effortLabel}</span>
-                  )}
-                </DropdownMenuSubTrigger>
-                <DropdownMenuSubContent data-testid="effort-submenu">
-                  {EFFORT_VALUES.map((value) => (
-                    <DropdownMenuItem
-                      key={value}
-                      onSelect={() => void handleEffortSelect(value)}
-                    >
-                      <span>{intl.formatMessage(EFFORT_MESSAGES[value])}</span>
-                      {effort === value && <Check className="ml-auto" />}
-                    </DropdownMenuItem>
-                  ))}
-                </DropdownMenuSubContent>
-              </DropdownMenuSub>
+              <EffortSlider
+                values={EFFORT_VALUES}
+                value={effort}
+                onChange={handleEffortChange}
+                title={intl.formatMessage(i18n.effort)}
+                labelFor={(value) => intl.formatMessage(EFFORT_MESSAGES[value])}
+              />
             </>
           )}
           {currentProvider === 'local' && currentModel && (

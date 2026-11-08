@@ -8,7 +8,7 @@ const path = require('node:path');
 // src/utils/autoUpdater.ts). ZIP copies request latest.yml, which is never published for
 // Windows, so they stay on the swap updater.
 const MANIFEST_NAME = 'installer.yml';
-const INSTALLER_NAME = 'Goose-win32-x64-setup.exe';
+const INSTALLER_NAME = '10Router-win32-x64-setup.exe';
 
 function usage() {
   console.error(

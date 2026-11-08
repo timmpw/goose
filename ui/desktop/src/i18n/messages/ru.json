@@ -4754,20 +4754,8 @@
   "appsView.publishFailedTitle": {
     "defaultMessage": "Не удалось опубликовать в 10router"
   },
-  "appsView.recipeBook": {
-    "defaultMessage": "Книга рецептов"
-  },
   "recipeBook.title": {
     "defaultMessage": "Книга рецептов"
-  },
-  "recipeBook.description": {
-    "defaultMessage": "Рецепты и приложения, которыми поделились другие пользователи 10router. Установка сохраняет их в вашу библиотеку."
-  },
-  "recipeBook.recipesTab": {
-    "defaultMessage": "Рецепты"
-  },
-  "recipeBook.appsTab": {
-    "defaultMessage": "Приложения"
   },
   "recipeBook.refresh": {
     "defaultMessage": "Обновить"
@@ -4777,9 +4765,6 @@
   },
   "recipeBook.emptyTitle": {
     "defaultMessage": "Пока ничего не опубликовано"
-  },
-  "recipeBook.emptyDescription": {
-    "defaultMessage": "Здесь появятся публикации. Используйте «Поделиться в 10router» на карточке рецепта или приложения."
   },
   "recipeBook.errorTitle": {
     "defaultMessage": "Не удалось загрузить библиотеку"
@@ -4816,5 +4801,38 @@
   },
   "recipeBook.you": {
     "defaultMessage": "вы"
+  },
+  "recipeBook.titleApps": {
+    "defaultMessage": "Каталог приложений"
+  },
+  "recipeBook.descriptionRecipes": {
+    "defaultMessage": "Рецепты, которыми поделились другие пользователи 10router. Установка сохраняет рецепт в ваши рецепты."
+  },
+  "recipeBook.descriptionApps": {
+    "defaultMessage": "Приложения, которыми поделились другие пользователи 10router. Установка добавляет приложение в ваши приложения."
+  },
+  "recipeBook.emptyDescriptionRecipes": {
+    "defaultMessage": "Здесь появятся опубликованные рецепты. Используйте «Поделиться в 10router» на карточке рецепта."
+  },
+  "recipeBook.emptyDescriptionApps": {
+    "defaultMessage": "Здесь появятся опубликованные приложения. Используйте «Поделиться в 10router» на карточке приложения."
+  },
+  "appsView.appLibrary": {
+    "defaultMessage": "Каталог приложений"
+  },
+  "modelsBottomBar.tierCapable": {
+    "defaultMessage": "Самая мощная — для сложных задач"
+  },
+  "modelsBottomBar.tierEfficient": {
+    "defaultMessage": "Оптимальная для повседневных задач"
+  },
+  "modelsBottomBar.tierFast": {
+    "defaultMessage": "Самая быстрая — для коротких ответов"
+  },
+  "modelsBottomBar.tierCoding": {
+    "defaultMessage": "Заточена под агентную разработку"
+  },
+  "modelsBottomBar.longContext": {
+    "defaultMessage": "Контекстное окно 1M"
   }
 }

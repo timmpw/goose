@@ -44,7 +44,7 @@ import PermissionSettingsView from './components/settings/permission/PermissionS
 
 import ExtensionsView, { ExtensionsViewOptions } from './components/extensions/ExtensionsView';
 import RecipesView from './components/recipes/RecipesView';
-import RecipeBookView from './components/recipes/RecipeBookView';
+import RecipeBookView, { HARNESS_LIBRARY_PATH } from './components/recipes/RecipeBookView';
 import SkillsView from './components/skills/SkillsView';
 import AppsView from './components/apps/AppsView';
 import StandaloneAppView from './components/apps/StandaloneAppView';
@@ -559,7 +559,7 @@ export function AppInner() {
       const kind = args[0];
       const id = Number(args[1]);
       if ((kind !== 'recipe' && kind !== 'app') || !Number.isFinite(id)) return;
-      navigate(`/recipe-book?install=${kind}:${id}`);
+      navigate(`${HARNESS_LIBRARY_PATH[kind]}?install=${kind}:${id}`);
     };
 
     window.electron.on('harness-install', handleHarnessInstall);
@@ -641,7 +641,7 @@ export function AppInner() {
         toastClassName={() =>
           `relative min-h-16 mb-4 p-2 rounded-lg
                flex justify-between overflow-hidden cursor-pointer
-               text-text-inverse bg-background-inverse
+               text-text-inverse bg-tooltip
               `
         }
         style={{ width: '450px' }}
@@ -654,7 +654,7 @@ export function AppInner() {
       <ExtensionInstallModal addExtension={addExtension} setView={setView} />
       <RecipeConsentModalContainer />
       <RecipeParamsModalContainer />
-      <div className="relative w-screen h-screen overflow-hidden bg-background-secondary flex flex-col">
+      <div className="relative w-screen h-screen overflow-hidden bg-canvas flex flex-col">
         <div className="titlebar-drag-region" />
         <div style={{ position: 'relative', width: '100%', height: '100%' }}>
           <Routes>
@@ -697,7 +697,8 @@ export function AppInner() {
               <Route path="sessions" element={<SessionsRoute />} />
               <Route path="schedules" element={<SchedulesRoute />} />
               <Route path="recipes" element={<RecipesRoute />} />
-              <Route path="recipe-book" element={<RecipeBookView />} />
+              <Route path="recipes/library" element={<RecipeBookView kind="recipe" />} />
+              <Route path="apps/library" element={<RecipeBookView kind="app" />} />
               <Route path="skills" element={<SkillsRoute />} />
               <Route path="permission" element={<PermissionRoute />} />
             </Route>

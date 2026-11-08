@@ -70,7 +70,7 @@ const i18n = defineMessages({
 });
 
 const settingsTabClass =
-  'w-full gap-3 rounded-full px-3 py-2 text-sm font-medium hover:bg-background-tertiary/60 data-[state=active]:bg-background-tertiary data-[state=active]:shadow-none';
+  'w-full gap-3 rounded-lg px-3 py-2 text-sm font-medium hover:bg-background-tertiary data-[state=active]:bg-background-inverse data-[state=active]:text-text-inverse data-[state=active]:shadow-none [&[data-state=active]_svg]:text-text-inverse';
 
 export type SettingsViewOptions = {
   deepLinkConfig?: ExtensionConfig;
@@ -175,14 +175,14 @@ export default function SettingsView({
         <div className="h-full flex-shrink-0 p-2" style={{ width: navWidth }}>
           <aside
             aria-label={intl.formatMessage(i18n.title)}
-            className="flex h-full w-full flex-col overflow-hidden rounded-xl border border-border-primary bg-background-primary"
+            className="surface-card flex h-full w-full flex-col overflow-hidden"
           >
             <div className="h-[48px] flex-shrink-0 no-drag" />
             <div className="px-2">
               <BackButton
                 onClick={onClose}
                 variant="ghost"
-                className="mb-3 w-full justify-start rounded-full px-3 text-sm font-medium hover:bg-background-tertiary/60"
+                className="mb-3 w-full justify-start rounded-lg px-3 text-sm font-medium hover:bg-background-tertiary"
               />
             </div>
             <TabsList className="w-full flex-col items-stretch gap-0.5 bg-transparent px-2 py-0">
@@ -256,10 +256,10 @@ export default function SettingsView({
           </aside>
         </div>
 
-        <main className="flex min-w-0 flex-1 flex-col overflow-hidden bg-background-primary">
+        <main className="surface-card my-2 mr-2 flex min-w-0 flex-1 flex-col overflow-hidden">
           <div className="px-12 pb-8 pt-16">
             <div className="mx-auto max-w-5xl">
-              <h1 className="text-4xl font-light">{activeTabTitle}</h1>
+              <h1 className="font-display text-[32px] font-bold tracking-tight">{activeTabTitle}</h1>
             </div>
           </div>
 

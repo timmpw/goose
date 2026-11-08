@@ -95,7 +95,25 @@ jobs:
             macos-pnpm-cache-v1-${{ runner.os }}-
 
       - name: Install dependencies
-        run: source ../../bin/activate-hermit && pnpm install --frozen-lockfile
+        # Cold installs occasionally die on a transient registry/CDN download;
+        # retry, and surface the log tail as an annotation on final failure
+        # (job logs need auth to read, annotations do not).
+        run: |
+          source ../../bin/activate-hermit
+          set -o pipefail
+          attempt=0
+          max_attempts=3
+          until [ $attempt -ge $max_attempts ]; do
+            pnpm install --frozen-lockfile 2>&1 | tee /tmp/pnpm-install.log && break
+            attempt=$((attempt + 1))
+            echo "Install attempt $attempt failed. Retrying..."
+            sleep 20
+          done
+          if [ $attempt -ge $max_attempts ]; then
+            echo "Install failed after $max_attempts attempts."
+            echo "::error title=pnpm install failed::$(tail -n 25 /tmp/pnpm-install.log | tr '\n' ' ' | tr -cd '[:print:]' | cut -c1-900)"
+            exit 1
+          fi
         working-directory: ui/desktop
 
       - name: Build app (DMG + zip)
@@ -209,7 +227,25 @@ jobs:
             macos-pnpm-cache-v1-${{ runner.os }}-
 
       - name: Install dependencies
-        run: source ../../bin/activate-hermit && pnpm install --frozen-lockfile
+        # Cold installs occasionally die on a transient registry/CDN download;
+        # retry, and surface the log tail as an annotation on final failure
+        # (job logs need auth to read, annotations do not).
+        run: |
+          source ../../bin/activate-hermit
+          set -o pipefail
+          attempt=0
+          max_attempts=3
+          until [ $attempt -ge $max_attempts ]; do
+            pnpm install --frozen-lockfile 2>&1 | tee /tmp/pnpm-install.log && break
+            attempt=$((attempt + 1))
+            echo "Install attempt $attempt failed. Retrying..."
+            sleep 20
+          done
+          if [ $attempt -ge $max_attempts ]; then
+            echo "Install failed after $max_attempts attempts."
+            echo "::error title=pnpm install failed::$(tail -n 25 /tmp/pnpm-install.log | tr '\n' ' ' | tr -cd '[:print:]' | cut -c1-900)"
+            exit 1
+          fi
         working-directory: ui/desktop
 
       - name: Build app (DMG + zip)
@@ -338,7 +374,20 @@ jobs:
           ELECTRON_PLATFORM: win32
         run: |
           cd ui/desktop
-          pnpm install --frozen-lockfile
+          set -o pipefail
+          attempt=0
+          max_attempts=3
+          until [ $attempt -ge $max_attempts ]; do
+            pnpm install --frozen-lockfile 2>&1 | tee /tmp/pnpm-install.log && break
+            attempt=$((attempt + 1))
+            echo "Install attempt $attempt failed. Retrying..."
+            sleep 20
+          done
+          if [ $attempt -ge $max_attempts ]; then
+            echo "Install failed after $max_attempts attempts."
+            echo "::error title=pnpm install failed::$(tail -n 25 /tmp/pnpm-install.log | tr '\n' ' ' | tr -cd '[:print:]' | cut -c1-900)"
+            exit 1
+          fi
           node scripts/build-main.js
           node scripts/prepare-platform-binaries.js
           pnpm run make --platform=win32 --arch=x64

@@ -128,7 +128,7 @@ export default function ExtensionsView({
         <div className="bg-background-primary px-8 pb-4 pt-16">
           <div className="flex flex-col page-transition">
             <div className="flex justify-between items-center mb-1">
-              <h1 className="text-4xl font-light">{intl.formatMessage(i18n.heading)}</h1>
+              <h1 className="font-display text-[32px] font-bold tracking-tight">{intl.formatMessage(i18n.heading)}</h1>
             </div>
             <p className="text-sm text-text-secondary mb-2">
               {intl.formatMessage(i18n.description, { searchShortcut: getSearchShortcutText() })}
