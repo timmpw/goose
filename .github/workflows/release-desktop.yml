@@ -95,7 +95,22 @@ jobs:
             macos-pnpm-cache-v1-${{ runner.os }}-
 
       - name: Install dependencies
-        run: source ../../bin/activate-hermit && pnpm install --frozen-lockfile
+        # Cold installs occasionally die on a transient registry/CDN download;
+        # retry before failing the whole release run.
+        run: |
+          source ../../bin/activate-hermit
+          attempt=0
+          max_attempts=3
+          until [ $attempt -ge $max_attempts ]; do
+            pnpm install --frozen-lockfile && break
+            attempt=$((attempt + 1))
+            echo "Install attempt $attempt failed. Retrying..."
+            sleep 20
+          done
+          if [ $attempt -ge $max_attempts ]; then
+            echo "Install failed after $max_attempts attempts."
+            exit 1
+          fi
         working-directory: ui/desktop
 
       - name: Build app (DMG + zip)
@@ -209,7 +224,22 @@ jobs:
             macos-pnpm-cache-v1-${{ runner.os }}-
 
       - name: Install dependencies
-        run: source ../../bin/activate-hermit && pnpm install --frozen-lockfile
+        # Cold installs occasionally die on a transient registry/CDN download;
+        # retry before failing the whole release run.
+        run: |
+          source ../../bin/activate-hermit
+          attempt=0
+          max_attempts=3
+          until [ $attempt -ge $max_attempts ]; do
+            pnpm install --frozen-lockfile && break
+            attempt=$((attempt + 1))
+            echo "Install attempt $attempt failed. Retrying..."
+            sleep 20
+          done
+          if [ $attempt -ge $max_attempts ]; then
+            echo "Install failed after $max_attempts attempts."
+            exit 1
+          fi
         working-directory: ui/desktop
 
       - name: Build app (DMG + zip)
@@ -338,7 +368,18 @@ jobs:
           ELECTRON_PLATFORM: win32
         run: |
           cd ui/desktop
-          pnpm install --frozen-lockfile
+          attempt=0
+          max_attempts=3
+          until [ $attempt -ge $max_attempts ]; do
+            pnpm install --frozen-lockfile && break
+            attempt=$((attempt + 1))
+            echo "Install attempt $attempt failed. Retrying..."
+            sleep 20
+          done
+          if [ $attempt -ge $max_attempts ]; then
+            echo "Install failed after $max_attempts attempts."
+            exit 1
+          fi
           node scripts/build-main.js
           node scripts/prepare-platform-binaries.js
           pnpm run make --platform=win32 --arch=x64
