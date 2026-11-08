@@ -1,4 +1,25 @@
 {
+  "acpReadinessPanel.adapterFound": {
+    "defaultMessage": "ACPアダプターが見つかりました"
+  },
+  "acpReadinessPanel.adapterNotFound": {
+    "defaultMessage": "ACPアダプターが見つかりません"
+  },
+  "acpReadinessPanel.authenticationHelp": {
+    "defaultMessage": "プロバイダーのCLIからサインインし、もう一度確認してください。"
+  },
+  "acpReadinessPanel.checkAgain": {
+    "defaultMessage": "もう一度確認"
+  },
+  "acpReadinessPanel.checking": {
+    "defaultMessage": "確認中..."
+  },
+  "acpReadinessPanel.connected": {
+    "defaultMessage": "接続しました"
+  },
+  "acpReadinessPanel.connectionNotChecked": {
+    "defaultMessage": "続行する前にアカウントの接続を確認してください。"
+  },
   "announcementModal.gotIt": {
     "defaultMessage": "了解しました"
   },
@@ -7,6 +28,9 @@
   },
   "appLayout.openNavigation": {
     "defaultMessage": "ナビゲーションを開く"
+  },
+  "appsView.appLibrary": {
+    "defaultMessage": "アプリライブラリ"
   },
   "appsView.customApp": {
     "defaultMessage": "カスタムアプリ"
@@ -41,6 +65,18 @@
   "appsView.noAppsTitle": {
     "defaultMessage": "利用可能なアプリはありません"
   },
+  "appsView.publishCreatedMsg": {
+    "defaultMessage": "\"{title}\" is now in the shared library"
+  },
+  "appsView.publishFailedTitle": {
+    "defaultMessage": "Failed to publish to 10router"
+  },
+  "appsView.publishSuccessTitle": {
+    "defaultMessage": "Published to 10router"
+  },
+  "appsView.publishUpdatedMsg": {
+    "defaultMessage": "\"{title}\" publication was updated"
+  },
   "appsView.retiredChatApp": {
     "defaultMessage": "Chat app retired"
   },
@@ -49,6 +85,9 @@
   },
   "appsView.retry": {
     "defaultMessage": "再試行"
+  },
+  "appsView.shareTo10Router": {
+    "defaultMessage": "Share to 10router"
   },
   "appsView.title": {
     "defaultMessage": "アプリ"
@@ -307,6 +346,63 @@
   },
   "confirmationModal.processing": {
     "defaultMessage": "処理中..."
+  },
+  "contextWindowIndicator.open": {
+    "defaultMessage": "{limit} 中 {used} トークンを使用中。コンテキストウィンドウの内容を表示"
+  },
+  "contextXray.autoCompactionPending": {
+    "defaultMessage": "自動コンパクション閾値を超えています。次のリクエストを送信する前に会話がコンパクションされます。"
+  },
+  "contextXray.category.additionalInstructions": {
+    "defaultMessage": "指示とヒント"
+  },
+  "contextXray.category.compactionSummary": {
+    "defaultMessage": "コンパクト化の要約"
+  },
+  "contextXray.category.extensionInstructions": {
+    "defaultMessage": "拡張機能の指示"
+  },
+  "contextXray.category.messages": {
+    "defaultMessage": "会話"
+  },
+  "contextXray.category.systemPrompt": {
+    "defaultMessage": "システムプロンプト"
+  },
+  "contextXray.category.toolDefinitions": {
+    "defaultMessage": "ツール定義"
+  },
+  "contextXray.category.turnContext": {
+    "defaultMessage": "ターンコンテキスト"
+  },
+  "contextXray.compactNow": {
+    "defaultMessage": "今すぐコンパクト化"
+  },
+  "contextXray.free": {
+    "defaultMessage": "空き"
+  },
+  "contextXray.loadError": {
+    "defaultMessage": "コンテキストレポートを読み込めませんでした。"
+  },
+  "contextXray.modelSummary": {
+    "defaultMessage": "{model} · {limit} トークンのコンテキストウィンドウ"
+  },
+  "contextXray.providerManagesContext": {
+    "defaultMessage": "{provider} は独自の会話履歴を保持し、10Router からは最新のプロンプトのみを受け取るため、内訳を表示するリクエストはありません。"
+  },
+  "contextXray.refresh": {
+    "defaultMessage": "更新"
+  },
+  "contextXray.retry": {
+    "defaultMessage": "再試行"
+  },
+  "contextXray.title": {
+    "defaultMessage": "コンテキストウィンドウ"
+  },
+  "contextXray.tokenizerNote": {
+    "defaultMessage": "トークン数は o200k トークナイザーによる推定値です。"
+  },
+  "contextXray.usage": {
+    "defaultMessage": "/ {limit} トークン · コンテキストウィンドウの {percent}"
   },
   "conversationLimitsDropdown.conversationLimits": {
     "defaultMessage": "会話制限"
@@ -908,11 +1004,11 @@
   "dirSwitcher.enterPath": {
     "defaultMessage": "Enter path"
   },
-  "dirSwitcher.enterPathPlaceholder": {
-    "defaultMessage": "Enter an absolute path (e.g. /home/10Router/workspace)"
-  },
   "dirSwitcher.enterPathInvalid": {
     "defaultMessage": "Working directory must be an absolute path"
+  },
+  "dirSwitcher.enterPathPlaceholder": {
+    "defaultMessage": "Enter an absolute path (e.g. /home/10Router/workspace)"
   },
   "dirSwitcher.failedToUpdateWorkingDir": {
     "defaultMessage": "作業ディレクトリの更新に失敗しました"
@@ -928,18 +1024,6 @@
   },
   "dirSwitcher.recentDirectories": {
     "defaultMessage": "最近のディレクトリ"
-  },
-  "gitBranchIndicator.failedToSwitch": {
-    "defaultMessage": "{branch} への切り替えに失敗しました"
-  },
-  "gitBranchIndicator.noBranchesFound": {
-    "defaultMessage": "ブランチが見つかりません"
-  },
-  "gitBranchIndicator.searchBranches": {
-    "defaultMessage": "ブランチを検索…"
-  },
-  "gitBranchIndicator.uncommittedChanges": {
-    "defaultMessage": "コミットされていない変更がある可能性があります。"
   },
   "elicitationRequest.accept": {
     "defaultMessage": "承諾"
@@ -1243,6 +1327,18 @@
   },
   "externalBackendSection.workingDirPlaceholder": {
     "defaultMessage": "/home/10Router/workspace"
+  },
+  "gitBranchIndicator.failedToSwitch": {
+    "defaultMessage": "{branch} への切り替えに失敗しました"
+  },
+  "gitBranchIndicator.noBranchesFound": {
+    "defaultMessage": "ブランチが見つかりません"
+  },
+  "gitBranchIndicator.searchBranches": {
+    "defaultMessage": "ブランチを検索…"
+  },
+  "gitBranchIndicator.uncommittedChanges": {
+    "defaultMessage": "コミットされていない変更がある可能性があります。"
   },
   "goosehintsModal.close": {
     "defaultMessage": "閉じる"
@@ -1922,6 +2018,18 @@
   "messageCopyLink.copy": {
     "defaultMessage": "コピー"
   },
+  "messageList.hiddenMessages": {
+    "defaultMessage": "{count, plural, other {# 件のメッセージを非表示}}"
+  },
+  "messageList.modelChanged": {
+    "defaultMessage": "モデルを変更しました: {previousModel} → {currentModel}"
+  },
+  "messageList.requestedModel": {
+    "defaultMessage": "{model}（リクエスト済み）"
+  },
+  "messageList.showAllMessages": {
+    "defaultMessage": "すべて表示"
+  },
   "messageQueue.cancel": {
     "defaultMessage": "キャンセル"
   },
@@ -2282,17 +2390,32 @@
   "modelsBottomBar.loadingModels": {
     "defaultMessage": "モデルを読み込み中…"
   },
-  "modelsBottomBar.models": {
-    "defaultMessage": "モデル"
-  },
   "modelsBottomBar.localModelSettings": {
     "defaultMessage": "ローカルモデル設定"
   },
   "modelsBottomBar.localModelSettingsTitle": {
     "defaultMessage": "ローカルモデル設定 — {modelName}"
   },
+  "modelsBottomBar.longContext": {
+    "defaultMessage": "1Mコンテキストウィンドウ"
+  },
+  "modelsBottomBar.models": {
+    "defaultMessage": "モデル"
+  },
   "modelsBottomBar.selectModel": {
     "defaultMessage": "モデルを選択"
+  },
+  "modelsBottomBar.tierCapable": {
+    "defaultMessage": "野心のある作業に最も有力"
+  },
+  "modelsBottomBar.tierCoding": {
+    "defaultMessage": "エージェント的コーディング向けに調整"
+  },
+  "modelsBottomBar.tierEfficient": {
+    "defaultMessage": "日常のタスクに最も効率的"
+  },
+  "modelsBottomBar.tierFast": {
+    "defaultMessage": "素早い回答に最速"
   },
   "modelsSection.resetDescription": {
     "defaultMessage": "選択したモデルとプロバイダー設定をクリアして最初からやり直します"
@@ -2546,18 +2669,6 @@
   "privacyInfoModal.whatWeCollect": {
     "defaultMessage": "収集する内容:"
   },
-  "messageList.hiddenMessages": {
-    "defaultMessage": "{count, plural, other {# 件のメッセージを非表示}}"
-  },
-  "messageList.modelChanged": {
-    "defaultMessage": "モデルを変更しました: {previousModel} → {currentModel}"
-  },
-  "messageList.requestedModel": {
-    "defaultMessage": "{model}（リクエスト済み）"
-  },
-  "messageList.showAllMessages": {
-    "defaultMessage": "すべて表示"
-  },
   "promptsSettings.allPromptsReset": {
     "defaultMessage": "すべてのプロンプトをデフォルトにリセットしました"
   },
@@ -2636,6 +2747,9 @@
   "promptsSettings.unsavedChanges": {
     "defaultMessage": "未保存の変更があります"
   },
+  "providerCard.deprecatedReplacement": {
+    "defaultMessage": "非推奨です。代わりに {replacement} を使用してください。"
+  },
   "providerCard.unknownProvider": {
     "defaultMessage": "不明なプロバイダー"
   },
@@ -2690,6 +2804,9 @@
   "providerConfigurationModal.checkConfigAgain": {
     "defaultMessage": "このプロバイダーを使用するには、設定をもう一度確認してください。"
   },
+  "providerConfigurationModal.chooseModel": {
+    "defaultMessage": "モデルを選択"
+  },
   "providerConfigurationModal.close": {
     "defaultMessage": "閉じる"
   },
@@ -2702,8 +2819,17 @@
   "providerConfigurationModal.deleteConfirmation": {
     "defaultMessage": "現在のプロバイダー設定は完全に削除されます。"
   },
+  "providerConfigurationModal.deviceCodeAndEnter": {
+    "defaultMessage": "コードを入力してください："
+  },
+  "providerConfigurationModal.deviceCodeCopy": {
+    "defaultMessage": "コピー"
+  },
   "providerConfigurationModal.deviceCodeFlowHint": {
     "defaultMessage": "ブラウザーウィンドウが開きます。確認コードがここに表示されるので、入力してサインインを完了してください。"
+  },
+  "providerConfigurationModal.deviceCodeVisit": {
+    "defaultMessage": "次のURLにアクセスし、"
   },
   "providerConfigurationModal.errorCheckingConfig": {
     "defaultMessage": "このプロバイダー設定の確認中にエラーが発生しました。"
@@ -2830,6 +2956,69 @@
   },
   "recipeActivityEditor.messagePlaceholder": {
     "defaultMessage": "レシピ用にユーザー向けの紹介メッセージを入力してください（**太字**、*斜体*、`コード`などに対応）"
+  },
+  "recipeBook.descriptionApps": {
+    "defaultMessage": "他の10routerユーザーが共有したアプリケーション。インストールするとアプリに追加されます。"
+  },
+  "recipeBook.descriptionRecipes": {
+    "defaultMessage": "他の10routerユーザーが共有したレシピ。インストールするとレシピに保存されます。"
+  },
+  "recipeBook.emptyDescriptionApps": {
+    "defaultMessage": "共有されたアプリケーションはここに表示されます。アプリケーションカードの「10routerへ共有」を使ってください。"
+  },
+  "recipeBook.emptyDescriptionRecipes": {
+    "defaultMessage": "共有されたレシピはここに表示されます。レシピカードの「10routerへ共有」を使ってください。"
+  },
+  "recipeBook.emptyTitle": {
+    "defaultMessage": "Nothing shared yet"
+  },
+  "recipeBook.errorTitle": {
+    "defaultMessage": "Failed to load the library"
+  },
+  "recipeBook.install": {
+    "defaultMessage": "Install"
+  },
+  "recipeBook.installFailedTitle": {
+    "defaultMessage": "Install failed"
+  },
+  "recipeBook.installed": {
+    "defaultMessage": "Installed"
+  },
+  "recipeBook.installedAppMsg": {
+    "defaultMessage": "Application \"{title}\" added"
+  },
+  "recipeBook.installedRecipeMsg": {
+    "defaultMessage": "Recipe \"{title}\" saved to your library"
+  },
+  "recipeBook.installing": {
+    "defaultMessage": "Installing…"
+  },
+  "recipeBook.loading": {
+    "defaultMessage": "Loading…"
+  },
+  "recipeBook.refresh": {
+    "defaultMessage": "Refresh"
+  },
+  "recipeBook.retry": {
+    "defaultMessage": "Retry"
+  },
+  "recipeBook.title": {
+    "defaultMessage": "Recipe Book"
+  },
+  "recipeBook.titleApps": {
+    "defaultMessage": "アプリライブラリ"
+  },
+  "recipeBook.unpublish": {
+    "defaultMessage": "Unpublish"
+  },
+  "recipeBook.unpublishFailedTitle": {
+    "defaultMessage": "Failed to unpublish"
+  },
+  "recipeBook.unpublishedMsg": {
+    "defaultMessage": "\"{title}\" is no longer published"
+  },
+  "recipeBook.you": {
+    "defaultMessage": "you"
   },
   "recipeExtensionSelector.description": {
     "defaultMessage": "このレシピの実行時に利用できる拡張機能を選択します。空のままにするとデフォルトの拡張機能を使用します。"
@@ -3068,6 +3257,21 @@
   "recipesView.openInNewWindow": {
     "defaultMessage": "新しいウィンドウで開く"
   },
+  "recipesView.publishCreatedMsg": {
+    "defaultMessage": "\"{title}\" is now in the shared library"
+  },
+  "recipesView.publishFailedTitle": {
+    "defaultMessage": "Failed to publish to 10router"
+  },
+  "recipesView.publishSuccessTitle": {
+    "defaultMessage": "Published to 10router"
+  },
+  "recipesView.publishUpdatedMsg": {
+    "defaultMessage": "\"{title}\" publication was updated"
+  },
+  "recipesView.recipeBook": {
+    "defaultMessage": "Recipe Book"
+  },
   "recipesView.recipeDeletedSuccess": {
     "defaultMessage": "レシピを削除しました"
   },
@@ -3113,8 +3317,14 @@
   "recipesView.searchRecipesPlaceholder": {
     "defaultMessage": "レシピを検索..."
   },
+  "recipesView.shareEnvWarningTitle": {
+    "defaultMessage": "This recipe includes extension environment values, which will be visible to everyone. Publish anyway?"
+  },
   "recipesView.shareRecipe": {
     "defaultMessage": "レシピを共有"
+  },
+  "recipesView.shareTo10Router": {
+    "defaultMessage": "Share to 10router"
   },
   "recipesView.slashCommandDescription": {
     "defaultMessage": "このレシピを任意のチャットからすばやく実行するためのスラッシュコマンドを設定します"
@@ -3797,6 +4007,96 @@
   "sessions.toast.updated": {
     "defaultMessage": "セッションの説明を更新しました"
   },
+  "settings.agentLoop.operations.auto.placeholder": {
+    "defaultMessage": "自動"
+  },
+  "settings.agentLoop.operations.autoEffort.apiKey.configured": {
+    "defaultMessage": "設定済み"
+  },
+  "settings.agentLoop.operations.autoEffort.apiKey.label": {
+    "defaultMessage": "TypeSafe APIキー"
+  },
+  "settings.agentLoop.operations.autoEffort.apiKey.placeholder": {
+    "defaultMessage": "APIキーを入力"
+  },
+  "settings.agentLoop.operations.autoEffort.apiKey.remove": {
+    "defaultMessage": "キーを削除"
+  },
+  "settings.agentLoop.operations.autoEffort.apiKey.save": {
+    "defaultMessage": "キーを保存"
+  },
+  "settings.agentLoop.operations.autoEffort.description": {
+    "defaultMessage": "Jevを使用してリクエストごとの思考レベルを選択します。リクエストのテキストはTypeSafe AIに送信され、スキルやレシピのスラッシュコマンドには展開されたローカル指示が含まれます。"
+  },
+  "settings.agentLoop.operations.autoEffort.title": {
+    "defaultMessage": "思考レベルの自動選択"
+  },
+  "settings.agentLoop.operations.blockLimit.label": {
+    "defaultMessage": "ブロック上限"
+  },
+  "settings.agentLoop.operations.contextCompaction.description": {
+    "defaultMessage": "コンテキストウィンドウがいっぱいになる前に会話履歴を要約します。"
+  },
+  "settings.agentLoop.operations.contextCompaction.title": {
+    "defaultMessage": "コンテキスト圧縮"
+  },
+  "settings.agentLoop.operations.cutoff.label": {
+    "defaultMessage": "カットオフ"
+  },
+  "settings.agentLoop.operations.enable": {
+    "defaultMessage": "{operation}を有効にする"
+  },
+  "settings.agentLoop.operations.failureTimeout.label": {
+    "defaultMessage": "失敗タイムアウト"
+  },
+  "settings.agentLoop.operations.heading": {
+    "defaultMessage": "設定可能なオペレーション"
+  },
+  "settings.agentLoop.operations.maxTurns.description": {
+    "defaultMessage": "自律作業を停止し、続行する前にユーザーへ確認します。"
+  },
+  "settings.agentLoop.operations.maxTurns.title": {
+    "defaultMessage": "最大ターン数"
+  },
+  "settings.agentLoop.operations.recipeRetry.description": {
+    "defaultMessage": "設定された成功チェックが失敗した場合にレシピのチェックを再実行します。"
+  },
+  "settings.agentLoop.operations.recipeRetry.title": {
+    "defaultMessage": "レシピの再試行"
+  },
+  "settings.agentLoop.operations.retryTimeout.label": {
+    "defaultMessage": "再試行タイムアウト"
+  },
+  "settings.agentLoop.operations.slashCommands.description": {
+    "defaultMessage": "/compact、/skills、レシピのショートカットなどのコマンドを認識します。"
+  },
+  "settings.agentLoop.operations.slashCommands.title": {
+    "defaultMessage": "スラッシュコマンド"
+  },
+  "settings.agentLoop.operations.stopHooks.description": {
+    "defaultMessage": "無限の停止サイクルを防ぎながら、フックによる完了のブロックを許可します。"
+  },
+  "settings.agentLoop.operations.stopHooks.title": {
+    "defaultMessage": "停止フック"
+  },
+  "settings.agentLoop.operations.threshold.label": {
+    "defaultMessage": "しきい値 %"
+  },
+  "settings.agentLoop.operations.tokenLimit.label": {
+    "defaultMessage": "トークン上限"
+  },
+  "settings.agentLoop.operations.toolPairCompaction.description": {
+    "defaultMessage": "古いツールのリクエストとレスポンスを要約してコンテキストを節約します。空欄の場合、カットオフは自動です。"
+  },
+  "settings.agentLoop.operations.toolPairCompaction.title": {
+    "defaultMessage": "ツールペア圧縮"
+  },
+  "settings.agentLoop.operations.turns.label": {
+    "defaultMessage": "ターン"
+  },
+  "settings.agentLoop.title": {
+    "defaultMessage": "エージェントループ"
+  },
   "settings.appearance.description": {
     "defaultMessage": "システム上でのgooseの表示を設定します"
   },
@@ -4319,6 +4619,39 @@
   "telemetrySettings.updateError": {
     "defaultMessage": "テレメトリ設定を更新できませんでした。"
   },
+  "tenRouterKeyForm.connect": {
+    "defaultMessage": "接続"
+  },
+  "tenRouterKeyForm.connecting": {
+    "defaultMessage": "接続中..."
+  },
+  "tenRouterKeyForm.description": {
+    "defaultMessage": "10router の API キーを入力してください（10r_ で始まります）。モデルの一覧は <link>10r.sokolov.io</link> から自動的に取得されます。"
+  },
+  "tenRouterKeyForm.fetchModelsError": {
+    "defaultMessage": "10router からモデル一覧を取得できませんでした：{detail}"
+  },
+  "tenRouterKeyForm.invalidKey": {
+    "defaultMessage": "キーが 10router に拒否されました。確認してもう一度お試しください。"
+  },
+  "tenRouterKeyForm.keyLabel": {
+    "defaultMessage": "API キー"
+  },
+  "tenRouterKeyForm.keyPlaceholder": {
+    "defaultMessage": "10r_…"
+  },
+  "tenRouterKeyForm.noModels": {
+    "defaultMessage": "このキーに対して 10router はモデルを返しませんでした。"
+  },
+  "tenRouterKeyForm.requiredError": {
+    "defaultMessage": "API キーを入力してください"
+  },
+  "tenRouterKeyForm.savedKeyHint": {
+    "defaultMessage": "キーは既に保存されています。「接続」を押すとそのキーで続行します。新しいキーを貼り付けることもできます。"
+  },
+  "tenRouterKeyForm.title": {
+    "defaultMessage": "10router に接続"
+  },
   "themeSelector.aura": {
     "defaultMessage": "Aura"
   },
@@ -4501,320 +4834,5 @@
   },
   "userMessage.removeImageFromEdit": {
     "defaultMessage": "メッセージから画像を削除"
-  },
-  "providerConfigurationModal.chooseModel": {
-    "defaultMessage": "モデルを選択"
-  },
-  "providerCard.deprecatedReplacement": {
-    "defaultMessage": "非推奨です。代わりに {replacement} を使用してください。"
-  },
-  "acpReadinessPanel.adapterFound": {
-    "defaultMessage": "ACPアダプターが見つかりました"
-  },
-  "acpReadinessPanel.adapterNotFound": {
-    "defaultMessage": "ACPアダプターが見つかりません"
-  },
-  "acpReadinessPanel.authenticationHelp": {
-    "defaultMessage": "プロバイダーのCLIからサインインし、もう一度確認してください。"
-  },
-  "acpReadinessPanel.checkAgain": {
-    "defaultMessage": "もう一度確認"
-  },
-  "acpReadinessPanel.checking": {
-    "defaultMessage": "確認中..."
-  },
-  "acpReadinessPanel.connected": {
-    "defaultMessage": "接続しました"
-  },
-  "acpReadinessPanel.connectionNotChecked": {
-    "defaultMessage": "続行する前にアカウントの接続を確認してください。"
-  },
-  "providerConfigurationModal.deviceCodeAndEnter": {
-    "defaultMessage": "コードを入力してください："
-  },
-  "providerConfigurationModal.deviceCodeCopy": {
-    "defaultMessage": "コピー"
-  },
-  "providerConfigurationModal.deviceCodeVisit": {
-    "defaultMessage": "次のURLにアクセスし、"
-  },
-  "contextWindowIndicator.open": {
-    "defaultMessage": "{limit} 中 {used} トークンを使用中。コンテキストウィンドウの内容を表示"
-  },
-  "contextXray.compactNow": {
-    "defaultMessage": "今すぐコンパクト化"
-  },
-  "contextXray.free": {
-    "defaultMessage": "空き"
-  },
-  "contextXray.loadError": {
-    "defaultMessage": "コンテキストレポートを読み込めませんでした。"
-  },
-  "contextXray.modelSummary": {
-    "defaultMessage": "{model} · {limit} トークンのコンテキストウィンドウ"
-  },
-  "contextXray.refresh": {
-    "defaultMessage": "更新"
-  },
-  "contextXray.retry": {
-    "defaultMessage": "再試行"
-  },
-  "contextXray.title": {
-    "defaultMessage": "コンテキストウィンドウ"
-  },
-  "contextXray.tokenizerNote": {
-    "defaultMessage": "トークン数は o200k トークナイザーによる推定値です。"
-  },
-  "contextXray.usage": {
-    "defaultMessage": "/ {limit} トークン · コンテキストウィンドウの {percent}"
-  },
-  "contextXray.category.additionalInstructions": {
-    "defaultMessage": "指示とヒント"
-  },
-  "contextXray.category.compactionSummary": {
-    "defaultMessage": "コンパクト化の要約"
-  },
-  "contextXray.category.extensionInstructions": {
-    "defaultMessage": "拡張機能の指示"
-  },
-  "contextXray.category.messages": {
-    "defaultMessage": "会話"
-  },
-  "contextXray.category.systemPrompt": {
-    "defaultMessage": "システムプロンプト"
-  },
-  "contextXray.category.toolDefinitions": {
-    "defaultMessage": "ツール定義"
-  },
-  "contextXray.category.turnContext": {
-    "defaultMessage": "ターンコンテキスト"
-  },
-  "settings.agentLoop.operations.auto.placeholder": {
-    "defaultMessage": "自動"
-  },
-  "settings.agentLoop.operations.autoEffort.apiKey.configured": {
-    "defaultMessage": "設定済み"
-  },
-  "settings.agentLoop.operations.autoEffort.apiKey.label": {
-    "defaultMessage": "TypeSafe APIキー"
-  },
-  "settings.agentLoop.operations.autoEffort.apiKey.placeholder": {
-    "defaultMessage": "APIキーを入力"
-  },
-  "settings.agentLoop.operations.autoEffort.apiKey.remove": {
-    "defaultMessage": "キーを削除"
-  },
-  "settings.agentLoop.operations.autoEffort.apiKey.save": {
-    "defaultMessage": "キーを保存"
-  },
-  "settings.agentLoop.operations.autoEffort.description": {
-    "defaultMessage": "Jevを使用してリクエストごとの思考レベルを選択します。リクエストのテキストはTypeSafe AIに送信され、スキルやレシピのスラッシュコマンドには展開されたローカル指示が含まれます。"
-  },
-  "settings.agentLoop.operations.autoEffort.title": {
-    "defaultMessage": "思考レベルの自動選択"
-  },
-  "settings.agentLoop.operations.blockLimit.label": {
-    "defaultMessage": "ブロック上限"
-  },
-  "settings.agentLoop.operations.contextCompaction.description": {
-    "defaultMessage": "コンテキストウィンドウがいっぱいになる前に会話履歴を要約します。"
-  },
-  "settings.agentLoop.operations.contextCompaction.title": {
-    "defaultMessage": "コンテキスト圧縮"
-  },
-  "settings.agentLoop.operations.cutoff.label": {
-    "defaultMessage": "カットオフ"
-  },
-  "settings.agentLoop.operations.enable": {
-    "defaultMessage": "{operation}を有効にする"
-  },
-  "settings.agentLoop.operations.failureTimeout.label": {
-    "defaultMessage": "失敗タイムアウト"
-  },
-  "settings.agentLoop.operations.heading": {
-    "defaultMessage": "設定可能なオペレーション"
-  },
-  "settings.agentLoop.operations.maxTurns.description": {
-    "defaultMessage": "自律作業を停止し、続行する前にユーザーへ確認します。"
-  },
-  "settings.agentLoop.operations.maxTurns.title": {
-    "defaultMessage": "最大ターン数"
-  },
-  "settings.agentLoop.operations.recipeRetry.description": {
-    "defaultMessage": "設定された成功チェックが失敗した場合にレシピのチェックを再実行します。"
-  },
-  "settings.agentLoop.operations.recipeRetry.title": {
-    "defaultMessage": "レシピの再試行"
-  },
-  "settings.agentLoop.operations.retryTimeout.label": {
-    "defaultMessage": "再試行タイムアウト"
-  },
-  "settings.agentLoop.operations.slashCommands.description": {
-    "defaultMessage": "/compact、/skills、レシピのショートカットなどのコマンドを認識します。"
-  },
-  "settings.agentLoop.operations.slashCommands.title": {
-    "defaultMessage": "スラッシュコマンド"
-  },
-  "settings.agentLoop.operations.stopHooks.description": {
-    "defaultMessage": "無限の停止サイクルを防ぎながら、フックによる完了のブロックを許可します。"
-  },
-  "settings.agentLoop.operations.stopHooks.title": {
-    "defaultMessage": "停止フック"
-  },
-  "settings.agentLoop.operations.threshold.label": {
-    "defaultMessage": "しきい値 %"
-  },
-  "settings.agentLoop.operations.tokenLimit.label": {
-    "defaultMessage": "トークン上限"
-  },
-  "settings.agentLoop.operations.toolPairCompaction.description": {
-    "defaultMessage": "古いツールのリクエストとレスポンスを要約してコンテキストを節約します。空欄の場合、カットオフは自動です。"
-  },
-  "settings.agentLoop.operations.toolPairCompaction.title": {
-    "defaultMessage": "ツールペア圧縮"
-  },
-  "settings.agentLoop.operations.turns.label": {
-    "defaultMessage": "ターン"
-  },
-  "settings.agentLoop.title": {
-    "defaultMessage": "エージェントループ"
-  },
-  "contextXray.providerManagesContext": {
-    "defaultMessage": "{provider} は独自の会話履歴を保持し、10Router からは最新のプロンプトのみを受け取るため、内訳を表示するリクエストはありません。"
-  },
-  "contextXray.autoCompactionPending": {
-    "defaultMessage": "自動コンパクション閾値を超えています。次のリクエストを送信する前に会話がコンパクションされます。"
-  },
-  "tenRouterKeyForm.title": {
-    "defaultMessage": "10router に接続"
-  },
-  "tenRouterKeyForm.description": {
-    "defaultMessage": "10router の API キーを入力してください（10r_ で始まります）。モデルの一覧は <link>10r.sokolov.io</link> から自動的に取得されます。"
-  },
-  "tenRouterKeyForm.keyLabel": {
-    "defaultMessage": "API キー"
-  },
-  "tenRouterKeyForm.keyPlaceholder": {
-    "defaultMessage": "10r_…"
-  },
-  "tenRouterKeyForm.connect": {
-    "defaultMessage": "接続"
-  },
-  "tenRouterKeyForm.connecting": {
-    "defaultMessage": "接続中..."
-  },
-  "tenRouterKeyForm.requiredError": {
-    "defaultMessage": "API キーを入力してください"
-  },
-  "tenRouterKeyForm.invalidKey": {
-    "defaultMessage": "キーが 10router に拒否されました。確認してもう一度お試しください。"
-  },
-  "tenRouterKeyForm.fetchModelsError": {
-    "defaultMessage": "10router からモデル一覧を取得できませんでした：{detail}"
-  },
-  "tenRouterKeyForm.noModels": {
-    "defaultMessage": "このキーに対して 10router はモデルを返しませんでした。"
-  },
-  "tenRouterKeyForm.savedKeyHint": {
-    "defaultMessage": "キーは既に保存されています。「接続」を押すとそのキーで続行します。新しいキーを貼り付けることもできます。"
-  },
-  "appsView.publishCreatedMsg": {
-    "defaultMessage": "\"{title}\" is now in the shared library"
-  },
-  "appsView.publishFailedTitle": {
-    "defaultMessage": "Failed to publish to 10router"
-  },
-  "appsView.publishSuccessTitle": {
-    "defaultMessage": "Published to 10router"
-  },
-  "appsView.publishUpdatedMsg": {
-    "defaultMessage": "\"{title}\" publication was updated"
-  },
-  "appsView.recipeBook": {
-    "defaultMessage": "Recipe Book"
-  },
-  "appsView.shareTo10Router": {
-    "defaultMessage": "Share to 10router"
-  },
-  "recipeBook.appsTab": {
-    "defaultMessage": "Applications"
-  },
-  "recipeBook.description": {
-    "defaultMessage": "Recipes and applications other 10router users shared. Installing saves them to your library."
-  },
-  "recipeBook.emptyDescription": {
-    "defaultMessage": "Publications will appear here. Use “Share to 10router” on a recipe or application card."
-  },
-  "recipeBook.emptyTitle": {
-    "defaultMessage": "Nothing shared yet"
-  },
-  "recipeBook.errorTitle": {
-    "defaultMessage": "Failed to load the library"
-  },
-  "recipeBook.install": {
-    "defaultMessage": "Install"
-  },
-  "recipeBook.installFailedTitle": {
-    "defaultMessage": "Install failed"
-  },
-  "recipeBook.installed": {
-    "defaultMessage": "Installed"
-  },
-  "recipeBook.installedAppMsg": {
-    "defaultMessage": "Application \"{title}\" added"
-  },
-  "recipeBook.installedRecipeMsg": {
-    "defaultMessage": "Recipe \"{title}\" saved to your library"
-  },
-  "recipeBook.installing": {
-    "defaultMessage": "Installing…"
-  },
-  "recipeBook.loading": {
-    "defaultMessage": "Loading…"
-  },
-  "recipeBook.recipesTab": {
-    "defaultMessage": "Recipes"
-  },
-  "recipeBook.refresh": {
-    "defaultMessage": "Refresh"
-  },
-  "recipeBook.retry": {
-    "defaultMessage": "Retry"
-  },
-  "recipeBook.title": {
-    "defaultMessage": "Recipe Book"
-  },
-  "recipeBook.unpublish": {
-    "defaultMessage": "Unpublish"
-  },
-  "recipeBook.unpublishFailedTitle": {
-    "defaultMessage": "Failed to unpublish"
-  },
-  "recipeBook.unpublishedMsg": {
-    "defaultMessage": "\"{title}\" is no longer published"
-  },
-  "recipeBook.you": {
-    "defaultMessage": "you"
-  },
-  "recipesView.publishCreatedMsg": {
-    "defaultMessage": "\"{title}\" is now in the shared library"
-  },
-  "recipesView.publishFailedTitle": {
-    "defaultMessage": "Failed to publish to 10router"
-  },
-  "recipesView.publishSuccessTitle": {
-    "defaultMessage": "Published to 10router"
-  },
-  "recipesView.publishUpdatedMsg": {
-    "defaultMessage": "\"{title}\" publication was updated"
-  },
-  "recipesView.recipeBook": {
-    "defaultMessage": "Recipe Book"
-  },
-  "recipesView.shareEnvWarningTitle": {
-    "defaultMessage": "This recipe includes extension environment values, which will be visible to everyone. Publish anyway?"
-  },
-  "recipesView.shareTo10Router": {
-    "defaultMessage": "Share to 10router"
   }
 }

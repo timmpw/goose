@@ -1,4 +1,25 @@
 {
+  "acpReadinessPanel.adapterFound": {
+    "defaultMessage": "ACP अडैप्टर मिल गया"
+  },
+  "acpReadinessPanel.adapterNotFound": {
+    "defaultMessage": "ACP अडैप्टर नहीं मिला"
+  },
+  "acpReadinessPanel.authenticationHelp": {
+    "defaultMessage": "प्रदाता CLI से साइन इन करें, फिर दोबारा जाँचें।"
+  },
+  "acpReadinessPanel.checkAgain": {
+    "defaultMessage": "दोबारा जाँचें"
+  },
+  "acpReadinessPanel.checking": {
+    "defaultMessage": "जाँच की जा रही है..."
+  },
+  "acpReadinessPanel.connected": {
+    "defaultMessage": "सफलतापूर्वक कनेक्ट हो गया"
+  },
+  "acpReadinessPanel.connectionNotChecked": {
+    "defaultMessage": "आगे बढ़ने से पहले अपने खाते का कनेक्शन जाँचें।"
+  },
   "announcementModal.gotIt": {
     "defaultMessage": "समझ गया!"
   },
@@ -7,6 +28,9 @@
   },
   "appLayout.openNavigation": {
     "defaultMessage": "नेविगेशन खोलें"
+  },
+  "appsView.appLibrary": {
+    "defaultMessage": "ऐप लाइब्रेरी"
   },
   "appsView.customApp": {
     "defaultMessage": "कस्टम ऐप"
@@ -41,6 +65,18 @@
   "appsView.noAppsTitle": {
     "defaultMessage": "कोई ऐप्स उपलब्ध नहीं"
   },
+  "appsView.publishCreatedMsg": {
+    "defaultMessage": "\"{title}\" is now in the shared library"
+  },
+  "appsView.publishFailedTitle": {
+    "defaultMessage": "Failed to publish to 10router"
+  },
+  "appsView.publishSuccessTitle": {
+    "defaultMessage": "Published to 10router"
+  },
+  "appsView.publishUpdatedMsg": {
+    "defaultMessage": "\"{title}\" publication was updated"
+  },
   "appsView.retiredChatApp": {
     "defaultMessage": "Chat app retired"
   },
@@ -49,6 +85,9 @@
   },
   "appsView.retry": {
     "defaultMessage": "पुनः प्रयास करें"
+  },
+  "appsView.shareTo10Router": {
+    "defaultMessage": "Share to 10router"
   },
   "appsView.title": {
     "defaultMessage": "ऐप्स"
@@ -307,6 +346,63 @@
   },
   "confirmationModal.processing": {
     "defaultMessage": "प्रसंस्करण..."
+  },
+  "contextWindowIndicator.open": {
+    "defaultMessage": "{limit} में से {used} टोकन उपयोग में। कॉन्टेक्स्ट विंडो में क्या है, दिखाएँ"
+  },
+  "contextXray.autoCompactionPending": {
+    "defaultMessage": "स्वतः-संकुचन सीमा पार हो गई: अगला अनुरोध भेजने से पहले वार्तालाप को संकुचित किया जाता है।"
+  },
+  "contextXray.category.additionalInstructions": {
+    "defaultMessage": "निर्देश और संकेत"
+  },
+  "contextXray.category.compactionSummary": {
+    "defaultMessage": "संक्षेपण सारांश"
+  },
+  "contextXray.category.extensionInstructions": {
+    "defaultMessage": "एक्सटेंशन निर्देश"
+  },
+  "contextXray.category.messages": {
+    "defaultMessage": "वार्तालाप"
+  },
+  "contextXray.category.systemPrompt": {
+    "defaultMessage": "सिस्टम प्रॉम्प्ट"
+  },
+  "contextXray.category.toolDefinitions": {
+    "defaultMessage": "टूल परिभाषाएँ"
+  },
+  "contextXray.category.turnContext": {
+    "defaultMessage": "टर्न कॉन्टेक्स्ट"
+  },
+  "contextXray.compactNow": {
+    "defaultMessage": "अभी संक्षिप्त करें"
+  },
+  "contextXray.free": {
+    "defaultMessage": "खाली"
+  },
+  "contextXray.loadError": {
+    "defaultMessage": "कॉन्टेक्स्ट रिपोर्ट लोड नहीं हो सकी।"
+  },
+  "contextXray.modelSummary": {
+    "defaultMessage": "{model} · {limit} टोकन कॉन्टेक्स्ट विंडो"
+  },
+  "contextXray.providerManagesContext": {
+    "defaultMessage": "{provider} अपना स्वयं का वार्तालाप इतिहास रखता है और 10Router से केवल नवीनतम प्रॉम्प्ट प्राप्त करता है, इसलिए विश्लेषण के लिए कोई अनुरोध नहीं है।"
+  },
+  "contextXray.refresh": {
+    "defaultMessage": "रीफ़्रेश करें"
+  },
+  "contextXray.retry": {
+    "defaultMessage": "पुनः प्रयास करें"
+  },
+  "contextXray.title": {
+    "defaultMessage": "कॉन्टेक्स्ट विंडो"
+  },
+  "contextXray.tokenizerNote": {
+    "defaultMessage": "टोकन गिनती o200k टोकनाइज़र से अनुमानित है।"
+  },
+  "contextXray.usage": {
+    "defaultMessage": "{limit} टोकन में से · कॉन्टेक्स्ट विंडो का {percent}"
   },
   "conversationLimitsDropdown.conversationLimits": {
     "defaultMessage": "बातचीत की सीमाएँ"
@@ -908,11 +1004,11 @@
   "dirSwitcher.enterPath": {
     "defaultMessage": "Enter path"
   },
-  "dirSwitcher.enterPathPlaceholder": {
-    "defaultMessage": "Enter an absolute path (e.g. /home/10Router/workspace)"
-  },
   "dirSwitcher.enterPathInvalid": {
     "defaultMessage": "Working directory must be an absolute path"
+  },
+  "dirSwitcher.enterPathPlaceholder": {
+    "defaultMessage": "Enter an absolute path (e.g. /home/10Router/workspace)"
   },
   "dirSwitcher.failedToUpdateWorkingDir": {
     "defaultMessage": "कार्यशील निर्देशिका अद्यतन करने में विफल"
@@ -928,18 +1024,6 @@
   },
   "dirSwitcher.recentDirectories": {
     "defaultMessage": "हाल की निर्देशिकाएँ"
-  },
-  "gitBranchIndicator.failedToSwitch": {
-    "defaultMessage": "{branch} पर स्विच नहीं किया जा सका"
-  },
-  "gitBranchIndicator.noBranchesFound": {
-    "defaultMessage": "कोई ब्रांच नहीं मिली"
-  },
-  "gitBranchIndicator.searchBranches": {
-    "defaultMessage": "ब्रांच खोजें…"
-  },
-  "gitBranchIndicator.uncommittedChanges": {
-    "defaultMessage": "आपके कुछ बदलाव कमिट नहीं हुए हो सकते हैं।"
   },
   "elicitationRequest.accept": {
     "defaultMessage": "स्वीकार करो"
@@ -1243,6 +1327,18 @@
   },
   "externalBackendSection.workingDirPlaceholder": {
     "defaultMessage": "/home/10Router/workspace"
+  },
+  "gitBranchIndicator.failedToSwitch": {
+    "defaultMessage": "{branch} पर स्विच नहीं किया जा सका"
+  },
+  "gitBranchIndicator.noBranchesFound": {
+    "defaultMessage": "कोई ब्रांच नहीं मिली"
+  },
+  "gitBranchIndicator.searchBranches": {
+    "defaultMessage": "ब्रांच खोजें…"
+  },
+  "gitBranchIndicator.uncommittedChanges": {
+    "defaultMessage": "आपके कुछ बदलाव कमिट नहीं हुए हो सकते हैं।"
   },
   "goosehintsModal.close": {
     "defaultMessage": "बंद करें"
@@ -1922,6 +2018,18 @@
   "messageCopyLink.copy": {
     "defaultMessage": "प्रतिलिपि"
   },
+  "messageList.hiddenMessages": {
+    "defaultMessage": "{count, plural, one {# संदेश छिपाया गया} other {# संदेश छिपाए गए}}"
+  },
+  "messageList.modelChanged": {
+    "defaultMessage": "मॉडल बदला गया: {previousModel} → {currentModel}"
+  },
+  "messageList.requestedModel": {
+    "defaultMessage": "{model} (अनुरोधित)"
+  },
+  "messageList.showAllMessages": {
+    "defaultMessage": "सभी दिखाएँ"
+  },
   "messageQueue.cancel": {
     "defaultMessage": "रद्द करें"
   },
@@ -2282,17 +2390,32 @@
   "modelsBottomBar.loadingModels": {
     "defaultMessage": "मॉडल लोड हो रहे हैं…"
   },
-  "modelsBottomBar.models": {
-    "defaultMessage": "मॉडल"
-  },
   "modelsBottomBar.localModelSettings": {
     "defaultMessage": "स्थानीय मॉडल Settings"
   },
   "modelsBottomBar.localModelSettingsTitle": {
     "defaultMessage": "स्थानीय मॉडल Settings — {modelName}"
   },
+  "modelsBottomBar.longContext": {
+    "defaultMessage": "1M कॉन्टेक्स्ट विंडो"
+  },
+  "modelsBottomBar.models": {
+    "defaultMessage": "मॉडल"
+  },
   "modelsBottomBar.selectModel": {
     "defaultMessage": "मॉडल का चयन करें"
+  },
+  "modelsBottomBar.tierCapable": {
+    "defaultMessage": "महत्वाकांक्षी काम के लिए सबसे सक्षम"
+  },
+  "modelsBottomBar.tierCoding": {
+    "defaultMessage": "एजेंटिक कोडिंग के लिए ट्यून किया गया"
+  },
+  "modelsBottomBar.tierEfficient": {
+    "defaultMessage": "रोज़मर्रा के कामों के लिए सबसे कुशल"
+  },
+  "modelsBottomBar.tierFast": {
+    "defaultMessage": "तुरंत जवाब के लिए सबसे तेज़"
   },
   "modelsSection.resetDescription": {
     "defaultMessage": "नए सिरे से शुरुआत करने के लिए अपने चयनित मॉडल और प्रदाता सेटिंग्स को साफ़ करें"
@@ -2546,18 +2669,6 @@
   "privacyInfoModal.whatWeCollect": {
     "defaultMessage": "हम क्या एकत्र करते हैं:"
   },
-  "messageList.hiddenMessages": {
-    "defaultMessage": "{count, plural, one {# संदेश छिपाया गया} other {# संदेश छिपाए गए}}"
-  },
-  "messageList.modelChanged": {
-    "defaultMessage": "मॉडल बदला गया: {previousModel} → {currentModel}"
-  },
-  "messageList.requestedModel": {
-    "defaultMessage": "{model} (अनुरोधित)"
-  },
-  "messageList.showAllMessages": {
-    "defaultMessage": "सभी दिखाएँ"
-  },
   "promptsSettings.allPromptsReset": {
     "defaultMessage": "सभी संकेत डिफ़ॉल्ट पर रीसेट हो गए"
   },
@@ -2636,6 +2747,9 @@
   "promptsSettings.unsavedChanges": {
     "defaultMessage": "आपके पास सहेजे नहीं गए परिवर्तन हैं"
   },
+  "providerCard.deprecatedReplacement": {
+    "defaultMessage": "अप्रचलित — इसके बजाय {replacement} का उपयोग करें।"
+  },
   "providerCard.unknownProvider": {
     "defaultMessage": "अज्ञात प्रदाता"
   },
@@ -2690,6 +2804,9 @@
   "providerConfigurationModal.checkConfigAgain": {
     "defaultMessage": "इस प्रदाता का उपयोग करने के लिए अपनी कॉन्फ़िगरेशन दोबारा जांचें।"
   },
+  "providerConfigurationModal.chooseModel": {
+    "defaultMessage": "मॉडल चुनें"
+  },
   "providerConfigurationModal.close": {
     "defaultMessage": "बंद करें"
   },
@@ -2702,8 +2819,17 @@
   "providerConfigurationModal.deleteConfirmation": {
     "defaultMessage": "यह वर्तमान प्रदाता कॉन्फ़िगरेशन को स्थायी रूप से हटा देगा।"
   },
+  "providerConfigurationModal.deviceCodeAndEnter": {
+    "defaultMessage": "और दर्ज करें:"
+  },
+  "providerConfigurationModal.deviceCodeCopy": {
+    "defaultMessage": "कॉपी करें"
+  },
   "providerConfigurationModal.deviceCodeFlowHint": {
     "defaultMessage": "एक ब्राउज़र विंडो खुलेगी। सत्यापन कोड यहाँ दिखाई देगा, ताकि आप उसे दर्ज करके साइन-इन पूरा कर सकें।"
+  },
+  "providerConfigurationModal.deviceCodeVisit": {
+    "defaultMessage": "जाएं"
   },
   "providerConfigurationModal.errorCheckingConfig": {
     "defaultMessage": "इस प्रदाता कॉन्फ़िगरेशन की जाँच करने में त्रुटि हुई।"
@@ -2830,6 +2956,69 @@
   },
   "recipeActivityEditor.messagePlaceholder": {
     "defaultMessage": "अपनी रेसिपी के लिए उपयोगकर्ता को दिखने वाला परिचय संदेश दर्ज करें (**bold**, *italic*, `code`, आदि समर्थित हैं)"
+  },
+  "recipeBook.descriptionApps": {
+    "defaultMessage": "अन्य 10router उपयोगकर्ताओं द्वारा साझा की गई ऐप्स। इंस्टॉल करने पर एक ऐप आपकी ऐप्स में जुड़ जाता है।"
+  },
+  "recipeBook.descriptionRecipes": {
+    "defaultMessage": "अन्य 10router उपयोगकर्ताओं द्वारा साझा की गई रेसिपी। इंस्टॉल करने पर एक रेसिपी आपकी रेसिपी में सहेज ली जाती है।"
+  },
+  "recipeBook.emptyDescriptionApps": {
+    "defaultMessage": "साझा की गई ऐप्स यहाँ दिखाई देंगी। ऐप कार्ड पर “10router पर साझा करें” का उपयोग करें।"
+  },
+  "recipeBook.emptyDescriptionRecipes": {
+    "defaultMessage": "साझा की गई रेसिपी यहाँ दिखाई देंगी। रेसिपी कार्ड पर “10router पर साझा करें” का उपयोग करें।"
+  },
+  "recipeBook.emptyTitle": {
+    "defaultMessage": "Nothing shared yet"
+  },
+  "recipeBook.errorTitle": {
+    "defaultMessage": "Failed to load the library"
+  },
+  "recipeBook.install": {
+    "defaultMessage": "Install"
+  },
+  "recipeBook.installFailedTitle": {
+    "defaultMessage": "Install failed"
+  },
+  "recipeBook.installed": {
+    "defaultMessage": "Installed"
+  },
+  "recipeBook.installedAppMsg": {
+    "defaultMessage": "Application \"{title}\" added"
+  },
+  "recipeBook.installedRecipeMsg": {
+    "defaultMessage": "Recipe \"{title}\" saved to your library"
+  },
+  "recipeBook.installing": {
+    "defaultMessage": "Installing…"
+  },
+  "recipeBook.loading": {
+    "defaultMessage": "Loading…"
+  },
+  "recipeBook.refresh": {
+    "defaultMessage": "Refresh"
+  },
+  "recipeBook.retry": {
+    "defaultMessage": "Retry"
+  },
+  "recipeBook.title": {
+    "defaultMessage": "Recipe Book"
+  },
+  "recipeBook.titleApps": {
+    "defaultMessage": "ऐप लाइब्रेरी"
+  },
+  "recipeBook.unpublish": {
+    "defaultMessage": "Unpublish"
+  },
+  "recipeBook.unpublishFailedTitle": {
+    "defaultMessage": "Failed to unpublish"
+  },
+  "recipeBook.unpublishedMsg": {
+    "defaultMessage": "\"{title}\" is no longer published"
+  },
+  "recipeBook.you": {
+    "defaultMessage": "you"
   },
   "recipeExtensionSelector.description": {
     "defaultMessage": "चुनें कि इस रेसिपी को चलाते समय कौन से एक्सटेंशन उपलब्ध होने चाहिए। डिफ़ॉल्ट एक्सटेंशन का उपयोग करने के लिए इसे खाली छोड़ दें."
@@ -3068,6 +3257,21 @@
   "recipesView.openInNewWindow": {
     "defaultMessage": "नई विंडो में खोलें"
   },
+  "recipesView.publishCreatedMsg": {
+    "defaultMessage": "\"{title}\" is now in the shared library"
+  },
+  "recipesView.publishFailedTitle": {
+    "defaultMessage": "Failed to publish to 10router"
+  },
+  "recipesView.publishSuccessTitle": {
+    "defaultMessage": "Published to 10router"
+  },
+  "recipesView.publishUpdatedMsg": {
+    "defaultMessage": "\"{title}\" publication was updated"
+  },
+  "recipesView.recipeBook": {
+    "defaultMessage": "Recipe Book"
+  },
   "recipesView.recipeDeletedSuccess": {
     "defaultMessage": "रेसिपी सफलतापूर्वक हटा दी गई"
   },
@@ -3113,8 +3317,14 @@
   "recipesView.searchRecipesPlaceholder": {
     "defaultMessage": "रेसिपी खोजें..."
   },
+  "recipesView.shareEnvWarningTitle": {
+    "defaultMessage": "This recipe includes extension environment values, which will be visible to everyone. Publish anyway?"
+  },
   "recipesView.shareRecipe": {
     "defaultMessage": "रेसिपी साझा करें"
+  },
+  "recipesView.shareTo10Router": {
+    "defaultMessage": "Share to 10router"
   },
   "recipesView.slashCommandDescription": {
     "defaultMessage": "किसी भी चैट से इस रेसिपी को तुरंत चलाने के लिए स्लैश कमांड सेट करें"
@@ -3797,6 +4007,96 @@
   "sessions.toast.updated": {
     "defaultMessage": "सत्र विवरण सफलतापूर्वक अपडेट किया गया"
   },
+  "settings.agentLoop.operations.auto.placeholder": {
+    "defaultMessage": "स्वचालित"
+  },
+  "settings.agentLoop.operations.autoEffort.apiKey.configured": {
+    "defaultMessage": "कॉन्फ़िगर किया गया"
+  },
+  "settings.agentLoop.operations.autoEffort.apiKey.label": {
+    "defaultMessage": "TypeSafe API कुंजी"
+  },
+  "settings.agentLoop.operations.autoEffort.apiKey.placeholder": {
+    "defaultMessage": "API कुंजी दर्ज करें"
+  },
+  "settings.agentLoop.operations.autoEffort.apiKey.remove": {
+    "defaultMessage": "कुंजी हटाएँ"
+  },
+  "settings.agentLoop.operations.autoEffort.apiKey.save": {
+    "defaultMessage": "कुंजी सहेजें"
+  },
+  "settings.agentLoop.operations.autoEffort.description": {
+    "defaultMessage": "हर अनुरोध के लिए सोचने का स्तर चुनने हेतु Jev का उपयोग करता है। अनुरोध का पाठ TypeSafe AI को भेजा जाता है; स्किल और रेसिपी स्लैश कमांड में उनके विस्तारित स्थानीय निर्देश शामिल होते हैं।"
+  },
+  "settings.agentLoop.operations.autoEffort.title": {
+    "defaultMessage": "स्वचालित सोचने का स्तर"
+  },
+  "settings.agentLoop.operations.blockLimit.label": {
+    "defaultMessage": "ब्लॉक सीमा"
+  },
+  "settings.agentLoop.operations.contextCompaction.description": {
+    "defaultMessage": "कॉन्टेक्स्ट विंडो भरने से पहले बातचीत के इतिहास का सारांश बनाता है।"
+  },
+  "settings.agentLoop.operations.contextCompaction.title": {
+    "defaultMessage": "कॉन्टेक्स्ट संक्षेपण"
+  },
+  "settings.agentLoop.operations.cutoff.label": {
+    "defaultMessage": "कटऑफ"
+  },
+  "settings.agentLoop.operations.enable": {
+    "defaultMessage": "{operation} सक्षम करें"
+  },
+  "settings.agentLoop.operations.failureTimeout.label": {
+    "defaultMessage": "विफलता टाइमआउट"
+  },
+  "settings.agentLoop.operations.heading": {
+    "defaultMessage": "कॉन्फ़िगर करने योग्य ऑपरेशन"
+  },
+  "settings.agentLoop.operations.maxTurns.description": {
+    "defaultMessage": "स्वायत्त काम रोकता है और जारी रखने से पहले उपयोगकर्ता से पूछता है।"
+  },
+  "settings.agentLoop.operations.maxTurns.title": {
+    "defaultMessage": "अधिकतम टर्न"
+  },
+  "settings.agentLoop.operations.recipeRetry.description": {
+    "defaultMessage": "कॉन्फ़िगर की गई सफलता जाँच विफल होने पर रेसिपी जाँच फिर से चलाता है।"
+  },
+  "settings.agentLoop.operations.recipeRetry.title": {
+    "defaultMessage": "रेसिपी पुनः प्रयास"
+  },
+  "settings.agentLoop.operations.retryTimeout.label": {
+    "defaultMessage": "पुनः प्रयास टाइमआउट"
+  },
+  "settings.agentLoop.operations.slashCommands.description": {
+    "defaultMessage": "/compact, /skills और रेसिपी शॉर्टकट जैसे कमांड पहचानता है।"
+  },
+  "settings.agentLoop.operations.slashCommands.title": {
+    "defaultMessage": "स्लैश कमांड"
+  },
+  "settings.agentLoop.operations.stopHooks.description": {
+    "defaultMessage": "हुक को पूर्णता रोकने देता है और अंतहीन स्टॉप चक्रों से बचाता है।"
+  },
+  "settings.agentLoop.operations.stopHooks.title": {
+    "defaultMessage": "स्टॉप हुक"
+  },
+  "settings.agentLoop.operations.threshold.label": {
+    "defaultMessage": "थ्रेशोल्ड %"
+  },
+  "settings.agentLoop.operations.tokenLimit.label": {
+    "defaultMessage": "टोकन सीमा"
+  },
+  "settings.agentLoop.operations.toolPairCompaction.description": {
+    "defaultMessage": "कॉन्टेक्स्ट बचाने के लिए पुराने टूल अनुरोधों और उत्तरों का सारांश बनाता है। खाली छोड़ने पर कटऑफ स्वचालित होता है।"
+  },
+  "settings.agentLoop.operations.toolPairCompaction.title": {
+    "defaultMessage": "टूल पेयर संक्षेपण"
+  },
+  "settings.agentLoop.operations.turns.label": {
+    "defaultMessage": "टर्न"
+  },
+  "settings.agentLoop.title": {
+    "defaultMessage": "एजेंट लूप"
+  },
   "settings.appearance.description": {
     "defaultMessage": "कॉन्फ़िगर करें कि 10Router आपके सिस्टम पर कैसे दिखाई देता है"
   },
@@ -4319,6 +4619,39 @@
   "telemetrySettings.updateError": {
     "defaultMessage": "टेलीमेट्री सेटिंग अपडेट करने में विफल."
   },
+  "tenRouterKeyForm.connect": {
+    "defaultMessage": "कनेक्ट करें"
+  },
+  "tenRouterKeyForm.connecting": {
+    "defaultMessage": "कनेक्ट हो रहा है..."
+  },
+  "tenRouterKeyForm.description": {
+    "defaultMessage": "अपनी 10router API कुंजी दर्ज करें (यह 10r_ से शुरू होती है)। मॉडल सूची <link>10r.sokolov.io</link> से स्वतः लाई जाएगी।"
+  },
+  "tenRouterKeyForm.fetchModelsError": {
+    "defaultMessage": "10router से मॉडल सूची नहीं मिल सकी: {detail}"
+  },
+  "tenRouterKeyForm.invalidKey": {
+    "defaultMessage": "कुंजी 10router ने अस्वीकार कर दी। इसे जाँचें और फिर से प्रयास करें।"
+  },
+  "tenRouterKeyForm.keyLabel": {
+    "defaultMessage": "API कुंजी"
+  },
+  "tenRouterKeyForm.keyPlaceholder": {
+    "defaultMessage": "10r_…"
+  },
+  "tenRouterKeyForm.noModels": {
+    "defaultMessage": "10router ने इस कुंजी के लिए कोई मॉडल नहीं लौटाए।"
+  },
+  "tenRouterKeyForm.requiredError": {
+    "defaultMessage": "कृपया अपनी API कुंजी दर्ज करें"
+  },
+  "tenRouterKeyForm.savedKeyHint": {
+    "defaultMessage": "कुंजी पहले से सहेजी गई है — उसी के साथ जारी रखने के लिए कनेक्ट करें दबाएँ, या नई कुंजी डालें।"
+  },
+  "tenRouterKeyForm.title": {
+    "defaultMessage": "10router से कनेक्ट करें"
+  },
   "themeSelector.aura": {
     "defaultMessage": "Aura"
   },
@@ -4501,320 +4834,5 @@
   },
   "userMessage.removeImageFromEdit": {
     "defaultMessage": "संदेश से छवि हटाएँ"
-  },
-  "providerConfigurationModal.chooseModel": {
-    "defaultMessage": "मॉडल चुनें"
-  },
-  "providerCard.deprecatedReplacement": {
-    "defaultMessage": "अप्रचलित — इसके बजाय {replacement} का उपयोग करें।"
-  },
-  "acpReadinessPanel.adapterFound": {
-    "defaultMessage": "ACP अडैप्टर मिल गया"
-  },
-  "acpReadinessPanel.adapterNotFound": {
-    "defaultMessage": "ACP अडैप्टर नहीं मिला"
-  },
-  "acpReadinessPanel.authenticationHelp": {
-    "defaultMessage": "प्रदाता CLI से साइन इन करें, फिर दोबारा जाँचें।"
-  },
-  "acpReadinessPanel.checkAgain": {
-    "defaultMessage": "दोबारा जाँचें"
-  },
-  "acpReadinessPanel.checking": {
-    "defaultMessage": "जाँच की जा रही है..."
-  },
-  "acpReadinessPanel.connected": {
-    "defaultMessage": "सफलतापूर्वक कनेक्ट हो गया"
-  },
-  "acpReadinessPanel.connectionNotChecked": {
-    "defaultMessage": "आगे बढ़ने से पहले अपने खाते का कनेक्शन जाँचें।"
-  },
-  "providerConfigurationModal.deviceCodeAndEnter": {
-    "defaultMessage": "और दर्ज करें:"
-  },
-  "providerConfigurationModal.deviceCodeCopy": {
-    "defaultMessage": "कॉपी करें"
-  },
-  "providerConfigurationModal.deviceCodeVisit": {
-    "defaultMessage": "जाएं"
-  },
-  "contextWindowIndicator.open": {
-    "defaultMessage": "{limit} में से {used} टोकन उपयोग में। कॉन्टेक्स्ट विंडो में क्या है, दिखाएँ"
-  },
-  "contextXray.compactNow": {
-    "defaultMessage": "अभी संक्षिप्त करें"
-  },
-  "contextXray.free": {
-    "defaultMessage": "खाली"
-  },
-  "contextXray.loadError": {
-    "defaultMessage": "कॉन्टेक्स्ट रिपोर्ट लोड नहीं हो सकी।"
-  },
-  "contextXray.modelSummary": {
-    "defaultMessage": "{model} · {limit} टोकन कॉन्टेक्स्ट विंडो"
-  },
-  "contextXray.refresh": {
-    "defaultMessage": "रीफ़्रेश करें"
-  },
-  "contextXray.retry": {
-    "defaultMessage": "पुनः प्रयास करें"
-  },
-  "contextXray.title": {
-    "defaultMessage": "कॉन्टेक्स्ट विंडो"
-  },
-  "contextXray.tokenizerNote": {
-    "defaultMessage": "टोकन गिनती o200k टोकनाइज़र से अनुमानित है।"
-  },
-  "contextXray.usage": {
-    "defaultMessage": "{limit} टोकन में से · कॉन्टेक्स्ट विंडो का {percent}"
-  },
-  "contextXray.category.additionalInstructions": {
-    "defaultMessage": "निर्देश और संकेत"
-  },
-  "contextXray.category.compactionSummary": {
-    "defaultMessage": "संक्षेपण सारांश"
-  },
-  "contextXray.category.extensionInstructions": {
-    "defaultMessage": "एक्सटेंशन निर्देश"
-  },
-  "contextXray.category.messages": {
-    "defaultMessage": "वार्तालाप"
-  },
-  "contextXray.category.systemPrompt": {
-    "defaultMessage": "सिस्टम प्रॉम्प्ट"
-  },
-  "contextXray.category.toolDefinitions": {
-    "defaultMessage": "टूल परिभाषाएँ"
-  },
-  "contextXray.category.turnContext": {
-    "defaultMessage": "टर्न कॉन्टेक्स्ट"
-  },
-  "settings.agentLoop.operations.auto.placeholder": {
-    "defaultMessage": "स्वचालित"
-  },
-  "settings.agentLoop.operations.autoEffort.apiKey.configured": {
-    "defaultMessage": "कॉन्फ़िगर किया गया"
-  },
-  "settings.agentLoop.operations.autoEffort.apiKey.label": {
-    "defaultMessage": "TypeSafe API कुंजी"
-  },
-  "settings.agentLoop.operations.autoEffort.apiKey.placeholder": {
-    "defaultMessage": "API कुंजी दर्ज करें"
-  },
-  "settings.agentLoop.operations.autoEffort.apiKey.remove": {
-    "defaultMessage": "कुंजी हटाएँ"
-  },
-  "settings.agentLoop.operations.autoEffort.apiKey.save": {
-    "defaultMessage": "कुंजी सहेजें"
-  },
-  "settings.agentLoop.operations.autoEffort.description": {
-    "defaultMessage": "हर अनुरोध के लिए सोचने का स्तर चुनने हेतु Jev का उपयोग करता है। अनुरोध का पाठ TypeSafe AI को भेजा जाता है; स्किल और रेसिपी स्लैश कमांड में उनके विस्तारित स्थानीय निर्देश शामिल होते हैं।"
-  },
-  "settings.agentLoop.operations.autoEffort.title": {
-    "defaultMessage": "स्वचालित सोचने का स्तर"
-  },
-  "settings.agentLoop.operations.blockLimit.label": {
-    "defaultMessage": "ब्लॉक सीमा"
-  },
-  "settings.agentLoop.operations.contextCompaction.description": {
-    "defaultMessage": "कॉन्टेक्स्ट विंडो भरने से पहले बातचीत के इतिहास का सारांश बनाता है।"
-  },
-  "settings.agentLoop.operations.contextCompaction.title": {
-    "defaultMessage": "कॉन्टेक्स्ट संक्षेपण"
-  },
-  "settings.agentLoop.operations.cutoff.label": {
-    "defaultMessage": "कटऑफ"
-  },
-  "settings.agentLoop.operations.enable": {
-    "defaultMessage": "{operation} सक्षम करें"
-  },
-  "settings.agentLoop.operations.failureTimeout.label": {
-    "defaultMessage": "विफलता टाइमआउट"
-  },
-  "settings.agentLoop.operations.heading": {
-    "defaultMessage": "कॉन्फ़िगर करने योग्य ऑपरेशन"
-  },
-  "settings.agentLoop.operations.maxTurns.description": {
-    "defaultMessage": "स्वायत्त काम रोकता है और जारी रखने से पहले उपयोगकर्ता से पूछता है।"
-  },
-  "settings.agentLoop.operations.maxTurns.title": {
-    "defaultMessage": "अधिकतम टर्न"
-  },
-  "settings.agentLoop.operations.recipeRetry.description": {
-    "defaultMessage": "कॉन्फ़िगर की गई सफलता जाँच विफल होने पर रेसिपी जाँच फिर से चलाता है।"
-  },
-  "settings.agentLoop.operations.recipeRetry.title": {
-    "defaultMessage": "रेसिपी पुनः प्रयास"
-  },
-  "settings.agentLoop.operations.retryTimeout.label": {
-    "defaultMessage": "पुनः प्रयास टाइमआउट"
-  },
-  "settings.agentLoop.operations.slashCommands.description": {
-    "defaultMessage": "/compact, /skills और रेसिपी शॉर्टकट जैसे कमांड पहचानता है।"
-  },
-  "settings.agentLoop.operations.slashCommands.title": {
-    "defaultMessage": "स्लैश कमांड"
-  },
-  "settings.agentLoop.operations.stopHooks.description": {
-    "defaultMessage": "हुक को पूर्णता रोकने देता है और अंतहीन स्टॉप चक्रों से बचाता है।"
-  },
-  "settings.agentLoop.operations.stopHooks.title": {
-    "defaultMessage": "स्टॉप हुक"
-  },
-  "settings.agentLoop.operations.threshold.label": {
-    "defaultMessage": "थ्रेशोल्ड %"
-  },
-  "settings.agentLoop.operations.tokenLimit.label": {
-    "defaultMessage": "टोकन सीमा"
-  },
-  "settings.agentLoop.operations.toolPairCompaction.description": {
-    "defaultMessage": "कॉन्टेक्स्ट बचाने के लिए पुराने टूल अनुरोधों और उत्तरों का सारांश बनाता है। खाली छोड़ने पर कटऑफ स्वचालित होता है।"
-  },
-  "settings.agentLoop.operations.toolPairCompaction.title": {
-    "defaultMessage": "टूल पेयर संक्षेपण"
-  },
-  "settings.agentLoop.operations.turns.label": {
-    "defaultMessage": "टर्न"
-  },
-  "settings.agentLoop.title": {
-    "defaultMessage": "एजेंट लूप"
-  },
-  "contextXray.providerManagesContext": {
-    "defaultMessage": "{provider} अपना स्वयं का वार्तालाप इतिहास रखता है और 10Router से केवल नवीनतम प्रॉम्प्ट प्राप्त करता है, इसलिए विश्लेषण के लिए कोई अनुरोध नहीं है।"
-  },
-  "contextXray.autoCompactionPending": {
-    "defaultMessage": "स्वतः-संकुचन सीमा पार हो गई: अगला अनुरोध भेजने से पहले वार्तालाप को संकुचित किया जाता है।"
-  },
-  "tenRouterKeyForm.title": {
-    "defaultMessage": "10router से कनेक्ट करें"
-  },
-  "tenRouterKeyForm.description": {
-    "defaultMessage": "अपनी 10router API कुंजी दर्ज करें (यह 10r_ से शुरू होती है)। मॉडल सूची <link>10r.sokolov.io</link> से स्वतः लाई जाएगी।"
-  },
-  "tenRouterKeyForm.keyLabel": {
-    "defaultMessage": "API कुंजी"
-  },
-  "tenRouterKeyForm.keyPlaceholder": {
-    "defaultMessage": "10r_…"
-  },
-  "tenRouterKeyForm.connect": {
-    "defaultMessage": "कनेक्ट करें"
-  },
-  "tenRouterKeyForm.connecting": {
-    "defaultMessage": "कनेक्ट हो रहा है..."
-  },
-  "tenRouterKeyForm.requiredError": {
-    "defaultMessage": "कृपया अपनी API कुंजी दर्ज करें"
-  },
-  "tenRouterKeyForm.invalidKey": {
-    "defaultMessage": "कुंजी 10router ने अस्वीकार कर दी। इसे जाँचें और फिर से प्रयास करें।"
-  },
-  "tenRouterKeyForm.fetchModelsError": {
-    "defaultMessage": "10router से मॉडल सूची नहीं मिल सकी: {detail}"
-  },
-  "tenRouterKeyForm.noModels": {
-    "defaultMessage": "10router ने इस कुंजी के लिए कोई मॉडल नहीं लौटाए।"
-  },
-  "tenRouterKeyForm.savedKeyHint": {
-    "defaultMessage": "कुंजी पहले से सहेजी गई है — उसी के साथ जारी रखने के लिए कनेक्ट करें दबाएँ, या नई कुंजी डालें।"
-  },
-  "appsView.publishCreatedMsg": {
-    "defaultMessage": "\"{title}\" is now in the shared library"
-  },
-  "appsView.publishFailedTitle": {
-    "defaultMessage": "Failed to publish to 10router"
-  },
-  "appsView.publishSuccessTitle": {
-    "defaultMessage": "Published to 10router"
-  },
-  "appsView.publishUpdatedMsg": {
-    "defaultMessage": "\"{title}\" publication was updated"
-  },
-  "appsView.recipeBook": {
-    "defaultMessage": "Recipe Book"
-  },
-  "appsView.shareTo10Router": {
-    "defaultMessage": "Share to 10router"
-  },
-  "recipeBook.appsTab": {
-    "defaultMessage": "Applications"
-  },
-  "recipeBook.description": {
-    "defaultMessage": "Recipes and applications other 10router users shared. Installing saves them to your library."
-  },
-  "recipeBook.emptyDescription": {
-    "defaultMessage": "Publications will appear here. Use “Share to 10router” on a recipe or application card."
-  },
-  "recipeBook.emptyTitle": {
-    "defaultMessage": "Nothing shared yet"
-  },
-  "recipeBook.errorTitle": {
-    "defaultMessage": "Failed to load the library"
-  },
-  "recipeBook.install": {
-    "defaultMessage": "Install"
-  },
-  "recipeBook.installFailedTitle": {
-    "defaultMessage": "Install failed"
-  },
-  "recipeBook.installed": {
-    "defaultMessage": "Installed"
-  },
-  "recipeBook.installedAppMsg": {
-    "defaultMessage": "Application \"{title}\" added"
-  },
-  "recipeBook.installedRecipeMsg": {
-    "defaultMessage": "Recipe \"{title}\" saved to your library"
-  },
-  "recipeBook.installing": {
-    "defaultMessage": "Installing…"
-  },
-  "recipeBook.loading": {
-    "defaultMessage": "Loading…"
-  },
-  "recipeBook.recipesTab": {
-    "defaultMessage": "Recipes"
-  },
-  "recipeBook.refresh": {
-    "defaultMessage": "Refresh"
-  },
-  "recipeBook.retry": {
-    "defaultMessage": "Retry"
-  },
-  "recipeBook.title": {
-    "defaultMessage": "Recipe Book"
-  },
-  "recipeBook.unpublish": {
-    "defaultMessage": "Unpublish"
-  },
-  "recipeBook.unpublishFailedTitle": {
-    "defaultMessage": "Failed to unpublish"
-  },
-  "recipeBook.unpublishedMsg": {
-    "defaultMessage": "\"{title}\" is no longer published"
-  },
-  "recipeBook.you": {
-    "defaultMessage": "you"
-  },
-  "recipesView.publishCreatedMsg": {
-    "defaultMessage": "\"{title}\" is now in the shared library"
-  },
-  "recipesView.publishFailedTitle": {
-    "defaultMessage": "Failed to publish to 10router"
-  },
-  "recipesView.publishSuccessTitle": {
-    "defaultMessage": "Published to 10router"
-  },
-  "recipesView.publishUpdatedMsg": {
-    "defaultMessage": "\"{title}\" publication was updated"
-  },
-  "recipesView.recipeBook": {
-    "defaultMessage": "Recipe Book"
-  },
-  "recipesView.shareEnvWarningTitle": {
-    "defaultMessage": "This recipe includes extension environment values, which will be visible to everyone. Publish anyway?"
-  },
-  "recipesView.shareTo10Router": {
-    "defaultMessage": "Share to 10router"
   }
 }

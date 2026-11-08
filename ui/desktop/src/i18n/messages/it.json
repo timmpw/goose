@@ -1,4 +1,25 @@
 {
+  "acpReadinessPanel.adapterFound": {
+    "defaultMessage": "Adattatore ACP trovato"
+  },
+  "acpReadinessPanel.adapterNotFound": {
+    "defaultMessage": "Adattatore ACP non trovato"
+  },
+  "acpReadinessPanel.authenticationHelp": {
+    "defaultMessage": "Accedi tramite la CLI del provider, quindi verifica di nuovo."
+  },
+  "acpReadinessPanel.checkAgain": {
+    "defaultMessage": "Verifica di nuovo"
+  },
+  "acpReadinessPanel.checking": {
+    "defaultMessage": "Verifica in corso..."
+  },
+  "acpReadinessPanel.connected": {
+    "defaultMessage": "Connessione riuscita"
+  },
+  "acpReadinessPanel.connectionNotChecked": {
+    "defaultMessage": "Verifica la connessione del tuo account prima di continuare."
+  },
   "announcementModal.gotIt": {
     "defaultMessage": "Capito!"
   },
@@ -7,6 +28,9 @@
   },
   "appLayout.openNavigation": {
     "defaultMessage": "Apri navigazione"
+  },
+  "appsView.appLibrary": {
+    "defaultMessage": "Libreria app"
   },
   "appsView.customApp": {
     "defaultMessage": "App personalizzata"
@@ -41,6 +65,18 @@
   "appsView.noAppsTitle": {
     "defaultMessage": "Nessuna app disponibile"
   },
+  "appsView.publishCreatedMsg": {
+    "defaultMessage": "\"{title}\" is now in the shared library"
+  },
+  "appsView.publishFailedTitle": {
+    "defaultMessage": "Failed to publish to 10router"
+  },
+  "appsView.publishSuccessTitle": {
+    "defaultMessage": "Published to 10router"
+  },
+  "appsView.publishUpdatedMsg": {
+    "defaultMessage": "\"{title}\" publication was updated"
+  },
   "appsView.retiredChatApp": {
     "defaultMessage": "Chat app retired"
   },
@@ -49,6 +85,9 @@
   },
   "appsView.retry": {
     "defaultMessage": "Riprova"
+  },
+  "appsView.shareTo10Router": {
+    "defaultMessage": "Share to 10router"
   },
   "appsView.title": {
     "defaultMessage": "App"
@@ -307,6 +346,63 @@
   },
   "confirmationModal.processing": {
     "defaultMessage": "Elaborazione in corso..."
+  },
+  "contextWindowIndicator.open": {
+    "defaultMessage": "{used} di {limit} token usati. Mostra cosa c'è nella finestra di contesto"
+  },
+  "contextXray.autoCompactionPending": {
+    "defaultMessage": "Soglia di compattazione automatica superata: la conversazione viene compattata prima dell'invio della prossima richiesta."
+  },
+  "contextXray.category.additionalInstructions": {
+    "defaultMessage": "Istruzioni e suggerimenti"
+  },
+  "contextXray.category.compactionSummary": {
+    "defaultMessage": "Riepilogo di compattazione"
+  },
+  "contextXray.category.extensionInstructions": {
+    "defaultMessage": "Istruzioni delle estensioni"
+  },
+  "contextXray.category.messages": {
+    "defaultMessage": "Conversazione"
+  },
+  "contextXray.category.systemPrompt": {
+    "defaultMessage": "Prompt di sistema"
+  },
+  "contextXray.category.toolDefinitions": {
+    "defaultMessage": "Definizioni degli strumenti"
+  },
+  "contextXray.category.turnContext": {
+    "defaultMessage": "Contesto del turno"
+  },
+  "contextXray.compactNow": {
+    "defaultMessage": "Compatta ora"
+  },
+  "contextXray.free": {
+    "defaultMessage": "Libero"
+  },
+  "contextXray.loadError": {
+    "defaultMessage": "Impossibile caricare il report del contesto."
+  },
+  "contextXray.modelSummary": {
+    "defaultMessage": "{model} · finestra di contesto da {limit} token"
+  },
+  "contextXray.providerManagesContext": {
+    "defaultMessage": "{provider} mantiene la propria cronologia della conversazione e riceve da 10Router solo l'ultimo prompt, quindi non c'è nessuna richiesta da scomporre."
+  },
+  "contextXray.refresh": {
+    "defaultMessage": "Aggiorna"
+  },
+  "contextXray.retry": {
+    "defaultMessage": "Riprova"
+  },
+  "contextXray.title": {
+    "defaultMessage": "Finestra di contesto"
+  },
+  "contextXray.tokenizerNote": {
+    "defaultMessage": "Il conteggio dei token è stimato con il tokenizer o200k."
+  },
+  "contextXray.usage": {
+    "defaultMessage": "di {limit} token · {percent} della finestra di contesto"
   },
   "conversationLimitsDropdown.conversationLimits": {
     "defaultMessage": "Limiti della conversazione"
@@ -908,11 +1004,11 @@
   "dirSwitcher.enterPath": {
     "defaultMessage": "Enter path"
   },
-  "dirSwitcher.enterPathPlaceholder": {
-    "defaultMessage": "Enter an absolute path (e.g. /home/10Router/workspace)"
-  },
   "dirSwitcher.enterPathInvalid": {
     "defaultMessage": "Working directory must be an absolute path"
+  },
+  "dirSwitcher.enterPathPlaceholder": {
+    "defaultMessage": "Enter an absolute path (e.g. /home/10Router/workspace)"
   },
   "dirSwitcher.failedToUpdateWorkingDir": {
     "defaultMessage": "Impossibile aggiornare la cartella di lavoro"
@@ -928,18 +1024,6 @@
   },
   "dirSwitcher.recentDirectories": {
     "defaultMessage": "Cartelle recenti"
-  },
-  "gitBranchIndicator.failedToSwitch": {
-    "defaultMessage": "Impossibile passare a {branch}"
-  },
-  "gitBranchIndicator.noBranchesFound": {
-    "defaultMessage": "Nessun branch trovato"
-  },
-  "gitBranchIndicator.searchBranches": {
-    "defaultMessage": "Cerca branch…"
-  },
-  "gitBranchIndicator.uncommittedChanges": {
-    "defaultMessage": "Potresti avere modifiche non incluse in un commit."
   },
   "elicitationRequest.accept": {
     "defaultMessage": "Accetta"
@@ -1243,6 +1327,18 @@
   },
   "externalBackendSection.workingDirPlaceholder": {
     "defaultMessage": "/home/10Router/workspace"
+  },
+  "gitBranchIndicator.failedToSwitch": {
+    "defaultMessage": "Impossibile passare a {branch}"
+  },
+  "gitBranchIndicator.noBranchesFound": {
+    "defaultMessage": "Nessun branch trovato"
+  },
+  "gitBranchIndicator.searchBranches": {
+    "defaultMessage": "Cerca branch…"
+  },
+  "gitBranchIndicator.uncommittedChanges": {
+    "defaultMessage": "Potresti avere modifiche non incluse in un commit."
   },
   "goosehintsModal.close": {
     "defaultMessage": "Chiudi"
@@ -1922,6 +2018,18 @@
   "messageCopyLink.copy": {
     "defaultMessage": "Copia"
   },
+  "messageList.hiddenMessages": {
+    "defaultMessage": "{count, plural, one {# messaggio nascosto} other {# messaggi nascosti}}"
+  },
+  "messageList.modelChanged": {
+    "defaultMessage": "Modello cambiato: {previousModel} → {currentModel}"
+  },
+  "messageList.requestedModel": {
+    "defaultMessage": "{model} (richiesto)"
+  },
+  "messageList.showAllMessages": {
+    "defaultMessage": "Mostra tutto"
+  },
   "messageQueue.cancel": {
     "defaultMessage": "Annulla"
   },
@@ -2282,17 +2390,32 @@
   "modelsBottomBar.loadingModels": {
     "defaultMessage": "Caricamento dei modelli…"
   },
-  "modelsBottomBar.models": {
-    "defaultMessage": "Modelli"
-  },
   "modelsBottomBar.localModelSettings": {
     "defaultMessage": "Impostazioni modello locale"
   },
   "modelsBottomBar.localModelSettingsTitle": {
     "defaultMessage": "Impostazioni modello locale — {modelName}"
   },
+  "modelsBottomBar.longContext": {
+    "defaultMessage": "Finestra di contesto da 1M"
+  },
+  "modelsBottomBar.models": {
+    "defaultMessage": "Modelli"
+  },
   "modelsBottomBar.selectModel": {
     "defaultMessage": "Seleziona modello"
+  },
+  "modelsBottomBar.tierCapable": {
+    "defaultMessage": "Il più capace per lavori ambiziosi"
+  },
+  "modelsBottomBar.tierCoding": {
+    "defaultMessage": "Ottimizzato per il coding agentico"
+  },
+  "modelsBottomBar.tierEfficient": {
+    "defaultMessage": "Il più efficiente per le attività quotidiane"
+  },
+  "modelsBottomBar.tierFast": {
+    "defaultMessage": "Il più veloce per risposte rapide"
   },
   "modelsSection.resetDescription": {
     "defaultMessage": "Cancella le impostazioni del modello e del provider selezionati per ricominciare da zero"
@@ -2546,18 +2669,6 @@
   "privacyInfoModal.whatWeCollect": {
     "defaultMessage": "Cosa raccogliamo:"
   },
-  "messageList.hiddenMessages": {
-    "defaultMessage": "{count, plural, one {# messaggio nascosto} other {# messaggi nascosti}}"
-  },
-  "messageList.modelChanged": {
-    "defaultMessage": "Modello cambiato: {previousModel} → {currentModel}"
-  },
-  "messageList.requestedModel": {
-    "defaultMessage": "{model} (richiesto)"
-  },
-  "messageList.showAllMessages": {
-    "defaultMessage": "Mostra tutto"
-  },
   "promptsSettings.allPromptsReset": {
     "defaultMessage": "Tutti i prompt ripristinati ai valori predefiniti"
   },
@@ -2636,6 +2747,9 @@
   "promptsSettings.unsavedChanges": {
     "defaultMessage": "Hai modifiche non salvate"
   },
+  "providerCard.deprecatedReplacement": {
+    "defaultMessage": "Deprecato — usa invece {replacement}."
+  },
   "providerCard.unknownProvider": {
     "defaultMessage": "Provider sconosciuto"
   },
@@ -2690,6 +2804,9 @@
   "providerConfigurationModal.checkConfigAgain": {
     "defaultMessage": "Controlla di nuovo la tua configurazione per usare questo provider."
   },
+  "providerConfigurationModal.chooseModel": {
+    "defaultMessage": "Scegli modello"
+  },
   "providerConfigurationModal.close": {
     "defaultMessage": "Chiudi"
   },
@@ -2702,8 +2819,17 @@
   "providerConfigurationModal.deleteConfirmation": {
     "defaultMessage": "Questa operazione eliminerà definitivamente la configurazione attuale del provider."
   },
+  "providerConfigurationModal.deviceCodeAndEnter": {
+    "defaultMessage": "e inserisci:"
+  },
+  "providerConfigurationModal.deviceCodeCopy": {
+    "defaultMessage": "Copia"
+  },
   "providerConfigurationModal.deviceCodeFlowHint": {
     "defaultMessage": "Si aprirà una finestra del browser. Il codice di verifica verrà visualizzato qui, così potrai inserirlo per completare l'accesso."
+  },
+  "providerConfigurationModal.deviceCodeVisit": {
+    "defaultMessage": "Visita"
   },
   "providerConfigurationModal.errorCheckingConfig": {
     "defaultMessage": "Si è verificato un errore durante la verifica della configurazione di questo provider."
@@ -2830,6 +2956,69 @@
   },
   "recipeActivityEditor.messagePlaceholder": {
     "defaultMessage": "Inserisci un messaggio di introduzione rivolto all'utente per la tua ricetta (supporta **grassetto**, *corsivo*, `codice`, ecc.)"
+  },
+  "recipeBook.descriptionApps": {
+    "defaultMessage": "Applicazioni condivise da altri utenti 10router. L'installazione aggiunge un'applicazione alle tue app."
+  },
+  "recipeBook.descriptionRecipes": {
+    "defaultMessage": "Ricette condivise da altri utenti 10router. L'installazione salva una ricetta nelle tue ricette."
+  },
+  "recipeBook.emptyDescriptionApps": {
+    "defaultMessage": "Le applicazioni condivise appariranno qui. Usa \"Condividi su 10router\" su una scheda applicazione."
+  },
+  "recipeBook.emptyDescriptionRecipes": {
+    "defaultMessage": "Le ricette condivise appariranno qui. Usa \"Condividi su 10router\" su una scheda ricetta."
+  },
+  "recipeBook.emptyTitle": {
+    "defaultMessage": "Nothing shared yet"
+  },
+  "recipeBook.errorTitle": {
+    "defaultMessage": "Failed to load the library"
+  },
+  "recipeBook.install": {
+    "defaultMessage": "Install"
+  },
+  "recipeBook.installFailedTitle": {
+    "defaultMessage": "Install failed"
+  },
+  "recipeBook.installed": {
+    "defaultMessage": "Installed"
+  },
+  "recipeBook.installedAppMsg": {
+    "defaultMessage": "Application \"{title}\" added"
+  },
+  "recipeBook.installedRecipeMsg": {
+    "defaultMessage": "Recipe \"{title}\" saved to your library"
+  },
+  "recipeBook.installing": {
+    "defaultMessage": "Installing…"
+  },
+  "recipeBook.loading": {
+    "defaultMessage": "Loading…"
+  },
+  "recipeBook.refresh": {
+    "defaultMessage": "Refresh"
+  },
+  "recipeBook.retry": {
+    "defaultMessage": "Retry"
+  },
+  "recipeBook.title": {
+    "defaultMessage": "Recipe Book"
+  },
+  "recipeBook.titleApps": {
+    "defaultMessage": "Libreria app"
+  },
+  "recipeBook.unpublish": {
+    "defaultMessage": "Unpublish"
+  },
+  "recipeBook.unpublishFailedTitle": {
+    "defaultMessage": "Failed to unpublish"
+  },
+  "recipeBook.unpublishedMsg": {
+    "defaultMessage": "\"{title}\" is no longer published"
+  },
+  "recipeBook.you": {
+    "defaultMessage": "you"
   },
   "recipeExtensionSelector.description": {
     "defaultMessage": "Seleziona quali estensioni devono essere disponibili durante l'esecuzione di questa ricetta. Lascia vuoto per usare le estensioni predefinite."
@@ -3068,6 +3257,21 @@
   "recipesView.openInNewWindow": {
     "defaultMessage": "Apri in una nuova finestra"
   },
+  "recipesView.publishCreatedMsg": {
+    "defaultMessage": "\"{title}\" is now in the shared library"
+  },
+  "recipesView.publishFailedTitle": {
+    "defaultMessage": "Failed to publish to 10router"
+  },
+  "recipesView.publishSuccessTitle": {
+    "defaultMessage": "Published to 10router"
+  },
+  "recipesView.publishUpdatedMsg": {
+    "defaultMessage": "\"{title}\" publication was updated"
+  },
+  "recipesView.recipeBook": {
+    "defaultMessage": "Recipe Book"
+  },
   "recipesView.recipeDeletedSuccess": {
     "defaultMessage": "Ricetta eliminata correttamente"
   },
@@ -3113,8 +3317,14 @@
   "recipesView.searchRecipesPlaceholder": {
     "defaultMessage": "Cerca ricette..."
   },
+  "recipesView.shareEnvWarningTitle": {
+    "defaultMessage": "This recipe includes extension environment values, which will be visible to everyone. Publish anyway?"
+  },
   "recipesView.shareRecipe": {
     "defaultMessage": "Condividi ricetta"
+  },
+  "recipesView.shareTo10Router": {
+    "defaultMessage": "Share to 10router"
   },
   "recipesView.slashCommandDescription": {
     "defaultMessage": "Imposta un comando slash per eseguire rapidamente questa ricetta da qualsiasi chat"
@@ -3797,6 +4007,96 @@
   "sessions.toast.updated": {
     "defaultMessage": "Descrizione della sessione aggiornata correttamente"
   },
+  "settings.agentLoop.operations.auto.placeholder": {
+    "defaultMessage": "Automatico"
+  },
+  "settings.agentLoop.operations.autoEffort.apiKey.configured": {
+    "defaultMessage": "Configurata"
+  },
+  "settings.agentLoop.operations.autoEffort.apiKey.label": {
+    "defaultMessage": "Chiave API TypeSafe"
+  },
+  "settings.agentLoop.operations.autoEffort.apiKey.placeholder": {
+    "defaultMessage": "Inserisci la chiave API"
+  },
+  "settings.agentLoop.operations.autoEffort.apiKey.remove": {
+    "defaultMessage": "Rimuovi chiave"
+  },
+  "settings.agentLoop.operations.autoEffort.apiKey.save": {
+    "defaultMessage": "Salva chiave"
+  },
+  "settings.agentLoop.operations.autoEffort.description": {
+    "defaultMessage": "Usa Jev per scegliere il livello di ragionamento per ogni richiesta. Il testo viene inviato a TypeSafe AI; i comandi slash di skill e ricette includono le relative istruzioni locali espanse."
+  },
+  "settings.agentLoop.operations.autoEffort.title": {
+    "defaultMessage": "Livello di ragionamento automatico"
+  },
+  "settings.agentLoop.operations.blockLimit.label": {
+    "defaultMessage": "Limite di blocco"
+  },
+  "settings.agentLoop.operations.contextCompaction.description": {
+    "defaultMessage": "Riassume la cronologia della conversazione prima che la finestra di contesto si riempia."
+  },
+  "settings.agentLoop.operations.contextCompaction.title": {
+    "defaultMessage": "Compattazione del contesto"
+  },
+  "settings.agentLoop.operations.cutoff.label": {
+    "defaultMessage": "Soglia di taglio"
+  },
+  "settings.agentLoop.operations.enable": {
+    "defaultMessage": "Abilita {operation}"
+  },
+  "settings.agentLoop.operations.failureTimeout.label": {
+    "defaultMessage": "Timeout errore"
+  },
+  "settings.agentLoop.operations.heading": {
+    "defaultMessage": "Operazioni configurabili"
+  },
+  "settings.agentLoop.operations.maxTurns.description": {
+    "defaultMessage": "Interrompe il lavoro autonomo e chiede all’utente prima di continuare."
+  },
+  "settings.agentLoop.operations.maxTurns.title": {
+    "defaultMessage": "Numero massimo di turni"
+  },
+  "settings.agentLoop.operations.recipeRetry.description": {
+    "defaultMessage": "Esegue di nuovo i controlli della ricetta quando un controllo di successo configurato non riesce."
+  },
+  "settings.agentLoop.operations.recipeRetry.title": {
+    "defaultMessage": "Riprova ricetta"
+  },
+  "settings.agentLoop.operations.retryTimeout.label": {
+    "defaultMessage": "Timeout nuovo tentativo"
+  },
+  "settings.agentLoop.operations.slashCommands.description": {
+    "defaultMessage": "Riconosce comandi come /compact, /skills e le scorciatoie delle ricette."
+  },
+  "settings.agentLoop.operations.slashCommands.title": {
+    "defaultMessage": "Comandi slash"
+  },
+  "settings.agentLoop.operations.stopHooks.description": {
+    "defaultMessage": "Consente agli hook di bloccare il completamento evitando cicli di arresto infiniti."
+  },
+  "settings.agentLoop.operations.stopHooks.title": {
+    "defaultMessage": "Hook di arresto"
+  },
+  "settings.agentLoop.operations.threshold.label": {
+    "defaultMessage": "Soglia %"
+  },
+  "settings.agentLoop.operations.tokenLimit.label": {
+    "defaultMessage": "Limite di token"
+  },
+  "settings.agentLoop.operations.toolPairCompaction.description": {
+    "defaultMessage": "Riassume le richieste e le risposte meno recenti degli strumenti per risparmiare contesto. La soglia è automatica se il campo è vuoto."
+  },
+  "settings.agentLoop.operations.toolPairCompaction.title": {
+    "defaultMessage": "Compattazione delle coppie di strumenti"
+  },
+  "settings.agentLoop.operations.turns.label": {
+    "defaultMessage": "Turni"
+  },
+  "settings.agentLoop.title": {
+    "defaultMessage": "Ciclo agente"
+  },
   "settings.appearance.description": {
     "defaultMessage": "Configura l'aspetto di 10Router sul tuo sistema"
   },
@@ -4319,6 +4619,39 @@
   "telemetrySettings.updateError": {
     "defaultMessage": "Impossibile aggiornare le impostazioni di telemetria."
   },
+  "tenRouterKeyForm.connect": {
+    "defaultMessage": "Connetti"
+  },
+  "tenRouterKeyForm.connecting": {
+    "defaultMessage": "Connessione..."
+  },
+  "tenRouterKeyForm.description": {
+    "defaultMessage": "Inserisci la tua chiave API di 10router (inizia con 10r_). L'elenco dei modelli viene recuperato automaticamente da <link>10r.sokolov.io</link>."
+  },
+  "tenRouterKeyForm.fetchModelsError": {
+    "defaultMessage": "Impossibile recuperare l'elenco dei modelli da 10router: {detail}"
+  },
+  "tenRouterKeyForm.invalidKey": {
+    "defaultMessage": "La chiave è stata rifiutata da 10router. Controllala e riprova."
+  },
+  "tenRouterKeyForm.keyLabel": {
+    "defaultMessage": "Chiave API"
+  },
+  "tenRouterKeyForm.keyPlaceholder": {
+    "defaultMessage": "10r_…"
+  },
+  "tenRouterKeyForm.noModels": {
+    "defaultMessage": "10router non ha restituito modelli per questa chiave."
+  },
+  "tenRouterKeyForm.requiredError": {
+    "defaultMessage": "Inserisci la tua chiave API"
+  },
+  "tenRouterKeyForm.savedKeyHint": {
+    "defaultMessage": "Una chiave è già salvata — premi Connetti per continuare con quella, oppure incollane una nuova."
+  },
+  "tenRouterKeyForm.title": {
+    "defaultMessage": "Connetti a 10router"
+  },
   "themeSelector.aura": {
     "defaultMessage": "Aura"
   },
@@ -4501,320 +4834,5 @@
   },
   "userMessage.removeImageFromEdit": {
     "defaultMessage": "Rimuovi immagine dal messaggio"
-  },
-  "providerConfigurationModal.chooseModel": {
-    "defaultMessage": "Scegli modello"
-  },
-  "providerCard.deprecatedReplacement": {
-    "defaultMessage": "Deprecato — usa invece {replacement}."
-  },
-  "acpReadinessPanel.adapterFound": {
-    "defaultMessage": "Adattatore ACP trovato"
-  },
-  "acpReadinessPanel.adapterNotFound": {
-    "defaultMessage": "Adattatore ACP non trovato"
-  },
-  "acpReadinessPanel.authenticationHelp": {
-    "defaultMessage": "Accedi tramite la CLI del provider, quindi verifica di nuovo."
-  },
-  "acpReadinessPanel.checkAgain": {
-    "defaultMessage": "Verifica di nuovo"
-  },
-  "acpReadinessPanel.checking": {
-    "defaultMessage": "Verifica in corso..."
-  },
-  "acpReadinessPanel.connected": {
-    "defaultMessage": "Connessione riuscita"
-  },
-  "acpReadinessPanel.connectionNotChecked": {
-    "defaultMessage": "Verifica la connessione del tuo account prima di continuare."
-  },
-  "providerConfigurationModal.deviceCodeAndEnter": {
-    "defaultMessage": "e inserisci:"
-  },
-  "providerConfigurationModal.deviceCodeCopy": {
-    "defaultMessage": "Copia"
-  },
-  "providerConfigurationModal.deviceCodeVisit": {
-    "defaultMessage": "Visita"
-  },
-  "contextWindowIndicator.open": {
-    "defaultMessage": "{used} di {limit} token usati. Mostra cosa c'è nella finestra di contesto"
-  },
-  "contextXray.compactNow": {
-    "defaultMessage": "Compatta ora"
-  },
-  "contextXray.free": {
-    "defaultMessage": "Libero"
-  },
-  "contextXray.loadError": {
-    "defaultMessage": "Impossibile caricare il report del contesto."
-  },
-  "contextXray.modelSummary": {
-    "defaultMessage": "{model} · finestra di contesto da {limit} token"
-  },
-  "contextXray.refresh": {
-    "defaultMessage": "Aggiorna"
-  },
-  "contextXray.retry": {
-    "defaultMessage": "Riprova"
-  },
-  "contextXray.title": {
-    "defaultMessage": "Finestra di contesto"
-  },
-  "contextXray.tokenizerNote": {
-    "defaultMessage": "Il conteggio dei token è stimato con il tokenizer o200k."
-  },
-  "contextXray.usage": {
-    "defaultMessage": "di {limit} token · {percent} della finestra di contesto"
-  },
-  "contextXray.category.additionalInstructions": {
-    "defaultMessage": "Istruzioni e suggerimenti"
-  },
-  "contextXray.category.compactionSummary": {
-    "defaultMessage": "Riepilogo di compattazione"
-  },
-  "contextXray.category.extensionInstructions": {
-    "defaultMessage": "Istruzioni delle estensioni"
-  },
-  "contextXray.category.messages": {
-    "defaultMessage": "Conversazione"
-  },
-  "contextXray.category.systemPrompt": {
-    "defaultMessage": "Prompt di sistema"
-  },
-  "contextXray.category.toolDefinitions": {
-    "defaultMessage": "Definizioni degli strumenti"
-  },
-  "contextXray.category.turnContext": {
-    "defaultMessage": "Contesto del turno"
-  },
-  "settings.agentLoop.operations.auto.placeholder": {
-    "defaultMessage": "Automatico"
-  },
-  "settings.agentLoop.operations.autoEffort.apiKey.configured": {
-    "defaultMessage": "Configurata"
-  },
-  "settings.agentLoop.operations.autoEffort.apiKey.label": {
-    "defaultMessage": "Chiave API TypeSafe"
-  },
-  "settings.agentLoop.operations.autoEffort.apiKey.placeholder": {
-    "defaultMessage": "Inserisci la chiave API"
-  },
-  "settings.agentLoop.operations.autoEffort.apiKey.remove": {
-    "defaultMessage": "Rimuovi chiave"
-  },
-  "settings.agentLoop.operations.autoEffort.apiKey.save": {
-    "defaultMessage": "Salva chiave"
-  },
-  "settings.agentLoop.operations.autoEffort.description": {
-    "defaultMessage": "Usa Jev per scegliere il livello di ragionamento per ogni richiesta. Il testo viene inviato a TypeSafe AI; i comandi slash di skill e ricette includono le relative istruzioni locali espanse."
-  },
-  "settings.agentLoop.operations.autoEffort.title": {
-    "defaultMessage": "Livello di ragionamento automatico"
-  },
-  "settings.agentLoop.operations.blockLimit.label": {
-    "defaultMessage": "Limite di blocco"
-  },
-  "settings.agentLoop.operations.contextCompaction.description": {
-    "defaultMessage": "Riassume la cronologia della conversazione prima che la finestra di contesto si riempia."
-  },
-  "settings.agentLoop.operations.contextCompaction.title": {
-    "defaultMessage": "Compattazione del contesto"
-  },
-  "settings.agentLoop.operations.cutoff.label": {
-    "defaultMessage": "Soglia di taglio"
-  },
-  "settings.agentLoop.operations.enable": {
-    "defaultMessage": "Abilita {operation}"
-  },
-  "settings.agentLoop.operations.failureTimeout.label": {
-    "defaultMessage": "Timeout errore"
-  },
-  "settings.agentLoop.operations.heading": {
-    "defaultMessage": "Operazioni configurabili"
-  },
-  "settings.agentLoop.operations.maxTurns.description": {
-    "defaultMessage": "Interrompe il lavoro autonomo e chiede all’utente prima di continuare."
-  },
-  "settings.agentLoop.operations.maxTurns.title": {
-    "defaultMessage": "Numero massimo di turni"
-  },
-  "settings.agentLoop.operations.recipeRetry.description": {
-    "defaultMessage": "Esegue di nuovo i controlli della ricetta quando un controllo di successo configurato non riesce."
-  },
-  "settings.agentLoop.operations.recipeRetry.title": {
-    "defaultMessage": "Riprova ricetta"
-  },
-  "settings.agentLoop.operations.retryTimeout.label": {
-    "defaultMessage": "Timeout nuovo tentativo"
-  },
-  "settings.agentLoop.operations.slashCommands.description": {
-    "defaultMessage": "Riconosce comandi come /compact, /skills e le scorciatoie delle ricette."
-  },
-  "settings.agentLoop.operations.slashCommands.title": {
-    "defaultMessage": "Comandi slash"
-  },
-  "settings.agentLoop.operations.stopHooks.description": {
-    "defaultMessage": "Consente agli hook di bloccare il completamento evitando cicli di arresto infiniti."
-  },
-  "settings.agentLoop.operations.stopHooks.title": {
-    "defaultMessage": "Hook di arresto"
-  },
-  "settings.agentLoop.operations.threshold.label": {
-    "defaultMessage": "Soglia %"
-  },
-  "settings.agentLoop.operations.tokenLimit.label": {
-    "defaultMessage": "Limite di token"
-  },
-  "settings.agentLoop.operations.toolPairCompaction.description": {
-    "defaultMessage": "Riassume le richieste e le risposte meno recenti degli strumenti per risparmiare contesto. La soglia è automatica se il campo è vuoto."
-  },
-  "settings.agentLoop.operations.toolPairCompaction.title": {
-    "defaultMessage": "Compattazione delle coppie di strumenti"
-  },
-  "settings.agentLoop.operations.turns.label": {
-    "defaultMessage": "Turni"
-  },
-  "settings.agentLoop.title": {
-    "defaultMessage": "Ciclo agente"
-  },
-  "contextXray.providerManagesContext": {
-    "defaultMessage": "{provider} mantiene la propria cronologia della conversazione e riceve da 10Router solo l'ultimo prompt, quindi non c'è nessuna richiesta da scomporre."
-  },
-  "contextXray.autoCompactionPending": {
-    "defaultMessage": "Soglia di compattazione automatica superata: la conversazione viene compattata prima dell'invio della prossima richiesta."
-  },
-  "tenRouterKeyForm.title": {
-    "defaultMessage": "Connetti a 10router"
-  },
-  "tenRouterKeyForm.description": {
-    "defaultMessage": "Inserisci la tua chiave API di 10router (inizia con 10r_). L'elenco dei modelli viene recuperato automaticamente da <link>10r.sokolov.io</link>."
-  },
-  "tenRouterKeyForm.keyLabel": {
-    "defaultMessage": "Chiave API"
-  },
-  "tenRouterKeyForm.keyPlaceholder": {
-    "defaultMessage": "10r_…"
-  },
-  "tenRouterKeyForm.connect": {
-    "defaultMessage": "Connetti"
-  },
-  "tenRouterKeyForm.connecting": {
-    "defaultMessage": "Connessione..."
-  },
-  "tenRouterKeyForm.requiredError": {
-    "defaultMessage": "Inserisci la tua chiave API"
-  },
-  "tenRouterKeyForm.invalidKey": {
-    "defaultMessage": "La chiave è stata rifiutata da 10router. Controllala e riprova."
-  },
-  "tenRouterKeyForm.fetchModelsError": {
-    "defaultMessage": "Impossibile recuperare l'elenco dei modelli da 10router: {detail}"
-  },
-  "tenRouterKeyForm.noModels": {
-    "defaultMessage": "10router non ha restituito modelli per questa chiave."
-  },
-  "tenRouterKeyForm.savedKeyHint": {
-    "defaultMessage": "Una chiave è già salvata — premi Connetti per continuare con quella, oppure incollane una nuova."
-  },
-  "appsView.publishCreatedMsg": {
-    "defaultMessage": "\"{title}\" is now in the shared library"
-  },
-  "appsView.publishFailedTitle": {
-    "defaultMessage": "Failed to publish to 10router"
-  },
-  "appsView.publishSuccessTitle": {
-    "defaultMessage": "Published to 10router"
-  },
-  "appsView.publishUpdatedMsg": {
-    "defaultMessage": "\"{title}\" publication was updated"
-  },
-  "appsView.recipeBook": {
-    "defaultMessage": "Recipe Book"
-  },
-  "appsView.shareTo10Router": {
-    "defaultMessage": "Share to 10router"
-  },
-  "recipeBook.appsTab": {
-    "defaultMessage": "Applications"
-  },
-  "recipeBook.description": {
-    "defaultMessage": "Recipes and applications other 10router users shared. Installing saves them to your library."
-  },
-  "recipeBook.emptyDescription": {
-    "defaultMessage": "Publications will appear here. Use “Share to 10router” on a recipe or application card."
-  },
-  "recipeBook.emptyTitle": {
-    "defaultMessage": "Nothing shared yet"
-  },
-  "recipeBook.errorTitle": {
-    "defaultMessage": "Failed to load the library"
-  },
-  "recipeBook.install": {
-    "defaultMessage": "Install"
-  },
-  "recipeBook.installFailedTitle": {
-    "defaultMessage": "Install failed"
-  },
-  "recipeBook.installed": {
-    "defaultMessage": "Installed"
-  },
-  "recipeBook.installedAppMsg": {
-    "defaultMessage": "Application \"{title}\" added"
-  },
-  "recipeBook.installedRecipeMsg": {
-    "defaultMessage": "Recipe \"{title}\" saved to your library"
-  },
-  "recipeBook.installing": {
-    "defaultMessage": "Installing…"
-  },
-  "recipeBook.loading": {
-    "defaultMessage": "Loading…"
-  },
-  "recipeBook.recipesTab": {
-    "defaultMessage": "Recipes"
-  },
-  "recipeBook.refresh": {
-    "defaultMessage": "Refresh"
-  },
-  "recipeBook.retry": {
-    "defaultMessage": "Retry"
-  },
-  "recipeBook.title": {
-    "defaultMessage": "Recipe Book"
-  },
-  "recipeBook.unpublish": {
-    "defaultMessage": "Unpublish"
-  },
-  "recipeBook.unpublishFailedTitle": {
-    "defaultMessage": "Failed to unpublish"
-  },
-  "recipeBook.unpublishedMsg": {
-    "defaultMessage": "\"{title}\" is no longer published"
-  },
-  "recipeBook.you": {
-    "defaultMessage": "you"
-  },
-  "recipesView.publishCreatedMsg": {
-    "defaultMessage": "\"{title}\" is now in the shared library"
-  },
-  "recipesView.publishFailedTitle": {
-    "defaultMessage": "Failed to publish to 10router"
-  },
-  "recipesView.publishSuccessTitle": {
-    "defaultMessage": "Published to 10router"
-  },
-  "recipesView.publishUpdatedMsg": {
-    "defaultMessage": "\"{title}\" publication was updated"
-  },
-  "recipesView.recipeBook": {
-    "defaultMessage": "Recipe Book"
-  },
-  "recipesView.shareEnvWarningTitle": {
-    "defaultMessage": "This recipe includes extension environment values, which will be visible to everyone. Publish anyway?"
-  },
-  "recipesView.shareTo10Router": {
-    "defaultMessage": "Share to 10router"
   }
 }

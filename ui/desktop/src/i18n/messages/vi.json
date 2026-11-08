@@ -1,4 +1,25 @@
 {
+  "acpReadinessPanel.adapterFound": {
+    "defaultMessage": "Đã tìm thấy bộ điều hợp ACP"
+  },
+  "acpReadinessPanel.adapterNotFound": {
+    "defaultMessage": "Không tìm thấy bộ điều hợp ACP"
+  },
+  "acpReadinessPanel.authenticationHelp": {
+    "defaultMessage": "Đăng nhập qua CLI của nhà cung cấp, sau đó kiểm tra lại."
+  },
+  "acpReadinessPanel.checkAgain": {
+    "defaultMessage": "Kiểm tra lại"
+  },
+  "acpReadinessPanel.checking": {
+    "defaultMessage": "Đang kiểm tra..."
+  },
+  "acpReadinessPanel.connected": {
+    "defaultMessage": "Kết nối thành công"
+  },
+  "acpReadinessPanel.connectionNotChecked": {
+    "defaultMessage": "Hãy kiểm tra kết nối tài khoản trước khi tiếp tục."
+  },
   "announcementModal.gotIt": {
     "defaultMessage": "Đã hiểu!"
   },
@@ -7,6 +28,9 @@
   },
   "appLayout.openNavigation": {
     "defaultMessage": "Mở điều hướng"
+  },
+  "appsView.appLibrary": {
+    "defaultMessage": "Thư viện ứng dụng"
   },
   "appsView.customApp": {
     "defaultMessage": "Ứng dụng tùy chỉnh"
@@ -41,6 +65,18 @@
   "appsView.noAppsTitle": {
     "defaultMessage": "Không có ứng dụng nào"
   },
+  "appsView.publishCreatedMsg": {
+    "defaultMessage": "\"{title}\" is now in the shared library"
+  },
+  "appsView.publishFailedTitle": {
+    "defaultMessage": "Failed to publish to 10router"
+  },
+  "appsView.publishSuccessTitle": {
+    "defaultMessage": "Published to 10router"
+  },
+  "appsView.publishUpdatedMsg": {
+    "defaultMessage": "\"{title}\" publication was updated"
+  },
   "appsView.retiredChatApp": {
     "defaultMessage": "Chat app retired"
   },
@@ -49,6 +85,9 @@
   },
   "appsView.retry": {
     "defaultMessage": "Thử lại"
+  },
+  "appsView.shareTo10Router": {
+    "defaultMessage": "Share to 10router"
   },
   "appsView.title": {
     "defaultMessage": "Ứng dụng"
@@ -307,6 +346,63 @@
   },
   "confirmationModal.processing": {
     "defaultMessage": "Đang xử lý..."
+  },
+  "contextWindowIndicator.open": {
+    "defaultMessage": "Đã dùng {used} trong {limit} token. Xem nội dung cửa sổ ngữ cảnh"
+  },
+  "contextXray.autoCompactionPending": {
+    "defaultMessage": "Đã vượt ngưỡng nén tự động: hội thoại sẽ được nén trước khi gửi yêu cầu tiếp theo."
+  },
+  "contextXray.category.additionalInstructions": {
+    "defaultMessage": "Hướng dẫn & gợi ý"
+  },
+  "contextXray.category.compactionSummary": {
+    "defaultMessage": "Tóm tắt nén"
+  },
+  "contextXray.category.extensionInstructions": {
+    "defaultMessage": "Hướng dẫn của tiện ích mở rộng"
+  },
+  "contextXray.category.messages": {
+    "defaultMessage": "Cuộc trò chuyện"
+  },
+  "contextXray.category.systemPrompt": {
+    "defaultMessage": "Prompt hệ thống"
+  },
+  "contextXray.category.toolDefinitions": {
+    "defaultMessage": "Định nghĩa công cụ"
+  },
+  "contextXray.category.turnContext": {
+    "defaultMessage": "Ngữ cảnh lượt"
+  },
+  "contextXray.compactNow": {
+    "defaultMessage": "Nén ngay"
+  },
+  "contextXray.free": {
+    "defaultMessage": "Còn trống"
+  },
+  "contextXray.loadError": {
+    "defaultMessage": "Không thể tải báo cáo ngữ cảnh."
+  },
+  "contextXray.modelSummary": {
+    "defaultMessage": "{model} · cửa sổ ngữ cảnh {limit} token"
+  },
+  "contextXray.providerManagesContext": {
+    "defaultMessage": "{provider} giữ lịch sử hội thoại riêng và chỉ nhận lời nhắc mới nhất từ 10Router, nên không có yêu cầu nào để phân tích."
+  },
+  "contextXray.refresh": {
+    "defaultMessage": "Làm mới"
+  },
+  "contextXray.retry": {
+    "defaultMessage": "Thử lại"
+  },
+  "contextXray.title": {
+    "defaultMessage": "Cửa sổ ngữ cảnh"
+  },
+  "contextXray.tokenizerNote": {
+    "defaultMessage": "Số token được ước tính bằng tokenizer o200k."
+  },
+  "contextXray.usage": {
+    "defaultMessage": "trong {limit} token · {percent} cửa sổ ngữ cảnh"
   },
   "conversationLimitsDropdown.conversationLimits": {
     "defaultMessage": "Giới hạn cuộc trò chuyện"
@@ -908,11 +1004,11 @@
   "dirSwitcher.enterPath": {
     "defaultMessage": "Enter path"
   },
-  "dirSwitcher.enterPathPlaceholder": {
-    "defaultMessage": "Enter an absolute path (e.g. /home/10Router/workspace)"
-  },
   "dirSwitcher.enterPathInvalid": {
     "defaultMessage": "Working directory must be an absolute path"
+  },
+  "dirSwitcher.enterPathPlaceholder": {
+    "defaultMessage": "Enter an absolute path (e.g. /home/10Router/workspace)"
   },
   "dirSwitcher.failedToUpdateWorkingDir": {
     "defaultMessage": "Không thể cập nhật thư mục làm việc"
@@ -928,18 +1024,6 @@
   },
   "dirSwitcher.recentDirectories": {
     "defaultMessage": "Thư mục gần đây"
-  },
-  "gitBranchIndicator.failedToSwitch": {
-    "defaultMessage": "Không thể chuyển sang {branch}"
-  },
-  "gitBranchIndicator.noBranchesFound": {
-    "defaultMessage": "Không tìm thấy nhánh"
-  },
-  "gitBranchIndicator.searchBranches": {
-    "defaultMessage": "Tìm kiếm nhánh…"
-  },
-  "gitBranchIndicator.uncommittedChanges": {
-    "defaultMessage": "Bạn có thể có các thay đổi chưa commit."
   },
   "elicitationRequest.accept": {
     "defaultMessage": "Chấp nhận"
@@ -1243,6 +1327,18 @@
   },
   "externalBackendSection.workingDirPlaceholder": {
     "defaultMessage": "/home/10Router/workspace"
+  },
+  "gitBranchIndicator.failedToSwitch": {
+    "defaultMessage": "Không thể chuyển sang {branch}"
+  },
+  "gitBranchIndicator.noBranchesFound": {
+    "defaultMessage": "Không tìm thấy nhánh"
+  },
+  "gitBranchIndicator.searchBranches": {
+    "defaultMessage": "Tìm kiếm nhánh…"
+  },
+  "gitBranchIndicator.uncommittedChanges": {
+    "defaultMessage": "Bạn có thể có các thay đổi chưa commit."
   },
   "goosehintsModal.close": {
     "defaultMessage": "Đóng"
@@ -1922,6 +2018,18 @@
   "messageCopyLink.copy": {
     "defaultMessage": "Sao chép"
   },
+  "messageList.hiddenMessages": {
+    "defaultMessage": "{count, plural, other {# tin nhắn đã bị ẩn}}"
+  },
+  "messageList.modelChanged": {
+    "defaultMessage": "Mô hình đã thay đổi: {previousModel} → {currentModel}"
+  },
+  "messageList.requestedModel": {
+    "defaultMessage": "{model} (đã yêu cầu)"
+  },
+  "messageList.showAllMessages": {
+    "defaultMessage": "Hiển thị tất cả"
+  },
   "messageQueue.cancel": {
     "defaultMessage": "Hủy"
   },
@@ -2282,17 +2390,32 @@
   "modelsBottomBar.loadingModels": {
     "defaultMessage": "Đang tải mô hình…"
   },
-  "modelsBottomBar.models": {
-    "defaultMessage": "Mô hình"
-  },
   "modelsBottomBar.localModelSettings": {
     "defaultMessage": "Cài đặt mô hình cục bộ"
   },
   "modelsBottomBar.localModelSettingsTitle": {
     "defaultMessage": "Cài đặt mô hình cục bộ — {modelName}"
   },
+  "modelsBottomBar.longContext": {
+    "defaultMessage": "Cửa sổ ngữ cảnh 1M"
+  },
+  "modelsBottomBar.models": {
+    "defaultMessage": "Mô hình"
+  },
   "modelsBottomBar.selectModel": {
     "defaultMessage": "Chọn mô hình"
+  },
+  "modelsBottomBar.tierCapable": {
+    "defaultMessage": "Mạnh nhất cho các công việc tham vọng"
+  },
+  "modelsBottomBar.tierCoding": {
+    "defaultMessage": "Tinh chỉnh cho lập trình agent"
+  },
+  "modelsBottomBar.tierEfficient": {
+    "defaultMessage": "Hiệu quả nhất cho công việc hằng ngày"
+  },
+  "modelsBottomBar.tierFast": {
+    "defaultMessage": "Nhanh nhất cho câu trả lời nhanh"
   },
   "modelsSection.resetDescription": {
     "defaultMessage": "Xóa các cài đặt mô hình và nhà cung cấp đã chọn để bắt đầu lại từ đầu"
@@ -2546,18 +2669,6 @@
   "privacyInfoModal.whatWeCollect": {
     "defaultMessage": "Những gì chúng tôi thu thập:"
   },
-  "messageList.hiddenMessages": {
-    "defaultMessage": "{count, plural, other {# tin nhắn đã bị ẩn}}"
-  },
-  "messageList.modelChanged": {
-    "defaultMessage": "Mô hình đã thay đổi: {previousModel} → {currentModel}"
-  },
-  "messageList.requestedModel": {
-    "defaultMessage": "{model} (đã yêu cầu)"
-  },
-  "messageList.showAllMessages": {
-    "defaultMessage": "Hiển thị tất cả"
-  },
   "promptsSettings.allPromptsReset": {
     "defaultMessage": "Tất cả lời nhắc đã được đặt lại về mặc định"
   },
@@ -2636,6 +2747,9 @@
   "promptsSettings.unsavedChanges": {
     "defaultMessage": "Bạn có các thay đổi chưa lưu"
   },
+  "providerCard.deprecatedReplacement": {
+    "defaultMessage": "Không còn được dùng — hãy sử dụng {replacement}."
+  },
   "providerCard.unknownProvider": {
     "defaultMessage": "Nhà cung cấp không xác định"
   },
@@ -2690,6 +2804,9 @@
   "providerConfigurationModal.checkConfigAgain": {
     "defaultMessage": "Kiểm tra lại cấu hình của bạn để sử dụng nhà cung cấp này."
   },
+  "providerConfigurationModal.chooseModel": {
+    "defaultMessage": "Chọn mô hình"
+  },
   "providerConfigurationModal.close": {
     "defaultMessage": "Đóng"
   },
@@ -2702,8 +2819,17 @@
   "providerConfigurationModal.deleteConfirmation": {
     "defaultMessage": "Thao tác này sẽ xóa vĩnh viễn cấu hình nhà cung cấp hiện tại."
   },
+  "providerConfigurationModal.deviceCodeAndEnter": {
+    "defaultMessage": "và nhập:"
+  },
+  "providerConfigurationModal.deviceCodeCopy": {
+    "defaultMessage": "Sao chép"
+  },
   "providerConfigurationModal.deviceCodeFlowHint": {
     "defaultMessage": "Một cửa sổ trình duyệt sẽ mở ra. Mã xác minh sẽ xuất hiện tại đây để bạn nhập và hoàn tất đăng nhập."
+  },
+  "providerConfigurationModal.deviceCodeVisit": {
+    "defaultMessage": "Truy cập"
   },
   "providerConfigurationModal.errorCheckingConfig": {
     "defaultMessage": "Đã xảy ra lỗi khi kiểm tra cấu hình nhà cung cấp này."
@@ -2830,6 +2956,69 @@
   },
   "recipeActivityEditor.messagePlaceholder": {
     "defaultMessage": "Nhập tin nhắn giới thiệu hướng tới người dùng cho công thức của bạn (hỗ trợ **đậm**, *nghiêng*, `mã`, v.v.)"
+  },
+  "recipeBook.descriptionApps": {
+    "defaultMessage": "Ứng dụng được người dùng 10router khác chia sẻ. Cài đặt sẽ thêm ứng dụng vào ứng dụng của bạn."
+  },
+  "recipeBook.descriptionRecipes": {
+    "defaultMessage": "Công thức được người dùng 10router khác chia sẻ. Cài đặt sẽ lưu công thức vào công thức của bạn."
+  },
+  "recipeBook.emptyDescriptionApps": {
+    "defaultMessage": "Ứng dụng được chia sẻ sẽ xuất hiện ở đây. Dùng “Chia sẻ lên 10router” trên thẻ ứng dụng."
+  },
+  "recipeBook.emptyDescriptionRecipes": {
+    "defaultMessage": "Công thức được chia sẻ sẽ xuất hiện ở đây. Dùng “Chia sẻ lên 10router” trên thẻ công thức."
+  },
+  "recipeBook.emptyTitle": {
+    "defaultMessage": "Nothing shared yet"
+  },
+  "recipeBook.errorTitle": {
+    "defaultMessage": "Failed to load the library"
+  },
+  "recipeBook.install": {
+    "defaultMessage": "Install"
+  },
+  "recipeBook.installFailedTitle": {
+    "defaultMessage": "Install failed"
+  },
+  "recipeBook.installed": {
+    "defaultMessage": "Installed"
+  },
+  "recipeBook.installedAppMsg": {
+    "defaultMessage": "Application \"{title}\" added"
+  },
+  "recipeBook.installedRecipeMsg": {
+    "defaultMessage": "Recipe \"{title}\" saved to your library"
+  },
+  "recipeBook.installing": {
+    "defaultMessage": "Installing…"
+  },
+  "recipeBook.loading": {
+    "defaultMessage": "Loading…"
+  },
+  "recipeBook.refresh": {
+    "defaultMessage": "Refresh"
+  },
+  "recipeBook.retry": {
+    "defaultMessage": "Retry"
+  },
+  "recipeBook.title": {
+    "defaultMessage": "Recipe Book"
+  },
+  "recipeBook.titleApps": {
+    "defaultMessage": "Thư viện ứng dụng"
+  },
+  "recipeBook.unpublish": {
+    "defaultMessage": "Unpublish"
+  },
+  "recipeBook.unpublishFailedTitle": {
+    "defaultMessage": "Failed to unpublish"
+  },
+  "recipeBook.unpublishedMsg": {
+    "defaultMessage": "\"{title}\" is no longer published"
+  },
+  "recipeBook.you": {
+    "defaultMessage": "you"
   },
   "recipeExtensionSelector.description": {
     "defaultMessage": "Chọn các phần mở rộng sẽ khả dụng khi chạy công thức này. Để trống để sử dụng các phần mở rộng mặc định."
@@ -3068,6 +3257,21 @@
   "recipesView.openInNewWindow": {
     "defaultMessage": "Mở trong cửa sổ mới"
   },
+  "recipesView.publishCreatedMsg": {
+    "defaultMessage": "\"{title}\" is now in the shared library"
+  },
+  "recipesView.publishFailedTitle": {
+    "defaultMessage": "Failed to publish to 10router"
+  },
+  "recipesView.publishSuccessTitle": {
+    "defaultMessage": "Published to 10router"
+  },
+  "recipesView.publishUpdatedMsg": {
+    "defaultMessage": "\"{title}\" publication was updated"
+  },
+  "recipesView.recipeBook": {
+    "defaultMessage": "Recipe Book"
+  },
   "recipesView.recipeDeletedSuccess": {
     "defaultMessage": "Đã xóa công thức thành công"
   },
@@ -3113,8 +3317,14 @@
   "recipesView.searchRecipesPlaceholder": {
     "defaultMessage": "Tìm công thức..."
   },
+  "recipesView.shareEnvWarningTitle": {
+    "defaultMessage": "This recipe includes extension environment values, which will be visible to everyone. Publish anyway?"
+  },
   "recipesView.shareRecipe": {
     "defaultMessage": "Chia sẻ công thức"
+  },
+  "recipesView.shareTo10Router": {
+    "defaultMessage": "Share to 10router"
   },
   "recipesView.slashCommandDescription": {
     "defaultMessage": "Đặt một lệnh gạch chéo để nhanh chóng chạy công thức này từ bất kỳ cuộc trò chuyện nào"
@@ -3797,6 +4007,96 @@
   "sessions.toast.updated": {
     "defaultMessage": "Đã cập nhật mô tả phiên làm việc thành công"
   },
+  "settings.agentLoop.operations.auto.placeholder": {
+    "defaultMessage": "Tự động"
+  },
+  "settings.agentLoop.operations.autoEffort.apiKey.configured": {
+    "defaultMessage": "Đã cấu hình"
+  },
+  "settings.agentLoop.operations.autoEffort.apiKey.label": {
+    "defaultMessage": "Khóa API TypeSafe"
+  },
+  "settings.agentLoop.operations.autoEffort.apiKey.placeholder": {
+    "defaultMessage": "Nhập khóa API"
+  },
+  "settings.agentLoop.operations.autoEffort.apiKey.remove": {
+    "defaultMessage": "Xóa khóa"
+  },
+  "settings.agentLoop.operations.autoEffort.apiKey.save": {
+    "defaultMessage": "Lưu khóa"
+  },
+  "settings.agentLoop.operations.autoEffort.description": {
+    "defaultMessage": "Sử dụng Jev để chọn mức suy luận cho từng yêu cầu. Nội dung được gửi đến TypeSafe AI; lệnh gạch chéo kỹ năng và công thức bao gồm hướng dẫn cục bộ đã mở rộng."
+  },
+  "settings.agentLoop.operations.autoEffort.title": {
+    "defaultMessage": "Mức suy luận tự động"
+  },
+  "settings.agentLoop.operations.blockLimit.label": {
+    "defaultMessage": "Giới hạn chặn"
+  },
+  "settings.agentLoop.operations.contextCompaction.description": {
+    "defaultMessage": "Tóm tắt lịch sử cuộc trò chuyện trước khi cửa sổ ngữ cảnh đầy."
+  },
+  "settings.agentLoop.operations.contextCompaction.title": {
+    "defaultMessage": "Nén ngữ cảnh"
+  },
+  "settings.agentLoop.operations.cutoff.label": {
+    "defaultMessage": "Ngưỡng cắt"
+  },
+  "settings.agentLoop.operations.enable": {
+    "defaultMessage": "Bật {operation}"
+  },
+  "settings.agentLoop.operations.failureTimeout.label": {
+    "defaultMessage": "Thời gian chờ khi lỗi"
+  },
+  "settings.agentLoop.operations.heading": {
+    "defaultMessage": "Thao tác có thể cấu hình"
+  },
+  "settings.agentLoop.operations.maxTurns.description": {
+    "defaultMessage": "Dừng công việc tự động và hỏi người dùng trước khi tiếp tục."
+  },
+  "settings.agentLoop.operations.maxTurns.title": {
+    "defaultMessage": "Số lượt tối đa"
+  },
+  "settings.agentLoop.operations.recipeRetry.description": {
+    "defaultMessage": "Chạy lại kiểm tra công thức khi kiểm tra thành công đã cấu hình thất bại."
+  },
+  "settings.agentLoop.operations.recipeRetry.title": {
+    "defaultMessage": "Thử lại công thức"
+  },
+  "settings.agentLoop.operations.retryTimeout.label": {
+    "defaultMessage": "Thời gian chờ thử lại"
+  },
+  "settings.agentLoop.operations.slashCommands.description": {
+    "defaultMessage": "Nhận diện các lệnh như /compact, /skills và phím tắt công thức."
+  },
+  "settings.agentLoop.operations.slashCommands.title": {
+    "defaultMessage": "Lệnh gạch chéo"
+  },
+  "settings.agentLoop.operations.stopHooks.description": {
+    "defaultMessage": "Cho phép hook chặn hoàn tất đồng thời ngăn chu kỳ dừng vô hạn."
+  },
+  "settings.agentLoop.operations.stopHooks.title": {
+    "defaultMessage": "Hook dừng"
+  },
+  "settings.agentLoop.operations.threshold.label": {
+    "defaultMessage": "Ngưỡng %"
+  },
+  "settings.agentLoop.operations.tokenLimit.label": {
+    "defaultMessage": "Giới hạn token"
+  },
+  "settings.agentLoop.operations.toolPairCompaction.description": {
+    "defaultMessage": "Tóm tắt các yêu cầu và phản hồi công cụ cũ để tiết kiệm ngữ cảnh. Ngưỡng cắt được đặt tự động khi để trống."
+  },
+  "settings.agentLoop.operations.toolPairCompaction.title": {
+    "defaultMessage": "Nén cặp công cụ"
+  },
+  "settings.agentLoop.operations.turns.label": {
+    "defaultMessage": "Lượt"
+  },
+  "settings.agentLoop.title": {
+    "defaultMessage": "Vòng lặp tác nhân"
+  },
   "settings.appearance.description": {
     "defaultMessage": "Định cấu hình cách 10Router hiển thị trên hệ thống của bạn"
   },
@@ -4319,6 +4619,39 @@
   "telemetrySettings.updateError": {
     "defaultMessage": "Không thể cập nhật cài đặt đo từ xa."
   },
+  "tenRouterKeyForm.connect": {
+    "defaultMessage": "Kết nối"
+  },
+  "tenRouterKeyForm.connecting": {
+    "defaultMessage": "Đang kết nối..."
+  },
+  "tenRouterKeyForm.description": {
+    "defaultMessage": "Nhập khóa API 10router của bạn (bắt đầu bằng 10r_). Danh sách mô hình sẽ được tự động tải từ <link>10r.sokolov.io</link>."
+  },
+  "tenRouterKeyForm.fetchModelsError": {
+    "defaultMessage": "Không thể lấy danh sách mô hình từ 10router: {detail}"
+  },
+  "tenRouterKeyForm.invalidKey": {
+    "defaultMessage": "Khóa đã bị 10router từ chối. Hãy kiểm tra và thử lại."
+  },
+  "tenRouterKeyForm.keyLabel": {
+    "defaultMessage": "Khóa API"
+  },
+  "tenRouterKeyForm.keyPlaceholder": {
+    "defaultMessage": "10r_…"
+  },
+  "tenRouterKeyForm.noModels": {
+    "defaultMessage": "10router không trả về mô hình nào cho khóa này."
+  },
+  "tenRouterKeyForm.requiredError": {
+    "defaultMessage": "Vui lòng nhập khóa API của bạn"
+  },
+  "tenRouterKeyForm.savedKeyHint": {
+    "defaultMessage": "Khóa đã được lưu — nhấn Kết nối để tiếp tục với khóa đó, hoặc dán khóa mới."
+  },
+  "tenRouterKeyForm.title": {
+    "defaultMessage": "Kết nối tới 10router"
+  },
   "themeSelector.aura": {
     "defaultMessage": "Aura"
   },
@@ -4501,320 +4834,5 @@
   },
   "userMessage.removeImageFromEdit": {
     "defaultMessage": "Xóa hình ảnh khỏi tin nhắn"
-  },
-  "providerConfigurationModal.chooseModel": {
-    "defaultMessage": "Chọn mô hình"
-  },
-  "providerCard.deprecatedReplacement": {
-    "defaultMessage": "Không còn được dùng — hãy sử dụng {replacement}."
-  },
-  "acpReadinessPanel.adapterFound": {
-    "defaultMessage": "Đã tìm thấy bộ điều hợp ACP"
-  },
-  "acpReadinessPanel.adapterNotFound": {
-    "defaultMessage": "Không tìm thấy bộ điều hợp ACP"
-  },
-  "acpReadinessPanel.authenticationHelp": {
-    "defaultMessage": "Đăng nhập qua CLI của nhà cung cấp, sau đó kiểm tra lại."
-  },
-  "acpReadinessPanel.checkAgain": {
-    "defaultMessage": "Kiểm tra lại"
-  },
-  "acpReadinessPanel.checking": {
-    "defaultMessage": "Đang kiểm tra..."
-  },
-  "acpReadinessPanel.connected": {
-    "defaultMessage": "Kết nối thành công"
-  },
-  "acpReadinessPanel.connectionNotChecked": {
-    "defaultMessage": "Hãy kiểm tra kết nối tài khoản trước khi tiếp tục."
-  },
-  "providerConfigurationModal.deviceCodeAndEnter": {
-    "defaultMessage": "và nhập:"
-  },
-  "providerConfigurationModal.deviceCodeCopy": {
-    "defaultMessage": "Sao chép"
-  },
-  "providerConfigurationModal.deviceCodeVisit": {
-    "defaultMessage": "Truy cập"
-  },
-  "contextWindowIndicator.open": {
-    "defaultMessage": "Đã dùng {used} trong {limit} token. Xem nội dung cửa sổ ngữ cảnh"
-  },
-  "contextXray.compactNow": {
-    "defaultMessage": "Nén ngay"
-  },
-  "contextXray.free": {
-    "defaultMessage": "Còn trống"
-  },
-  "contextXray.loadError": {
-    "defaultMessage": "Không thể tải báo cáo ngữ cảnh."
-  },
-  "contextXray.modelSummary": {
-    "defaultMessage": "{model} · cửa sổ ngữ cảnh {limit} token"
-  },
-  "contextXray.refresh": {
-    "defaultMessage": "Làm mới"
-  },
-  "contextXray.retry": {
-    "defaultMessage": "Thử lại"
-  },
-  "contextXray.title": {
-    "defaultMessage": "Cửa sổ ngữ cảnh"
-  },
-  "contextXray.tokenizerNote": {
-    "defaultMessage": "Số token được ước tính bằng tokenizer o200k."
-  },
-  "contextXray.usage": {
-    "defaultMessage": "trong {limit} token · {percent} cửa sổ ngữ cảnh"
-  },
-  "contextXray.category.additionalInstructions": {
-    "defaultMessage": "Hướng dẫn & gợi ý"
-  },
-  "contextXray.category.compactionSummary": {
-    "defaultMessage": "Tóm tắt nén"
-  },
-  "contextXray.category.extensionInstructions": {
-    "defaultMessage": "Hướng dẫn của tiện ích mở rộng"
-  },
-  "contextXray.category.messages": {
-    "defaultMessage": "Cuộc trò chuyện"
-  },
-  "contextXray.category.systemPrompt": {
-    "defaultMessage": "Prompt hệ thống"
-  },
-  "contextXray.category.toolDefinitions": {
-    "defaultMessage": "Định nghĩa công cụ"
-  },
-  "contextXray.category.turnContext": {
-    "defaultMessage": "Ngữ cảnh lượt"
-  },
-  "settings.agentLoop.operations.auto.placeholder": {
-    "defaultMessage": "Tự động"
-  },
-  "settings.agentLoop.operations.autoEffort.apiKey.configured": {
-    "defaultMessage": "Đã cấu hình"
-  },
-  "settings.agentLoop.operations.autoEffort.apiKey.label": {
-    "defaultMessage": "Khóa API TypeSafe"
-  },
-  "settings.agentLoop.operations.autoEffort.apiKey.placeholder": {
-    "defaultMessage": "Nhập khóa API"
-  },
-  "settings.agentLoop.operations.autoEffort.apiKey.remove": {
-    "defaultMessage": "Xóa khóa"
-  },
-  "settings.agentLoop.operations.autoEffort.apiKey.save": {
-    "defaultMessage": "Lưu khóa"
-  },
-  "settings.agentLoop.operations.autoEffort.description": {
-    "defaultMessage": "Sử dụng Jev để chọn mức suy luận cho từng yêu cầu. Nội dung được gửi đến TypeSafe AI; lệnh gạch chéo kỹ năng và công thức bao gồm hướng dẫn cục bộ đã mở rộng."
-  },
-  "settings.agentLoop.operations.autoEffort.title": {
-    "defaultMessage": "Mức suy luận tự động"
-  },
-  "settings.agentLoop.operations.blockLimit.label": {
-    "defaultMessage": "Giới hạn chặn"
-  },
-  "settings.agentLoop.operations.contextCompaction.description": {
-    "defaultMessage": "Tóm tắt lịch sử cuộc trò chuyện trước khi cửa sổ ngữ cảnh đầy."
-  },
-  "settings.agentLoop.operations.contextCompaction.title": {
-    "defaultMessage": "Nén ngữ cảnh"
-  },
-  "settings.agentLoop.operations.cutoff.label": {
-    "defaultMessage": "Ngưỡng cắt"
-  },
-  "settings.agentLoop.operations.enable": {
-    "defaultMessage": "Bật {operation}"
-  },
-  "settings.agentLoop.operations.failureTimeout.label": {
-    "defaultMessage": "Thời gian chờ khi lỗi"
-  },
-  "settings.agentLoop.operations.heading": {
-    "defaultMessage": "Thao tác có thể cấu hình"
-  },
-  "settings.agentLoop.operations.maxTurns.description": {
-    "defaultMessage": "Dừng công việc tự động và hỏi người dùng trước khi tiếp tục."
-  },
-  "settings.agentLoop.operations.maxTurns.title": {
-    "defaultMessage": "Số lượt tối đa"
-  },
-  "settings.agentLoop.operations.recipeRetry.description": {
-    "defaultMessage": "Chạy lại kiểm tra công thức khi kiểm tra thành công đã cấu hình thất bại."
-  },
-  "settings.agentLoop.operations.recipeRetry.title": {
-    "defaultMessage": "Thử lại công thức"
-  },
-  "settings.agentLoop.operations.retryTimeout.label": {
-    "defaultMessage": "Thời gian chờ thử lại"
-  },
-  "settings.agentLoop.operations.slashCommands.description": {
-    "defaultMessage": "Nhận diện các lệnh như /compact, /skills và phím tắt công thức."
-  },
-  "settings.agentLoop.operations.slashCommands.title": {
-    "defaultMessage": "Lệnh gạch chéo"
-  },
-  "settings.agentLoop.operations.stopHooks.description": {
-    "defaultMessage": "Cho phép hook chặn hoàn tất đồng thời ngăn chu kỳ dừng vô hạn."
-  },
-  "settings.agentLoop.operations.stopHooks.title": {
-    "defaultMessage": "Hook dừng"
-  },
-  "settings.agentLoop.operations.threshold.label": {
-    "defaultMessage": "Ngưỡng %"
-  },
-  "settings.agentLoop.operations.tokenLimit.label": {
-    "defaultMessage": "Giới hạn token"
-  },
-  "settings.agentLoop.operations.toolPairCompaction.description": {
-    "defaultMessage": "Tóm tắt các yêu cầu và phản hồi công cụ cũ để tiết kiệm ngữ cảnh. Ngưỡng cắt được đặt tự động khi để trống."
-  },
-  "settings.agentLoop.operations.toolPairCompaction.title": {
-    "defaultMessage": "Nén cặp công cụ"
-  },
-  "settings.agentLoop.operations.turns.label": {
-    "defaultMessage": "Lượt"
-  },
-  "settings.agentLoop.title": {
-    "defaultMessage": "Vòng lặp tác nhân"
-  },
-  "contextXray.providerManagesContext": {
-    "defaultMessage": "{provider} giữ lịch sử hội thoại riêng và chỉ nhận lời nhắc mới nhất từ 10Router, nên không có yêu cầu nào để phân tích."
-  },
-  "contextXray.autoCompactionPending": {
-    "defaultMessage": "Đã vượt ngưỡng nén tự động: hội thoại sẽ được nén trước khi gửi yêu cầu tiếp theo."
-  },
-  "tenRouterKeyForm.title": {
-    "defaultMessage": "Kết nối tới 10router"
-  },
-  "tenRouterKeyForm.description": {
-    "defaultMessage": "Nhập khóa API 10router của bạn (bắt đầu bằng 10r_). Danh sách mô hình sẽ được tự động tải từ <link>10r.sokolov.io</link>."
-  },
-  "tenRouterKeyForm.keyLabel": {
-    "defaultMessage": "Khóa API"
-  },
-  "tenRouterKeyForm.keyPlaceholder": {
-    "defaultMessage": "10r_…"
-  },
-  "tenRouterKeyForm.connect": {
-    "defaultMessage": "Kết nối"
-  },
-  "tenRouterKeyForm.connecting": {
-    "defaultMessage": "Đang kết nối..."
-  },
-  "tenRouterKeyForm.requiredError": {
-    "defaultMessage": "Vui lòng nhập khóa API của bạn"
-  },
-  "tenRouterKeyForm.invalidKey": {
-    "defaultMessage": "Khóa đã bị 10router từ chối. Hãy kiểm tra và thử lại."
-  },
-  "tenRouterKeyForm.fetchModelsError": {
-    "defaultMessage": "Không thể lấy danh sách mô hình từ 10router: {detail}"
-  },
-  "tenRouterKeyForm.noModels": {
-    "defaultMessage": "10router không trả về mô hình nào cho khóa này."
-  },
-  "tenRouterKeyForm.savedKeyHint": {
-    "defaultMessage": "Khóa đã được lưu — nhấn Kết nối để tiếp tục với khóa đó, hoặc dán khóa mới."
-  },
-  "appsView.publishCreatedMsg": {
-    "defaultMessage": "\"{title}\" is now in the shared library"
-  },
-  "appsView.publishFailedTitle": {
-    "defaultMessage": "Failed to publish to 10router"
-  },
-  "appsView.publishSuccessTitle": {
-    "defaultMessage": "Published to 10router"
-  },
-  "appsView.publishUpdatedMsg": {
-    "defaultMessage": "\"{title}\" publication was updated"
-  },
-  "appsView.recipeBook": {
-    "defaultMessage": "Recipe Book"
-  },
-  "appsView.shareTo10Router": {
-    "defaultMessage": "Share to 10router"
-  },
-  "recipeBook.appsTab": {
-    "defaultMessage": "Applications"
-  },
-  "recipeBook.description": {
-    "defaultMessage": "Recipes and applications other 10router users shared. Installing saves them to your library."
-  },
-  "recipeBook.emptyDescription": {
-    "defaultMessage": "Publications will appear here. Use “Share to 10router” on a recipe or application card."
-  },
-  "recipeBook.emptyTitle": {
-    "defaultMessage": "Nothing shared yet"
-  },
-  "recipeBook.errorTitle": {
-    "defaultMessage": "Failed to load the library"
-  },
-  "recipeBook.install": {
-    "defaultMessage": "Install"
-  },
-  "recipeBook.installFailedTitle": {
-    "defaultMessage": "Install failed"
-  },
-  "recipeBook.installed": {
-    "defaultMessage": "Installed"
-  },
-  "recipeBook.installedAppMsg": {
-    "defaultMessage": "Application \"{title}\" added"
-  },
-  "recipeBook.installedRecipeMsg": {
-    "defaultMessage": "Recipe \"{title}\" saved to your library"
-  },
-  "recipeBook.installing": {
-    "defaultMessage": "Installing…"
-  },
-  "recipeBook.loading": {
-    "defaultMessage": "Loading…"
-  },
-  "recipeBook.recipesTab": {
-    "defaultMessage": "Recipes"
-  },
-  "recipeBook.refresh": {
-    "defaultMessage": "Refresh"
-  },
-  "recipeBook.retry": {
-    "defaultMessage": "Retry"
-  },
-  "recipeBook.title": {
-    "defaultMessage": "Recipe Book"
-  },
-  "recipeBook.unpublish": {
-    "defaultMessage": "Unpublish"
-  },
-  "recipeBook.unpublishFailedTitle": {
-    "defaultMessage": "Failed to unpublish"
-  },
-  "recipeBook.unpublishedMsg": {
-    "defaultMessage": "\"{title}\" is no longer published"
-  },
-  "recipeBook.you": {
-    "defaultMessage": "you"
-  },
-  "recipesView.publishCreatedMsg": {
-    "defaultMessage": "\"{title}\" is now in the shared library"
-  },
-  "recipesView.publishFailedTitle": {
-    "defaultMessage": "Failed to publish to 10router"
-  },
-  "recipesView.publishSuccessTitle": {
-    "defaultMessage": "Published to 10router"
-  },
-  "recipesView.publishUpdatedMsg": {
-    "defaultMessage": "\"{title}\" publication was updated"
-  },
-  "recipesView.recipeBook": {
-    "defaultMessage": "Recipe Book"
-  },
-  "recipesView.shareEnvWarningTitle": {
-    "defaultMessage": "This recipe includes extension environment values, which will be visible to everyone. Publish anyway?"
-  },
-  "recipesView.shareTo10Router": {
-    "defaultMessage": "Share to 10router"
   }
 }

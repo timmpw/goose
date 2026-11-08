@@ -1,4 +1,25 @@
 {
+  "acpReadinessPanel.adapterFound": {
+    "defaultMessage": "已找到 ACP 适配器"
+  },
+  "acpReadinessPanel.adapterNotFound": {
+    "defaultMessage": "未找到 ACP 适配器"
+  },
+  "acpReadinessPanel.authenticationHelp": {
+    "defaultMessage": "请通过提供商 CLI 登录，然后再次检查。"
+  },
+  "acpReadinessPanel.checkAgain": {
+    "defaultMessage": "再次检查"
+  },
+  "acpReadinessPanel.checking": {
+    "defaultMessage": "正在检查…"
+  },
+  "acpReadinessPanel.connected": {
+    "defaultMessage": "连接成功"
+  },
+  "acpReadinessPanel.connectionNotChecked": {
+    "defaultMessage": "请先检查账户连接，然后再继续。"
+  },
   "announcementModal.gotIt": {
     "defaultMessage": "知道了！"
   },
@@ -7,6 +28,9 @@
   },
   "appLayout.openNavigation": {
     "defaultMessage": "展开导航"
+  },
+  "appsView.appLibrary": {
+    "defaultMessage": "应用库"
   },
   "appsView.customApp": {
     "defaultMessage": "自定义应用"
@@ -41,6 +65,18 @@
   "appsView.noAppsTitle": {
     "defaultMessage": "暂无可用应用"
   },
+  "appsView.publishCreatedMsg": {
+    "defaultMessage": "\"{title}\" is now in the shared library"
+  },
+  "appsView.publishFailedTitle": {
+    "defaultMessage": "Failed to publish to 10router"
+  },
+  "appsView.publishSuccessTitle": {
+    "defaultMessage": "Published to 10router"
+  },
+  "appsView.publishUpdatedMsg": {
+    "defaultMessage": "\"{title}\" publication was updated"
+  },
   "appsView.retiredChatApp": {
     "defaultMessage": "Chat app retired"
   },
@@ -49,6 +85,9 @@
   },
   "appsView.retry": {
     "defaultMessage": "重试"
+  },
+  "appsView.shareTo10Router": {
+    "defaultMessage": "Share to 10router"
   },
   "appsView.title": {
     "defaultMessage": "应用"
@@ -307,6 +346,63 @@
   },
   "confirmationModal.processing": {
     "defaultMessage": "处理中…"
+  },
+  "contextWindowIndicator.open": {
+    "defaultMessage": "已使用 {used} / {limit} 个 token。查看上下文窗口内容"
+  },
+  "contextXray.autoCompactionPending": {
+    "defaultMessage": "已超过自动压缩阈值：在发送下一个请求之前会先压缩对话。"
+  },
+  "contextXray.category.additionalInstructions": {
+    "defaultMessage": "指令与提示"
+  },
+  "contextXray.category.compactionSummary": {
+    "defaultMessage": "压缩摘要"
+  },
+  "contextXray.category.extensionInstructions": {
+    "defaultMessage": "扩展指令"
+  },
+  "contextXray.category.messages": {
+    "defaultMessage": "对话"
+  },
+  "contextXray.category.systemPrompt": {
+    "defaultMessage": "系统提示词"
+  },
+  "contextXray.category.toolDefinitions": {
+    "defaultMessage": "工具定义"
+  },
+  "contextXray.category.turnContext": {
+    "defaultMessage": "回合上下文"
+  },
+  "contextXray.compactNow": {
+    "defaultMessage": "立即压缩"
+  },
+  "contextXray.free": {
+    "defaultMessage": "空闲"
+  },
+  "contextXray.loadError": {
+    "defaultMessage": "无法加载上下文报告。"
+  },
+  "contextXray.modelSummary": {
+    "defaultMessage": "{model} · {limit} token 上下文窗口"
+  },
+  "contextXray.providerManagesContext": {
+    "defaultMessage": "{provider} 自行保存对话历史，只从 10Router 接收最新的提示，因此没有可拆解的请求。"
+  },
+  "contextXray.refresh": {
+    "defaultMessage": "刷新"
+  },
+  "contextXray.retry": {
+    "defaultMessage": "重试"
+  },
+  "contextXray.title": {
+    "defaultMessage": "上下文窗口"
+  },
+  "contextXray.tokenizerNote": {
+    "defaultMessage": "token 数量由 o200k 分词器估算。"
+  },
+  "contextXray.usage": {
+    "defaultMessage": "/ {limit} 个 token · 占上下文窗口的 {percent}"
   },
   "conversationLimitsDropdown.conversationLimits": {
     "defaultMessage": "对话限制"
@@ -908,11 +1004,11 @@
   "dirSwitcher.enterPath": {
     "defaultMessage": "Enter path"
   },
-  "dirSwitcher.enterPathPlaceholder": {
-    "defaultMessage": "Enter an absolute path (e.g. /home/10Router/workspace)"
-  },
   "dirSwitcher.enterPathInvalid": {
     "defaultMessage": "Working directory must be an absolute path"
+  },
+  "dirSwitcher.enterPathPlaceholder": {
+    "defaultMessage": "Enter an absolute path (e.g. /home/10Router/workspace)"
   },
   "dirSwitcher.failedToUpdateWorkingDir": {
     "defaultMessage": "更新工作目录失败"
@@ -928,18 +1024,6 @@
   },
   "dirSwitcher.recentDirectories": {
     "defaultMessage": "最近的目录"
-  },
-  "gitBranchIndicator.failedToSwitch": {
-    "defaultMessage": "无法切换到 {branch}"
-  },
-  "gitBranchIndicator.noBranchesFound": {
-    "defaultMessage": "未找到分支"
-  },
-  "gitBranchIndicator.searchBranches": {
-    "defaultMessage": "搜索分支…"
-  },
-  "gitBranchIndicator.uncommittedChanges": {
-    "defaultMessage": "你可能有尚未提交的更改。"
   },
   "elicitationRequest.accept": {
     "defaultMessage": "接受"
@@ -1243,6 +1327,18 @@
   },
   "externalBackendSection.workingDirPlaceholder": {
     "defaultMessage": "/home/10Router/workspace"
+  },
+  "gitBranchIndicator.failedToSwitch": {
+    "defaultMessage": "无法切换到 {branch}"
+  },
+  "gitBranchIndicator.noBranchesFound": {
+    "defaultMessage": "未找到分支"
+  },
+  "gitBranchIndicator.searchBranches": {
+    "defaultMessage": "搜索分支…"
+  },
+  "gitBranchIndicator.uncommittedChanges": {
+    "defaultMessage": "你可能有尚未提交的更改。"
   },
   "goosehintsModal.close": {
     "defaultMessage": "关闭"
@@ -1922,6 +2018,18 @@
   "messageCopyLink.copy": {
     "defaultMessage": "复制"
   },
+  "messageList.hiddenMessages": {
+    "defaultMessage": "已隐藏 {count, plural, other {# 条消息}}"
+  },
+  "messageList.modelChanged": {
+    "defaultMessage": "模型已更改：{previousModel} → {currentModel}"
+  },
+  "messageList.requestedModel": {
+    "defaultMessage": "{model}（已请求）"
+  },
+  "messageList.showAllMessages": {
+    "defaultMessage": "全部显示"
+  },
   "messageQueue.cancel": {
     "defaultMessage": "取消"
   },
@@ -2282,17 +2390,32 @@
   "modelsBottomBar.loadingModels": {
     "defaultMessage": "正在加载模型…"
   },
-  "modelsBottomBar.models": {
-    "defaultMessage": "模型"
-  },
   "modelsBottomBar.localModelSettings": {
     "defaultMessage": "本地模型设置"
   },
   "modelsBottomBar.localModelSettingsTitle": {
     "defaultMessage": "本地模型设置 — {modelName}"
   },
+  "modelsBottomBar.longContext": {
+    "defaultMessage": "1M 上下文窗口"
+  },
+  "modelsBottomBar.models": {
+    "defaultMessage": "模型"
+  },
   "modelsBottomBar.selectModel": {
     "defaultMessage": "选择模型"
+  },
+  "modelsBottomBar.tierCapable": {
+    "defaultMessage": "最适合雄心勃勃的工作"
+  },
+  "modelsBottomBar.tierCoding": {
+    "defaultMessage": "为智能体编程调优"
+  },
+  "modelsBottomBar.tierEfficient": {
+    "defaultMessage": "日常任务最高效"
+  },
+  "modelsBottomBar.tierFast": {
+    "defaultMessage": "快速回答最迅速"
   },
   "modelsSection.resetDescription": {
     "defaultMessage": "清空已选的模型和提供商设置，重新开始"
@@ -2546,18 +2669,6 @@
   "privacyInfoModal.whatWeCollect": {
     "defaultMessage": "我们采集的内容："
   },
-  "messageList.hiddenMessages": {
-    "defaultMessage": "已隐藏 {count, plural, other {# 条消息}}"
-  },
-  "messageList.modelChanged": {
-    "defaultMessage": "模型已更改：{previousModel} → {currentModel}"
-  },
-  "messageList.requestedModel": {
-    "defaultMessage": "{model}（已请求）"
-  },
-  "messageList.showAllMessages": {
-    "defaultMessage": "全部显示"
-  },
   "promptsSettings.allPromptsReset": {
     "defaultMessage": "所有提示词已重置为默认"
   },
@@ -2636,6 +2747,9 @@
   "promptsSettings.unsavedChanges": {
     "defaultMessage": "你有未保存的更改"
   },
+  "providerCard.deprecatedReplacement": {
+    "defaultMessage": "已弃用 — 请改用 {replacement}。"
+  },
   "providerCard.unknownProvider": {
     "defaultMessage": "未知提供商"
   },
@@ -2690,6 +2804,9 @@
   "providerConfigurationModal.checkConfigAgain": {
     "defaultMessage": "再次检查你的配置以使用此提供商。"
   },
+  "providerConfigurationModal.chooseModel": {
+    "defaultMessage": "选择模型"
+  },
   "providerConfigurationModal.close": {
     "defaultMessage": "关闭"
   },
@@ -2702,8 +2819,17 @@
   "providerConfigurationModal.deleteConfirmation": {
     "defaultMessage": "这将永久删除当前的提供商配置。"
   },
+  "providerConfigurationModal.deviceCodeAndEnter": {
+    "defaultMessage": "并输入："
+  },
+  "providerConfigurationModal.deviceCodeCopy": {
+    "defaultMessage": "复制"
+  },
   "providerConfigurationModal.deviceCodeFlowHint": {
     "defaultMessage": "将打开浏览器窗口。验证码会显示在此处，输入验证码即可完成登录。"
+  },
+  "providerConfigurationModal.deviceCodeVisit": {
+    "defaultMessage": "访问"
   },
   "providerConfigurationModal.errorCheckingConfig": {
     "defaultMessage": "检查此提供商配置时出错。"
@@ -2830,6 +2956,69 @@
   },
   "recipeActivityEditor.messagePlaceholder": {
     "defaultMessage": "为你的配方输入面向用户的介绍消息（支持 **加粗**、*斜体*、`代码` 等）"
+  },
+  "recipeBook.descriptionApps": {
+    "defaultMessage": "其他 10router 用户共享的应用。安装后会将应用添加到你的应用中。"
+  },
+  "recipeBook.descriptionRecipes": {
+    "defaultMessage": "其他 10router 用户共享的方案。安装后会将方案保存到你的方案中。"
+  },
+  "recipeBook.emptyDescriptionApps": {
+    "defaultMessage": "共享的应用将显示在这里。在应用卡片上使用“分享到 10router”。"
+  },
+  "recipeBook.emptyDescriptionRecipes": {
+    "defaultMessage": "共享的方案将显示在这里。在方案卡片上使用“分享到 10router”。"
+  },
+  "recipeBook.emptyTitle": {
+    "defaultMessage": "Nothing shared yet"
+  },
+  "recipeBook.errorTitle": {
+    "defaultMessage": "Failed to load the library"
+  },
+  "recipeBook.install": {
+    "defaultMessage": "Install"
+  },
+  "recipeBook.installFailedTitle": {
+    "defaultMessage": "Install failed"
+  },
+  "recipeBook.installed": {
+    "defaultMessage": "Installed"
+  },
+  "recipeBook.installedAppMsg": {
+    "defaultMessage": "Application \"{title}\" added"
+  },
+  "recipeBook.installedRecipeMsg": {
+    "defaultMessage": "Recipe \"{title}\" saved to your library"
+  },
+  "recipeBook.installing": {
+    "defaultMessage": "Installing…"
+  },
+  "recipeBook.loading": {
+    "defaultMessage": "Loading…"
+  },
+  "recipeBook.refresh": {
+    "defaultMessage": "Refresh"
+  },
+  "recipeBook.retry": {
+    "defaultMessage": "Retry"
+  },
+  "recipeBook.title": {
+    "defaultMessage": "Recipe Book"
+  },
+  "recipeBook.titleApps": {
+    "defaultMessage": "应用库"
+  },
+  "recipeBook.unpublish": {
+    "defaultMessage": "Unpublish"
+  },
+  "recipeBook.unpublishFailedTitle": {
+    "defaultMessage": "Failed to unpublish"
+  },
+  "recipeBook.unpublishedMsg": {
+    "defaultMessage": "\"{title}\" is no longer published"
+  },
+  "recipeBook.you": {
+    "defaultMessage": "you"
   },
   "recipeExtensionSelector.description": {
     "defaultMessage": "选择运行此配方时可用的扩展。留空将使用默认扩展。"
@@ -3068,6 +3257,21 @@
   "recipesView.openInNewWindow": {
     "defaultMessage": "在新窗口中打开"
   },
+  "recipesView.publishCreatedMsg": {
+    "defaultMessage": "\"{title}\" is now in the shared library"
+  },
+  "recipesView.publishFailedTitle": {
+    "defaultMessage": "Failed to publish to 10router"
+  },
+  "recipesView.publishSuccessTitle": {
+    "defaultMessage": "Published to 10router"
+  },
+  "recipesView.publishUpdatedMsg": {
+    "defaultMessage": "\"{title}\" publication was updated"
+  },
+  "recipesView.recipeBook": {
+    "defaultMessage": "Recipe Book"
+  },
   "recipesView.recipeDeletedSuccess": {
     "defaultMessage": "配方删除成功"
   },
@@ -3113,8 +3317,14 @@
   "recipesView.searchRecipesPlaceholder": {
     "defaultMessage": "搜索配方…"
   },
+  "recipesView.shareEnvWarningTitle": {
+    "defaultMessage": "This recipe includes extension environment values, which will be visible to everyone. Publish anyway?"
+  },
   "recipesView.shareRecipe": {
     "defaultMessage": "分享配方"
+  },
+  "recipesView.shareTo10Router": {
+    "defaultMessage": "Share to 10router"
   },
   "recipesView.slashCommandDescription": {
     "defaultMessage": "设置斜杠命令，以便在任何聊天中快速运行此配方"
@@ -3797,6 +4007,96 @@
   "sessions.toast.updated": {
     "defaultMessage": "会话描述更新成功"
   },
+  "settings.agentLoop.operations.auto.placeholder": {
+    "defaultMessage": "自动"
+  },
+  "settings.agentLoop.operations.autoEffort.apiKey.configured": {
+    "defaultMessage": "已配置"
+  },
+  "settings.agentLoop.operations.autoEffort.apiKey.label": {
+    "defaultMessage": "TypeSafe API 密钥"
+  },
+  "settings.agentLoop.operations.autoEffort.apiKey.placeholder": {
+    "defaultMessage": "输入 API 密钥"
+  },
+  "settings.agentLoop.operations.autoEffort.apiKey.remove": {
+    "defaultMessage": "移除密钥"
+  },
+  "settings.agentLoop.operations.autoEffort.apiKey.save": {
+    "defaultMessage": "保存密钥"
+  },
+  "settings.agentLoop.operations.autoEffort.description": {
+    "defaultMessage": "使用 Jev 为每个请求选择思考级别。请求文本会发送给 TypeSafe AI；技能和配方斜杠命令会包含展开后的本地指令。"
+  },
+  "settings.agentLoop.operations.autoEffort.title": {
+    "defaultMessage": "自动思考级别"
+  },
+  "settings.agentLoop.operations.blockLimit.label": {
+    "defaultMessage": "阻止上限"
+  },
+  "settings.agentLoop.operations.contextCompaction.description": {
+    "defaultMessage": "在上下文窗口填满前汇总对话历史。"
+  },
+  "settings.agentLoop.operations.contextCompaction.title": {
+    "defaultMessage": "上下文压缩"
+  },
+  "settings.agentLoop.operations.cutoff.label": {
+    "defaultMessage": "截断值"
+  },
+  "settings.agentLoop.operations.enable": {
+    "defaultMessage": "启用{operation}"
+  },
+  "settings.agentLoop.operations.failureTimeout.label": {
+    "defaultMessage": "失败超时"
+  },
+  "settings.agentLoop.operations.heading": {
+    "defaultMessage": "可配置操作"
+  },
+  "settings.agentLoop.operations.maxTurns.description": {
+    "defaultMessage": "停止自主工作，并在继续前询问用户。"
+  },
+  "settings.agentLoop.operations.maxTurns.title": {
+    "defaultMessage": "最大轮次"
+  },
+  "settings.agentLoop.operations.recipeRetry.description": {
+    "defaultMessage": "当配置的成功检查失败时，重新运行配方检查。"
+  },
+  "settings.agentLoop.operations.recipeRetry.title": {
+    "defaultMessage": "重试配方"
+  },
+  "settings.agentLoop.operations.retryTimeout.label": {
+    "defaultMessage": "重试超时"
+  },
+  "settings.agentLoop.operations.slashCommands.description": {
+    "defaultMessage": "识别 /compact、/skills 和配方快捷方式等命令。"
+  },
+  "settings.agentLoop.operations.slashCommands.title": {
+    "defaultMessage": "斜杠命令"
+  },
+  "settings.agentLoop.operations.stopHooks.description": {
+    "defaultMessage": "允许钩子阻止完成，同时防止无限停止循环。"
+  },
+  "settings.agentLoop.operations.stopHooks.title": {
+    "defaultMessage": "停止钩子"
+  },
+  "settings.agentLoop.operations.threshold.label": {
+    "defaultMessage": "阈值 %"
+  },
+  "settings.agentLoop.operations.tokenLimit.label": {
+    "defaultMessage": "词元上限"
+  },
+  "settings.agentLoop.operations.toolPairCompaction.description": {
+    "defaultMessage": "汇总较早的工具请求和响应以节省上下文。留空时自动设置截断值。"
+  },
+  "settings.agentLoop.operations.toolPairCompaction.title": {
+    "defaultMessage": "工具对压缩"
+  },
+  "settings.agentLoop.operations.turns.label": {
+    "defaultMessage": "轮次"
+  },
+  "settings.agentLoop.title": {
+    "defaultMessage": "代理循环"
+  },
   "settings.appearance.description": {
     "defaultMessage": "配置 10Router 在你系统中的外观"
   },
@@ -4319,6 +4619,39 @@
   "telemetrySettings.updateError": {
     "defaultMessage": "更新遥测设置失败。"
   },
+  "tenRouterKeyForm.connect": {
+    "defaultMessage": "连接"
+  },
+  "tenRouterKeyForm.connecting": {
+    "defaultMessage": "连接中..."
+  },
+  "tenRouterKeyForm.description": {
+    "defaultMessage": "输入你的 10router API 密钥（以 10r_ 开头）。模型列表会自动从 <link>10r.sokolov.io</link> 获取。"
+  },
+  "tenRouterKeyForm.fetchModelsError": {
+    "defaultMessage": "无法从 10router 获取模型列表：{detail}"
+  },
+  "tenRouterKeyForm.invalidKey": {
+    "defaultMessage": "密钥被 10router 拒绝。请检查后重试。"
+  },
+  "tenRouterKeyForm.keyLabel": {
+    "defaultMessage": "API 密钥"
+  },
+  "tenRouterKeyForm.keyPlaceholder": {
+    "defaultMessage": "10r_…"
+  },
+  "tenRouterKeyForm.noModels": {
+    "defaultMessage": "10router 未为该密钥返回任何模型。"
+  },
+  "tenRouterKeyForm.requiredError": {
+    "defaultMessage": "请输入你的 API 密钥"
+  },
+  "tenRouterKeyForm.savedKeyHint": {
+    "defaultMessage": "密钥已保存——点击“连接”继续使用它，或粘贴新密钥。"
+  },
+  "tenRouterKeyForm.title": {
+    "defaultMessage": "连接到 10router"
+  },
   "themeSelector.aura": {
     "defaultMessage": "Aura"
   },
@@ -4501,320 +4834,5 @@
   },
   "userMessage.removeImageFromEdit": {
     "defaultMessage": "从消息中移除图片"
-  },
-  "providerConfigurationModal.chooseModel": {
-    "defaultMessage": "选择模型"
-  },
-  "providerCard.deprecatedReplacement": {
-    "defaultMessage": "已弃用 — 请改用 {replacement}。"
-  },
-  "acpReadinessPanel.adapterFound": {
-    "defaultMessage": "已找到 ACP 适配器"
-  },
-  "acpReadinessPanel.adapterNotFound": {
-    "defaultMessage": "未找到 ACP 适配器"
-  },
-  "acpReadinessPanel.authenticationHelp": {
-    "defaultMessage": "请通过提供商 CLI 登录，然后再次检查。"
-  },
-  "acpReadinessPanel.checkAgain": {
-    "defaultMessage": "再次检查"
-  },
-  "acpReadinessPanel.checking": {
-    "defaultMessage": "正在检查…"
-  },
-  "acpReadinessPanel.connected": {
-    "defaultMessage": "连接成功"
-  },
-  "acpReadinessPanel.connectionNotChecked": {
-    "defaultMessage": "请先检查账户连接，然后再继续。"
-  },
-  "providerConfigurationModal.deviceCodeAndEnter": {
-    "defaultMessage": "并输入："
-  },
-  "providerConfigurationModal.deviceCodeCopy": {
-    "defaultMessage": "复制"
-  },
-  "providerConfigurationModal.deviceCodeVisit": {
-    "defaultMessage": "访问"
-  },
-  "contextWindowIndicator.open": {
-    "defaultMessage": "已使用 {used} / {limit} 个 token。查看上下文窗口内容"
-  },
-  "contextXray.compactNow": {
-    "defaultMessage": "立即压缩"
-  },
-  "contextXray.free": {
-    "defaultMessage": "空闲"
-  },
-  "contextXray.loadError": {
-    "defaultMessage": "无法加载上下文报告。"
-  },
-  "contextXray.modelSummary": {
-    "defaultMessage": "{model} · {limit} token 上下文窗口"
-  },
-  "contextXray.refresh": {
-    "defaultMessage": "刷新"
-  },
-  "contextXray.retry": {
-    "defaultMessage": "重试"
-  },
-  "contextXray.title": {
-    "defaultMessage": "上下文窗口"
-  },
-  "contextXray.tokenizerNote": {
-    "defaultMessage": "token 数量由 o200k 分词器估算。"
-  },
-  "contextXray.usage": {
-    "defaultMessage": "/ {limit} 个 token · 占上下文窗口的 {percent}"
-  },
-  "contextXray.category.additionalInstructions": {
-    "defaultMessage": "指令与提示"
-  },
-  "contextXray.category.compactionSummary": {
-    "defaultMessage": "压缩摘要"
-  },
-  "contextXray.category.extensionInstructions": {
-    "defaultMessage": "扩展指令"
-  },
-  "contextXray.category.messages": {
-    "defaultMessage": "对话"
-  },
-  "contextXray.category.systemPrompt": {
-    "defaultMessage": "系统提示词"
-  },
-  "contextXray.category.toolDefinitions": {
-    "defaultMessage": "工具定义"
-  },
-  "contextXray.category.turnContext": {
-    "defaultMessage": "回合上下文"
-  },
-  "settings.agentLoop.operations.auto.placeholder": {
-    "defaultMessage": "自动"
-  },
-  "settings.agentLoop.operations.autoEffort.apiKey.configured": {
-    "defaultMessage": "已配置"
-  },
-  "settings.agentLoop.operations.autoEffort.apiKey.label": {
-    "defaultMessage": "TypeSafe API 密钥"
-  },
-  "settings.agentLoop.operations.autoEffort.apiKey.placeholder": {
-    "defaultMessage": "输入 API 密钥"
-  },
-  "settings.agentLoop.operations.autoEffort.apiKey.remove": {
-    "defaultMessage": "移除密钥"
-  },
-  "settings.agentLoop.operations.autoEffort.apiKey.save": {
-    "defaultMessage": "保存密钥"
-  },
-  "settings.agentLoop.operations.autoEffort.description": {
-    "defaultMessage": "使用 Jev 为每个请求选择思考级别。请求文本会发送给 TypeSafe AI；技能和配方斜杠命令会包含展开后的本地指令。"
-  },
-  "settings.agentLoop.operations.autoEffort.title": {
-    "defaultMessage": "自动思考级别"
-  },
-  "settings.agentLoop.operations.blockLimit.label": {
-    "defaultMessage": "阻止上限"
-  },
-  "settings.agentLoop.operations.contextCompaction.description": {
-    "defaultMessage": "在上下文窗口填满前汇总对话历史。"
-  },
-  "settings.agentLoop.operations.contextCompaction.title": {
-    "defaultMessage": "上下文压缩"
-  },
-  "settings.agentLoop.operations.cutoff.label": {
-    "defaultMessage": "截断值"
-  },
-  "settings.agentLoop.operations.enable": {
-    "defaultMessage": "启用{operation}"
-  },
-  "settings.agentLoop.operations.failureTimeout.label": {
-    "defaultMessage": "失败超时"
-  },
-  "settings.agentLoop.operations.heading": {
-    "defaultMessage": "可配置操作"
-  },
-  "settings.agentLoop.operations.maxTurns.description": {
-    "defaultMessage": "停止自主工作，并在继续前询问用户。"
-  },
-  "settings.agentLoop.operations.maxTurns.title": {
-    "defaultMessage": "最大轮次"
-  },
-  "settings.agentLoop.operations.recipeRetry.description": {
-    "defaultMessage": "当配置的成功检查失败时，重新运行配方检查。"
-  },
-  "settings.agentLoop.operations.recipeRetry.title": {
-    "defaultMessage": "重试配方"
-  },
-  "settings.agentLoop.operations.retryTimeout.label": {
-    "defaultMessage": "重试超时"
-  },
-  "settings.agentLoop.operations.slashCommands.description": {
-    "defaultMessage": "识别 /compact、/skills 和配方快捷方式等命令。"
-  },
-  "settings.agentLoop.operations.slashCommands.title": {
-    "defaultMessage": "斜杠命令"
-  },
-  "settings.agentLoop.operations.stopHooks.description": {
-    "defaultMessage": "允许钩子阻止完成，同时防止无限停止循环。"
-  },
-  "settings.agentLoop.operations.stopHooks.title": {
-    "defaultMessage": "停止钩子"
-  },
-  "settings.agentLoop.operations.threshold.label": {
-    "defaultMessage": "阈值 %"
-  },
-  "settings.agentLoop.operations.tokenLimit.label": {
-    "defaultMessage": "词元上限"
-  },
-  "settings.agentLoop.operations.toolPairCompaction.description": {
-    "defaultMessage": "汇总较早的工具请求和响应以节省上下文。留空时自动设置截断值。"
-  },
-  "settings.agentLoop.operations.toolPairCompaction.title": {
-    "defaultMessage": "工具对压缩"
-  },
-  "settings.agentLoop.operations.turns.label": {
-    "defaultMessage": "轮次"
-  },
-  "settings.agentLoop.title": {
-    "defaultMessage": "代理循环"
-  },
-  "contextXray.providerManagesContext": {
-    "defaultMessage": "{provider} 自行保存对话历史，只从 10Router 接收最新的提示，因此没有可拆解的请求。"
-  },
-  "contextXray.autoCompactionPending": {
-    "defaultMessage": "已超过自动压缩阈值：在发送下一个请求之前会先压缩对话。"
-  },
-  "tenRouterKeyForm.title": {
-    "defaultMessage": "连接到 10router"
-  },
-  "tenRouterKeyForm.description": {
-    "defaultMessage": "输入你的 10router API 密钥（以 10r_ 开头）。模型列表会自动从 <link>10r.sokolov.io</link> 获取。"
-  },
-  "tenRouterKeyForm.keyLabel": {
-    "defaultMessage": "API 密钥"
-  },
-  "tenRouterKeyForm.keyPlaceholder": {
-    "defaultMessage": "10r_…"
-  },
-  "tenRouterKeyForm.connect": {
-    "defaultMessage": "连接"
-  },
-  "tenRouterKeyForm.connecting": {
-    "defaultMessage": "连接中..."
-  },
-  "tenRouterKeyForm.requiredError": {
-    "defaultMessage": "请输入你的 API 密钥"
-  },
-  "tenRouterKeyForm.invalidKey": {
-    "defaultMessage": "密钥被 10router 拒绝。请检查后重试。"
-  },
-  "tenRouterKeyForm.fetchModelsError": {
-    "defaultMessage": "无法从 10router 获取模型列表：{detail}"
-  },
-  "tenRouterKeyForm.noModels": {
-    "defaultMessage": "10router 未为该密钥返回任何模型。"
-  },
-  "tenRouterKeyForm.savedKeyHint": {
-    "defaultMessage": "密钥已保存——点击“连接”继续使用它，或粘贴新密钥。"
-  },
-  "appsView.publishCreatedMsg": {
-    "defaultMessage": "\"{title}\" is now in the shared library"
-  },
-  "appsView.publishFailedTitle": {
-    "defaultMessage": "Failed to publish to 10router"
-  },
-  "appsView.publishSuccessTitle": {
-    "defaultMessage": "Published to 10router"
-  },
-  "appsView.publishUpdatedMsg": {
-    "defaultMessage": "\"{title}\" publication was updated"
-  },
-  "appsView.recipeBook": {
-    "defaultMessage": "Recipe Book"
-  },
-  "appsView.shareTo10Router": {
-    "defaultMessage": "Share to 10router"
-  },
-  "recipeBook.appsTab": {
-    "defaultMessage": "Applications"
-  },
-  "recipeBook.description": {
-    "defaultMessage": "Recipes and applications other 10router users shared. Installing saves them to your library."
-  },
-  "recipeBook.emptyDescription": {
-    "defaultMessage": "Publications will appear here. Use “Share to 10router” on a recipe or application card."
-  },
-  "recipeBook.emptyTitle": {
-    "defaultMessage": "Nothing shared yet"
-  },
-  "recipeBook.errorTitle": {
-    "defaultMessage": "Failed to load the library"
-  },
-  "recipeBook.install": {
-    "defaultMessage": "Install"
-  },
-  "recipeBook.installFailedTitle": {
-    "defaultMessage": "Install failed"
-  },
-  "recipeBook.installed": {
-    "defaultMessage": "Installed"
-  },
-  "recipeBook.installedAppMsg": {
-    "defaultMessage": "Application \"{title}\" added"
-  },
-  "recipeBook.installedRecipeMsg": {
-    "defaultMessage": "Recipe \"{title}\" saved to your library"
-  },
-  "recipeBook.installing": {
-    "defaultMessage": "Installing…"
-  },
-  "recipeBook.loading": {
-    "defaultMessage": "Loading…"
-  },
-  "recipeBook.recipesTab": {
-    "defaultMessage": "Recipes"
-  },
-  "recipeBook.refresh": {
-    "defaultMessage": "Refresh"
-  },
-  "recipeBook.retry": {
-    "defaultMessage": "Retry"
-  },
-  "recipeBook.title": {
-    "defaultMessage": "Recipe Book"
-  },
-  "recipeBook.unpublish": {
-    "defaultMessage": "Unpublish"
-  },
-  "recipeBook.unpublishFailedTitle": {
-    "defaultMessage": "Failed to unpublish"
-  },
-  "recipeBook.unpublishedMsg": {
-    "defaultMessage": "\"{title}\" is no longer published"
-  },
-  "recipeBook.you": {
-    "defaultMessage": "you"
-  },
-  "recipesView.publishCreatedMsg": {
-    "defaultMessage": "\"{title}\" is now in the shared library"
-  },
-  "recipesView.publishFailedTitle": {
-    "defaultMessage": "Failed to publish to 10router"
-  },
-  "recipesView.publishSuccessTitle": {
-    "defaultMessage": "Published to 10router"
-  },
-  "recipesView.publishUpdatedMsg": {
-    "defaultMessage": "\"{title}\" publication was updated"
-  },
-  "recipesView.recipeBook": {
-    "defaultMessage": "Recipe Book"
-  },
-  "recipesView.shareEnvWarningTitle": {
-    "defaultMessage": "This recipe includes extension environment values, which will be visible to everyone. Publish anyway?"
-  },
-  "recipesView.shareTo10Router": {
-    "defaultMessage": "Share to 10router"
   }
 }

@@ -1,4 +1,25 @@
 {
+  "acpReadinessPanel.adapterFound": {
+    "defaultMessage": "ACP bağdaştırıcısı bulundu"
+  },
+  "acpReadinessPanel.adapterNotFound": {
+    "defaultMessage": "ACP bağdaştırıcısı bulunamadı"
+  },
+  "acpReadinessPanel.authenticationHelp": {
+    "defaultMessage": "Sağlayıcı CLI üzerinden oturum açın, ardından tekrar kontrol edin."
+  },
+  "acpReadinessPanel.checkAgain": {
+    "defaultMessage": "Tekrar kontrol et"
+  },
+  "acpReadinessPanel.checking": {
+    "defaultMessage": "Kontrol ediliyor..."
+  },
+  "acpReadinessPanel.connected": {
+    "defaultMessage": "Başarıyla bağlanıldı"
+  },
+  "acpReadinessPanel.connectionNotChecked": {
+    "defaultMessage": "Devam etmeden önce hesap bağlantınızı kontrol edin."
+  },
   "announcementModal.gotIt": {
     "defaultMessage": "Anladım!"
   },
@@ -7,6 +28,9 @@
   },
   "appLayout.openNavigation": {
     "defaultMessage": "Gezinmeyi aç"
+  },
+  "appsView.appLibrary": {
+    "defaultMessage": "Uygulama Kitaplığı"
   },
   "appsView.customApp": {
     "defaultMessage": "Özel uygulama"
@@ -41,6 +65,18 @@
   "appsView.noAppsTitle": {
     "defaultMessage": "Kullanılabilir uygulama yok"
   },
+  "appsView.publishCreatedMsg": {
+    "defaultMessage": "\"{title}\" is now in the shared library"
+  },
+  "appsView.publishFailedTitle": {
+    "defaultMessage": "Failed to publish to 10router"
+  },
+  "appsView.publishSuccessTitle": {
+    "defaultMessage": "Published to 10router"
+  },
+  "appsView.publishUpdatedMsg": {
+    "defaultMessage": "\"{title}\" publication was updated"
+  },
   "appsView.retiredChatApp": {
     "defaultMessage": "Chat app retired"
   },
@@ -49,6 +85,9 @@
   },
   "appsView.retry": {
     "defaultMessage": "Yeniden dene"
+  },
+  "appsView.shareTo10Router": {
+    "defaultMessage": "Share to 10router"
   },
   "appsView.title": {
     "defaultMessage": "Uygulamalar"
@@ -307,6 +346,63 @@
   },
   "confirmationModal.processing": {
     "defaultMessage": "İşleniyor..."
+  },
+  "contextWindowIndicator.open": {
+    "defaultMessage": "{limit} jetonun {used} kadarı kullanıldı. Bağlam penceresindekileri göster"
+  },
+  "contextXray.autoCompactionPending": {
+    "defaultMessage": "Otomatik sıkıştırma eşiği aşıldı: bir sonraki istek gönderilmeden önce konuşma sıkıştırılır."
+  },
+  "contextXray.category.additionalInstructions": {
+    "defaultMessage": "Talimatlar ve ipuçları"
+  },
+  "contextXray.category.compactionSummary": {
+    "defaultMessage": "Sıkıştırma özeti"
+  },
+  "contextXray.category.extensionInstructions": {
+    "defaultMessage": "Uzantı talimatları"
+  },
+  "contextXray.category.messages": {
+    "defaultMessage": "Sohbet"
+  },
+  "contextXray.category.systemPrompt": {
+    "defaultMessage": "Sistem istemi"
+  },
+  "contextXray.category.toolDefinitions": {
+    "defaultMessage": "Araç tanımları"
+  },
+  "contextXray.category.turnContext": {
+    "defaultMessage": "Tur bağlamı"
+  },
+  "contextXray.compactNow": {
+    "defaultMessage": "Şimdi sıkıştır"
+  },
+  "contextXray.free": {
+    "defaultMessage": "Boş"
+  },
+  "contextXray.loadError": {
+    "defaultMessage": "Bağlam raporu yüklenemedi."
+  },
+  "contextXray.modelSummary": {
+    "defaultMessage": "{model} · {limit} jetonluk bağlam penceresi"
+  },
+  "contextXray.providerManagesContext": {
+    "defaultMessage": "{provider} kendi konuşma geçmişini tutar ve 10Router'dan yalnızca en son istemi alır; bu nedenle ayrıştırılacak bir istek yok."
+  },
+  "contextXray.refresh": {
+    "defaultMessage": "Yenile"
+  },
+  "contextXray.retry": {
+    "defaultMessage": "Yeniden dene"
+  },
+  "contextXray.title": {
+    "defaultMessage": "Bağlam penceresi"
+  },
+  "contextXray.tokenizerNote": {
+    "defaultMessage": "Jeton sayıları o200k belirteçleyicisiyle tahmin edilir."
+  },
+  "contextXray.usage": {
+    "defaultMessage": "/ {limit} jeton · bağlam penceresinin {percent} kadarı"
   },
   "conversationLimitsDropdown.conversationLimits": {
     "defaultMessage": "Konuşma Sınırları"
@@ -908,11 +1004,11 @@
   "dirSwitcher.enterPath": {
     "defaultMessage": "Enter path"
   },
-  "dirSwitcher.enterPathPlaceholder": {
-    "defaultMessage": "Enter an absolute path (e.g. /home/10Router/workspace)"
-  },
   "dirSwitcher.enterPathInvalid": {
     "defaultMessage": "Working directory must be an absolute path"
+  },
+  "dirSwitcher.enterPathPlaceholder": {
+    "defaultMessage": "Enter an absolute path (e.g. /home/10Router/workspace)"
   },
   "dirSwitcher.failedToUpdateWorkingDir": {
     "defaultMessage": "Çalışma dizini güncellenemedi"
@@ -928,18 +1024,6 @@
   },
   "dirSwitcher.recentDirectories": {
     "defaultMessage": "Son dizinler"
-  },
-  "gitBranchIndicator.failedToSwitch": {
-    "defaultMessage": "{branch} dalına geçilemedi"
-  },
-  "gitBranchIndicator.noBranchesFound": {
-    "defaultMessage": "Dal bulunamadı"
-  },
-  "gitBranchIndicator.searchBranches": {
-    "defaultMessage": "Dal ara…"
-  },
-  "gitBranchIndicator.uncommittedChanges": {
-    "defaultMessage": "Commit edilmemiş değişiklikleriniz olabilir."
   },
   "elicitationRequest.accept": {
     "defaultMessage": "Kabul et"
@@ -1243,6 +1327,18 @@
   },
   "externalBackendSection.workingDirPlaceholder": {
     "defaultMessage": "/home/10Router/workspace"
+  },
+  "gitBranchIndicator.failedToSwitch": {
+    "defaultMessage": "{branch} dalına geçilemedi"
+  },
+  "gitBranchIndicator.noBranchesFound": {
+    "defaultMessage": "Dal bulunamadı"
+  },
+  "gitBranchIndicator.searchBranches": {
+    "defaultMessage": "Dal ara…"
+  },
+  "gitBranchIndicator.uncommittedChanges": {
+    "defaultMessage": "Commit edilmemiş değişiklikleriniz olabilir."
   },
   "goosehintsModal.close": {
     "defaultMessage": "Kapat"
@@ -1922,6 +2018,18 @@
   "messageCopyLink.copy": {
     "defaultMessage": "Kopyala"
   },
+  "messageList.hiddenMessages": {
+    "defaultMessage": "{count, plural, other {# mesaj gizlendi}}"
+  },
+  "messageList.modelChanged": {
+    "defaultMessage": "Model değişti: {previousModel} → {currentModel}"
+  },
+  "messageList.requestedModel": {
+    "defaultMessage": "{model} (istenen)"
+  },
+  "messageList.showAllMessages": {
+    "defaultMessage": "Tümünü göster"
+  },
   "messageQueue.cancel": {
     "defaultMessage": "İptal"
   },
@@ -2282,17 +2390,32 @@
   "modelsBottomBar.loadingModels": {
     "defaultMessage": "Modeller yükleniyor…"
   },
-  "modelsBottomBar.models": {
-    "defaultMessage": "Modeller"
-  },
   "modelsBottomBar.localModelSettings": {
     "defaultMessage": "Yerel Model Ayarları"
   },
   "modelsBottomBar.localModelSettingsTitle": {
     "defaultMessage": "Yerel Model Ayarları — {modelName}"
   },
+  "modelsBottomBar.longContext": {
+    "defaultMessage": "1M bağlam penceresi"
+  },
+  "modelsBottomBar.models": {
+    "defaultMessage": "Modeller"
+  },
   "modelsBottomBar.selectModel": {
     "defaultMessage": "Modeli Seçin"
+  },
+  "modelsBottomBar.tierCapable": {
+    "defaultMessage": "İddialı işler için en yetenekli"
+  },
+  "modelsBottomBar.tierCoding": {
+    "defaultMessage": "Ajanlı kodlama için ayarlandı"
+  },
+  "modelsBottomBar.tierEfficient": {
+    "defaultMessage": "Günlük görevler için en verimli"
+  },
+  "modelsBottomBar.tierFast": {
+    "defaultMessage": "Hızlı yanıtlar için en hızlı"
   },
   "modelsSection.resetDescription": {
     "defaultMessage": "Yeni bir başlangıç yapmak için seçtiğiniz model ve sağlayıcı ayarlarını temizleyin"
@@ -2546,18 +2669,6 @@
   "privacyInfoModal.whatWeCollect": {
     "defaultMessage": "Ne topluyoruz:"
   },
-  "messageList.hiddenMessages": {
-    "defaultMessage": "{count, plural, other {# mesaj gizlendi}}"
-  },
-  "messageList.modelChanged": {
-    "defaultMessage": "Model değişti: {previousModel} → {currentModel}"
-  },
-  "messageList.requestedModel": {
-    "defaultMessage": "{model} (istenen)"
-  },
-  "messageList.showAllMessages": {
-    "defaultMessage": "Tümünü göster"
-  },
   "promptsSettings.allPromptsReset": {
     "defaultMessage": "Tüm istemler varsayılanlara sıfırlandı"
   },
@@ -2636,6 +2747,9 @@
   "promptsSettings.unsavedChanges": {
     "defaultMessage": "Kaydedilmemiş değişiklikleriniz var"
   },
+  "providerCard.deprecatedReplacement": {
+    "defaultMessage": "Kullanımdan kaldırıldı — bunun yerine {replacement} kullanın."
+  },
   "providerCard.unknownProvider": {
     "defaultMessage": "Bilinmeyen Sağlayıcı"
   },
@@ -2690,6 +2804,9 @@
   "providerConfigurationModal.checkConfigAgain": {
     "defaultMessage": "Bu sağlayıcıyı kullanmak için yapılandırmanızı tekrar kontrol edin."
   },
+  "providerConfigurationModal.chooseModel": {
+    "defaultMessage": "Modeli seçin"
+  },
   "providerConfigurationModal.close": {
     "defaultMessage": "Kapat"
   },
@@ -2702,8 +2819,17 @@
   "providerConfigurationModal.deleteConfirmation": {
     "defaultMessage": "Bu, mevcut sağlayıcı yapılandırmasını kalıcı olarak silecektir."
   },
+  "providerConfigurationModal.deviceCodeAndEnter": {
+    "defaultMessage": "ve girin:"
+  },
+  "providerConfigurationModal.deviceCodeCopy": {
+    "defaultMessage": "Kopyala"
+  },
   "providerConfigurationModal.deviceCodeFlowHint": {
     "defaultMessage": "Bir tarayıcı penceresi açılacak. Doğrulama kodu burada görünecek; oturum açmayı tamamlamak için kodu girin."
+  },
+  "providerConfigurationModal.deviceCodeVisit": {
+    "defaultMessage": "Ziyaret edin"
   },
   "providerConfigurationModal.errorCheckingConfig": {
     "defaultMessage": "Bu sağlayıcı yapılandırması kontrol edilirken bir hata oluştu."
@@ -2830,6 +2956,69 @@
   },
   "recipeActivityEditor.messagePlaceholder": {
     "defaultMessage": "Tarifiniz için kullanıcıya yönelik bir tanıtım mesajı girin (**kalın**, *italik*, `kod' vb. destekler)"
+  },
+  "recipeBook.descriptionApps": {
+    "defaultMessage": "Diğer 10router kullanıcılarının paylaştığı uygulamalar. Yüklemek uygulamalarınıza bir uygulama ekler."
+  },
+  "recipeBook.descriptionRecipes": {
+    "defaultMessage": "Diğer 10router kullanıcılarının paylaştığı tarifler. Yüklemek bir tarifi tariflerinize kaydeder."
+  },
+  "recipeBook.emptyDescriptionApps": {
+    "defaultMessage": "Paylaşılan uygulamalar burada görünecek. Bir uygulama kartında “10router’da paylaş”ı kullanın."
+  },
+  "recipeBook.emptyDescriptionRecipes": {
+    "defaultMessage": "Paylaşılan tarifler burada görünecek. Bir tarif kartında “10router’da paylaş”ı kullanın."
+  },
+  "recipeBook.emptyTitle": {
+    "defaultMessage": "Nothing shared yet"
+  },
+  "recipeBook.errorTitle": {
+    "defaultMessage": "Failed to load the library"
+  },
+  "recipeBook.install": {
+    "defaultMessage": "Install"
+  },
+  "recipeBook.installFailedTitle": {
+    "defaultMessage": "Install failed"
+  },
+  "recipeBook.installed": {
+    "defaultMessage": "Installed"
+  },
+  "recipeBook.installedAppMsg": {
+    "defaultMessage": "Application \"{title}\" added"
+  },
+  "recipeBook.installedRecipeMsg": {
+    "defaultMessage": "Recipe \"{title}\" saved to your library"
+  },
+  "recipeBook.installing": {
+    "defaultMessage": "Installing…"
+  },
+  "recipeBook.loading": {
+    "defaultMessage": "Loading…"
+  },
+  "recipeBook.refresh": {
+    "defaultMessage": "Refresh"
+  },
+  "recipeBook.retry": {
+    "defaultMessage": "Retry"
+  },
+  "recipeBook.title": {
+    "defaultMessage": "Recipe Book"
+  },
+  "recipeBook.titleApps": {
+    "defaultMessage": "Uygulama Kitaplığı"
+  },
+  "recipeBook.unpublish": {
+    "defaultMessage": "Unpublish"
+  },
+  "recipeBook.unpublishFailedTitle": {
+    "defaultMessage": "Failed to unpublish"
+  },
+  "recipeBook.unpublishedMsg": {
+    "defaultMessage": "\"{title}\" is no longer published"
+  },
+  "recipeBook.you": {
+    "defaultMessage": "you"
   },
   "recipeExtensionSelector.description": {
     "defaultMessage": "Bu tarifi çalıştırırken hangi uzantıların mevcut olacağını seçin. Varsayılan uzantıları kullanmak için boş bırakın."
@@ -3068,6 +3257,21 @@
   "recipesView.openInNewWindow": {
     "defaultMessage": "Yeni pencerede aç"
   },
+  "recipesView.publishCreatedMsg": {
+    "defaultMessage": "\"{title}\" is now in the shared library"
+  },
+  "recipesView.publishFailedTitle": {
+    "defaultMessage": "Failed to publish to 10router"
+  },
+  "recipesView.publishSuccessTitle": {
+    "defaultMessage": "Published to 10router"
+  },
+  "recipesView.publishUpdatedMsg": {
+    "defaultMessage": "\"{title}\" publication was updated"
+  },
+  "recipesView.recipeBook": {
+    "defaultMessage": "Recipe Book"
+  },
   "recipesView.recipeDeletedSuccess": {
     "defaultMessage": "Tarif başarıyla silindi"
   },
@@ -3113,8 +3317,14 @@
   "recipesView.searchRecipesPlaceholder": {
     "defaultMessage": "Tarif ara..."
   },
+  "recipesView.shareEnvWarningTitle": {
+    "defaultMessage": "This recipe includes extension environment values, which will be visible to everyone. Publish anyway?"
+  },
   "recipesView.shareRecipe": {
     "defaultMessage": "Tarifi paylaş"
+  },
+  "recipesView.shareTo10Router": {
+    "defaultMessage": "Share to 10router"
   },
   "recipesView.slashCommandDescription": {
     "defaultMessage": "Bu tarifi herhangi bir sohbetten hızlı bir şekilde çalıştırmak için bir eğik çizgi komutu ayarlayın"
@@ -3797,6 +4007,96 @@
   "sessions.toast.updated": {
     "defaultMessage": "Oturum açıklaması başarıyla güncellendi"
   },
+  "settings.agentLoop.operations.auto.placeholder": {
+    "defaultMessage": "Otomatik"
+  },
+  "settings.agentLoop.operations.autoEffort.apiKey.configured": {
+    "defaultMessage": "Yapılandırıldı"
+  },
+  "settings.agentLoop.operations.autoEffort.apiKey.label": {
+    "defaultMessage": "TypeSafe API anahtarı"
+  },
+  "settings.agentLoop.operations.autoEffort.apiKey.placeholder": {
+    "defaultMessage": "API anahtarını girin"
+  },
+  "settings.agentLoop.operations.autoEffort.apiKey.remove": {
+    "defaultMessage": "Anahtarı kaldır"
+  },
+  "settings.agentLoop.operations.autoEffort.apiKey.save": {
+    "defaultMessage": "Anahtarı kaydet"
+  },
+  "settings.agentLoop.operations.autoEffort.description": {
+    "defaultMessage": "Her istek için düşünme düzeyini seçmek üzere Jev’i kullanır. İstek metni TypeSafe AI’a gönderilir; beceri ve tarif eğik çizgi komutları genişletilmiş yerel talimatlarını içerir."
+  },
+  "settings.agentLoop.operations.autoEffort.title": {
+    "defaultMessage": "Otomatik düşünme düzeyi"
+  },
+  "settings.agentLoop.operations.blockLimit.label": {
+    "defaultMessage": "Engelleme sınırı"
+  },
+  "settings.agentLoop.operations.contextCompaction.description": {
+    "defaultMessage": "Bağlam penceresi dolmadan önce konuşma geçmişini özetler."
+  },
+  "settings.agentLoop.operations.contextCompaction.title": {
+    "defaultMessage": "Bağlam sıkıştırma"
+  },
+  "settings.agentLoop.operations.cutoff.label": {
+    "defaultMessage": "Kesme noktası"
+  },
+  "settings.agentLoop.operations.enable": {
+    "defaultMessage": "{operation} etkinleştir"
+  },
+  "settings.agentLoop.operations.failureTimeout.label": {
+    "defaultMessage": "Başarısızlık zaman aşımı"
+  },
+  "settings.agentLoop.operations.heading": {
+    "defaultMessage": "Yapılandırılabilir işlemler"
+  },
+  "settings.agentLoop.operations.maxTurns.description": {
+    "defaultMessage": "Otonom çalışmayı durdurur ve devam etmeden önce kullanıcıya sorar."
+  },
+  "settings.agentLoop.operations.maxTurns.title": {
+    "defaultMessage": "Maksimum tur"
+  },
+  "settings.agentLoop.operations.recipeRetry.description": {
+    "defaultMessage": "Yapılandırılmış bir başarı denetimi başarısız olduğunda tarif denetimlerini yeniden çalıştırır."
+  },
+  "settings.agentLoop.operations.recipeRetry.title": {
+    "defaultMessage": "Tarifi yeniden dene"
+  },
+  "settings.agentLoop.operations.retryTimeout.label": {
+    "defaultMessage": "Yeniden deneme zaman aşımı"
+  },
+  "settings.agentLoop.operations.slashCommands.description": {
+    "defaultMessage": "/compact, /skills ve tarif kısayolları gibi komutları tanır."
+  },
+  "settings.agentLoop.operations.slashCommands.title": {
+    "defaultMessage": "Eğik çizgi komutları"
+  },
+  "settings.agentLoop.operations.stopHooks.description": {
+    "defaultMessage": "Kancaların tamamlanmayı engellemesine izin verirken sonsuz durdurma döngülerini önler."
+  },
+  "settings.agentLoop.operations.stopHooks.title": {
+    "defaultMessage": "Durdurma kancaları"
+  },
+  "settings.agentLoop.operations.threshold.label": {
+    "defaultMessage": "Eşik %"
+  },
+  "settings.agentLoop.operations.tokenLimit.label": {
+    "defaultMessage": "Jeton sınırı"
+  },
+  "settings.agentLoop.operations.toolPairCompaction.description": {
+    "defaultMessage": "Bağlamdan tasarruf etmek için eski araç isteklerini ve yanıtlarını özetler. Boş bırakıldığında kesme noktası otomatik belirlenir."
+  },
+  "settings.agentLoop.operations.toolPairCompaction.title": {
+    "defaultMessage": "Araç çifti sıkıştırma"
+  },
+  "settings.agentLoop.operations.turns.label": {
+    "defaultMessage": "Turlar"
+  },
+  "settings.agentLoop.title": {
+    "defaultMessage": "Ajan döngüsü"
+  },
   "settings.appearance.description": {
     "defaultMessage": "10Router'nin sisteminizde nasıl görüneceğini yapılandırın"
   },
@@ -4319,6 +4619,39 @@
   "telemetrySettings.updateError": {
     "defaultMessage": "Telemetri ayarları güncellenemedi."
   },
+  "tenRouterKeyForm.connect": {
+    "defaultMessage": "Bağlan"
+  },
+  "tenRouterKeyForm.connecting": {
+    "defaultMessage": "Bağlanıyor..."
+  },
+  "tenRouterKeyForm.description": {
+    "defaultMessage": "10router API anahtarınızı girin (10r_ ile başlar). Model listesi <link>10r.sokolov.io</link> adresinden otomatik olarak alınır."
+  },
+  "tenRouterKeyForm.fetchModelsError": {
+    "defaultMessage": "10router'dan model listesi alınamadı: {detail}"
+  },
+  "tenRouterKeyForm.invalidKey": {
+    "defaultMessage": "Anahtar 10router tarafından reddedildi. Anahtarı kontrol edip tekrar deneyin."
+  },
+  "tenRouterKeyForm.keyLabel": {
+    "defaultMessage": "API anahtarı"
+  },
+  "tenRouterKeyForm.keyPlaceholder": {
+    "defaultMessage": "10r_…"
+  },
+  "tenRouterKeyForm.noModels": {
+    "defaultMessage": "10router bu anahtar için model döndürmedi."
+  },
+  "tenRouterKeyForm.requiredError": {
+    "defaultMessage": "Lütfen API anahtarınızı girin"
+  },
+  "tenRouterKeyForm.savedKeyHint": {
+    "defaultMessage": "Bir anahtar zaten kayıtlı — onunla devam etmek için Bağlan’a basın ya da yenisini yapıştırın."
+  },
+  "tenRouterKeyForm.title": {
+    "defaultMessage": "10router'a bağlan"
+  },
   "themeSelector.aura": {
     "defaultMessage": "Aura"
   },
@@ -4501,320 +4834,5 @@
   },
   "userMessage.removeImageFromEdit": {
     "defaultMessage": "Görseli mesajdan kaldır"
-  },
-  "providerConfigurationModal.chooseModel": {
-    "defaultMessage": "Modeli seçin"
-  },
-  "providerCard.deprecatedReplacement": {
-    "defaultMessage": "Kullanımdan kaldırıldı — bunun yerine {replacement} kullanın."
-  },
-  "acpReadinessPanel.adapterFound": {
-    "defaultMessage": "ACP bağdaştırıcısı bulundu"
-  },
-  "acpReadinessPanel.adapterNotFound": {
-    "defaultMessage": "ACP bağdaştırıcısı bulunamadı"
-  },
-  "acpReadinessPanel.authenticationHelp": {
-    "defaultMessage": "Sağlayıcı CLI üzerinden oturum açın, ardından tekrar kontrol edin."
-  },
-  "acpReadinessPanel.checkAgain": {
-    "defaultMessage": "Tekrar kontrol et"
-  },
-  "acpReadinessPanel.checking": {
-    "defaultMessage": "Kontrol ediliyor..."
-  },
-  "acpReadinessPanel.connected": {
-    "defaultMessage": "Başarıyla bağlanıldı"
-  },
-  "acpReadinessPanel.connectionNotChecked": {
-    "defaultMessage": "Devam etmeden önce hesap bağlantınızı kontrol edin."
-  },
-  "providerConfigurationModal.deviceCodeAndEnter": {
-    "defaultMessage": "ve girin:"
-  },
-  "providerConfigurationModal.deviceCodeCopy": {
-    "defaultMessage": "Kopyala"
-  },
-  "providerConfigurationModal.deviceCodeVisit": {
-    "defaultMessage": "Ziyaret edin"
-  },
-  "contextWindowIndicator.open": {
-    "defaultMessage": "{limit} jetonun {used} kadarı kullanıldı. Bağlam penceresindekileri göster"
-  },
-  "contextXray.compactNow": {
-    "defaultMessage": "Şimdi sıkıştır"
-  },
-  "contextXray.free": {
-    "defaultMessage": "Boş"
-  },
-  "contextXray.loadError": {
-    "defaultMessage": "Bağlam raporu yüklenemedi."
-  },
-  "contextXray.modelSummary": {
-    "defaultMessage": "{model} · {limit} jetonluk bağlam penceresi"
-  },
-  "contextXray.refresh": {
-    "defaultMessage": "Yenile"
-  },
-  "contextXray.retry": {
-    "defaultMessage": "Yeniden dene"
-  },
-  "contextXray.title": {
-    "defaultMessage": "Bağlam penceresi"
-  },
-  "contextXray.tokenizerNote": {
-    "defaultMessage": "Jeton sayıları o200k belirteçleyicisiyle tahmin edilir."
-  },
-  "contextXray.usage": {
-    "defaultMessage": "/ {limit} jeton · bağlam penceresinin {percent} kadarı"
-  },
-  "contextXray.category.additionalInstructions": {
-    "defaultMessage": "Talimatlar ve ipuçları"
-  },
-  "contextXray.category.compactionSummary": {
-    "defaultMessage": "Sıkıştırma özeti"
-  },
-  "contextXray.category.extensionInstructions": {
-    "defaultMessage": "Uzantı talimatları"
-  },
-  "contextXray.category.messages": {
-    "defaultMessage": "Sohbet"
-  },
-  "contextXray.category.systemPrompt": {
-    "defaultMessage": "Sistem istemi"
-  },
-  "contextXray.category.toolDefinitions": {
-    "defaultMessage": "Araç tanımları"
-  },
-  "contextXray.category.turnContext": {
-    "defaultMessage": "Tur bağlamı"
-  },
-  "settings.agentLoop.operations.auto.placeholder": {
-    "defaultMessage": "Otomatik"
-  },
-  "settings.agentLoop.operations.autoEffort.apiKey.configured": {
-    "defaultMessage": "Yapılandırıldı"
-  },
-  "settings.agentLoop.operations.autoEffort.apiKey.label": {
-    "defaultMessage": "TypeSafe API anahtarı"
-  },
-  "settings.agentLoop.operations.autoEffort.apiKey.placeholder": {
-    "defaultMessage": "API anahtarını girin"
-  },
-  "settings.agentLoop.operations.autoEffort.apiKey.remove": {
-    "defaultMessage": "Anahtarı kaldır"
-  },
-  "settings.agentLoop.operations.autoEffort.apiKey.save": {
-    "defaultMessage": "Anahtarı kaydet"
-  },
-  "settings.agentLoop.operations.autoEffort.description": {
-    "defaultMessage": "Her istek için düşünme düzeyini seçmek üzere Jev’i kullanır. İstek metni TypeSafe AI’a gönderilir; beceri ve tarif eğik çizgi komutları genişletilmiş yerel talimatlarını içerir."
-  },
-  "settings.agentLoop.operations.autoEffort.title": {
-    "defaultMessage": "Otomatik düşünme düzeyi"
-  },
-  "settings.agentLoop.operations.blockLimit.label": {
-    "defaultMessage": "Engelleme sınırı"
-  },
-  "settings.agentLoop.operations.contextCompaction.description": {
-    "defaultMessage": "Bağlam penceresi dolmadan önce konuşma geçmişini özetler."
-  },
-  "settings.agentLoop.operations.contextCompaction.title": {
-    "defaultMessage": "Bağlam sıkıştırma"
-  },
-  "settings.agentLoop.operations.cutoff.label": {
-    "defaultMessage": "Kesme noktası"
-  },
-  "settings.agentLoop.operations.enable": {
-    "defaultMessage": "{operation} etkinleştir"
-  },
-  "settings.agentLoop.operations.failureTimeout.label": {
-    "defaultMessage": "Başarısızlık zaman aşımı"
-  },
-  "settings.agentLoop.operations.heading": {
-    "defaultMessage": "Yapılandırılabilir işlemler"
-  },
-  "settings.agentLoop.operations.maxTurns.description": {
-    "defaultMessage": "Otonom çalışmayı durdurur ve devam etmeden önce kullanıcıya sorar."
-  },
-  "settings.agentLoop.operations.maxTurns.title": {
-    "defaultMessage": "Maksimum tur"
-  },
-  "settings.agentLoop.operations.recipeRetry.description": {
-    "defaultMessage": "Yapılandırılmış bir başarı denetimi başarısız olduğunda tarif denetimlerini yeniden çalıştırır."
-  },
-  "settings.agentLoop.operations.recipeRetry.title": {
-    "defaultMessage": "Tarifi yeniden dene"
-  },
-  "settings.agentLoop.operations.retryTimeout.label": {
-    "defaultMessage": "Yeniden deneme zaman aşımı"
-  },
-  "settings.agentLoop.operations.slashCommands.description": {
-    "defaultMessage": "/compact, /skills ve tarif kısayolları gibi komutları tanır."
-  },
-  "settings.agentLoop.operations.slashCommands.title": {
-    "defaultMessage": "Eğik çizgi komutları"
-  },
-  "settings.agentLoop.operations.stopHooks.description": {
-    "defaultMessage": "Kancaların tamamlanmayı engellemesine izin verirken sonsuz durdurma döngülerini önler."
-  },
-  "settings.agentLoop.operations.stopHooks.title": {
-    "defaultMessage": "Durdurma kancaları"
-  },
-  "settings.agentLoop.operations.threshold.label": {
-    "defaultMessage": "Eşik %"
-  },
-  "settings.agentLoop.operations.tokenLimit.label": {
-    "defaultMessage": "Jeton sınırı"
-  },
-  "settings.agentLoop.operations.toolPairCompaction.description": {
-    "defaultMessage": "Bağlamdan tasarruf etmek için eski araç isteklerini ve yanıtlarını özetler. Boş bırakıldığında kesme noktası otomatik belirlenir."
-  },
-  "settings.agentLoop.operations.toolPairCompaction.title": {
-    "defaultMessage": "Araç çifti sıkıştırma"
-  },
-  "settings.agentLoop.operations.turns.label": {
-    "defaultMessage": "Turlar"
-  },
-  "settings.agentLoop.title": {
-    "defaultMessage": "Ajan döngüsü"
-  },
-  "contextXray.providerManagesContext": {
-    "defaultMessage": "{provider} kendi konuşma geçmişini tutar ve 10Router'dan yalnızca en son istemi alır; bu nedenle ayrıştırılacak bir istek yok."
-  },
-  "contextXray.autoCompactionPending": {
-    "defaultMessage": "Otomatik sıkıştırma eşiği aşıldı: bir sonraki istek gönderilmeden önce konuşma sıkıştırılır."
-  },
-  "tenRouterKeyForm.title": {
-    "defaultMessage": "10router'a bağlan"
-  },
-  "tenRouterKeyForm.description": {
-    "defaultMessage": "10router API anahtarınızı girin (10r_ ile başlar). Model listesi <link>10r.sokolov.io</link> adresinden otomatik olarak alınır."
-  },
-  "tenRouterKeyForm.keyLabel": {
-    "defaultMessage": "API anahtarı"
-  },
-  "tenRouterKeyForm.keyPlaceholder": {
-    "defaultMessage": "10r_…"
-  },
-  "tenRouterKeyForm.connect": {
-    "defaultMessage": "Bağlan"
-  },
-  "tenRouterKeyForm.connecting": {
-    "defaultMessage": "Bağlanıyor..."
-  },
-  "tenRouterKeyForm.requiredError": {
-    "defaultMessage": "Lütfen API anahtarınızı girin"
-  },
-  "tenRouterKeyForm.invalidKey": {
-    "defaultMessage": "Anahtar 10router tarafından reddedildi. Anahtarı kontrol edip tekrar deneyin."
-  },
-  "tenRouterKeyForm.fetchModelsError": {
-    "defaultMessage": "10router'dan model listesi alınamadı: {detail}"
-  },
-  "tenRouterKeyForm.noModels": {
-    "defaultMessage": "10router bu anahtar için model döndürmedi."
-  },
-  "tenRouterKeyForm.savedKeyHint": {
-    "defaultMessage": "Bir anahtar zaten kayıtlı — onunla devam etmek için Bağlan’a basın ya da yenisini yapıştırın."
-  },
-  "appsView.publishCreatedMsg": {
-    "defaultMessage": "\"{title}\" is now in the shared library"
-  },
-  "appsView.publishFailedTitle": {
-    "defaultMessage": "Failed to publish to 10router"
-  },
-  "appsView.publishSuccessTitle": {
-    "defaultMessage": "Published to 10router"
-  },
-  "appsView.publishUpdatedMsg": {
-    "defaultMessage": "\"{title}\" publication was updated"
-  },
-  "appsView.recipeBook": {
-    "defaultMessage": "Recipe Book"
-  },
-  "appsView.shareTo10Router": {
-    "defaultMessage": "Share to 10router"
-  },
-  "recipeBook.appsTab": {
-    "defaultMessage": "Applications"
-  },
-  "recipeBook.description": {
-    "defaultMessage": "Recipes and applications other 10router users shared. Installing saves them to your library."
-  },
-  "recipeBook.emptyDescription": {
-    "defaultMessage": "Publications will appear here. Use “Share to 10router” on a recipe or application card."
-  },
-  "recipeBook.emptyTitle": {
-    "defaultMessage": "Nothing shared yet"
-  },
-  "recipeBook.errorTitle": {
-    "defaultMessage": "Failed to load the library"
-  },
-  "recipeBook.install": {
-    "defaultMessage": "Install"
-  },
-  "recipeBook.installFailedTitle": {
-    "defaultMessage": "Install failed"
-  },
-  "recipeBook.installed": {
-    "defaultMessage": "Installed"
-  },
-  "recipeBook.installedAppMsg": {
-    "defaultMessage": "Application \"{title}\" added"
-  },
-  "recipeBook.installedRecipeMsg": {
-    "defaultMessage": "Recipe \"{title}\" saved to your library"
-  },
-  "recipeBook.installing": {
-    "defaultMessage": "Installing…"
-  },
-  "recipeBook.loading": {
-    "defaultMessage": "Loading…"
-  },
-  "recipeBook.recipesTab": {
-    "defaultMessage": "Recipes"
-  },
-  "recipeBook.refresh": {
-    "defaultMessage": "Refresh"
-  },
-  "recipeBook.retry": {
-    "defaultMessage": "Retry"
-  },
-  "recipeBook.title": {
-    "defaultMessage": "Recipe Book"
-  },
-  "recipeBook.unpublish": {
-    "defaultMessage": "Unpublish"
-  },
-  "recipeBook.unpublishFailedTitle": {
-    "defaultMessage": "Failed to unpublish"
-  },
-  "recipeBook.unpublishedMsg": {
-    "defaultMessage": "\"{title}\" is no longer published"
-  },
-  "recipeBook.you": {
-    "defaultMessage": "you"
-  },
-  "recipesView.publishCreatedMsg": {
-    "defaultMessage": "\"{title}\" is now in the shared library"
-  },
-  "recipesView.publishFailedTitle": {
-    "defaultMessage": "Failed to publish to 10router"
-  },
-  "recipesView.publishSuccessTitle": {
-    "defaultMessage": "Published to 10router"
-  },
-  "recipesView.publishUpdatedMsg": {
-    "defaultMessage": "\"{title}\" publication was updated"
-  },
-  "recipesView.recipeBook": {
-    "defaultMessage": "Recipe Book"
-  },
-  "recipesView.shareEnvWarningTitle": {
-    "defaultMessage": "This recipe includes extension environment values, which will be visible to everyone. Publish anyway?"
-  },
-  "recipesView.shareTo10Router": {
-    "defaultMessage": "Share to 10router"
   }
 }
