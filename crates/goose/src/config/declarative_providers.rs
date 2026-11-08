@@ -416,6 +416,7 @@ pub fn load_provider(id: &str) -> Result<LoadedProvider> {
 /// are registered. The rest stay in the crate as data and never reach the
 /// provider list. (In-crate tests keep the full set as fixtures; see
 /// providers/init.rs.)
+#[cfg(not(test))]
 const BUNDLED_PROVIDER_ALLOWLIST: &[&str] = &["tenrouter"];
 
 pub fn register_declarative_providers(
