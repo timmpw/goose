@@ -35,8 +35,24 @@ async fn init_registry() -> RwLock<ProviderRegistry> {
     RwLock::new(registry)
 }
 
-#[cfg(test)]
+/// Whether the full upstream provider registry is available: always in
+/// in-crate tests, and in any build when GOOSE_BUNDLED_PROVIDERS=all is set
+/// (used by integration tests). Production binaries see tenrouter only.
+fn upstream_registry_enabled() -> bool {
+    cfg!(test)
+        || crate::config::declarative_providers::bundled_providers_all()
+}
+
 fn registry_with_fixture_providers(
+    tls_config: Option<super::api_client::TlsConfig>,
+) -> ProviderRegistry {
+    if !upstream_registry_enabled() {
+        return ProviderRegistry::new(tls_config);
+    }
+    full_upstream_registry(tls_config)
+}
+
+fn full_upstream_registry(
     tls_config: Option<super::api_client::TlsConfig>,
 ) -> ProviderRegistry {
     use super::inventory::registrations;
@@ -234,13 +250,6 @@ fn registry_with_fixture_providers(
         Arc::new(|| Box::pin(HuggingFaceProvider::cleanup())),
     );
     registry
-}
-
-#[cfg(not(test))]
-fn registry_with_fixture_providers(
-    tls_config: Option<super::api_client::TlsConfig>,
-) -> ProviderRegistry {
-    ProviderRegistry::new(tls_config)
 }
 
 fn load_custom_providers_into_registry(registry: &mut ProviderRegistry) -> Result<()> {

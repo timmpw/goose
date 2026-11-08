@@ -27,6 +27,7 @@ fn write_secrets(config_dir: &std::path::Path, contents: &str) {
 fn acp_catalog_and_custom_provider_methods_use_core_provider_store() {
     let _env = env_lock::lock_env([
         ("GOOSE_DISABLE_KEYRING", Some("1")),
+        ("GOOSE_BUNDLED_PROVIDERS", Some("all")),
         ("XAI_API_KEY", None),
         ("XAI_HOST", None),
         ("CUSTOM_STARK_ACP_PROVIDER_API_KEY", None),
