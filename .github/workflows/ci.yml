@@ -110,7 +110,14 @@ jobs:
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
 
       - name: Install Dependencies
-        run: source ../../bin/activate-hermit && pnpm install --frozen-lockfile
+        run: |
+          set +e
+          source ../../bin/activate-hermit && pnpm install --frozen-lockfile > "$RUNNER_TEMP/install.log" 2>&1
+          rc=$?
+          if [ $rc -ne 0 ]; then
+            echo "::error::install failed rc=$rc TAIL: $(tail -n 40 "$RUNNER_TEMP/install.log" | tr '\n' '|' | cut -c1-1500)"
+          fi
+          exit $rc
         working-directory: ui/desktop
 
       - name: Run Lint
