@@ -632,7 +632,7 @@ export function AppInner() {
         toastClassName={() =>
           `relative min-h-16 mb-4 p-2 rounded-lg
                flex justify-between overflow-hidden cursor-pointer
-               text-text-inverse bg-background-inverse
+               text-text-inverse bg-tooltip
               `
         }
         style={{ width: '450px' }}
@@ -645,7 +645,7 @@ export function AppInner() {
       <ExtensionInstallModal addExtension={addExtension} setView={setView} />
       <RecipeConsentModalContainer />
       <RecipeParamsModalContainer />
-      <div className="relative w-screen h-screen overflow-hidden bg-background-secondary flex flex-col">
+      <div className="relative w-screen h-screen overflow-hidden bg-canvas flex flex-col">
         <div className="titlebar-drag-region" />
         <div style={{ position: 'relative', width: '100%', height: '100%' }}>
           <Routes>

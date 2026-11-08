@@ -973,7 +973,7 @@ export default function RecipesView() {
           <div className="bg-background-primary px-8 pb-8 pt-16">
             <div className="flex flex-col page-transition">
               <div className="flex justify-between items-center mb-1">
-                <h1 className="text-4xl font-light">{intl.formatMessage(i18n.recipesTitle)}</h1>
+                <h1 className="font-display text-[32px] font-bold tracking-tight">{intl.formatMessage(i18n.recipesTitle)}</h1>
                 <div className="flex gap-2">
                   <Button
                     onClick={() => setShowCreateDialog(true)}

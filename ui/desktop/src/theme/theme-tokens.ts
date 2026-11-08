@@ -34,7 +34,7 @@ type ColorTokenKey = Exclude<McpUiStyleVariableKey, BaseTokenKey>;
 // ---------------------------------------------------------------------------
 const baseTokens: Pick<ThemeTokens, BaseTokenKey> = {
   // Typography — families
-  '--font-sans': "'Montserrat', 'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif",
+  '--font-sans': "'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif",
   '--font-mono': "'IBM Plex Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace",
 
   // Typography — weights
@@ -90,74 +90,79 @@ type ColorTokens = Pick<ThemeTokens, ColorTokenKey>;
 
 // ---------------------------------------------------------------------------
 // Light theme — colors & shadows
-// The 10router cabinet palette: white cards on a pale blue-grey page, brand
-// blue #2463F5 as the inverse surface (primary actions), ink #0B1220 text.
-// Mirrors html.theme-user in the 10router cabinet redesign (DESIGN.md).
+// The 10router cabinet palette (html.theme-user in 10router web/src/index.css,
+// DESIGN.md there): white cards (--color-background-primary) on a pale grey
+// page (--color-background-secondary, also the app canvas), ink #0B1220 text.
+// --color-background-inverse is the cabinet's --primary-solid #1E5AE6 — the
+// fill under white text (buttons, the active menu row), 5.7:1, AA. The exact
+// brand blue #2463F5 is for the logo only (--brand in main.css).
 // ---------------------------------------------------------------------------
 const lightColorTokens: ColorTokens = {
   // Backgrounds
   '--color-background-primary': '#ffffff',
   '--color-background-secondary': '#f6f7f9',
   '--color-background-tertiary': '#edeff2',
-  '--color-background-inverse': '#2463f5',
+  '--color-background-inverse': '#1e5ae6',
   '--color-background-ghost': 'transparent',
-  '--color-background-info': '#2463f5',
+  '--color-background-info': '#1e5ae6',
   '--color-background-danger': '#db2424',
   '--color-background-success': '#059669',
   '--color-background-warning': '#d97706',
-  '--color-background-disabled': '#e1e6ee',
+  '--color-background-disabled': '#edeff2',
 
   // Text
   '--color-text-primary': '#0b1220',
   '--color-text-secondary': '#666d7a',
-  '--color-text-tertiary': '#98a2b3',
+  '--color-text-tertiary': '#8b93a1',
   '--color-text-inverse': '#ffffff',
   '--color-text-ghost': '#666d7a',
-  '--color-text-info': '#2463f5',
+  '--color-text-info': '#1e5ae6',
   '--color-text-danger': '#db2424',
-  '--color-text-success': '#059669',
+  '--color-text-success': '#047857',
   '--color-text-warning': '#b45309',
   '--color-text-disabled': '#a6adbd',
 
   // Borders
-  '--color-border-primary': '#e1e6ee',
-  '--color-border-secondary': '#e1e6ee',
+  '--color-border-primary': '#e1e4ea',
+  '--color-border-secondary': '#e1e4ea',
   '--color-border-tertiary': '#d6dae0',
-  '--color-border-inverse': '#2463f5',
+  '--color-border-inverse': '#1e5ae6',
   '--color-border-ghost': 'transparent',
-  '--color-border-info': '#2463f5',
+  '--color-border-info': '#1e5ae6',
   '--color-border-danger': '#db2424',
   '--color-border-success': '#059669',
   '--color-border-warning': '#d97706',
-  '--color-border-disabled': '#e1e6ee',
+  '--color-border-disabled': '#e1e4ea',
 
   // Rings
-  '--color-ring-primary': '#2463f5',
+  '--color-ring-primary': '#1e5ae6',
   '--color-ring-secondary': '#d6dae0',
   '--color-ring-inverse': '#ffffff',
-  '--color-ring-info': '#2463f5',
+  '--color-ring-info': '#1e5ae6',
   '--color-ring-danger': '#db2424',
   '--color-ring-success': '#059669',
   '--color-ring-warning': '#d97706',
 
-  // Shadows — the cabinet's crisp hairline style, no floating blocks
+  // Shadows — the cabinet's .surface: a hairline and the faintest shadow
   '--shadow-hairline': '0 0 0 1px rgba(16, 24, 40, 0.06)',
-  '--shadow-sm': '0 1px 2px 0 rgba(16, 24, 40, 0.05)',
+  '--shadow-sm': '0 1px 2px 0 rgba(16, 24, 40, 0.04)',
   '--shadow-md': '0 2px 6px -1px rgba(16, 24, 40, 0.07), 0 1px 2px -1px rgba(16, 24, 40, 0.04)',
   '--shadow-lg': '0 10px 24px -6px rgba(16, 24, 40, 0.1), 0 2px 6px -2px rgba(16, 24, 40, 0.05)',
 };
 
 // ---------------------------------------------------------------------------
 // Dark theme — colors & shadows
-// The cabinet's dark twin: ink-blue page #0E1016, #161A22 cards, a lighter
-// brand blue #4A7EF7 for actions and rings (html.theme-user.dark).
+// The cabinet's dark twin (html.theme-user.dark): #161A22 cards on a #0E1016
+// page (the canvas — see --color-canvas in main.css), #22262F for raised and
+// hovered fills. Fills under white text stay #1E5AE6; blue text, links and
+// rings take the lighter #4A7EF7 that reads on the dark page.
 // ---------------------------------------------------------------------------
 const darkColorTokens: ColorTokens = {
   // Backgrounds
   '--color-background-primary': '#161a22',
-  '--color-background-secondary': '#0e1016',
-  '--color-background-tertiary': '#22262f',
-  '--color-background-inverse': '#4a7ef7',
+  '--color-background-secondary': '#22262f',
+  '--color-background-tertiary': '#2a2f3a',
+  '--color-background-inverse': '#1e5ae6',
   '--color-background-ghost': 'transparent',
   '--color-background-info': '#4a7ef7',
   '--color-background-danger': '#e64c4c',
@@ -198,9 +203,9 @@ const darkColorTokens: ColorTokens = {
   '--color-ring-success': '#34d399',
   '--color-ring-warning': '#fbbf24',
 
-  // Shadows (deeper ink, no colored glow)
+  // Shadows — none to speak of in the dark cabinet; depth comes from borders
   '--shadow-hairline': '0 0 0 1px rgba(0, 0, 0, 0.3)',
-  '--shadow-sm': '0 1px 2px 0 rgba(0, 0, 0, 0.3)',
+  '--shadow-sm': '0 1px 2px 0 rgba(0, 0, 0, 0.25)',
   '--shadow-md': '0 2px 6px -1px rgba(0, 0, 0, 0.4), 0 1px 2px -1px rgba(0, 0, 0, 0.3)',
   '--shadow-lg': '0 10px 24px -6px rgba(0, 0, 0, 0.5), 0 2px 6px -2px rgba(0, 0, 0, 0.35)',
 };
@@ -306,22 +311,6 @@ const HOST_FONT_CSS = `
 @font-face { font-family: 'IBM Plex Mono'; font-style: normal; font-weight: 400; font-display: swap; src: url(https://fonts.gstatic.com/s/ibmplexmono/v20/-F63fjptAgt5VM-kVkqdyU8n1i8q131nj-o.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
 @font-face { font-family: 'IBM Plex Mono'; font-style: normal; font-weight: 500; font-display: swap; src: url(https://fonts.gstatic.com/s/ibmplexmono/v20/-F6qfjptAgt5VM-kVkqdyU8n3twJwlRFgsAXHNlYzg.woff2) format('woff2'); unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
 @font-face { font-family: 'IBM Plex Mono'; font-style: normal; font-weight: 500; font-display: swap; src: url(https://fonts.gstatic.com/s/ibmplexmono/v20/-F6qfjptAgt5VM-kVkqdyU8n3twJwlBFgsAXHNk.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
-@font-face { font-family: 'IBM Plex Sans'; font-style: normal; font-weight: 400; font-stretch: 100%; font-display: swap; src: url(https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxaKYbSB4ZhRNU.woff2) format('woff2'); unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
-@font-face { font-family: 'IBM Plex Sans'; font-style: normal; font-weight: 400; font-stretch: 100%; font-display: swap; src: url(https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxeKYbSB4Zh.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
-@font-face { font-family: 'IBM Plex Sans'; font-style: normal; font-weight: 500; font-stretch: 100%; font-display: swap; src: url(https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxaKYbSB4ZhRNU.woff2) format('woff2'); unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
-@font-face { font-family: 'IBM Plex Sans'; font-style: normal; font-weight: 500; font-stretch: 100%; font-display: swap; src: url(https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxeKYbSB4Zh.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
-@font-face { font-family: 'IBM Plex Sans'; font-style: normal; font-weight: 600; font-stretch: 100%; font-display: swap; src: url(https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxaKYbSB4ZhRNU.woff2) format('woff2'); unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
-@font-face { font-family: 'IBM Plex Sans'; font-style: normal; font-weight: 600; font-stretch: 100%; font-display: swap; src: url(https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxeKYbSB4Zh.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
-@font-face { font-family: 'Montserrat'; font-style: normal; font-weight: 400; font-display: swap; src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUSjIg1_i6t8kCHKm459W1hyyTh89ZNpQ.woff2) format('woff2'); unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
-@font-face { font-family: 'Montserrat'; font-style: normal; font-weight: 400; font-display: swap; src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUSjIg1_i6t8kCHKm459WlhyyTh89Y.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
-@font-face { font-family: 'Montserrat'; font-style: normal; font-weight: 500; font-display: swap; src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUSjIg1_i6t8kCHKm459W1hyyTh89ZNpQ.woff2) format('woff2'); unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
-@font-face { font-family: 'Montserrat'; font-style: normal; font-weight: 500; font-display: swap; src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUSjIg1_i6t8kCHKm459WlhyyTh89Y.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
-@font-face { font-family: 'Montserrat'; font-style: normal; font-weight: 600; font-display: swap; src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUSjIg1_i6t8kCHKm459W1hyyTh89ZNpQ.woff2) format('woff2'); unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
-@font-face { font-family: 'Montserrat'; font-style: normal; font-weight: 600; font-display: swap; src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUSjIg1_i6t8kCHKm459WlhyyTh89Y.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
-@font-face { font-family: 'Montserrat'; font-style: normal; font-weight: 700; font-display: swap; src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUSjIg1_i6t8kCHKm459W1hyyTh89ZNpQ.woff2) format('woff2'); unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
-@font-face { font-family: 'Montserrat'; font-style: normal; font-weight: 700; font-display: swap; src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUSjIg1_i6t8kCHKm459WlhyyTh89Y.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
-@font-face { font-family: 'Montserrat'; font-style: normal; font-weight: 800; font-display: swap; src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUSjIg1_i6t8kCHKm459W1hyyTh89ZNpQ.woff2) format('woff2'); unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
-@font-face { font-family: 'Montserrat'; font-style: normal; font-weight: 800; font-display: swap; src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUSjIg1_i6t8kCHKm459WlhyyTh89Y.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
 `.trim();
 
 /**

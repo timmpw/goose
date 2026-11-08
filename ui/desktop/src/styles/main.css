@@ -109,10 +109,13 @@
   /* Typography */
   --font-sans: initial;
   --font-mono: initial;
-  --font-weight-normal: initial;
-  --font-weight-medium: initial;
-  --font-weight-semibold: initial;
-  --font-weight-bold: initial;
+  /* Weights resolve through var() like the colours above: with `initial`
+     every font-medium/semibold/bold utility compiled to font-weight: initial
+     (400), and the cabinet's bold headings came out regular. */
+  --font-weight-normal: var(--font-weight-normal);
+  --font-weight-medium: var(--font-weight-medium);
+  --font-weight-semibold: var(--font-weight-semibold);
+  --font-weight-bold: var(--font-weight-bold);
   --font-text-xs-size: initial;
   --font-text-sm-size: initial;
   --font-text-md-size: initial;
@@ -167,6 +170,16 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --shadow-default: var(--shadow-default);
+
+  /* Display face for page titles — the cabinet's Montserrat; running text
+     stays on --font-sans (Inter) */
+  --font-display: 'Montserrat', 'Inter', ui-sans-serif, system-ui, sans-serif;
+
+  /* 10router cabinet roles the MCP token set has no slot for */
+  --color-canvas: var(--canvas);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-tooltip: var(--tooltip);
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
@@ -176,8 +189,18 @@
    ═══════════════════════════════════════════════════════════════════════════ */
 
 :root {
-  /* 10router brand blue — the mark stays this blue in every theme */
+  /* 10router brand blue — the logo's mark only; fills use
+     --color-background-inverse (#1E5AE6), which passes AA under white text */
   --brand: #2463f5;
+
+  /* The cabinet's page colour: the app canvas behind the sidebar and the
+     main panel, which sit on it as white cards */
+  --canvas: #f6f7f9;
+  /* Pale-blue chip / selection fill and its blue text (cabinet --accent) */
+  --accent: #ebf1fe;
+  --accent-foreground: #0a49db;
+  /* Ink surface for tooltips and toasts — calmer than the blue fill */
+  --tooltip: #0b1220;
 
   /* Legacy aliases (used by toast and katex styles in this file) */
   --text-inverse: var(--color-white);
@@ -206,6 +229,11 @@
 
 .dark {
   --brand: #4a7ef7;
+
+  --canvas: #0e1016;
+  --accent: #1b2846;
+  --accent-foreground: #9cbafc;
+  --tooltip: #2a2f3a;
 
   /* Legacy aliases */
   --text-inverse: var(--color-black);
@@ -551,7 +579,6 @@ pre:has(> code.bg-inline-code) {
 
 .dark .user-message-bubble {
   --code-block-background: #16223d;
-  background-color: #1b2846;
   color: #d7e2f8;
 }
 
@@ -949,6 +976,13 @@ pre:has(> code.bg-inline-code) {
    User message bubbles use the inverted bg-text-primary surface,
    which turns light in Aura. Restore Aura's dark chat bubble.
    ═══════════════════════════════════════════════════════════ */
+[data-theme='aura'] {
+  --canvas: #15141b;
+  --accent: #2a2440;
+  --accent-foreground: #c4a8ff;
+  --tooltip: #2d2b38;
+}
+
 [data-theme='aura'] .user-message-bubble {
   background-color: #393647;
   color: #edecee;
@@ -962,14 +996,14 @@ pre:has(> code.bg-inline-code) {
    ═══════════════════════════════════════════════════════════ */
 .hero-gradient {
   background:
-    radial-gradient(120% 140% at 100% 0%, rgb(36 99 245 / 0.14) 0%, transparent 55%),
+    radial-gradient(120% 140% at 100% 0%, rgb(59 120 245 / 0.18) 0%, transparent 55%),
     radial-gradient(90% 120% at 0% 100%, rgb(160 190 255 / 0.25) 0%, transparent 60%),
     linear-gradient(135deg, #ffffff 0%, #eef3fc 100%);
 }
 
 .dark .hero-gradient {
   background:
-    radial-gradient(120% 140% at 100% 0%, rgb(77 126 247 / 0.28) 0%, transparent 55%),
+    radial-gradient(120% 140% at 100% 0%, rgb(77 135 255 / 0.28) 0%, transparent 55%),
     radial-gradient(90% 120% at 0% 100%, rgb(80 110 200 / 0.18) 0%, transparent 60%),
     linear-gradient(135deg, #131927 0%, #0f1522 100%);
 }

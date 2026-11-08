@@ -101,7 +101,7 @@ const AppLayoutContent: React.FC<AppLayoutContentProps> = ({ activeSessions, liv
 
   if (isOnSettingsRoute) {
     return (
-      <div className="relative flex h-full w-full flex-1 bg-background-secondary">
+      <div className="relative flex h-full w-full flex-1 bg-canvas">
         <Outlet />
         <div className="hidden">
           <ChatSessionsContainer
@@ -122,7 +122,7 @@ const AppLayoutContent: React.FC<AppLayoutContentProps> = ({ activeSessions, liv
   );
 
   return (
-    <div className="flex flex-1 w-full h-full relative animate-fade-in bg-background-primary flex-row">
+    <div className="flex flex-1 w-full h-full relative animate-fade-in bg-canvas flex-row">
       <div
         style={{ zIndex: Z_INDEX.HEADER }}
         className={cn('absolute flex items-center gap-1', headerPadding, headerTop, 'ml-1.5')}
@@ -139,8 +139,9 @@ const AppLayoutContent: React.FC<AppLayoutContentProps> = ({ activeSessions, liv
         </Button>
       </div>
 
-      {/* Main content with navigation. Shared white canvas; the sidebar is a
-          rounded outlined card floating on it with breathing room. */}
+      {/* Main content with navigation. As in the 10router cabinet: a pale
+          grey page (bg-canvas) with the sidebar and the main panel as two
+          white cards on it — hairline border, the faintest shadow, 12px. */}
       <div className="flex flex-1 w-full h-full min-h-0 flex-row">
         <motion.div
           key="nav"
@@ -152,7 +153,7 @@ const AppLayoutContent: React.FC<AppLayoutContentProps> = ({ activeSessions, liv
           style={{ height: '100%' }}
           className="relative flex-shrink-0 overflow-hidden h-full p-2"
         >
-          <div className="w-full h-full overflow-hidden rounded-xl border border-border-primary">
+          <div className="surface-card w-full h-full overflow-hidden">
             <Navigation activeLiveVoiceSessionId={liveVoice.activeSessionId} />
           </div>
           {isNavExpanded && (
@@ -163,8 +164,9 @@ const AppLayoutContent: React.FC<AppLayoutContentProps> = ({ activeSessions, liv
           )}
         </motion.div>
 
-        {/* Main content — no border / no card; just flows on the canvas. */}
-        <div className="flex-1 overflow-hidden min-h-0">
+        {/* Main content — the second card; the sidebar's p-2 already gives
+            the gap on its side. */}
+        <div className="surface-card flex-1 overflow-hidden min-h-0 my-2 mr-2">
           <Outlet />
           {/* Always render ChatSessionsContainer to keep SSE connections alive.
               When navigating away from /pair, hide it with CSS */}

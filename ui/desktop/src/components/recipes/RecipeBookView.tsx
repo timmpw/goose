@@ -241,7 +241,7 @@ export default function RecipeBookView() {
         <div className="bg-background-primary px-8 pb-8 pt-16">
           <div className="flex flex-col page-transition">
             <div className="flex justify-between items-center mb-1">
-              <h1 className="text-4xl font-light flex items-center gap-3">
+              <h1 className="font-display text-[32px] font-bold tracking-tight flex items-center gap-3">
                 <BookOpen className="w-8 h-8" />
                 {intl.formatMessage(i18n.title)}
               </h1>

@@ -18,6 +18,7 @@ import { acpRenameSession, type SessionListItem } from '../../acp/sessions';
 import { Tooltip, TooltipContent, TooltipTrigger } from '../ui/Tooltip';
 import { formatMessageTimestamp } from '../../utils/timeUtils';
 import { cn } from '../../utils';
+import { TenRouterLogo } from '../icons';
 import type { ProjectGroup } from '../../utils/projectSessions';
 import { defineMessages, useIntl } from '../../i18n';
 
@@ -90,10 +91,11 @@ const i18n = defineMessages({
 const navItemClass = (active: boolean) =>
   cn(
     'flex flex-row items-center gap-3 outline-none no-drag w-full',
-    'rounded-full px-3 py-2 text-sm font-medium transition-colors',
+    // The cabinet's tabs: 8px plates, the active one solid blue with white text.
+    'rounded-lg px-3 py-2 text-sm font-medium transition-colors',
     active
-      ? 'bg-background-tertiary text-text-primary'
-      : 'text-text-primary hover:bg-background-tertiary/60'
+      ? 'bg-background-inverse text-text-inverse'
+      : 'text-text-primary hover:bg-background-tertiary'
   );
 
 interface NavRowProps {
@@ -107,7 +109,12 @@ const NavRow: React.FC<NavRowProps> = ({ item, active, onClick }) => {
   const Icon = item.icon;
   return (
     <button onClick={onClick} className={navItemClass(active)}>
-      <Icon className="w-5 h-5 flex-shrink-0 text-text-secondary" />
+      <Icon
+        className={cn(
+          'w-5 h-5 flex-shrink-0',
+          active ? 'text-text-inverse' : 'text-text-secondary'
+        )}
+      />
       <span className="text-left flex-1 truncate">{getNavItemLabel(item, intl)}</span>
     </button>
   );
@@ -198,9 +205,9 @@ const SessionRow: React.FC<SessionRowProps> = ({
         <div
           onClick={() => !isEditing && onClick()}
           className={cn(
-            'flex items-center gap-2 px-3 py-1.5 rounded-full cursor-pointer text-sm',
-            'hover:bg-background-tertiary/60 transition-colors',
-            active && 'bg-background-tertiary'
+            'flex items-center gap-2 px-3 py-1.5 rounded-md cursor-pointer text-sm',
+            'transition-colors',
+            active ? 'bg-accent text-accent-foreground' : 'hover:bg-background-tertiary'
           )}
         >
           <InlineEditText
@@ -217,14 +224,17 @@ const SessionRow: React.FC<SessionRowProps> = ({
             placeholder={intl.formatMessage(i18n.untitledSession)}
             disabled={isStreaming}
             singleClickEdit={false}
-            className="truncate text-text-primary flex-1 !px-0 !py-0 hover:bg-transparent"
+            className={cn(
+              'truncate flex-1 !px-0 !py-0 hover:bg-transparent',
+              active ? 'text-accent-foreground font-medium' : 'text-text-primary'
+            )}
             editClassName="!text-sm"
             onEditStart={() => setIsEditing(true)}
             onEditEnd={() => setIsEditing(false)}
           />
           {isLiveVoiceActive && (
             <AudioLines
-              className="w-3.5 h-3.5 flex-shrink-0 text-blue-500"
+              className="w-3.5 h-3.5 flex-shrink-0 text-text-info"
               aria-label={intl.formatMessage(i18n.returnToActiveLiveVoice)}
             />
           )}
@@ -336,7 +346,12 @@ export const Navigation: React.FC<{
       transition={{ duration: 0.15 }}
       className="bg-background-primary outline-none flex flex-col h-full"
     >
+      {/* The macOS traffic lights and the nav toggle take this strip; the
+          10router lockup gets its own row under it, as in the cabinet header. */}
       <div className="h-[48px] no-drag" />
+      <div className="px-5 pb-4 pt-1">
+        <TenRouterLogo className="h-[20px] w-auto text-text-primary" />
+      </div>
 
       <div className="px-2 flex flex-col gap-0.5">
         {visibleItems.map((item) => (

@@ -226,11 +226,11 @@ export default function Hub({
     <div className="flex flex-col h-full min-h-0 items-start justify-center relative">
       <div className="w-full">
         <div className="flex items-baseline gap-2 mb-1 px-4">
-          <span className="text-6xl font-light text-text-primary tracking-tight">
+          <span className="font-display text-6xl font-bold text-text-primary tracking-tight">
             {time}
           </span>
           {meridiem ? (
-            <span className="text-2xl font-light text-text-secondary">{meridiem}</span>
+            <span className="text-2xl font-medium text-text-secondary">{meridiem}</span>
           ) : null}
         </div>
         <p className="text-xl text-text-secondary mb-6 px-4">{greeting}</p>
