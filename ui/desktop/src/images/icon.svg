@@ -1,10 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
-<title>10router</title>
-<defs><linearGradient id="bg" x1="0" y1="0" x2="0.8" y2="1"><stop stop-color="#24211f"/><stop offset="1" stop-color="#121211"/></linearGradient><linearGradient id="copper" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f39463"/><stop offset="1" stop-color="#ce6032"/></linearGradient></defs>
-<rect x="62" y="62" width="900" height="900" rx="202" fill="url(#bg)"/>
-<rect x="63.5" y="63.5" width="897" height="897" rx="200.5" fill="none" stroke="#fff" stroke-opacity=".09" stroke-width="3"/>
-<g fill="none" stroke="url(#copper)" stroke-width="62" stroke-linecap="round" stroke-linejoin="round">
-<path d="M256 403 336 339V685M256 685H416"/>
-<rect x="505" y="339" width="244" height="346" rx="122"/>
-<path d="M581 565 673 459M608 459H673V524" stroke-width="35"/>
-</g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024"><title>10router app icon</title><rect x="62" y="62" width="900" height="900" rx="202" fill="#2463F5"/><g fill="#fff" transform="translate(172 284.5) scale(1.85)"><path d="M0 29 55 0H102V246H40V64L0 84Z"/><path d="M227 246H196C154 246 120 212 120 170V76C120 34 154 0 196 0H292C334 0 368 34 368 76V170C368 212 334 246 292 246H259V190H288C301 190 312 179 312 166V80C312 67 301 56 288 56H200C187 56 176 67 176 80V166C176 179 187 190 200 190H227Z"/></g></svg>

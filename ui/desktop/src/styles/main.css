@@ -27,32 +27,29 @@
   --color-white: #ffffff;
   --color-black: #000000;
 
-  --color-block-teal: #13bbaf;
-  --color-block-orange: #ff4f00;
+  --color-neutral-50: #f6f7f9;
+  --color-neutral-100: #edeff2;
+  --color-neutral-200: #e1e6ee;
+  --color-neutral-300: #d6dae0;
+  --color-neutral-400: #98a2b3;
+  --color-neutral-500: #666d7a;
+  --color-neutral-600: #4e5769;
+  --color-neutral-700: #3e4553;
+  --color-neutral-800: #292d38;
+  --color-neutral-900: #22262f;
+  --color-neutral-950: #161a22;
 
-  --color-neutral-50: #f4f6f7;
-  --color-neutral-100: #e3e6ea;
-  --color-neutral-200: #cbd1d6;
-  --color-neutral-300: #a7b0b9;
-  --color-neutral-400: #878787;
-  --color-neutral-500: #606c7a;
-  --color-neutral-600: #525b68;
-  --color-neutral-700: #474e57;
-  --color-neutral-800: #3f434b;
-  --color-neutral-900: #32353b;
-  --color-neutral-950: #22252a;
+  --color-red-100: #e64c4c;
+  --color-red-200: #db2424;
 
-  --color-red-100: #ff6b6b;
-  --color-red-200: #f94b4b;
+  --color-blue-100: #4a7ef7;
+  --color-blue-200: #2463f5;
 
-  --color-blue-100: #7cacff;
-  --color-blue-200: #5c98f9;
+  --color-green-100: #34d399;
+  --color-green-200: #059669;
 
-  --color-green-100: #a3d795;
-  --color-green-200: #91cb80;
-
-  --color-yellow-100: #ffd966;
-  --color-yellow-200: #fbcd44;
+  --color-yellow-100: #fbbf24;
+  --color-yellow-200: #d97706;
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
@@ -179,11 +176,14 @@
    ═══════════════════════════════════════════════════════════════════════════ */
 
 :root {
+  /* 10router brand blue — the mark stays this blue in every theme */
+  --brand: #2463f5;
+
   /* Legacy aliases (used by toast and katex styles in this file) */
   --text-inverse: var(--color-white);
   --text-danger: var(--color-red-200);
 
-  --color-inline-code: #c2410c;
+  --color-inline-code: #0a49db;
 
   /* Search highlighting */
   --highlight-color: rgba(255, 213, 0, 0.5);
@@ -201,16 +201,17 @@
 
   /* Custom shadow */
   --shadow-default:
-    0px 12px 32px 0px rgba(0, 0, 0, 0.04), 0px 8px 16px 0px rgba(0, 0, 0, 0.02),
-    0px 2px 4px 0px rgba(0, 0, 0, 0.04), 0px 0px 1px 0px rgba(0, 0, 0, 0.2);
+    0px 1px 2px 0px rgba(16, 24, 40, 0.05), 0px 0px 1px 0px rgba(16, 24, 40, 0.1);
 }
 
 .dark {
+  --brand: #4a7ef7;
+
   /* Legacy aliases */
   --text-inverse: var(--color-black);
   --text-danger: var(--color-red-100);
 
-  --color-inline-code: #ff7235;
+  --color-inline-code: #9cbafc;
 
   /* Search highlighting */
   --highlight-color: rgba(255, 213, 0, 0.5);
@@ -228,8 +229,7 @@
 
   /* Custom shadow */
   --shadow-default:
-    0px 12px 32px 0px rgba(0, 0, 0, 0.2), 0px 8px 16px 0px rgba(0, 0, 0, 0.15),
-    0px 2px 4px 0px rgba(0, 0, 0, 0.1), 0px 0px 1px 0px rgba(0, 0, 0, 0.3);
+    0px 2px 6px 0px rgba(0, 0, 0, 0.35), 0px 0px 1px 0px rgba(0, 0, 0, 0.4);
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
@@ -246,46 +246,9 @@
   }
 }
 
-@font-face {
-  font-family: 'Cash Sans';
-  src:
-    url(https://cash-f.squarecdn.com/static/fonts/cashsans/woff2/CashSans-Light.woff2)
-      format('woff2'),
-    url(https://cash-f.squarecdn.com/static/fonts/cashsans/woff/CashSans-Light.woff) format('woff');
-  font-weight: 300;
-  font-style: normal;
-}
+/* Brand fonts (Montserrat / IBM Plex) are bundled via @fontsource imports in
+   renderer.tsx; no remote @font-face needed here. */
 
-@font-face {
-  font-family: 'Cash Sans';
-  src:
-    url(https://cash-f.squarecdn.com/static/fonts/cashsans/woff2/CashSans-Regular.woff2)
-      format('woff2'),
-    url(https://cash-f.squarecdn.com/static/fonts/cashsans/woff/CashSans-Regular.woff)
-      format('woff');
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Cash Sans';
-  src:
-    url(https://cash-f.squarecdn.com/static/fonts/cashsans/woff2/CashSans-Medium.woff2)
-      format('woff2'),
-    url(https://cash-f.squarecdn.com/static/fonts/cashsans/woff/CashSans-Medium.woff) format('woff');
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Cash Sans';
-  src:
-    url(https://cash-f.squarecdn.com/static/fonts/cashsans/woff2/CashSans-Bold.woff2)
-      format('woff2'),
-    url(https://cash-f.squarecdn.com/static/fonts/cashsans/woff/CashSans-Bold.woff) format('woff');
-  font-weight: 700;
-  font-style: normal;
-}
 
 /* animations */
 @keyframes appear {
@@ -441,7 +404,7 @@
 }
 
 .Toastify__close-button:focus {
-  outline: 2px solid var(--color-block-teal);
+  outline: 2px solid var(--color-ring-primary);
   outline-offset: 2px;
 }
 
@@ -529,6 +492,7 @@
 
 body {
   background-color: var(--color-background-primary);
+  font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -557,7 +521,7 @@ body {
   border-radius: 4px;
   color: var(--color-inline-code);
   background-color: var(--color-neutral-50);
-  font-family: monospace;
+  font-family: var(--font-mono);
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
@@ -586,9 +550,9 @@ pre:has(> code.bg-inline-code) {
 }
 
 .dark .user-message-bubble {
-  --code-block-background: #0f1628;
-  background-color: #171d30;
-  color: #d2dae6;
+  --code-block-background: #16223d;
+  background-color: #1b2846;
+  color: #d7e2f8;
 }
 
 .dark .user-message pre {
@@ -596,40 +560,40 @@ pre:has(> code.bg-inline-code) {
 }
 
 .dark .user-message :is(h1, h2, h3, h4, h5, h6, strong) {
-  color: #e7ebf2 !important;
+  color: #edf1fa !important;
 }
 
 .dark .user-message li {
-  color: #c4cfde !important;
+  color: #c4cee0 !important;
 }
 
 .dark .user-message li::marker {
-  color: #8798b0;
+  color: #8ca3d9;
 }
 
 .dark .user-message a {
-  color: #aecfe3 !important;
+  color: #a9c4fb !important;
 }
 
 .dark .user-message em {
-  color: #c6d9df !important;
+  color: #c6d4f5 !important;
 }
 
 .dark .agent-message-bubble {
-  background-color: #1f2126;
+  background-color: #20242c;
   border-radius: 0.75rem;
   padding: 0.625rem 1rem;
 }
 
 .dark :is(.agent-message-bubble, .user-message-bubble) :not(pre) > code.bg-inline-code {
   background-color: transparent;
-  color: #8cd3d6;
+  color: #9cbafc;
   padding: 0;
 }
 
 .dark :is(.agent-message-bubble, .user-message-bubble) pre > code.bg-inline-code {
   background-color: transparent;
-  color: #b8c4d1;
+  color: #c2cadb;
   padding: 0;
 }
 
@@ -988,4 +952,35 @@ pre:has(> code.bg-inline-code) {
 [data-theme='aura'] .user-message-bubble {
   background-color: #393647;
   color: #edecee;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   10ROUTER CABINET SURFACES
+   .hero-gradient — the sign-in screen's soft blue-grey wash;
+   .surface-card — a card set off by a hairline border and the
+   faintest shadow, crisp 12px rounding (per cabinet DESIGN.md).
+   ═══════════════════════════════════════════════════════════ */
+.hero-gradient {
+  background:
+    radial-gradient(120% 140% at 100% 0%, rgb(36 99 245 / 0.14) 0%, transparent 55%),
+    radial-gradient(90% 120% at 0% 100%, rgb(160 190 255 / 0.25) 0%, transparent 60%),
+    linear-gradient(135deg, #ffffff 0%, #eef3fc 100%);
+}
+
+.dark .hero-gradient {
+  background:
+    radial-gradient(120% 140% at 100% 0%, rgb(77 126 247 / 0.28) 0%, transparent 55%),
+    radial-gradient(90% 120% at 0% 100%, rgb(80 110 200 / 0.18) 0%, transparent 60%),
+    linear-gradient(135deg, #131927 0%, #0f1522 100%);
+}
+
+.surface-card {
+  background-color: var(--color-background-primary);
+  border: 1px solid var(--color-border-primary);
+  border-radius: 12px;
+  box-shadow: 0 1px 2px rgb(16 24 40 / 0.04);
+}
+
+.dark .surface-card {
+  box-shadow: none;
 }

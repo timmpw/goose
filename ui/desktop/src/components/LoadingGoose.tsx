@@ -1,4 +1,4 @@
-import GooseLogo from './GooseLogo';
+import { TenRouterMark } from './icons';
 import AnimatedIcons from './AnimatedIcons';
 import FlyingBird from './FlyingBird';
 import { ChatState } from '../types/chatState';
@@ -48,7 +48,7 @@ const STATE_ICONS: Record<ChatState, React.ReactNode> = {
     <AnimatedIcons className="flex-shrink-0" cycleInterval={600} variant="waiting" />
   ),
   [ChatState.Compacting]: <AnimatedIcons className="flex-shrink-0" cycleInterval={600} />,
-  [ChatState.Idle]: <GooseLogo size="small" hover={false} />,
+  [ChatState.Idle]: <TenRouterMark className="h-7 w-auto" />,
   [ChatState.RestartingAgent]: <AnimatedIcons className="flex-shrink-0" cycleInterval={600} />,
 };
 
