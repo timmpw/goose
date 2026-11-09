@@ -70,13 +70,35 @@ jobs:
         with:
           key: macos-release-arm64
 
+      - name: Cache hermit tool downloads
+        # hermit fetches rust/pnpm binaries from GitHub release assets; the CDN
+        # flaps with 504s often enough to kill cold runs.
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9  # v6.1.0
+        with:
+          path: ~/.cache/hermit
+          key: hermit-tools-v1-${{ runner.arch }}
+          restore-keys: |
+            hermit-tools-v1-
+
       - name: Build goose backend
+        # Transient CDN failures can kill crate/rustup downloads; retry.
         run: |
           source ./bin/activate-hermit
           brew install openssl@3
           export OPENSSL_ROOT_DIR="$(brew --prefix openssl@3)"
-          rustup target add aarch64-apple-darwin
-          cargo build --release -p goose-cli --bin goose --target aarch64-apple-darwin
+          rustup target add aarch64-apple-darwin || rustup target add aarch64-apple-darwin
+          attempt=0
+          max_attempts=3
+          until [ $attempt -ge $max_attempts ]; do
+            cargo build --release -p goose-cli --bin goose --target aarch64-apple-darwin && break
+            attempt=$((attempt + 1))
+            echo "Attempt $attempt failed. Retrying..."
+            sleep 20
+          done
+          if [ $attempt -ge $max_attempts ]; then
+            echo "Action failed after $max_attempts attempts."
+            exit 1
+          fi
 
       - name: Stage backend binary
         run: |
@@ -240,13 +262,35 @@ jobs:
         with:
           key: macos-release-x64
 
+      - name: Cache hermit tool downloads
+        # hermit fetches rust/pnpm binaries from GitHub release assets; the CDN
+        # flaps with 504s often enough to kill cold runs.
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9  # v6.1.0
+        with:
+          path: ~/.cache/hermit
+          key: hermit-tools-v1-${{ runner.arch }}
+          restore-keys: |
+            hermit-tools-v1-
+
       - name: Build goose backend
+        # Transient CDN failures can kill crate/rustup downloads; retry.
         run: |
           source ./bin/activate-hermit
           brew install openssl@3
           export OPENSSL_ROOT_DIR="$(brew --prefix openssl@3)"
-          rustup target add x86_64-apple-darwin
-          cargo build --release -p goose-cli --bin goose --target x86_64-apple-darwin
+          rustup target add x86_64-apple-darwin || rustup target add x86_64-apple-darwin
+          attempt=0
+          max_attempts=3
+          until [ $attempt -ge $max_attempts ]; do
+            cargo build --release -p goose-cli --bin goose --target x86_64-apple-darwin && break
+            attempt=$((attempt + 1))
+            echo "Attempt $attempt failed. Retrying..."
+            sleep 20
+          done
+          if [ $attempt -ge $max_attempts ]; then
+            echo "Action failed after $max_attempts attempts."
+            exit 1
+          fi
 
       - name: Stage backend binary
         run: |
@@ -465,7 +509,18 @@ jobs:
           fi
           node scripts/build-main.js
           node scripts/prepare-platform-binaries.js
-          pnpm run make --platform=win32 --arch=x64
+          attempt=0
+          max_attempts=3
+          until [ $attempt -ge $max_attempts ]; do
+            pnpm run make --platform=win32 --arch=x64 && break
+            attempt=$((attempt + 1))
+            echo "Make attempt $attempt failed. Retrying..."
+            sleep 20
+          done
+          if [ $attempt -ge $max_attempts ]; then
+            echo "Make failed after $max_attempts attempts."
+            exit 1
+          fi
 
       - name: Prepare flat distribution
         shell: bash
