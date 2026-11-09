@@ -1,5 +1,10 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest';
-import { getEffectiveWorkingDir, resolveWorkingDir } from '../workingDir';
+import {
+  getDefaultWorkingDirSync,
+  getEffectiveWorkingDir,
+  rememberWorkingDir,
+  resolveWorkingDir,
+} from '../workingDir';
 
 describe('resolveWorkingDir', () => {
   it('uses the configured external backend directory when present', () => {
@@ -14,6 +19,8 @@ describe('resolveWorkingDir', () => {
 describe('getEffectiveWorkingDir', () => {
   const getSettingMock = vi.fn();
   const appConfigGetMock = vi.fn();
+  const listRecentDirsMock = vi.fn();
+  const addRecentDirMock = vi.fn();
 
   const mockWindow = (externalBackend: boolean, boundUrl: string, source = 'settings') => {
     appConfigGetMock.mockImplementation((key: string) => {
@@ -28,9 +35,17 @@ describe('getEffectiveWorkingDir', () => {
   beforeEach(() => {
     getSettingMock.mockReset();
     appConfigGetMock.mockReset();
+    listRecentDirsMock.mockReset();
+    listRecentDirsMock.mockResolvedValue([]);
+    addRecentDirMock.mockReset();
+    addRecentDirMock.mockResolvedValue(true);
     (globalThis as Record<string, unknown>).window = {
       appConfig: { get: appConfigGetMock },
-      electron: { getSetting: getSettingMock },
+      electron: {
+        getSetting: getSettingMock,
+        listRecentDirs: listRecentDirsMock,
+        addRecentDir: addRecentDirMock,
+      },
     } as unknown as typeof globalThis;
   });
 
@@ -96,5 +111,41 @@ describe('getEffectiveWorkingDir', () => {
     mockWindow(true, 'http://remote:3000');
     getSettingMock.mockRejectedValue(new Error('settings unavailable'));
     await expect(getEffectiveWorkingDir()).resolves.toBe('/Users/johannes/home/workspace');
+  });
+
+  it('defaults a local new chat to the folder the user last worked in', async () => {
+    mockWindow(false, '');
+    listRecentDirsMock.mockResolvedValue(['/projects/last', '/projects/older']);
+    await expect(getEffectiveWorkingDir()).resolves.toBe('/projects/last');
+    // An explicit directory (e.g. inherited from the current chat) still wins.
+    await expect(getEffectiveWorkingDir('/projects/website')).resolves.toBe('/projects/website');
+  });
+
+  it('falls back to the window directory when there are no recent folders', async () => {
+    mockWindow(false, '');
+    listRecentDirsMock.mockRejectedValue(new Error('ipc unavailable'));
+    await expect(getEffectiveWorkingDir()).resolves.toBe('/Users/johannes/home/workspace');
+  });
+
+  it('does not use local recent folders for an external backend', async () => {
+    mockWindow(true, 'http://remote:3000');
+    listRecentDirsMock.mockResolvedValue(['/projects/last']);
+    getSettingMock.mockResolvedValue({ enabled: false, workingDir: '' });
+    await expect(getEffectiveWorkingDir()).resolves.toBe('/Users/johannes/home/workspace');
+  });
+
+  it('records local folders and shows the last one right away on the next new chat', () => {
+    mockWindow(false, '');
+    rememberWorkingDir('/projects/current');
+    expect(addRecentDirMock).toHaveBeenCalledWith('/projects/current');
+    expect(getDefaultWorkingDirSync()).toBe('/projects/current');
+    expect(getDefaultWorkingDirSync('/projects/inherited')).toBe('/projects/inherited');
+  });
+
+  it('never records folders of a window bound to an external backend', () => {
+    mockWindow(true, 'http://remote:3000');
+    rememberWorkingDir('/tmp');
+    expect(addRecentDirMock).not.toHaveBeenCalled();
+    expect(getDefaultWorkingDirSync()).toBe('/Users/johannes/home/workspace');
   });
 });

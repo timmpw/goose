@@ -17,7 +17,11 @@ import { ChatState } from '../types/chatState';
 import 'react-toastify/dist/ReactToastify.css';
 import { View, ViewOptions } from '../utils/navigationUtils';
 import { useConfig } from './ConfigContext';
-import { getEffectiveWorkingDir, getInitialWorkingDir } from '../utils/workingDir';
+import {
+  getDefaultWorkingDirSync,
+  getEffectiveWorkingDir,
+  rememberWorkingDir,
+} from '../utils/workingDir';
 import { createSession } from '../sessions';
 import LoadingGoose from './LoadingGoose';
 import { UserInput } from '../types/message';
@@ -64,7 +68,7 @@ export default function Hub({
   const { state } = useLocation();
   const initialWorkingDir = (state as { workingDir?: string } | null)?.workingDir;
   const { extensionsList } = useConfig();
-  const [workingDir, setWorkingDir] = useState(initialWorkingDir ?? getInitialWorkingDir());
+  const [workingDir, setWorkingDir] = useState(() => getDefaultWorkingDirSync(initialWorkingDir));
   const userSelectedWorkingDirRef = useRef(false);
   const [isCreatingSession, setIsCreatingSession] = useState(false);
   const [liveVoiceAvailability, setLiveVoiceAvailability] =
@@ -162,6 +166,7 @@ export default function Hub({
         ? workingDir
         : await getEffectiveWorkingDir(initialWorkingDir);
       const session = await createSession(dir, sessionOptions);
+      rememberWorkingDir(dir);
       setNextChatExtensionDraft(null);
       return session;
     } catch (error) {

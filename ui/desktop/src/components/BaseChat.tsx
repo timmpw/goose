@@ -35,6 +35,7 @@ import SessionActionsHeader from './SessionActionsHeader';
 import { isAcpRecovering, subscribeToAcpRecovery } from '../acp/acpConnection';
 import type { LiveVoiceAvailabilityResponse_unstable } from '@aaif/goose-acp-client';
 import { acpGetLiveVoiceAvailability } from '../acp/liveVoice';
+import { rememberWorkingDir } from '../utils/workingDir';
 import type { LiveVoiceController } from '../liveVoice/useLiveVoice';
 
 const NEW_LIVE_VOICE_GREETING = 'Hello! What can I help you with?';
@@ -303,6 +304,7 @@ export default function BaseChat({
     if (recipe && input.msg.trim()) {
       setHasStartedUsingRecipe(true);
     }
+    rememberWorkingDir(session?.working_dir);
     handleSubmit(input);
   };
 

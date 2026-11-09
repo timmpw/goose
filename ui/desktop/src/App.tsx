@@ -472,7 +472,8 @@ export function AppInner() {
       if ((isMac ? event.metaKey : event.ctrlKey) && event.key === 'n') {
         event.preventDefault();
         try {
-          window.electron.createChatWindow({ dir: getInitialWorkingDir() });
+          // No dir: the main process opens the folder the user last worked in.
+          window.electron.createChatWindow();
         } catch (error) {
           console.error('Error creating new window:', error);
         }

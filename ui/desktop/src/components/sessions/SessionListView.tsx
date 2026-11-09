@@ -201,6 +201,8 @@ const EditSessionModal = React.memo<EditSessionModalProps>(
         if (e.key === 'Enter' && !isUpdating) {
           handleSave();
         } else if (e.key === 'Escape' && !isUpdating) {
+          // Keep the Escape from also closing the page hosting the list (Settings).
+          e.preventDefault();
           handleCancel();
         }
       },
@@ -215,7 +217,11 @@ const EditSessionModal = React.memo<EditSessionModalProps>(
 
     return (
       <div className="fixed inset-0 z-[300] flex items-center justify-center bg-black/50">
-        <div className="bg-background-primary border border-border-primary rounded-lg p-6 w-[500px] max-w-[90vw]">
+        <div
+          role="dialog"
+          aria-modal="true"
+          className="bg-background-primary border border-border-primary rounded-lg p-6 w-[500px] max-w-[90vw]"
+        >
           <h3 className="text-lg font-medium text-text-primary mb-4">
             {intl.formatMessage(i18n.editSessionTitle)}
           </h3>

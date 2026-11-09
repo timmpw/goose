@@ -8,7 +8,7 @@ import {
   GroupedExtensionLoadingToast,
   ExtensionLoadingStatus,
 } from './components/GroupedExtensionLoadingToast';
-import { getInitialWorkingDir } from './utils/workingDir';
+import { getEffectiveWorkingDir } from './utils/workingDir';
 
 export interface ToastServiceOptions {
   silent?: boolean;
@@ -198,7 +198,11 @@ function ToastErrorContent({
       </div>
       <div className="flex-none flex items-center gap-2">
         {showRecovery && (
-          <Button onClick={() => startNewSession(recoverHints, setView, getInitialWorkingDir())}>
+          <Button
+            onClick={async () =>
+              startNewSession(recoverHints, setView, await getEffectiveWorkingDir())
+            }
+          >
             Ask goose
           </Button>
         )}

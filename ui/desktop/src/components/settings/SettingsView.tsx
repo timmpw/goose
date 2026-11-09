@@ -160,9 +160,13 @@ export default function SettingsView({
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'Escape' && !event.defaultPrevented) {
-        onClose();
+      if (event.key !== 'Escape' || event.defaultPrevented) return;
+      // Escape inside an open dialog or menu (e.g. renaming or deleting a session
+      // on the Session History tab) belongs to that overlay, not to Settings.
+      if (document.querySelector('[role="dialog"], [role="alertdialog"], [role="menu"]')) {
+        return;
       }
+      onClose();
     };
 
     document.addEventListener('keydown', handleKeyDown);
