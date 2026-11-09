@@ -49,8 +49,14 @@ let cfg = {
 if (process.env.APPLE_TEAM_ID) {
   cfg.osxSign = {
     keychain: process.env.KEYCHAIN_PATH || undefined,
+    // Inert under @electron/osx-sign 1.3.x (it only reads optionsForFile);
+    // signing uses its built-in darwin defaults, same entitlements upstream
+    // ships with. Kept for upstream parity.
     entitlements: 'entitlements.plist',
     'entitlements-inherit': 'entitlements.plist',
+    // electron-packager defaults this to true, which turns signing failures
+    // into silent no-ops; we want unsigned artifacts to fail the build.
+    continueOnError: false,
   };
 }
 // Notarization inside Forge is only enabled when credentials are explicitly

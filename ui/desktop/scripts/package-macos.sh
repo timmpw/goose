@@ -10,8 +10,12 @@ APP_DIR="out/${BUNDLE_NAME}-darwin-${arch}"
 APP_BUNDLE="${APP_DIR}/${BUNDLE_NAME}.app"
 VERSION="$(node -p "require('./package.json').version")"
 
-if codesign -dv "$APP_BUNDLE" 2>&1 | grep -q "Authority=Developer ID Application"; then
-  echo "App already carries a Developer ID signature, keeping it"
+# codesign -dv prints "TeamIdentifier=not set" for ad-hoc signatures and an
+# actual team ID for real ones; newer codesign versions omit the Authority=
+# lines, so keying on TeamIdentifier works across macOS versions.
+TEAM="$(codesign -dv "$APP_BUNDLE" 2>&1 | grep -m1 '^TeamIdentifier=')"
+if [ -n "$TEAM" ] && [ "$TEAM" != "TeamIdentifier=not set" ]; then
+  echo "App already carries a Developer ID signature ($TEAM), keeping it"
 else
   codesign --force --deep --sign - "$APP_BUNDLE"
 fi
