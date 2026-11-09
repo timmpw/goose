@@ -18,6 +18,8 @@ import ToolCallConfirmation from './ToolCallConfirmation';
 import ElicitationRequest from './ElicitationRequest';
 import MessageCopyLink from './MessageCopyLink';
 import MessageUsageStats from './MessageUsageStats';
+import MessageErrorBanner from './MessageErrorBanner';
+import { getMessageErrorText } from '../utils/messageError';
 import { getTextDirection } from '../utils/textDirection';
 import { cn } from '../utils';
 import type { ToolRenderState } from './messageRowContext';
@@ -38,6 +40,7 @@ interface GooseMessageProps {
   toolConfirmationShownInline: boolean;
   append: (value: string) => void;
   isStreaming: boolean;
+  onRetry?: () => void | Promise<void>;
   submitElicitationResponse?: (
     elicitationId: string,
     userData: Record<string, unknown>
@@ -53,6 +56,7 @@ function GooseMessage({
   toolConfirmationShownInline,
   append,
   isStreaming,
+  onRetry,
   submitElicitationResponse,
 }: GooseMessageProps) {
   const contentRef = useRef<HTMLDivElement | null>(null);
@@ -95,6 +99,22 @@ function GooseMessage({
           isCancelled?: boolean;
         })
       : undefined;
+
+  const errorText = getMessageErrorText(message, textContent);
+  if (errorText !== null) {
+    return (
+      <div className="goose-message flex w-[90%] justify-start min-w-0">
+        <div className="flex flex-col w-full min-w-0">
+          <MessageErrorBanner
+            text={errorText}
+            kind={message.metadata.error?.kind}
+            timestamp={isStreaming || hideTimestamp ? undefined : timestamp}
+            onRetry={isStreaming ? undefined : onRetry}
+          />
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="goose-message flex w-[90%] justify-start min-w-0">

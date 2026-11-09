@@ -2018,6 +2018,42 @@
   "messageCopyLink.copy": {
     "defaultMessage": "複製"
   },
+  "messageErrorBanner.code": {
+    "defaultMessage": "代碼：{code}"
+  },
+  "messageErrorBanner.copied": {
+    "defaultMessage": "已複製！"
+  },
+  "messageErrorBanner.copy": {
+    "defaultMessage": "複製詳細資訊"
+  },
+  "messageErrorBanner.requestId": {
+    "defaultMessage": "請求 ID：{requestId}"
+  },
+  "messageErrorBanner.retry": {
+    "defaultMessage": "重試請求"
+  },
+  "messageErrorBanner.titleAuthentication": {
+    "defaultMessage": "驗證失敗"
+  },
+  "messageErrorBanner.titleContextLength": {
+    "defaultMessage": "對話過長，超出模型上限"
+  },
+  "messageErrorBanner.titleGeneric": {
+    "defaultMessage": "請求失敗"
+  },
+  "messageErrorBanner.titleNetwork": {
+    "defaultMessage": "網路錯誤"
+  },
+  "messageErrorBanner.titleRateLimit": {
+    "defaultMessage": "已達到請求上限"
+  },
+  "messageErrorBanner.titleRequestFailed": {
+    "defaultMessage": "供應商拒絕了此請求"
+  },
+  "messageErrorBanner.titleServer": {
+    "defaultMessage": "供應商伺服器錯誤"
+  },
   "messageList.hiddenMessages": {
     "defaultMessage": "已隱藏 {count, plural, other {# 則訊息}}"
   },

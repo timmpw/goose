@@ -2018,6 +2018,42 @@
   "messageCopyLink.copy": {
     "defaultMessage": "复制"
   },
+  "messageErrorBanner.code": {
+    "defaultMessage": "代码：{code}"
+  },
+  "messageErrorBanner.copied": {
+    "defaultMessage": "已复制！"
+  },
+  "messageErrorBanner.copy": {
+    "defaultMessage": "复制详情"
+  },
+  "messageErrorBanner.requestId": {
+    "defaultMessage": "请求 ID：{requestId}"
+  },
+  "messageErrorBanner.retry": {
+    "defaultMessage": "重试请求"
+  },
+  "messageErrorBanner.titleAuthentication": {
+    "defaultMessage": "身份验证失败"
+  },
+  "messageErrorBanner.titleContextLength": {
+    "defaultMessage": "对话过长，超出模型上限"
+  },
+  "messageErrorBanner.titleGeneric": {
+    "defaultMessage": "请求失败"
+  },
+  "messageErrorBanner.titleNetwork": {
+    "defaultMessage": "网络错误"
+  },
+  "messageErrorBanner.titleRateLimit": {
+    "defaultMessage": "已达到请求限额"
+  },
+  "messageErrorBanner.titleRequestFailed": {
+    "defaultMessage": "提供商拒绝了该请求"
+  },
+  "messageErrorBanner.titleServer": {
+    "defaultMessage": "提供商服务器错误"
+  },
   "messageList.hiddenMessages": {
     "defaultMessage": "已隐藏 {count, plural, other {# 条消息}}"
   },

@@ -2018,6 +2018,42 @@
   "messageCopyLink.copy": {
     "defaultMessage": "コピー"
   },
+  "messageErrorBanner.code": {
+    "defaultMessage": "コード: {code}"
+  },
+  "messageErrorBanner.copied": {
+    "defaultMessage": "コピーしました！"
+  },
+  "messageErrorBanner.copy": {
+    "defaultMessage": "詳細をコピー"
+  },
+  "messageErrorBanner.requestId": {
+    "defaultMessage": "リクエスト ID: {requestId}"
+  },
+  "messageErrorBanner.retry": {
+    "defaultMessage": "リクエストを再試行"
+  },
+  "messageErrorBanner.titleAuthentication": {
+    "defaultMessage": "認証に失敗しました"
+  },
+  "messageErrorBanner.titleContextLength": {
+    "defaultMessage": "会話がモデルにとって長すぎます"
+  },
+  "messageErrorBanner.titleGeneric": {
+    "defaultMessage": "リクエストに失敗しました"
+  },
+  "messageErrorBanner.titleNetwork": {
+    "defaultMessage": "ネットワークエラー"
+  },
+  "messageErrorBanner.titleRateLimit": {
+    "defaultMessage": "レート制限に達しました"
+  },
+  "messageErrorBanner.titleRequestFailed": {
+    "defaultMessage": "プロバイダーがリクエストを拒否しました"
+  },
+  "messageErrorBanner.titleServer": {
+    "defaultMessage": "プロバイダーのサーバーエラー"
+  },
   "messageList.hiddenMessages": {
     "defaultMessage": "{count, plural, other {# 件のメッセージを非表示}}"
   },

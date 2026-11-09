@@ -1,6 +1,12 @@
 import type { ToolCall, ToolCallUpdate } from '@agentclientprotocol/sdk';
 import type { TokenState } from '../../types/chat';
-import type { InferenceMetadata, Message, NotificationEvent } from '../../types/message';
+import type {
+  InferenceMetadata,
+  Message,
+  MessageError,
+  MessageErrorKind,
+  NotificationEvent,
+} from '../../types/message';
 
 export type AcpChatStateChange =
   | { type: 'messages'; messages: Message[] }
@@ -31,6 +37,7 @@ export interface GooseMessageMeta {
   operationLogs?: string[];
   steer?: boolean;
   inference?: InferenceMetadata;
+  error?: MessageError;
 }
 
 export interface ToolIdentity {
@@ -82,7 +89,23 @@ export function getGooseMessageMeta(update: { _meta?: unknown }): GooseMessageMe
     operationLogs,
     steer: goose.steer === true ? true : undefined,
     inference: getInferenceMeta(goose.inference),
+    error: getErrorMeta(goose.error),
   };
+}
+
+const MESSAGE_ERROR_KINDS: readonly MessageErrorKind[] = [
+  'authentication',
+  'contextLengthExceeded',
+  'creditsExhausted',
+  'other',
+];
+
+function getErrorMeta(error: unknown): MessageError | undefined {
+  if (!isRecord(error)) {
+    return undefined;
+  }
+  const kind = MESSAGE_ERROR_KINDS.find((candidate) => candidate === error.kind) ?? 'other';
+  return { kind };
 }
 
 function getInferenceMeta(inference: unknown): InferenceMetadata | undefined {

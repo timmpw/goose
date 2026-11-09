@@ -44,6 +44,9 @@ export function applyContentChunk(
     if (gooseMeta.operationLogs) {
       existing.metadata.operationLogs = gooseMeta.operationLogs;
     }
+    if (gooseMeta.error) {
+      existing.metadata.error = gooseMeta.error;
+    }
     applyInferenceMeta(existing, gooseMeta);
 
     if (shouldSkipFallbackChunk) {
@@ -76,6 +79,7 @@ export function applyContentChunk(
         outputTokenLimitReached: gooseMeta.outputTokenLimitReached,
         fallbackContent: gooseMeta.fallbackContent,
         ...(gooseMeta.operationLogs ? { operationLogs: gooseMeta.operationLogs } : {}),
+        ...(gooseMeta.error ? { error: gooseMeta.error } : {}),
       },
     };
     applyInferenceMeta(message, gooseMeta);

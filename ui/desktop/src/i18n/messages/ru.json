@@ -1922,6 +1922,42 @@
   "messageCopyLink.copy": {
     "defaultMessage": "Копировать"
   },
+  "messageErrorBanner.code": {
+    "defaultMessage": "Код: {code}"
+  },
+  "messageErrorBanner.copied": {
+    "defaultMessage": "Скопировано!"
+  },
+  "messageErrorBanner.copy": {
+    "defaultMessage": "Скопировать"
+  },
+  "messageErrorBanner.requestId": {
+    "defaultMessage": "ID запроса: {requestId}"
+  },
+  "messageErrorBanner.retry": {
+    "defaultMessage": "Повторить запрос"
+  },
+  "messageErrorBanner.titleAuthentication": {
+    "defaultMessage": "Ошибка авторизации"
+  },
+  "messageErrorBanner.titleContextLength": {
+    "defaultMessage": "Диалог слишком длинный для модели"
+  },
+  "messageErrorBanner.titleGeneric": {
+    "defaultMessage": "Запрос не выполнен"
+  },
+  "messageErrorBanner.titleNetwork": {
+    "defaultMessage": "Ошибка сети"
+  },
+  "messageErrorBanner.titleRateLimit": {
+    "defaultMessage": "Достигнут лимит запросов"
+  },
+  "messageErrorBanner.titleRequestFailed": {
+    "defaultMessage": "Провайдер отклонил запрос"
+  },
+  "messageErrorBanner.titleServer": {
+    "defaultMessage": "Ошибка сервера провайдера"
+  },
   "messageQueue.cancel": {
     "defaultMessage": "Отмена"
   },

@@ -1,4 +1,4 @@
-import { Fragment, memo, useEffect, useMemo, useState } from 'react';
+import { Fragment, memo, useCallback, useEffect, useMemo, useState } from 'react';
 import { isEqual } from 'lodash';
 import { defineMessages, useIntl } from '../i18n';
 import GooseMessage from './GooseMessage';
@@ -11,12 +11,15 @@ import {
   CreditsExhaustedNotification,
   getCreditsExhaustedNotification,
 } from './context_management/CreditsExhaustedNotification';
-import type {
-  ImageData,
-  Message,
-  NotificationEvent,
-  SystemNotificationContent,
+import {
+  getTextAndImageContent,
+  imageDataFromMessage,
+  type ImageData,
+  type Message,
+  type NotificationEvent,
+  type SystemNotificationContent,
 } from '../types/message';
+import { findRetryableUserMessage, getMessageErrorText } from '../utils/messageError';
 import { getModelDisplayName } from './settings/models/predefinedModelsUtils';
 import {
   deriveMessageRowContexts,
@@ -78,7 +81,8 @@ interface MessageRowProps {
     newContent: string,
     editType: 'fork' | 'edit',
     retainedImages: ImageData[]
-  ) => void;
+  ) => void | Promise<void>;
+  retryMessage?: Message;
   rowContext: MessageRowContext;
   sessionId: string;
   submitElicitationResponse?: (
@@ -96,12 +100,23 @@ function MessageRowComponent({
   message,
   modelChangeMessage,
   onMessageUpdate,
+  retryMessage,
   rowContext,
   sessionId,
   submitElicitationResponse,
   toolNotifications,
 }: MessageRowProps) {
   const notification = getSystemNotification(message);
+  const retry = useCallback(() => {
+    if (!retryMessage?.id || !onMessageUpdate) return;
+    return onMessageUpdate(
+      retryMessage.id,
+      getTextAndImageContent(retryMessage).textContent,
+      'edit',
+      imageDataFromMessage(retryMessage)
+    );
+  }, [onMessageUpdate, retryMessage]);
+  const handleRetry = retryMessage?.id && onMessageUpdate ? retry : undefined;
 
   if (notification) {
     return (
@@ -144,6 +159,7 @@ function MessageRowComponent({
             toolConfirmationShownInline={rowContext.toolConfirmationShownInline}
             append={append}
             isStreaming={isStreaming}
+            onRetry={handleRetry}
             submitElicitationResponse={submitElicitationResponse}
           />
         )}
@@ -166,7 +182,7 @@ interface MessageListProps {
     newContent: string,
     editType: 'fork' | 'edit',
     retainedImages: ImageData[]
-  ) => void;
+  ) => void | Promise<void>;
   onRenderingComplete?: () => void;
   submitElicitationResponse?: (
     elicitationId: string,
@@ -194,6 +210,7 @@ export default function MessageList({
       ),
     [messages]
   );
+  const lastVisibleIndex = visibleMessages[visibleMessages.length - 1]?.index;
   const hiddenMessageCount = showAllMessages
     ? 0
     : Math.max(0, visibleMessages.length - MESSAGE_DISPLAY_LIMIT);
@@ -277,6 +294,13 @@ export default function MessageList({
     const toolNotifications = rowContext.toolStates.map((toolState) =>
       toolCallNotifications.get(toolState.requestId)
     );
+    const retryMessage =
+      index === lastVisibleIndex &&
+      !isStreamingMessage &&
+      onMessageUpdate &&
+      getMessageErrorText(message)
+        ? findRetryableUserMessage(messages, index)
+        : undefined;
 
     messageRows.push(
       <MessageRow
@@ -293,6 +317,7 @@ export default function MessageList({
         message={message}
         modelChangeMessage={modelChangeMessage}
         onMessageUpdate={onMessageUpdate}
+        retryMessage={retryMessage}
         rowContext={rowContext}
         sessionId={sessionId}
         submitElicitationResponse={submitElicitationResponse}

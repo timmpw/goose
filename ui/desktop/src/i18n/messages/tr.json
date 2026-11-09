@@ -2018,6 +2018,42 @@
   "messageCopyLink.copy": {
     "defaultMessage": "Kopyala"
   },
+  "messageErrorBanner.code": {
+    "defaultMessage": "Kod: {code}"
+  },
+  "messageErrorBanner.copied": {
+    "defaultMessage": "Kopyalandı!"
+  },
+  "messageErrorBanner.copy": {
+    "defaultMessage": "Ayrıntıları kopyala"
+  },
+  "messageErrorBanner.requestId": {
+    "defaultMessage": "İstek kimliği: {requestId}"
+  },
+  "messageErrorBanner.retry": {
+    "defaultMessage": "İsteği yeniden dene"
+  },
+  "messageErrorBanner.titleAuthentication": {
+    "defaultMessage": "Kimlik doğrulama başarısız"
+  },
+  "messageErrorBanner.titleContextLength": {
+    "defaultMessage": "Konuşma model için çok uzun"
+  },
+  "messageErrorBanner.titleGeneric": {
+    "defaultMessage": "İstek başarısız oldu"
+  },
+  "messageErrorBanner.titleNetwork": {
+    "defaultMessage": "Ağ hatası"
+  },
+  "messageErrorBanner.titleRateLimit": {
+    "defaultMessage": "İstek sınırına ulaşıldı"
+  },
+  "messageErrorBanner.titleRequestFailed": {
+    "defaultMessage": "Sağlayıcı isteği reddetti"
+  },
+  "messageErrorBanner.titleServer": {
+    "defaultMessage": "Sağlayıcı sunucu hatası"
+  },
   "messageList.hiddenMessages": {
     "defaultMessage": "{count, plural, other {# mesaj gizlendi}}"
   },

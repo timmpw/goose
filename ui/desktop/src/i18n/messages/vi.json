@@ -2018,6 +2018,42 @@
   "messageCopyLink.copy": {
     "defaultMessage": "Sao chép"
   },
+  "messageErrorBanner.code": {
+    "defaultMessage": "Mã: {code}"
+  },
+  "messageErrorBanner.copied": {
+    "defaultMessage": "Đã sao chép!"
+  },
+  "messageErrorBanner.copy": {
+    "defaultMessage": "Sao chép chi tiết"
+  },
+  "messageErrorBanner.requestId": {
+    "defaultMessage": "ID yêu cầu: {requestId}"
+  },
+  "messageErrorBanner.retry": {
+    "defaultMessage": "Thử lại yêu cầu"
+  },
+  "messageErrorBanner.titleAuthentication": {
+    "defaultMessage": "Xác thực thất bại"
+  },
+  "messageErrorBanner.titleContextLength": {
+    "defaultMessage": "Cuộc trò chuyện quá dài đối với mô hình"
+  },
+  "messageErrorBanner.titleGeneric": {
+    "defaultMessage": "Yêu cầu thất bại"
+  },
+  "messageErrorBanner.titleNetwork": {
+    "defaultMessage": "Lỗi mạng"
+  },
+  "messageErrorBanner.titleRateLimit": {
+    "defaultMessage": "Đã đạt giới hạn yêu cầu"
+  },
+  "messageErrorBanner.titleRequestFailed": {
+    "defaultMessage": "Nhà cung cấp đã từ chối yêu cầu"
+  },
+  "messageErrorBanner.titleServer": {
+    "defaultMessage": "Lỗi máy chủ của nhà cung cấp"
+  },
   "messageList.hiddenMessages": {
     "defaultMessage": "{count, plural, other {# tin nhắn đã bị ẩn}}"
   },

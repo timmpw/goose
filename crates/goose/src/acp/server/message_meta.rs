@@ -1,5 +1,5 @@
-use crate::conversation::message::{Message, MessageContent};
-use agent_client_protocol::schema::v1::{ContentBlock, ContentChunk, MessageId, Meta};
+use crate::conversation::message::{ErrorContent, Message, MessageContent};
+use agent_client_protocol::schema::v1::{ContentBlock, ContentChunk, MessageId, Meta, TextContent};
 use serde::Serialize;
 
 const OUTPUT_TOKEN_LIMIT_TEXT: &str =
@@ -102,6 +102,24 @@ pub(super) fn content_chunk_for_message(message: &Message, content: ContentBlock
     chunk
 }
 
+// Marks a failed turn's text so clients can render it as an error with a retry action
+// instead of as an ordinary assistant reply.
+pub(super) fn error_chunk_for_message(message: &Message, error: &ErrorContent) -> ContentChunk {
+    let mut chunk = content_chunk_for_message(
+        message,
+        ContentBlock::Text(TextContent::new(error.message.clone())),
+    );
+    if let Some(serde_json::Value::Object(goose)) =
+        chunk.meta.as_mut().and_then(|meta| meta.get_mut("goose"))
+    {
+        goose.insert(
+            "error".to_string(),
+            serde_json::json!({ "kind": error.kind }),
+        );
+    }
+    chunk
+}
+
 pub(super) fn populate_output_token_limit_content(message: &mut Message) {
     if message.role != rmcp::model::Role::Assistant
         || !message.content.is_empty()
@@ -130,6 +148,34 @@ mod tests {
     use crate::conversation::message::InferenceMetadata;
     use agent_client_protocol::schema::v1::TextContent;
     use rmcp::model::Role;
+
+    #[test]
+    fn error_chunk_marks_meta_with_error_kind() {
+        let message = Message::new(Role::Assistant, 1_700_000_000, vec![])
+            .with_id("msg_err")
+            .with_error(
+                crate::conversation::message::MessageErrorKind::Other,
+                "Ran into this error: boom.",
+            );
+        let MessageContent::Error(error) = &message.content[0] else {
+            panic!("expected error content");
+        };
+
+        let chunk = error_chunk_for_message(&message, error);
+
+        assert_eq!(
+            chunk.meta.as_ref().and_then(|meta| meta.get("goose")),
+            Some(&serde_json::json!({
+                "created": 1_700_000_000,
+                "messageId": "msg_err",
+                "error": { "kind": "other" },
+            })),
+        );
+        assert_eq!(
+            chunk.content,
+            ContentBlock::Text(TextContent::new("Ran into this error: boom."))
+        );
+    }
 
     #[test]
     fn message_meta_serializes_message_fields() {

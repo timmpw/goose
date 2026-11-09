@@ -2018,6 +2018,42 @@
   "messageCopyLink.copy": {
     "defaultMessage": "복사"
   },
+  "messageErrorBanner.code": {
+    "defaultMessage": "코드: {code}"
+  },
+  "messageErrorBanner.copied": {
+    "defaultMessage": "복사됨!"
+  },
+  "messageErrorBanner.copy": {
+    "defaultMessage": "세부 정보 복사"
+  },
+  "messageErrorBanner.requestId": {
+    "defaultMessage": "요청 ID: {requestId}"
+  },
+  "messageErrorBanner.retry": {
+    "defaultMessage": "요청 다시 시도"
+  },
+  "messageErrorBanner.titleAuthentication": {
+    "defaultMessage": "인증에 실패했습니다"
+  },
+  "messageErrorBanner.titleContextLength": {
+    "defaultMessage": "대화가 모델에 비해 너무 깁니다"
+  },
+  "messageErrorBanner.titleGeneric": {
+    "defaultMessage": "요청 실패"
+  },
+  "messageErrorBanner.titleNetwork": {
+    "defaultMessage": "네트워크 오류"
+  },
+  "messageErrorBanner.titleRateLimit": {
+    "defaultMessage": "요청 한도에 도달했습니다"
+  },
+  "messageErrorBanner.titleRequestFailed": {
+    "defaultMessage": "제공자가 요청을 거부했습니다"
+  },
+  "messageErrorBanner.titleServer": {
+    "defaultMessage": "제공자 서버 오류"
+  },
   "messageList.hiddenMessages": {
     "defaultMessage": "{count, plural, other {#개의 메시지를 숨겼습니다}}"
   },

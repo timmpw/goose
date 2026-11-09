@@ -2018,6 +2018,42 @@
   "messageCopyLink.copy": {
     "defaultMessage": "प्रतिलिपि"
   },
+  "messageErrorBanner.code": {
+    "defaultMessage": "कोड: {code}"
+  },
+  "messageErrorBanner.copied": {
+    "defaultMessage": "कॉपी हो गया!"
+  },
+  "messageErrorBanner.copy": {
+    "defaultMessage": "विवरण कॉपी करें"
+  },
+  "messageErrorBanner.requestId": {
+    "defaultMessage": "अनुरोध ID: {requestId}"
+  },
+  "messageErrorBanner.retry": {
+    "defaultMessage": "अनुरोध फिर से भेजें"
+  },
+  "messageErrorBanner.titleAuthentication": {
+    "defaultMessage": "प्रमाणीकरण विफल"
+  },
+  "messageErrorBanner.titleContextLength": {
+    "defaultMessage": "बातचीत मॉडल के लिए बहुत लंबी है"
+  },
+  "messageErrorBanner.titleGeneric": {
+    "defaultMessage": "अनुरोध विफल"
+  },
+  "messageErrorBanner.titleNetwork": {
+    "defaultMessage": "नेटवर्क त्रुटि"
+  },
+  "messageErrorBanner.titleRateLimit": {
+    "defaultMessage": "अनुरोध सीमा पूरी हो गई"
+  },
+  "messageErrorBanner.titleRequestFailed": {
+    "defaultMessage": "प्रदाता ने अनुरोध अस्वीकार कर दिया"
+  },
+  "messageErrorBanner.titleServer": {
+    "defaultMessage": "प्रदाता सर्वर त्रुटि"
+  },
   "messageList.hiddenMessages": {
     "defaultMessage": "{count, plural, one {# संदेश छिपाया गया} other {# संदेश छिपाए गए}}"
   },

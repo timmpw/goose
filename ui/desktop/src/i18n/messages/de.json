@@ -2018,6 +2018,42 @@
   "messageCopyLink.copy": {
     "defaultMessage": "Kopieren"
   },
+  "messageErrorBanner.code": {
+    "defaultMessage": "Code: {code}"
+  },
+  "messageErrorBanner.copied": {
+    "defaultMessage": "Kopiert!"
+  },
+  "messageErrorBanner.copy": {
+    "defaultMessage": "Details kopieren"
+  },
+  "messageErrorBanner.requestId": {
+    "defaultMessage": "Anfrage-ID: {requestId}"
+  },
+  "messageErrorBanner.retry": {
+    "defaultMessage": "Anfrage wiederholen"
+  },
+  "messageErrorBanner.titleAuthentication": {
+    "defaultMessage": "Authentifizierung fehlgeschlagen"
+  },
+  "messageErrorBanner.titleContextLength": {
+    "defaultMessage": "Die Unterhaltung ist zu lang für das Modell"
+  },
+  "messageErrorBanner.titleGeneric": {
+    "defaultMessage": "Anfrage fehlgeschlagen"
+  },
+  "messageErrorBanner.titleNetwork": {
+    "defaultMessage": "Netzwerkfehler"
+  },
+  "messageErrorBanner.titleRateLimit": {
+    "defaultMessage": "Ratenlimit erreicht"
+  },
+  "messageErrorBanner.titleRequestFailed": {
+    "defaultMessage": "Der Anbieter hat die Anfrage abgelehnt"
+  },
+  "messageErrorBanner.titleServer": {
+    "defaultMessage": "Serverfehler des Anbieters"
+  },
   "messageList.hiddenMessages": {
     "defaultMessage": "{count, plural, one {# Nachricht ausgeblendet} other {# Nachrichten ausgeblendet}}"
   },

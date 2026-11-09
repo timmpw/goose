@@ -2018,6 +2018,42 @@
   "messageCopyLink.copy": {
     "defaultMessage": "Copy"
   },
+  "messageErrorBanner.code": {
+    "defaultMessage": "Code: {code}"
+  },
+  "messageErrorBanner.copied": {
+    "defaultMessage": "Copied!"
+  },
+  "messageErrorBanner.copy": {
+    "defaultMessage": "Copy details"
+  },
+  "messageErrorBanner.requestId": {
+    "defaultMessage": "Request ID: {requestId}"
+  },
+  "messageErrorBanner.retry": {
+    "defaultMessage": "Retry request"
+  },
+  "messageErrorBanner.titleAuthentication": {
+    "defaultMessage": "Authentication failed"
+  },
+  "messageErrorBanner.titleContextLength": {
+    "defaultMessage": "The conversation is too long for the model"
+  },
+  "messageErrorBanner.titleGeneric": {
+    "defaultMessage": "Request failed"
+  },
+  "messageErrorBanner.titleNetwork": {
+    "defaultMessage": "Network error"
+  },
+  "messageErrorBanner.titleRateLimit": {
+    "defaultMessage": "Rate limit reached"
+  },
+  "messageErrorBanner.titleRequestFailed": {
+    "defaultMessage": "The provider rejected the request"
+  },
+  "messageErrorBanner.titleServer": {
+    "defaultMessage": "Provider server error"
+  },
   "messageList.hiddenMessages": {
     "defaultMessage": "{count,plural,one{# message hidden} other{# messages hidden}}"
   },

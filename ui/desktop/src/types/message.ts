@@ -178,8 +178,16 @@ export type MessageUsage = {
   isCompaction?: boolean;
 };
 
+export type MessageErrorKind =
+  'authentication' | 'contextLengthExceeded' | 'creditsExhausted' | 'other';
+
+export type MessageError = {
+  kind: MessageErrorKind;
+};
+
 export type MessageMetadata = {
   agentVisible: boolean;
+  error?: MessageError;
   fallbackContent?: boolean;
   inference?: InferenceMetadata | null;
   operationLogs?: string[];

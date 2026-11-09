@@ -2018,6 +2018,42 @@
   "messageCopyLink.copy": {
     "defaultMessage": "Salin"
   },
+  "messageErrorBanner.code": {
+    "defaultMessage": "Kode: {code}"
+  },
+  "messageErrorBanner.copied": {
+    "defaultMessage": "Tersalin!"
+  },
+  "messageErrorBanner.copy": {
+    "defaultMessage": "Salin detail"
+  },
+  "messageErrorBanner.requestId": {
+    "defaultMessage": "ID permintaan: {requestId}"
+  },
+  "messageErrorBanner.retry": {
+    "defaultMessage": "Ulangi permintaan"
+  },
+  "messageErrorBanner.titleAuthentication": {
+    "defaultMessage": "Autentikasi gagal"
+  },
+  "messageErrorBanner.titleContextLength": {
+    "defaultMessage": "Percakapan terlalu panjang untuk model"
+  },
+  "messageErrorBanner.titleGeneric": {
+    "defaultMessage": "Permintaan gagal"
+  },
+  "messageErrorBanner.titleNetwork": {
+    "defaultMessage": "Kesalahan jaringan"
+  },
+  "messageErrorBanner.titleRateLimit": {
+    "defaultMessage": "Batas permintaan tercapai"
+  },
+  "messageErrorBanner.titleRequestFailed": {
+    "defaultMessage": "Penyedia menolak permintaan"
+  },
+  "messageErrorBanner.titleServer": {
+    "defaultMessage": "Kesalahan server penyedia"
+  },
   "messageList.hiddenMessages": {
     "defaultMessage": "{count, plural, other {# pesan disembunyikan}}"
   },

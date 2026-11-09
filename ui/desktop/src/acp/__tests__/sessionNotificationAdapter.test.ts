@@ -172,6 +172,23 @@ describe('createAcpSessionNotificationAdapter', () => {
         expect(firstContent(messages[0])).toMatchObject({ type: 'text', text: 'Hell' });
       });
 
+      it('marks a message as an error when the chunk carries goose error meta', () => {
+        const adapter = createAcpSessionNotificationAdapter();
+
+        const messages = expectOnlyMessagesChange(
+          adapter.apply(
+            acpUpdate({
+              sessionUpdate: 'agent_message_chunk',
+              content: { type: 'text', text: 'Ran into this error: boom.' },
+              _meta: { goose: { messageId: 'msg-err', error: { kind: 'authentication' } } },
+            } as SessionNotification['update'])
+          )
+        );
+
+        expect(messages).toHaveLength(1);
+        expect(messages[0].metadata.error).toEqual({ kind: 'authentication' });
+      });
+
       it('keeps streamed content visible when an output-limit fallback chunk arrives later', () => {
         const adapter = createAcpSessionNotificationAdapter();
 

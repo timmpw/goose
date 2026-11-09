@@ -2018,6 +2018,42 @@
   "messageCopyLink.copy": {
     "defaultMessage": "Copiar"
   },
+  "messageErrorBanner.code": {
+    "defaultMessage": "Código: {code}"
+  },
+  "messageErrorBanner.copied": {
+    "defaultMessage": "Copiado!"
+  },
+  "messageErrorBanner.copy": {
+    "defaultMessage": "Copiar detalhes"
+  },
+  "messageErrorBanner.requestId": {
+    "defaultMessage": "ID da solicitação: {requestId}"
+  },
+  "messageErrorBanner.retry": {
+    "defaultMessage": "Repetir solicitação"
+  },
+  "messageErrorBanner.titleAuthentication": {
+    "defaultMessage": "Falha na autenticação"
+  },
+  "messageErrorBanner.titleContextLength": {
+    "defaultMessage": "A conversa é longa demais para o modelo"
+  },
+  "messageErrorBanner.titleGeneric": {
+    "defaultMessage": "A solicitação falhou"
+  },
+  "messageErrorBanner.titleNetwork": {
+    "defaultMessage": "Erro de rede"
+  },
+  "messageErrorBanner.titleRateLimit": {
+    "defaultMessage": "Limite de solicitações atingido"
+  },
+  "messageErrorBanner.titleRequestFailed": {
+    "defaultMessage": "O provedor rejeitou a solicitação"
+  },
+  "messageErrorBanner.titleServer": {
+    "defaultMessage": "Erro no servidor do provedor"
+  },
   "messageList.hiddenMessages": {
     "defaultMessage": "{count, plural, one {# mensagem oculta} other {# mensagens ocultas}}"
   },
