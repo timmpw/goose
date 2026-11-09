@@ -19,10 +19,15 @@ APP="${APP_DIR}/${BUNDLE_NAME}.app"
 VERSION="$(node -p "require('./package.json').version")"
 DMG="out/make/${BUNDLE_NAME}-${VERSION}-${arch}.dmg"
 
-codesign -dv "$APP" 2>&1 | grep -q "Authority=Developer ID Application" || {
+# codesign -dv prints "TeamIdentifier=not set" for ad-hoc signatures and an
+# actual team ID for real ones; newer codesign versions omit the Authority=
+# lines, so keying on TeamIdentifier works across macOS versions.
+TEAM="$(codesign -dv "$APP" 2>&1 | grep -m1 '^TeamIdentifier=')"
+if [ -z "$TEAM" ] || [ "$TEAM" = "TeamIdentifier=not set" ]; then
   echo "App is not Developer ID signed; build with APPLE_TEAM_ID set" >&2
   exit 1
-}
+fi
+echo "Detected $TEAM"
 
 echo "==> Notarizing app"
 NOTARIZE_ZIP="out/${BUNDLE_NAME}-notarize-${arch}.zip"
