@@ -1994,6 +1994,7 @@ const validSettingKeys: Set<string> = new Set([
   'seenAnnouncementIds',
   'disableAutoDownload',
   'recentModels',
+  'userModel',
   'showThinking',
 ]);
 

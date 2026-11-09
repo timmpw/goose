@@ -9,6 +9,7 @@ import {
   acpSetSessionProviderModel,
   type AppliedSessionProviderModel,
 } from '../acp/providers';
+import { rememberUserModel, resolveUserModel } from '../acp/userModel';
 import { errorMessage } from '../utils/conversionUtils';
 import {
   getModelDisplayName,
@@ -113,10 +114,9 @@ export const ModelAndProviderProvider: React.FC<ModelAndProviderProviderProps> =
           await acpSaveDefaults(providerName, modelName);
         }
 
-        if (!sessionId) {
-          setCurrentProvider(providerName);
-          setCurrentModel(modelName);
-        }
+        await rememberUserModel(providerName, modelName);
+        setCurrentProvider(providerName);
+        setCurrentModel(modelName);
 
         toastSuccess({
           title: intl.formatMessage(i18n.modelChangedTitle),
@@ -217,7 +217,8 @@ export const ModelAndProviderProvider: React.FC<ModelAndProviderProviderProps> =
 
   const refreshCurrentModelAndProvider = useCallback(async () => {
     try {
-      const { model, provider } = await getCurrentModelAndProvider();
+      const { model, provider } =
+        (await resolveUserModel()) ?? (await getCurrentModelAndProvider());
       setCurrentModel(model);
       setCurrentProvider(provider);
     } catch (_error) {

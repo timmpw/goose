@@ -57,6 +57,7 @@ export interface Settings {
   showPricing: boolean;
   seenAnnouncementIds: string[];
   recentModels: RecentModel[];
+  userModel: RecentModel | null;
   showThinking: ShowThinking;
 }
 
@@ -99,6 +100,7 @@ export const defaultSettings: Settings = {
   showPricing: true,
   seenAnnouncementIds: [],
   recentModels: [],
+  userModel: null,
   showThinking: 'collapsed',
 };
 

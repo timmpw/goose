@@ -33,6 +33,7 @@ import {
   sessionInfoToSession,
   type AcpRecipeOptions,
 } from './sessions';
+import { applyUserModel } from './userModel';
 
 export interface AcpLoadSessionOptions {
   onSessionLoaded?: () => void;
@@ -121,7 +122,9 @@ async function createSession(
   recipe?: AcpRecipeOptions
 ): Promise<Session> {
   const { sessionId, sessionInfo, meta } = await acpNewSession(cwd, gooseExtensions, recipe);
-  const session = sessionInfoToSession(sessionInfo, meta);
+  const createdSession = sessionInfoToSession(sessionInfo, meta);
+  const hasRecipe = Boolean(recipe?.recipeId || recipe?.recipeDeeplink);
+  const session = hasRecipe ? createdSession : await applyUserModel(createdSession);
 
   showExtensionLoadResults(meta.extensionResults);
   window.dispatchEvent(
