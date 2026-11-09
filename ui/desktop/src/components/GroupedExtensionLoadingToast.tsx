@@ -5,7 +5,7 @@ import { Button } from './ui/button';
 import { startNewSession } from '../sessions';
 import { useNavigation } from '../hooks/useNavigation';
 import { formatExtensionErrorMessage } from '../utils/extensionErrorUtils';
-import { getInitialWorkingDir } from '../utils/workingDir';
+import { getEffectiveWorkingDir } from '../utils/workingDir';
 import { formatExtensionName } from './settings/extensions/subcomponents/ExtensionList';
 import { defineMessages, useIntl } from '../i18n';
 
@@ -164,12 +164,12 @@ export function GroupedExtensionLoadingToast({
                             {ext.recoverHints && setView && (
                               <Button
                                 size="sm"
-                                onClick={(e) => {
+                                onClick={async (e) => {
                                   e.stopPropagation();
                                   startNewSession(
                                     ext.recoverHints,
                                     setView,
-                                    getInitialWorkingDir()
+                                    await getEffectiveWorkingDir()
                                   );
                                 }}
                               >

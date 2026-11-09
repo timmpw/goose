@@ -55,8 +55,10 @@ vi.mock('../sessions', () => ({ createSession: vi.fn() }));
 
 vi.mock('../utils/workingDir', () => ({
   getInitialWorkingDir: () => '/tmp/goose',
+  getDefaultWorkingDirSync: (inheritedWorkingDir?: string) => inheritedWorkingDir ?? '/tmp/goose',
   getEffectiveWorkingDir: (inheritedWorkingDir?: string) =>
     Promise.resolve(inheritedWorkingDir ?? '/tmp/goose'),
+  rememberWorkingDir: () => undefined,
 }));
 
 vi.mock('../utils/nextChatExtensions', () => ({

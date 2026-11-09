@@ -1,3 +1,20 @@
+const isExternalBackendWindow = (): boolean =>
+  window.appConfig?.get('GOOSE_EXTERNAL_BACKEND') === true;
+
+// Last known "folder the user last worked in" for this window, so a new chat can
+// render it immediately instead of flashing the window's start folder while the
+// recent-directories lookup is in flight.
+let cachedLastWorkedDir: string | undefined;
+
+/**
+ * Synchronous best guess for a new chat's folder; getEffectiveWorkingDir is the
+ * authoritative (async) answer.
+ */
+export const getDefaultWorkingDirSync = (inheritedWorkingDir?: string): string =>
+  inheritedWorkingDir ??
+  (isExternalBackendWindow() ? undefined : cachedLastWorkedDir) ??
+  getInitialWorkingDir();
+
 export const getInitialWorkingDir = (): string => {
   // Fall back to initial config from app startup
   return (window.appConfig?.get('GOOSE_WORKING_DIR') as string) ?? '';
@@ -23,7 +40,9 @@ export const getEffectiveWorkingDir = async (inheritedWorkingDir?: string): Prom
   const boundUrl = window.appConfig?.get('GOOSE_EXTERNAL_BACKEND_URL') as string | undefined;
   const source = window.appConfig?.get('GOOSE_EXTERNAL_BACKEND_SOURCE') as string | undefined;
   if (window.appConfig?.get('GOOSE_EXTERNAL_BACKEND') !== true || !boundUrl) {
-    return initial;
+    // Local backend: without an explicit directory, a new chat opens in the
+    // folder the user last worked in, not the one this window started with.
+    return inheritedWorkingDir ?? (await getLastWorkedDir()) ?? initial;
   }
   try {
     const external = await window.electron.getSetting('externalGoosed');
@@ -48,6 +67,29 @@ export const getEffectiveWorkingDir = async (inheritedWorkingDir?: string): Prom
     // Settings unavailable; fall back to the remembered directory.
   }
   return initial;
+};
+
+/** Most recent entry of the recent-directories list, if any. */
+const getLastWorkedDir = async (): Promise<string | undefined> => {
+  try {
+    const dirs = await window.electron?.listRecentDirs?.();
+    cachedLastWorkedDir = dirs?.[0] || undefined;
+    return cachedLastWorkedDir;
+  } catch {
+    return undefined;
+  }
+};
+
+/**
+ * Record a directory the user is working in so the next new chat defaults to it.
+ * Windows bound to an external backend work in remote paths, which never go into
+ * the local list (a remote /tmp or /home/... may exist locally too). Repeats of
+ * the current first entry are cheap: the main process returns before rewriting.
+ */
+export const rememberWorkingDir = (dir: string | undefined): void => {
+  if (!dir || isExternalBackendWindow()) return;
+  cachedLastWorkedDir = dir;
+  void window.electron?.addRecentDir?.(dir)?.catch(() => undefined);
 };
 
 const normalizeUrl = (url: string): string => url.trim().replace(/\/+$/, '');

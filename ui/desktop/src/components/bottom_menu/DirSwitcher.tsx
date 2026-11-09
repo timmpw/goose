@@ -12,6 +12,7 @@ import {
 } from '../ui/dropdown-menu';
 import { toast } from 'react-toastify';
 import { defineMessages, useIntl } from '../../i18n';
+import { rememberWorkingDir } from '../../utils/workingDir';
 
 const i18n = defineMessages({
   failedToUpdateWorkingDir: {
@@ -138,7 +139,7 @@ export const DirSwitcher: React.FC<DirSwitcherProps> = ({
 
     // Only record the directory after the backend confirmed the change, so a
     // rejected path does not pollute the recent-directories list.
-    window.electron.addRecentDir(newDir);
+    rememberWorkingDir(newDir);
     setRecentDirs((previous) => [newDir, ...previous.filter((dir) => dir !== newDir)].slice(0, 10));
   };
 

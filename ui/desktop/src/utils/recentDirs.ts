@@ -50,6 +50,15 @@ export function loadRecentDirs(): string[] {
   return [];
 }
 
+function readStoredDirs(): string[] {
+  try {
+    const recentDirs: RecentDirs = JSON.parse(fs.readFileSync(RECENT_DIRS_FILE, 'utf8'));
+    return Array.isArray(recentDirs.dirs) ? recentDirs.dirs : [];
+  } catch {
+    return [];
+  }
+}
+
 export function addRecentDir(dir: string): void {
   try {
     // Validate that the path is actually a directory before adding it
@@ -68,6 +77,12 @@ export function addRecentDir(dir: string): void {
       }
     } catch {
       console.warn(`Cannot add recent directory: path does not exist or cannot be accessed`);
+      return;
+    }
+
+    // Already the most recent entry (the common case: called on every chat
+    // message): skip re-validating every listed dir and rewriting the file.
+    if (readStoredDirs()[0] === dir) {
       return;
     }
 
