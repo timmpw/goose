@@ -4277,6 +4277,9 @@
   "settingsView.tabPrompts": {
     "defaultMessage": "Prompts"
   },
+  "settingsView.tabSessions": {
+    "defaultMessage": "Sitzungsverlauf"
+  },
   "settingsView.title": {
     "defaultMessage": "Einstellungen"
   },

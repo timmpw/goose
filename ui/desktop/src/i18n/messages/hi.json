@@ -4277,6 +4277,9 @@
   "settingsView.tabPrompts": {
     "defaultMessage": "संकेत"
   },
+  "settingsView.tabSessions": {
+    "defaultMessage": "सत्र इतिहास"
+  },
   "settingsView.title": {
     "defaultMessage": "Settings"
   },

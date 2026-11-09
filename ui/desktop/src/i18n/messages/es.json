@@ -4277,6 +4277,9 @@
   "settingsView.tabPrompts": {
     "defaultMessage": "Prompts"
   },
+  "settingsView.tabSessions": {
+    "defaultMessage": "Historial de sesiones"
+  },
   "settingsView.title": {
     "defaultMessage": "Ajustes"
   },

@@ -1,6 +1,14 @@
 import { useEffect, useState, useRef, type RefObject } from 'react';
 import { IpcRendererEvent } from 'electron';
-import { HashRouter, Routes, Route, useNavigate, useLocation, useSearchParams } from 'react-router';
+import {
+  HashRouter,
+  Navigate,
+  Routes,
+  Route,
+  useNavigate,
+  useLocation,
+  useSearchParams,
+} from 'react-router';
 import { ErrorUI } from './components/ErrorBoundary';
 import { ExtensionInstallModal } from './components/ExtensionInstallModal';
 import RecipeParamsModalContainer from './components/RecipeParamsModalContainer';
@@ -28,7 +36,6 @@ interface PairRouteState {
   noAutoSubmit?: boolean;
 }
 import SettingsView, { SettingsViewOptions } from './components/settings/SettingsView';
-import SessionsView from './components/sessions/SessionsView';
 import SchedulesView from './components/schedule/SchedulesView';
 import ProviderSettings from './components/settings/providers/ProviderSettingsPage';
 import { AppLayout } from './components/Layout/AppLayout';
@@ -227,10 +234,6 @@ const SettingsRoute = () => {
   };
 
   return <SettingsView onClose={closeSettings} setView={setView} viewOptions={viewOptions} />;
-};
-
-const SessionsRoute = () => {
-  return <SessionsView />;
 };
 
 const SchedulesRoute = () => {
@@ -694,7 +697,10 @@ export function AppInner() {
                 }
               />
               <Route path="apps" element={<AppsView />} />
-              <Route path="sessions" element={<SessionsRoute />} />
+              <Route
+                path="sessions"
+                element={<Navigate to="/settings?section=sessions" replace />}
+              />
               <Route path="schedules" element={<SchedulesRoute />} />
               <Route path="recipes" element={<RecipesRoute />} />
               <Route path="recipes/library" element={<RecipeBookView kind="recipe" />} />

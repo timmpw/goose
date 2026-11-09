@@ -4277,6 +4277,9 @@
   "settingsView.tabPrompts": {
     "defaultMessage": "提示"
   },
+  "settingsView.tabSessions": {
+    "defaultMessage": "工作階段紀錄"
+  },
   "settingsView.title": {
     "defaultMessage": "設定"
   },

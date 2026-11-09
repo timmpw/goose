@@ -3977,6 +3977,9 @@
   "settingsView.tabPrompts": {
     "defaultMessage": "Промпты"
   },
+  "settingsView.tabSessions": {
+    "defaultMessage": "История сеансов"
+  },
   "settingsView.title": {
     "defaultMessage": "Настройки"
   },

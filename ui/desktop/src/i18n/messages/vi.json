@@ -4277,6 +4277,9 @@
   "settingsView.tabPrompts": {
     "defaultMessage": "Lời nhắc"
   },
+  "settingsView.tabSessions": {
+    "defaultMessage": "Lịch sử phiên"
+  },
   "settingsView.title": {
     "defaultMessage": "Cài đặt"
   },

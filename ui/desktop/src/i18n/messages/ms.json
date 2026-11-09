@@ -4277,6 +4277,9 @@
   "settingsView.tabPrompts": {
     "defaultMessage": "Gesaan"
   },
+  "settingsView.tabSessions": {
+    "defaultMessage": "Sejarah Sesi"
+  },
   "settingsView.title": {
     "defaultMessage": "Tetapan"
   },
