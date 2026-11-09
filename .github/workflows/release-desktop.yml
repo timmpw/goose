@@ -467,6 +467,24 @@ jobs:
           mkdir -p ./ui/desktop/src/bin
           cp -f ./target/x86_64-pc-windows-msvc/release/goose.exe ./ui/desktop/src/bin/
 
+          # goose.exe links the MSVC CRT dynamically. Machines without the VC++
+          # Redistributable fail to start it with 0xC0000135 (DLL not found), so
+          # ship the runtime DLLs it imports next to it (app-local deployment).
+          vc_dlls=$(grep -a -o -i -E '(vcruntime|msvcp|vcomp|concrt)[0-9]+(_[0-9a-z]+)*\.dll' ./ui/desktop/src/bin/goose.exe | tr 'A-Z' 'a-z' | sort -u)
+          if [ -z "$vc_dlls" ]; then
+            echo "::error title=VC++ runtime::goose.exe imports no VC++ runtime DLLs; check the detection"
+            exit 1
+          fi
+          for dll in $vc_dlls; do
+            src="/c/Windows/System32/$dll"
+            if [ ! -f "$src" ]; then
+              echo "::error title=VC++ runtime::$dll is imported by goose.exe but missing on the runner"
+              exit 1
+            fi
+            cp -f "$src" ./ui/desktop/src/bin/
+            echo "Bundled $dll"
+          done
+
           if [ -d "./ui/desktop/src/platform/windows/bin" ]; then
             for file in ./ui/desktop/src/platform/windows/bin/*.{exe,dll,cmd}; do
               filename="$(basename "$file")"
