@@ -164,6 +164,7 @@ vi.mock('react-router', () => ({
   useLocation: () => mockLocation,
   useSearchParams: () => [mockSearchParams, mockSetSearchParams],
   Outlet: () => null,
+  Navigate: () => null,
 }));
 
 // Mock electron API
