@@ -2,7 +2,7 @@ import React, { useCallback } from 'react';
 import SessionListView from './SessionListView';
 import { useNavigation } from '../../hooks/useNavigation';
 
-const SessionsView: React.FC = () => {
+const SessionsView: React.FC<{ embedded?: boolean }> = ({ embedded = false }) => {
   const setView = useNavigation();
 
   const handleSelectSession = useCallback(
@@ -15,7 +15,7 @@ const SessionsView: React.FC = () => {
     [setView]
   );
 
-  return <SessionListView onSelectSession={handleSelectSession} />;
+  return <SessionListView onSelectSession={handleSelectSession} embedded={embedded} />;
 };
 
 export default SessionsView;

@@ -7,6 +7,7 @@ import AgentLoopSettings from './AgentLoopSettings';
 import AppSettingsSection from './app/AppSettingsSection';
 import ConfigSettings from './config/ConfigSettings';
 import PromptsSettingsSection from './PromptsSettingsSection';
+import SessionsView from '../sessions/SessionsView';
 import type { ExtensionConfig } from '../../types/extensions';
 import {
   Bot,
@@ -17,6 +18,7 @@ import {
   Keyboard,
   HardDrive,
   KeyRound,
+  History,
 } from 'lucide-react';
 import { useState, useEffect, useRef } from 'react';
 import ChatSettingsSection from './chat/ChatSettingsSection';
@@ -67,6 +69,10 @@ const i18n = defineMessages({
     id: 'settingsView.tabApp',
     defaultMessage: 'App',
   },
+  tabSessions: {
+    id: 'settingsView.tabSessions',
+    defaultMessage: 'Session History',
+  },
 });
 
 const settingsTabClass =
@@ -102,6 +108,7 @@ export default function SettingsView({
     keyboard: intl.formatMessage(i18n.tabKeyboard),
     auth: intl.formatMessage(i18n.tabAuth),
     app: intl.formatMessage(i18n.tabApp),
+    sessions: intl.formatMessage(i18n.tabSessions),
   }[activeTab];
 
   const handleTabChange = (tab: string) => {
@@ -127,6 +134,7 @@ export default function SettingsView({
         keyboard: 'keyboard',
         auth: 'auth',
         'local-inference': 'local-inference',
+        sessions: 'sessions',
       };
 
       const targetTab = sectionToTab[viewOptions.section];
@@ -244,93 +252,107 @@ export default function SettingsView({
                 <KeyRound className="h-5 w-5 text-text-secondary" />
                 {intl.formatMessage(i18n.tabAuth)}
               </TabsTrigger>
-              <TabsTrigger
-                value="app"
-                className={settingsTabClass}
-                data-testid="settings-app-tab"
-              >
+              <TabsTrigger value="app" className={settingsTabClass} data-testid="settings-app-tab">
                 <Monitor className="h-5 w-5 text-text-secondary" />
                 {intl.formatMessage(i18n.tabApp)}
+              </TabsTrigger>
+              <TabsTrigger
+                value="sessions"
+                className={settingsTabClass}
+                data-testid="settings-sessions-tab"
+              >
+                <History className="h-5 w-5 text-text-secondary" />
+                {intl.formatMessage(i18n.tabSessions)}
               </TabsTrigger>
             </TabsList>
           </aside>
         </div>
 
-        <main className="surface-card my-2 mr-2 flex min-w-0 flex-1 flex-col overflow-hidden">
-          <div className="px-12 pb-8 pt-16">
-            <div className="mx-auto max-w-5xl">
-              <h1 className="font-display text-[32px] font-bold tracking-tight">{activeTabTitle}</h1>
+        {activeTab === 'sessions' ? (
+          // Session history brings its own header, search and infinite scroll,
+          // so it takes the whole panel instead of the shared settings scroller.
+          <main className="surface-card my-2 mr-2 flex min-w-0 flex-1 flex-col overflow-hidden">
+            <SessionsView embedded />
+          </main>
+        ) : (
+          <main className="surface-card my-2 mr-2 flex min-w-0 flex-1 flex-col overflow-hidden">
+            <div className="px-12 pb-8 pt-16">
+              <div className="mx-auto max-w-5xl">
+                <h1 className="font-display text-[32px] font-bold tracking-tight">
+                  {activeTabTitle}
+                </h1>
+              </div>
             </div>
-          </div>
 
-          <ScrollArea className="min-h-0 flex-1 px-12">
-            <div className="mx-auto max-w-5xl pb-10">
-              <TabsContent
-                value="models"
-                className="mt-0 focus-visible:outline-none focus-visible:ring-0"
-              >
-                <ModelsSection setView={setView} />
-              </TabsContent>
-
-              {localInference && (
+            <ScrollArea className="min-h-0 flex-1 px-12">
+              <div className="mx-auto max-w-5xl pb-10">
                 <TabsContent
-                  value="local-inference"
+                  value="models"
                   className="mt-0 focus-visible:outline-none focus-visible:ring-0"
                 >
-                  <LocalInferenceSection />
+                  <ModelsSection setView={setView} />
                 </TabsContent>
-              )}
 
-              <TabsContent
-                value="chat"
-                className="mt-0 focus-visible:outline-none focus-visible:ring-0"
-              >
-                <ChatSettingsSection />
-              </TabsContent>
+                {localInference && (
+                  <TabsContent
+                    value="local-inference"
+                    className="mt-0 focus-visible:outline-none focus-visible:ring-0"
+                  >
+                    <LocalInferenceSection />
+                  </TabsContent>
+                )}
 
-              <TabsContent
-                value="sharing"
-                className="mt-0 focus-visible:outline-none focus-visible:ring-0"
-              >
-                <div className="space-y-4 pb-8">
-                  <AgentLoopSettings />
-                  <ExternalBackendSection />
-                </div>
-              </TabsContent>
+                <TabsContent
+                  value="chat"
+                  className="mt-0 focus-visible:outline-none focus-visible:ring-0"
+                >
+                  <ChatSettingsSection />
+                </TabsContent>
 
-              <TabsContent
-                value="prompts"
-                className="mt-0 focus-visible:outline-none focus-visible:ring-0"
-              >
-                <PromptsSettingsSection />
-              </TabsContent>
+                <TabsContent
+                  value="sharing"
+                  className="mt-0 focus-visible:outline-none focus-visible:ring-0"
+                >
+                  <div className="space-y-4 pb-8">
+                    <AgentLoopSettings />
+                    <ExternalBackendSection />
+                  </div>
+                </TabsContent>
 
-              <TabsContent
-                value="keyboard"
-                className="mt-0 focus-visible:outline-none focus-visible:ring-0"
-              >
-                <KeyboardShortcutsSection />
-              </TabsContent>
+                <TabsContent
+                  value="prompts"
+                  className="mt-0 focus-visible:outline-none focus-visible:ring-0"
+                >
+                  <PromptsSettingsSection />
+                </TabsContent>
 
-              <TabsContent
-                value="auth"
-                className="mt-0 focus-visible:outline-none focus-visible:ring-0"
-              >
-                <AuthSettingsSection />
-              </TabsContent>
+                <TabsContent
+                  value="keyboard"
+                  className="mt-0 focus-visible:outline-none focus-visible:ring-0"
+                >
+                  <KeyboardShortcutsSection />
+                </TabsContent>
 
-              <TabsContent
-                value="app"
-                className="mt-0 focus-visible:outline-none focus-visible:ring-0"
-              >
-                <div className="space-y-8">
-                  {CONFIGURATION_ENABLED && <ConfigSettings />}
-                  <AppSettingsSection scrollToSection={viewOptions.section} />
-                </div>
-              </TabsContent>
-            </div>
-          </ScrollArea>
-        </main>
+                <TabsContent
+                  value="auth"
+                  className="mt-0 focus-visible:outline-none focus-visible:ring-0"
+                >
+                  <AuthSettingsSection />
+                </TabsContent>
+
+                <TabsContent
+                  value="app"
+                  className="mt-0 focus-visible:outline-none focus-visible:ring-0"
+                >
+                  <div className="space-y-8">
+                    {CONFIGURATION_ENABLED && <ConfigSettings />}
+                    <AppSettingsSection scrollToSection={viewOptions.section} />
+                  </div>
+                </TabsContent>
+              </div>
+            </ScrollArea>
+          </main>
+        )}
       </Tabs>
     </div>
   );

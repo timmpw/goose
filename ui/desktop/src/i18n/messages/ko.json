@@ -4313,6 +4313,9 @@
   "settingsView.tabPrompts": {
     "defaultMessage": "프롬프트"
   },
+  "settingsView.tabSessions": {
+    "defaultMessage": "채팅 기록"
+  },
   "settingsView.title": {
     "defaultMessage": "설정"
   },

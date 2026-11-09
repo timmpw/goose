@@ -4313,6 +4313,9 @@
   "settingsView.tabPrompts": {
     "defaultMessage": "Prompt"
   },
+  "settingsView.tabSessions": {
+    "defaultMessage": "Riwayat Sesi"
+  },
   "settingsView.title": {
     "defaultMessage": "Pengaturan"
   },

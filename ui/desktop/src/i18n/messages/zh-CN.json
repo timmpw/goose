@@ -4313,6 +4313,9 @@
   "settingsView.tabPrompts": {
     "defaultMessage": "提示词"
   },
+  "settingsView.tabSessions": {
+    "defaultMessage": "会话历史"
+  },
   "settingsView.title": {
     "defaultMessage": "设置"
   },

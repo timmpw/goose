@@ -4313,6 +4313,9 @@
   "settingsView.tabPrompts": {
     "defaultMessage": "Prompt"
   },
+  "settingsView.tabSessions": {
+    "defaultMessage": "Cronologia sessioni"
+  },
   "settingsView.title": {
     "defaultMessage": "Impostazioni"
   },

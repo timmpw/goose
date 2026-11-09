@@ -4313,6 +4313,9 @@
   "settingsView.tabPrompts": {
     "defaultMessage": "İstemler"
   },
+  "settingsView.tabSessions": {
+    "defaultMessage": "Oturum Geçmişi"
+  },
   "settingsView.title": {
     "defaultMessage": "Ayarlar"
   },
